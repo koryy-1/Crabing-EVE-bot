@@ -24,7 +24,6 @@ namespace EVE_Bot.Scripts
 
             for (int i = 0; i < 300; i++)
             {
-                TimeToFarmExp();
                 DateTime StartTime = DateTime.Now;
                 Console.WriteLine(StartTime);
 
@@ -37,6 +36,7 @@ namespace EVE_Bot.Scripts
                     Console.WriteLine("pause for {0} minutes, continue at {1}", PauseDuration, TimeForBreak);
                     sleep(PauseDuration * 60 * 1000);
                 }
+                TimeToFarmExp();
 
                 //SecondaryScripts.RemoveWaypoint();
             }
@@ -324,9 +324,21 @@ namespace EVE_Bot.Scripts
             {
                 //SecondaryScripts.RemoveWaypoint();
                 Console.WriteLine("remove waypoint");
-                Emulators.ClickRB(157, 327);
-                Thread.Sleep(500);
-                Emulators.ClickLB(157 + 70, 327 + 126);
+                //Emulators.ClickRB(157, 327);
+                //Thread.Sleep(500);
+                //Emulators.ClickLB(157 + 70, 327 + 126);
+
+                (int XlocNotepadWindow, int YlocNotepadWindow) = Finders.FindLocWnd("NotepadWindow");
+                if (XlocNotepadWindow == 0)
+                {
+                    Emulators.ClickRB(157, 327);
+                    Thread.Sleep(500);
+                    Emulators.ClickLB(157 + 70, 327 + 126);
+                }
+                Emulators.ClickRB(XlocNotepadWindow + 310, YlocNotepadWindow + 215);
+                System.Threading.Thread.Sleep(1000);
+                Emulators.ClickLB(XlocNotepadWindow + 310 + 60, YlocNotepadWindow + 215 + 40); // set destination
+                System.Threading.Thread.Sleep(500);
             }
             Thread.Sleep(500);
             Emulators.ClickLB(XlocAgencyWnd + 1150, YlocAgencyWnd + 10);
@@ -403,6 +415,7 @@ namespace EVE_Bot.Scripts
                 Emulators.PressButton((int)WinApi.VirtualKeyShort.VK_F3);
             MainScripts.ClearExpRoom();
 
+            Emulators.PressButton((int)WinApi.VirtualKeyShort.VK_F1);
             Console.WriteLine("try to find ExpBlock");
             (XBlock, YBlock) = Finders.FindExpBlock();
             if (XBlock != 0 && YBlock != 0)
@@ -415,7 +428,6 @@ namespace EVE_Bot.Scripts
                 Thread.Sleep(500);
                 Emulators.ClickLB(2200 - 66, 100); //1 button approach
                 Thread.Sleep(500);
-                Emulators.PressButton((int)WinApi.VirtualKeyShort.VK_F1);
 
                 ThreadManager.AllowDroneControl = true;
                 ThreadManager.AllowDroneRescoop = true;

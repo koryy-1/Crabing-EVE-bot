@@ -25,15 +25,15 @@ namespace EVE_Bot.Scripts
             (int XlocNotepadWindow, int YlocNotepadWindow) = Finders.FindLocWnd("OverView");
             if (XlocNotepadWindow == 0) // ship docked
             {
-                Emulators.ClickLB(2420, 190);
+                Emulators.ClickLB(2420, 205);
                 System.Threading.Thread.Sleep(500);
                 Emulators.ClickLB(2420, 230);
                 System.Threading.Thread.Sleep(1000 * 15);//wait for 20 sec after undock
                 Emulators.ClickLB(1300, 600);
                 System.Threading.Thread.Sleep(1000 * 3);
                 Console.WriteLine("undocked");
-                ThreadManager.AllowDocking = false;
             }
+            ThreadManager.AllowDocking = false;
 
             //узнать количество дронов, реконнект
             (XlocNotepadWindow, YlocNotepadWindow) = Finders.FindLocWnd("DroneView");
@@ -168,6 +168,7 @@ namespace EVE_Bot.Scripts
                 if (!Checkers.ShipInLowHP(50))
                 {
                     (int XBlock, int YBlock) = Finders.FindExpBlock();
+                    (int XAcGate, int YAcGate) = Finders.FindAccelerationGate();
                     if (XBlock > 0)
                     {
                         while (!Emulators.AllowControlEmulator)
@@ -184,6 +185,22 @@ namespace EVE_Bot.Scripts
                         Emulators.ClickLBForLockTargets(2200, 100); //3 button orbit
                         Emulators.AllowControlEmulator = true;
                     }
+                    else if (XAcGate > 0)
+                    {
+                        while (!Emulators.AllowControlEmulator)
+                        {
+                            System.Threading.Thread.Sleep(20);
+                        }
+                        Emulators.AllowControlEmulator = false;
+                        Emulators.ClickLBForLockTargets(XAcGate, YAcGate);
+                        System.Threading.Thread.Sleep(500);
+                        Emulators.ClickLBForLockTargets(2200 + 33, 100); //4 button orbit
+                        System.Threading.Thread.Sleep(500);
+                        Emulators.ClickLBForLockTargets(XAcGate, YAcGate);
+                        System.Threading.Thread.Sleep(500);
+                        Emulators.ClickLBForLockTargets(2200 + 33, 100); //4 button orbit
+                        Emulators.AllowControlEmulator = true;
+                    }
                     else
                     {
                         while (!Emulators.AllowControlEmulator)
@@ -191,12 +208,12 @@ namespace EVE_Bot.Scripts
                             System.Threading.Thread.Sleep(20);
                         }
                         Emulators.AllowControlEmulator = false;
-                        (int XAcGate, int YAcGate) = Finders.FindAccelerationGate();
-                        Emulators.ClickLBForLockTargets(XAcGate, YAcGate);
+                        (int XCont, int YCont) = Finders.FindObjectByWordInOverview("Cargo Container");
+                        Emulators.ClickLBForLockTargets(XCont, YCont);
                         System.Threading.Thread.Sleep(500);
                         Emulators.ClickLBForLockTargets(2200 + 33, 100); //4 button orbit
                         System.Threading.Thread.Sleep(500);
-                        Emulators.ClickLBForLockTargets(XAcGate, YAcGate);
+                        Emulators.ClickLBForLockTargets(XCont, YCont);
                         System.Threading.Thread.Sleep(500);
                         Emulators.ClickLBForLockTargets(2200 + 33, 100); //4 button orbit
                         Emulators.AllowControlEmulator = true;
@@ -253,7 +270,7 @@ namespace EVE_Bot.Scripts
                     int PriceValue;
                     int.TryParse(string.Join("", CargoPrice.Where(c => char.IsDigit(c))), out PriceValue);
                     int KK = 1000 * 1000;
-                    Console.WriteLine("PriceValue = " + PriceValue);
+                    Console.WriteLine("PriceValue = " + PriceValue + " CargoPrice = " + CargoPrice);
                     if (PriceValue > 30 * KK)
                     {
                         Console.WriteLine("unload cargo");
@@ -296,7 +313,7 @@ namespace EVE_Bot.Scripts
                     int Volume;
                     int.TryParse(string.Join("", CargoVolume.Where(c => char.IsDigit(c))), out Volume);
                     Console.WriteLine("Volume = " + Volume);
-                    if (Volume > 100)
+                    if (Volume > 70)
                     {
                         Console.WriteLine("unload cargo");
                         UnloadCargo();

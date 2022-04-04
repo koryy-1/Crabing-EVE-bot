@@ -116,6 +116,7 @@ namespace EVE_Bot.Searchers
 
                     if (OverviewEntry.children[k].children.Last().pythonObjectTypeName == "SpaceObjectIcon")
                     {
+                        //Unhandled exception. System.NullReferenceException: Object reference not set to an instance of an object.
                         for (int j = 0; j < OverviewEntry.children[k].children.Last().children.Length; j++)
                         {
                             if (OverviewEntry.children[k].children.Last().children[j].pythonObjectTypeName == "Sprite"

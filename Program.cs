@@ -57,9 +57,12 @@ static public class Program
                         if (X == 0 && !ThreadManager.AllowDocking) // X == 0 ship docked
                         {
                             Console.WriteLine("ship docking, but allow to docking false");
-                            ThreadManager.AllowPVEMode = false;
+                            ThreadManager.AllowShipControl = false;
                             Thread.Sleep(3 * 1000);
-                            ThreadManager.AllowPVEMode = true;
+                            if (!MainScripts.CheckForSuicidesInChat())
+                            {
+                                ThreadManager.AllowShipControl = true;
+                            }
                         }
                     }
 

@@ -61,9 +61,13 @@ if hWnd == 0:
 
 #close window with loot
 clickLB(1805, 385-23)
+time.sleep(1)
+clickLB(1805, 385-23)
 time.sleep(5)
 
 #start twin acc
+clickLB(1000, 600)
+time.sleep(0.5)
 clickLB(1000, 600)
 time.sleep(40)
 

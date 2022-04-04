@@ -184,6 +184,7 @@ namespace EVE_Bot.Controllers
 
                     if (needDrone.children[k].children[0].children[0].children[1].children[j].dictEntriesOfInterest["_name"].ToString() == "gauge_shield")
                     {
+                        //Unhandled exception. System.NullReferenceException: Object reference not set to an instance of an object.
                         if (12 < Convert.ToInt32(needDrone.children[k].children[0].children[0].children[1].children[j].children[1].dictEntriesOfInterest["_displayWidth"]))
                         {
                             Console.WriteLine(needDrone.children[k].dictEntriesOfInterest["_name"]);
