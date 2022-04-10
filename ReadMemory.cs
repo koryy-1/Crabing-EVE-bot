@@ -726,7 +726,7 @@ namespace read_memory_64_bit
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine(e.Message);
+                    Console.WriteLine("Unable to cast object of type '<>f__AnonymousType1 to type 'DictEntryValueGenericRepresentation'.");
                     Console.WriteLine(childrenDictEntry.value);
                     return null;
                 }

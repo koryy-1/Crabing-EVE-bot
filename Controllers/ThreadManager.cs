@@ -14,6 +14,8 @@ namespace EVE_Bot.Controllers
 
         volatile static public bool AllowPVEMode = false;
 
+        volatile static public bool PVEModeRunning = false;
+
         volatile static public bool AllowDroneControl = false;
 
         volatile static public bool AllowDroneRescoop = false;

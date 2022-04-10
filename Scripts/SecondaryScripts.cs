@@ -249,13 +249,26 @@ namespace EVE_Bot.Scripts
             Emulators.AllowControlEmulator = true;
         }
 
-        static public void CheckCargo()
+        static public bool CheckCargo(int price = 30)
+        {
+            if (CheckCargoPrice(price))
+            {
+                return true;
+            }
+            else if (CheckVolumeCargo())
+            {
+                return true;
+            }
+            return false;
+        }
+
+        static public bool CheckCargoPrice(int NeedPrice)
         {
             var InventoryPrimary = GetUITrees().FindEntityOfStringByDictEntriesOfInterest("_name", "totalPriceLabel");
             if (InventoryPrimary == null)
             {
                 Console.WriteLine("InventoryPrimary and totalPriceLabel not found");
-                return;
+                return false;
             }
             var InventoryPrimaryEntry = InventoryPrimary.handleEntityByDictEntriesOfInterest("_name", "totalPriceLabel");
 
@@ -271,28 +284,28 @@ namespace EVE_Bot.Scripts
                     int.TryParse(string.Join("", CargoPrice.Where(c => char.IsDigit(c))), out PriceValue);
                     int KK = 1000 * 1000;
                     Console.WriteLine("PriceValue = " + PriceValue + " CargoPrice = " + CargoPrice);
-                    if (PriceValue > 30 * KK)
+                    if (PriceValue > NeedPrice * KK)
                     {
-                        Console.WriteLine("unload cargo");
-                        UnloadCargo();
-                        return;
+                        return true;
                     }
                 }
             }
             catch
             {
                 Console.WriteLine("totalPriceLabel in InventoryPrimary not found");
-                return;
             }
+            return false;
+        }
 
-            ///
-            InventoryPrimary = GetUITrees().FindEntityOfStringByDictEntriesOfInterest("_name", "capacityText");
+        static public bool CheckVolumeCargo(int NeedVolume = 70)
+        {
+            var InventoryPrimary = GetUITrees().FindEntityOfStringByDictEntriesOfInterest("_name", "capacityText");
             if (InventoryPrimary == null)
             {
                 Console.WriteLine("InventoryPrimary and totalPriceLabel not found");
-                return;
+                return false;
             }
-            InventoryPrimaryEntry = InventoryPrimary.handleEntityByDictEntriesOfInterest("_name", "capacityText");
+            var InventoryPrimaryEntry = InventoryPrimary.handleEntityByDictEntriesOfInterest("_name", "capacityText");
 
             try
             {
@@ -313,19 +326,17 @@ namespace EVE_Bot.Scripts
                     int Volume;
                     int.TryParse(string.Join("", CargoVolume.Where(c => char.IsDigit(c))), out Volume);
                     Console.WriteLine("Volume = " + Volume);
-                    if (Volume > 70)
+                    if (Volume > NeedVolume)
                     {
-                        Console.WriteLine("unload cargo");
-                        UnloadCargo();
-                        return;
+                        return true;
                     }
                 }
             }
             catch
             {
                 Console.WriteLine("totalPriceLabel in InventoryPrimary not found");
-                return;
             }
+            return false;
         }
 
         static public void UnloadCargo()
@@ -405,7 +416,7 @@ namespace EVE_Bot.Scripts
             System.Threading.Thread.Sleep(500);
             Emulators.ClickLB(110 + 70, 275 + 200);
             System.Threading.Thread.Sleep(500);
-            var (XGate, _) = MainScripts.GoToNextSystem();
+            var (XGate, _) = MainScripts.GetCoordsNextSystem();
             if (XGate == 0)
             {
                 return true;

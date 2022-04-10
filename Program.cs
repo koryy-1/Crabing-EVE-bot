@@ -58,7 +58,12 @@ static public class Program
                         {
                             Console.WriteLine("ship docking, but allow to docking false");
                             ThreadManager.AllowShipControl = false;
-                            Thread.Sleep(3 * 1000);
+                            while (ThreadManager.PVEModeRunning)
+                            {
+                                Thread.Sleep(1 * 1000);
+                                //Console.WriteLine("PVEModeRunning = true");
+                            }
+                            
                             if (!MainScripts.CheckForSuicidesInChat())
                             {
                                 ThreadManager.AllowShipControl = true;
@@ -91,6 +96,7 @@ static public class Program
                         if (!CleanerRoom.IsAlive)
                         {
                             Console.WriteLine("starting thread CleanerRoom");
+                            ThreadManager.PVEModeRunning = true;
                             CleanerRoom.Start();
                         }
                     }
@@ -115,6 +121,7 @@ static public class Program
                                     Console.WriteLine(e.Message);
                                 }
                             });
+                            ThreadManager.PVEModeRunning = false;
                         }
                     }
                     Thread.Sleep(1000);
@@ -188,31 +195,6 @@ static public class Program
                 }
             });
 
-            var DroneControl = new Thread(() =>
-            {
-                while (true)
-                {
-                    if (ThreadManager.AllowDroneControl && ThreadManager.AllowShipControl)
-                    {
-                        if (!DroneController.DronesDroped)
-                        {
-                            DroneController.DropDrones();
-                        }
-
-                        DroneController.EngageTarget();
-                    }
-                    else
-                    {
-                        if (DroneController.DronesDroped)
-                        {
-                            DroneController.ScoopDrones();
-                        }
-                    }
-
-                    Thread.Sleep(5 * 1000);
-                }
-            });
-
             var DroneRescoopController = new Thread(() =>
             {
                 Thread DroneRescooper = new Thread(() =>
@@ -254,9 +236,34 @@ static public class Program
                     {
                         if (DroneRescooper.IsAlive)
                         {
-                            Console.WriteLine("stoping thread FlyOff");
+                            Console.WriteLine("stoping thread DroneRescooper");
                             DroneRescooper.Interrupt();
                             DroneRescooper.Join();
+                        }
+                    }
+
+                    Thread.Sleep(5 * 1000);
+                }
+            });
+
+            var DroneControl = new Thread(() =>
+            {
+                while (true)
+                {
+                    if (ThreadManager.AllowDroneControl && ThreadManager.AllowShipControl)
+                    {
+                        if (!DroneController.DronesDroped)
+                        {
+                            DroneController.DropDrones();
+                        }
+
+                        DroneController.EngageTarget();
+                    }
+                    else
+                    {
+                        if (DroneController.DronesDroped)
+                        {
+                            DroneController.ScoopDrones();
                         }
                     }
 

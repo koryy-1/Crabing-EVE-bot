@@ -50,24 +50,9 @@ namespace EVE_Bot.Scripts
                 var (XWarpToAnomaly, YWarpToAnomaly) = Finders.CheckCurrentSystemForCombatSites();
                 if (XWarpToAnomaly == 1)
                     continue;
-                if (XWarpToAnomaly == 0 && YWarpToAnomaly == 0)
+                if (XWarpToAnomaly == 0)
                 {
-                    var (XGate, YGate) = MainScripts.GoToNextSystem();
-                    if (XGate == 1)
-                    {
-                        continue;
-                    }
-                    if (XGate == 0 && YGate == 0)
-                    {
-                        Console.WriteLine("no route, start to laying a new route");
-                        SecondaryScripts.StartLayRoute();
-                    }
-                    Emulators.ClickLB(XGate, YGate);
-                    Thread.Sleep(500);
-                    Emulators.ClickLB(2200, 100); //3 button
-
-                    Checkers.WatchState();
-                    Thread.Sleep(1000 * 10);
+                    GotoNextSystem();
                     continue;
                 }
 
@@ -80,22 +65,20 @@ namespace EVE_Bot.Scripts
                 (_, int YlocProbeScannerWindow) = Finders.FindLocWnd("ProbeScannerWindow");
                 if (YWarpToAnomaly - YlocProbeScannerWindow - 104 != 0)
                 {
-                    Console.WriteLine("not that anomaly");
+                    Console.WriteLine("not that anomaly near");
                     continue;
                 }
 
                 ClearRoom();
+
+                if (Checkers.CheckQuantityDrones() < 3)
+                    SecondaryScripts.DockToStationAndExit();
+
                 if (i % 10 == 0)
                 {
                     if ((DateTime.Now - StartTime).TotalHours > 1)
                         return;
                 }
-                while (DroneController.DronesDroped)
-                    Thread.Sleep(1000);
-
-                var DronesQuantity = Checkers.CheckQuantityDrones();
-                if (DronesQuantity < 3)
-                    SecondaryScripts.DockToStationAndExit();
             }
         }
 
@@ -159,9 +142,14 @@ namespace EVE_Bot.Scripts
             Console.WriteLine("end clear at: {0}", DateTime.Now);
             ThreadManager.AllowDroneControl = false;
             ThreadManager.AllowDroneRescoop = false;
-            GotoLootCont("Dread Guristas");
-            GotoLootCont("Shadow Serpentis");
-            SecondaryScripts.CheckCargo();
+            GotoLootCont("Dread Guristas", 1);
+            GotoLootCont("Shadow Serpentis", 1);
+
+            while (DroneController.DronesDroped)
+                Thread.Sleep(1000);
+
+            if (SecondaryScripts.CheckCargo())
+                SecondaryScripts.UnloadCargo();
         }
 
         static public void TimeToFarmExp()
@@ -171,30 +159,20 @@ namespace EVE_Bot.Scripts
                 if (!FindExpidition())
                     return;
 
-                for (int j = 0; j < 30; j++)
+                for (int j = 0; j < 60; j++)
                 {
-                    (int XGate, int YGate) = GoToNextSystem();
-                    if (XGate == 1)
-                    {
-                        continue;
-                    }
-                    if (XGate == 0 && YGate == 0)
+                    if (!GotoNextSystem(false))
                         break;
-                    Emulators.ClickLB(XGate, YGate);
-                    Thread.Sleep(500);
-                    Emulators.ClickLB(2200, 100); //3 button
-                    Checkers.WatchState();
-                    Thread.Sleep(1000 * 10);
                 }
                 if (!WarpToLocExp())
-                    return;
+                    continue;
                 Checkers.WatchState();
 
                 StartClearExp();
-                SecondaryScripts.CheckCargo();
+                if (SecondaryScripts.CheckCargo())
+                    SecondaryScripts.UnloadCargo();
 
-                var DronesQuantity = Checkers.CheckQuantityDrones();
-                if (DronesQuantity < 3)
+                if (Checkers.CheckQuantityDrones() < 3)
                     SecondaryScripts.DockToStationAndExit();
             }
         }
@@ -259,13 +237,13 @@ namespace EVE_Bot.Scripts
             }
             var EscalationCardEntry = EscalationCards.handleEntity("EscalationsSystemContentCard");
 
-            List<string> SS = new List<string>();
-            SS.Add("0.5");
-            SS.Add("0.6");
-            SS.Add("0.7");
-            SS.Add("0.8");
-            SS.Add("0.9");
-            SS.Add("1.0");
+            //List<string> SS = new List<string>();
+            //SS.Add("0.5");
+            //SS.Add("0.6");
+            //SS.Add("0.7");
+            //SS.Add("0.8");
+            //SS.Add("0.9");
+            //SS.Add("1.0");
             var Routed = false;
             Emulators.ClickLB(XlocAgencyWnd + 360, YlocAgencyWnd + 220);
             Thread.Sleep(200);
@@ -560,7 +538,7 @@ namespace EVE_Bot.Scripts
             }
             else
             {
-                (int XGate, int YGate) = GoToNextSystem();
+                (int XGate, int YGate) = GetCoordsNextSystem();
                 if (XGate > 1)
                 {
                     TryTosebat = true;
@@ -583,7 +561,30 @@ namespace EVE_Bot.Scripts
             }
         }
 
-        static public (int, int) GoToNextSystem()
+        static public bool GotoNextSystem(bool NeedToLayRoute = true)
+        {
+            var (XGate, YGate) = MainScripts.GetCoordsNextSystem();
+            if (YGate == 1)
+            {
+                Thread.Sleep(1000);
+                return false;
+            }
+            if (YGate == 0 && NeedToLayRoute)
+            {
+                Console.WriteLine("no route, start to laying a new route");
+                SecondaryScripts.StartLayRoute();
+                return false;
+            }
+            Emulators.ClickLB(XGate, YGate);
+            Thread.Sleep(500);
+            Emulators.ClickLB(2200, 100); //3 button
+
+            Checkers.WatchState();
+            Thread.Sleep(1000 * 10);
+            return true;
+        }
+
+        static public (int, int) GetCoordsNextSystem()
         {
             var Overview = GetUITrees().FindEntityOfString("OverviewScrollEntry");
             if (Overview == null)
@@ -621,14 +622,17 @@ namespace EVE_Bot.Scripts
                         continue;
                     }
                     // Unhandled exception. System.NullReferenceException: Object reference not set to an instance of an object.
-                    if (OverviewEntry.children[k].children[j].dictEntriesOfInterest["_text"].ToString().Contains("Cargo Container")
+                    if (OverviewEntry.children[k].children[j].dictEntriesOfInterest.ContainsKey("_text"))
+                    {
+                        if (OverviewEntry.children[k].children[j].dictEntriesOfInterest["_text"].ToString().Contains("Cargo Container")
                         ||
                         OverviewEntry.children[k].children[j].dictEntriesOfInterest["_text"].ToString().Contains("Hangar Container")
                         ||
                         OverviewEntry.children[k].children[j].dictEntriesOfInterest["_text"].ToString().Contains("Wreck"))
-                    {
-                        IsCargo = true;
-                        break;
+                        {
+                            IsCargo = true;
+                            break;
+                        }
                     }
                 }
                 if (IsCargo)
@@ -751,7 +755,7 @@ namespace EVE_Bot.Scripts
             
         }
 
-        static public void GotoLootCont(string ContName)
+        static public void GotoLootCont(string ContName, int NeedPrice = 0)
         {
             var Inventory = GetUITrees().FindEntityOfString("InventoryPrimary");
             if (Inventory == null)
@@ -811,17 +815,25 @@ namespace EVE_Bot.Scripts
                     Thread.Sleep(1000);
                 }
                 Thread.Sleep(1000);
+                if (SecondaryScripts.CheckCargoPrice(NeedPrice))
+                {
+                    (XlocInventory, YlocInventory) = Finders.FindLocWnd("InventoryPrimary");
 
-                (XlocInventory, YlocInventory) = Finders.FindLocWnd("InventoryPrimary");
+                    HeightInventory = Window.GetHeightWindow("InventoryPrimary");
+                    WidthLeftSidebar = Window.GetWidthWindow("TreeViewEntryInventoryCargo");
 
-                HeightInventory = Window.GetHeightWindow("InventoryPrimary");
-                WidthLeftSidebar = Window.GetWidthWindow("TreeViewEntryInventoryCargo");
+                    Console.WriteLine("button loot all: {0}, {1}", XlocInventory + WidthLeftSidebar + 30, YlocInventory + HeightInventory - 20 + 23);
 
-                Console.WriteLine("button loot all: {0}, {1}", XlocInventory + WidthLeftSidebar + 30, YlocInventory + HeightInventory - 20 + 23);
-
-                Emulators.ClickLB(XlocInventory + WidthLeftSidebar + 30, YlocInventory + HeightInventory - 20); // Loot all
-                Console.WriteLine("cont looted");
-                Thread.Sleep(1000 * 5);
+                    Emulators.ClickLB(XlocInventory + WidthLeftSidebar + 30, YlocInventory + HeightInventory - 20); // Loot all
+                    Console.WriteLine("cont looted");
+                    Thread.Sleep(1000 * 5);
+                }
+                else
+                {
+                    Console.WriteLine("carbage in loot");
+                    return;
+                }
+                
             }
         }
 
