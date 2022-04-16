@@ -57,6 +57,8 @@ namespace EVE_Bot.Scripts
             Emulators.ClickLB(XlocInventory + 60, YlocInventory + 55);
             System.Threading.Thread.Sleep(500);
 
+            ThreadManager.AllowDScan = true;
+
             //узнать количество дронов, докнуться если меньше 3-х
             DronesQuantity = Checkers.CheckQuantityDrones();
             if (DronesQuantity < 3)
@@ -92,6 +94,7 @@ namespace EVE_Bot.Scripts
             {
                 MainScripts.ClearRoom();
             }
+            ThreadManager.MultiplierSleep = 5;
         }
 
         static public void DockToStationAndExit()
@@ -348,6 +351,8 @@ namespace EVE_Bot.Scripts
                 return;
             }
             ThreadManager.AllowDocking = true;
+            ThreadManager.AllowDScan = false;
+            Console.WriteLine("unload cargo");
 
             Emulators.ClickLB(XStationCoords, YStationCoords);
             System.Threading.Thread.Sleep(500);
@@ -361,7 +366,9 @@ namespace EVE_Bot.Scripts
                 Emulators.ClickLB(2420, 190); // undock
                 System.Threading.Thread.Sleep(1000 * 15);
                 Emulators.ClickLB(1300, 600);
-                System.Threading.Thread.Sleep(1000 * 3);
+                System.Threading.Thread.Sleep(1000 * 2);
+                ThreadManager.AllowDocking = false;
+                ThreadManager.AllowDScan = true;
                 return;
             }
             Emulators.ClickRB(XlocChatWindowStack + 170, YlocChatWindowStack + 75);
@@ -375,8 +382,9 @@ namespace EVE_Bot.Scripts
             Emulators.ClickLB(2420, 190); // undock
             System.Threading.Thread.Sleep(1000 * 15);
             Emulators.ClickLB(1300, 600);
-            System.Threading.Thread.Sleep(1000 * 3);
+            System.Threading.Thread.Sleep(1000 * 2);
             ThreadManager.AllowDocking = false;
+            ThreadManager.AllowDScan = true;
         }
 
         static public void StartLayRoute()
@@ -384,6 +392,8 @@ namespace EVE_Bot.Scripts
             (int XlocNotepadWindow, int YlocNotepadWindow) = Finders.FindLocWnd("NotepadWindow");
             if (XlocNotepadWindow == 0)
                 return;
+            ThreadManager.AllowDScan = false;
+            System.Threading.Thread.Sleep(3 * 1000);
             int X = 0;
             int Y = 0;
             for (int i = 0; i < 7; i++)
@@ -399,6 +409,7 @@ namespace EVE_Bot.Scripts
                 }
                 Y += 16;
             }
+            ThreadManager.AllowDScan = true;
         }
 
         static public bool RemoveWaypoint()

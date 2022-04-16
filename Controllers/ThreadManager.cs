@@ -27,5 +27,9 @@ namespace EVE_Bot.Controllers
         volatile static public bool AllowToAttack = false;
 
         volatile static public bool AllowDocking = true;
+
+        volatile static public bool AllowDScan = false;
+
+        volatile static public int MultiplierSleep = 1;
     }
 }

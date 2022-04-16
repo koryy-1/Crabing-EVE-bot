@@ -9,6 +9,7 @@ using EVE_Bot.Controllers;
 using EVE_Bot.Scripts;
 using System.Threading.Tasks;
 using System.Threading;
+using read_memory_64_bit;
 
 static public class Program
 {
@@ -77,7 +78,7 @@ static public class Program
 
             var PVEMode = new Thread(() =>
             {
-                Thread CleanerRoom = new Thread(() =>
+                Thread ScriptExecutor = new Thread(() =>
                 {
                     try
                     {
@@ -93,24 +94,24 @@ static public class Program
                 {
                     if (ThreadManager.AllowPVEMode && ThreadManager.AllowShipControl)
                     {
-                        if (!CleanerRoom.IsAlive)
+                        if (!ScriptExecutor.IsAlive)
                         {
                             Console.WriteLine("starting thread CleanerRoom");
                             ThreadManager.PVEModeRunning = true;
-                            CleanerRoom.Start();
+                            ScriptExecutor.Start();
                         }
                     }
                     else
                     {
-                        if (CleanerRoom.IsAlive)
+                        if (ScriptExecutor.IsAlive)
                         {
                             ThreadManager.AllowDroneControl = false;
                             ThreadManager.AllowDroneRescoop = false;
                             Console.WriteLine("stoping thread CleanerRoom");
-                            CleanerRoom.Interrupt();
-                            CleanerRoom.Join();
+                            ScriptExecutor.Interrupt();
+                            ScriptExecutor.Join();
 
-                            CleanerRoom = new Thread(() =>
+                            ScriptExecutor = new Thread(() =>
                             {
                                 try
                                 {
@@ -242,7 +243,7 @@ static public class Program
                         }
                     }
 
-                    Thread.Sleep(5 * 1000);
+                    Thread.Sleep(3 * 1000);
                 }
             });
 
@@ -267,7 +268,7 @@ static public class Program
                         }
                     }
 
-                    Thread.Sleep(5 * 1000);
+                    Thread.Sleep(3 * 1000);
                 }
             });
 
@@ -277,16 +278,18 @@ static public class Program
                 {
                     if (ThreadManager.AllowCheckRedMarker)
                     {
-                        if (MainScripts.CheckForSuicidesInChat())
+                        if (MainScripts.CheckForSuicidesInChat() || MainScripts.CheckDScan())
                         {
                             ThreadManager.AllowShipControl = false;
-                            Thread.Sleep(5 * 1000);
+                            while (ThreadManager.PVEModeRunning)
+                                Thread.Sleep(1 * 1000);
+
                             Emulators.AllowControlEmulator = true;
                             MainScripts.DockingFromSuicides();
                             ThreadManager.AllowShipControl = true;
                         }
                     }
-                    Thread.Sleep(5 * 1000);
+                    Thread.Sleep(ThreadManager.MultiplierSleep * 1000);
                 }
             });
 

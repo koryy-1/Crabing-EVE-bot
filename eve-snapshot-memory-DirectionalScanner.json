@@ -1,0 +1,2076 @@
+{
+    "pythonObjectAddress": "2187918742528",
+    "pythonObjectTypeName": "LayerCore",
+    "dictEntriesOfInterest": {
+        "_displayHeight": {
+            "int": "2186138355041",
+            "int_low32": "1377"
+        },
+        "_displayY": "0",
+        "children": {
+            "address": "2187918742584",
+            "pythonObjectTypeName": "PyChildrenList"
+        },
+        "_displayWidth": "2560",
+        "_name": "l_main",
+        "_displayX": "0",
+        "needIndex": "1"
+    },
+    "otherDictEntriesKeys": null,
+    "children": [
+        null,
+        {
+            "pythonObjectAddress": "2188782561040",
+            "pythonObjectTypeName": "DirectionalScanner",
+            "dictEntriesOfInterest": {
+                "children": {
+                    "address": "2188782562776",
+                    "pythonObjectTypeName": "PyChildrenList"
+                },
+                "_displayWidth": {
+                    "int": "4603456929807729070",
+                    "int_low32": "430"
+                },
+                "_left": {
+                    "int": "4697690024110458516",
+                    "int_low32": "1684"
+                },
+                "_display": true,
+                "_sr": {
+                    "entriesOfInterest": {
+                    }
+                },
+                "_width": {
+                    "int": "4642648265865560494",
+                    "int_low32": "430"
+                },
+                "_name": "directionalScannerWindow",
+                "_displayHeight": {
+                    "int": "4691061961859793349",
+                    "int_low32": "453"
+                },
+                "_top": {
+                    "int": "4607182418800018245",
+                    "int_low32": "837"
+                },
+                "_displayX": {
+                    "int": "4652891316189922964",
+                    "int_low32": "1684"
+                },
+                "_displayY": {
+                    "int": "-4558768722805783739",
+                    "int_low32": "837"
+                },
+                "_height": {
+                    "int": "4652939694701543877",
+                    "int_low32": "453"
+                }
+            },
+            "otherDictEntriesKeys": null,
+            "children": [
+                {
+                    "pythonObjectAddress": "2188513207968",
+                    "pythonObjectTypeName": "Container",
+                    "dictEntriesOfInterest": {
+                        "_displayHeight": {
+                            "int": "4656672330519413189",
+                            "int_low32": "453"
+                        },
+                        "_displayX": "0",
+                        "children": {
+                            "address": "2188513207576",
+                            "pythonObjectTypeName": "PyChildrenList"
+                        },
+                        "_displayWidth": {
+                            "int": "4646289848376754606",
+                            "int_low32": "430"
+                        },
+                        "_displayY": "0",
+                        "_name": "resizers"
+                    },
+                    "otherDictEntriesKeys": null,
+                    "children": [
+                        {
+                            "pythonObjectAddress": "2188816418632",
+                            "pythonObjectTypeName": "Fill",
+                            "dictEntriesOfInterest": {
+                                "_displayHeight": "8",
+                                "_top": "0",
+                                "_displayX": "0",
+                                "_displayWidth": "8",
+                                "_left": "0",
+                                "_height": "8",
+                                "_width": "8",
+                                "_displayY": "0",
+                                "_name": "sLeftTop",
+                                "_color": {
+                                    "aPercent": "0",
+                                    "rPercent": "0",
+                                    "gPercent": "0",
+                                    "bPercent": "0"
+                                }
+                            },
+                            "otherDictEntriesKeys": null,
+                            "children": null
+                        },
+                        {
+                            "pythonObjectAddress": "2188816420256",
+                            "pythonObjectTypeName": "Fill",
+                            "dictEntriesOfInterest": {
+                                "_displayHeight": "6",
+                                "_top": "0",
+                                "_displayX": {
+                                    "int": "4652235964310094248",
+                                    "int_low32": "424"
+                                },
+                                "_displayWidth": "6",
+                                "_left": "0",
+                                "_height": "6",
+                                "_width": "6",
+                                "_displayY": "0",
+                                "_name": "sRightTop",
+                                "_color": {
+                                    "aPercent": "0",
+                                    "rPercent": "0",
+                                    "gPercent": "0",
+                                    "bPercent": "0"
+                                }
+                            },
+                            "otherDictEntriesKeys": null,
+                            "children": null
+                        },
+                        {
+                            "pythonObjectAddress": "2188513206736",
+                            "pythonObjectTypeName": "Fill",
+                            "dictEntriesOfInterest": {
+                                "_displayHeight": "8",
+                                "_top": "0",
+                                "_displayX": {
+                                    "int": "4640044622330986918",
+                                    "int_low32": "422"
+                                },
+                                "_displayWidth": "8",
+                                "_left": "0",
+                                "_height": "8",
+                                "_width": "8",
+                                "_displayY": {
+                                    "int": "4645744490609377725",
+                                    "int_low32": "445"
+                                },
+                                "_name": "sRightBottom",
+                                "_color": {
+                                    "aPercent": "0",
+                                    "rPercent": "0",
+                                    "gPercent": "0",
+                                    "bPercent": "0"
+                                }
+                            },
+                            "otherDictEntriesKeys": null,
+                            "children": null
+                        },
+                        {
+                            "pythonObjectAddress": "2187943474568",
+                            "pythonObjectTypeName": "Fill",
+                            "dictEntriesOfInterest": {
+                                "_displayHeight": "8",
+                                "_top": "0",
+                                "_displayX": "0",
+                                "_displayWidth": "8",
+                                "_left": "0",
+                                "_height": "8",
+                                "_width": "8",
+                                "_displayY": {
+                                    "int": "4611686018427388349",
+                                    "int_low32": "445"
+                                },
+                                "_name": "sLeftBottom",
+                                "_color": {
+                                    "aPercent": "0",
+                                    "rPercent": "0",
+                                    "gPercent": "0",
+                                    "bPercent": "0"
+                                }
+                            },
+                            "otherDictEntriesKeys": null,
+                            "children": null
+                        },
+                        {
+                            "pythonObjectAddress": "2187943473896",
+                            "pythonObjectTypeName": "Fill",
+                            "dictEntriesOfInterest": {
+                                "_displayHeight": {
+                                    "int": "4645920412469821893",
+                                    "int_low32": "453"
+                                },
+                                "_top": "0",
+                                "_displayX": "0",
+                                "_displayWidth": "4",
+                                "_left": "0",
+                                "_height": "0",
+                                "_width": "4",
+                                "_displayY": "0",
+                                "_name": "sLeft",
+                                "_color": {
+                                    "aPercent": "0",
+                                    "rPercent": "0",
+                                    "gPercent": "0",
+                                    "bPercent": "0"
+                                }
+                            },
+                            "otherDictEntriesKeys": null,
+                            "children": null
+                        },
+                        {
+                            "pythonObjectAddress": "2187943475968",
+                            "pythonObjectTypeName": "Fill",
+                            "dictEntriesOfInterest": {
+                                "_displayHeight": {
+                                    "int": "4643035293958537669",
+                                    "int_low32": "453"
+                                },
+                                "_top": "0",
+                                "_displayX": "426",
+                                "_displayWidth": "4",
+                                "_left": "0",
+                                "_height": "0",
+                                "_width": "4",
+                                "_displayY": "0",
+                                "_name": "sRight",
+                                "_color": {
+                                    "aPercent": "0",
+                                    "rPercent": "0",
+                                    "gPercent": "0",
+                                    "bPercent": "0"
+                                }
+                            },
+                            "otherDictEntriesKeys": null,
+                            "children": null
+                        },
+                        {
+                            "pythonObjectAddress": "2187943473672",
+                            "pythonObjectTypeName": "Fill",
+                            "dictEntriesOfInterest": {
+                                "_displayHeight": "4",
+                                "_top": "0",
+                                "_displayX": "4",
+                                "_displayWidth": "422",
+                                "_left": "0",
+                                "_height": "4",
+                                "_width": "0",
+                                "_displayY": "0",
+                                "_name": "sTop",
+                                "_color": {
+                                    "aPercent": "0",
+                                    "rPercent": "0",
+                                    "gPercent": "0",
+                                    "bPercent": "0"
+                                }
+                            },
+                            "otherDictEntriesKeys": null,
+                            "children": null
+                        },
+                        {
+                            "pythonObjectAddress": "2187943475912",
+                            "pythonObjectTypeName": "Fill",
+                            "dictEntriesOfInterest": {
+                                "_displayHeight": "4",
+                                "_top": "0",
+                                "_displayX": "4",
+                                "_displayWidth": "422",
+                                "_left": "0",
+                                "_height": "4",
+                                "_width": "0",
+                                "_displayY": {
+                                    "int": "2186138354113",
+                                    "int_low32": "449"
+                                },
+                                "_name": "sBottom",
+                                "_color": {
+                                    "aPercent": "0",
+                                    "rPercent": "0",
+                                    "gPercent": "0",
+                                    "bPercent": "0"
+                                }
+                            },
+                            "otherDictEntriesKeys": null,
+                            "children": null
+                        }
+                    ]
+                },
+                {
+                    "pythonObjectAddress": "2188782559920",
+                    "pythonObjectTypeName": "Container",
+                    "dictEntriesOfInterest": {
+                        "_displayHeight": {
+                            "int": "4613937818241073605",
+                            "int_low32": "453"
+                        },
+                        "_displayX": "0",
+                        "children": {
+                            "address": "2188782562664",
+                            "pythonObjectTypeName": "PyChildrenList"
+                        },
+                        "_displayWidth": {
+                            "int": "4616189618054758830",
+                            "int_low32": "430"
+                        },
+                        "_displayY": "0",
+                        "_name": "content"
+                    },
+                    "otherDictEntriesKeys": null,
+                    "children": [
+                        {
+                            "pythonObjectAddress": "2188782560480",
+                            "pythonObjectTypeName": "Container",
+                            "dictEntriesOfInterest": {
+                                "_displayHeight": "22",
+                                "_top": "0",
+                                "_displayX": "0",
+                                "children": {
+                                    "address": "2188782561824",
+                                    "pythonObjectTypeName": "PyChildrenList"
+                                },
+                                "_displayWidth": {
+                                    "int": "4607182418800017838",
+                                    "int_low32": "430"
+                                },
+                                "_left": "0",
+                                "_height": "22",
+                                "_width": "0",
+                                "_displayY": "0",
+                                "_name": "headerParent"
+                            },
+                            "otherDictEntriesKeys": null,
+                            "children": [
+                                {
+                                    "pythonObjectAddress": "2188782561656",
+                                    "pythonObjectTypeName": "Container",
+                                    "dictEntriesOfInterest": {
+                                        "_displayHeight": "22",
+                                        "_displayX": "0",
+                                        "children": {
+                                            "address": "2188782563168",
+                                            "pythonObjectTypeName": "PyChildrenList"
+                                        },
+                                        "_displayWidth": {
+                                            "int": "4652897689921388968",
+                                            "int_low32": "424"
+                                        },
+                                        "_displayY": "0",
+                                        "_name": "captionParent"
+                                    },
+                                    "otherDictEntriesKeys": null,
+                                    "children": [
+                                        {
+                                            "pythonObjectAddress": "2188999193376",
+                                            "pythonObjectTypeName": "EveLabelSmall",
+                                            "dictEntriesOfInterest": {
+                                                "_displayHeight": "14",
+                                                "_top": "0",
+                                                "_displayX": "8",
+                                                "_displayWidth": "110",
+                                                "_setText": "Directional Scanner",
+                                                "_left": "8",
+                                                "_height": "14",
+                                                "_width": "110",
+                                                "_displayY": "4",
+                                                "_color": {
+                                                    "aPercent": "60",
+                                                    "rPercent": "100",
+                                                    "gPercent": "100",
+                                                    "bPercent": "100"
+                                                }
+                                            },
+                                            "otherDictEntriesKeys": null,
+                                            "children": null
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "pythonObjectAddress": "2188782559528",
+                            "pythonObjectTypeName": "Container",
+                            "dictEntriesOfInterest": {
+                                "_displayHeight": "431",
+                                "_displayX": "0",
+                                "children": {
+                                    "address": "2188782560760",
+                                    "pythonObjectTypeName": "PyChildrenList"
+                                },
+                                "_displayWidth": "430",
+                                "_displayY": "22",
+                                "_name": "main"
+                            },
+                            "otherDictEntriesKeys": null,
+                            "children": [
+                                {
+                                    "pythonObjectAddress": "2189055192760",
+                                    "pythonObjectTypeName": "DirectionalScannerPalette",
+                                    "dictEntriesOfInterest": {
+                                        "_displayHeight": {
+                                            "int": "4595631568113893803",
+                                            "int_low32": "427"
+                                        },
+                                        "_displayX": "4",
+                                        "_displayY": "0",
+                                        "children": {
+                                            "address": "2189055192816",
+                                            "pythonObjectTypeName": "PyChildrenList"
+                                        },
+                                        "_displayWidth": {
+                                            "int": "4607182418800017830",
+                                            "int_low32": "422"
+                                        }
+                                    },
+                                    "otherDictEntriesKeys": null,
+                                    "children": [
+                                        {
+                                            "pythonObjectAddress": "2189055190912",
+                                            "pythonObjectTypeName": "ContainerAutoSize",
+                                            "dictEntriesOfInterest": {
+                                                "_displayHeight": "36",
+                                                "_displayWidth": {
+                                                    "int": "4626885667169763750",
+                                                    "int_low32": "422"
+                                                },
+                                                "_height": "36",
+                                                "children": {
+                                                    "address": "2189055190520",
+                                                    "pythonObjectTypeName": "UIChildrenListAutoSize"
+                                                },
+                                                "_displayY": {
+                                                    "int": "4591870177489977739",
+                                                    "int_low32": "395"
+                                                },
+                                                "_name": "bottomCont",
+                                                "_displayX": "0"
+                                            },
+                                            "otherDictEntriesKeys": null,
+                                            "children": [
+                                                {
+                                                    "pythonObjectAddress": "2188915044080",
+                                                    "pythonObjectTypeName": "ScanButton",
+                                                    "dictEntriesOfInterest": {
+                                                        "_displayY": "0",
+                                                        "children": {
+                                                            "address": "2188816996000",
+                                                            "pythonObjectTypeName": "PyChildrenList"
+                                                        },
+                                                        "_displayWidth": "90",
+                                                        "_top": "0",
+                                                        "_sr": {
+                                                            "entriesOfInterest": {
+                                                            }
+                                                        },
+                                                        "_left": "0",
+                                                        "_height": "32",
+                                                        "_width": "90",
+                                                        "_displayHeight": "32",
+                                                        "_displayX": {
+                                                            "int": "4607182418800017740",
+                                                            "int_low32": "332"
+                                                        }
+                                                    },
+                                                    "otherDictEntriesKeys": null,
+                                                    "children": [
+                                                        {
+                                                            "pythonObjectAddress": "2188915041504",
+                                                            "pythonObjectTypeName": "LabelThemeColored",
+                                                            "dictEntriesOfInterest": {
+                                                                "_width": "30",
+                                                                "_displayX": "30",
+                                                                "_displayWidth": "30",
+                                                                "_setText": "Scan",
+                                                                "_height": "17",
+                                                                "_displayY": "8",
+                                                                "_displayHeight": "17",
+                                                                "_color": {
+                                                                    "aPercent": "75",
+                                                                    "rPercent": "100",
+                                                                    "gPercent": "100",
+                                                                    "bPercent": "100"
+                                                                }
+                                                            },
+                                                            "otherDictEntriesKeys": null,
+                                                            "children": null
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "pythonObjectAddress": "2188816994880",
+                                                    "pythonObjectTypeName": "EveLabelSmall",
+                                                    "dictEntriesOfInterest": {
+                                                        "_top": "0",
+                                                        "_displayX": "2",
+                                                        "_displayWidth": "35",
+                                                        "_setText": "Range",
+                                                        "_left": "2",
+                                                        "_height": "14",
+                                                        "_width": "35",
+                                                        "_displayY": "0",
+                                                        "_displayHeight": "14",
+                                                        "_color": {
+                                                            "aPercent": "60",
+                                                            "rPercent": "100",
+                                                            "gPercent": "100",
+                                                            "bPercent": "100"
+                                                        }
+                                                    },
+                                                    "otherDictEntriesKeys": null,
+                                                    "children": null
+                                                },
+                                                {
+                                                    "pythonObjectAddress": "2188619533392",
+                                                    "pythonObjectTypeName": "FlowContainer",
+                                                    "dictEntriesOfInterest": {
+                                                        "_displayHeight": "16",
+                                                        "_displayX": "43",
+                                                        "children": {
+                                                            "address": "2188619533952",
+                                                            "pythonObjectTypeName": "PyChildrenList"
+                                                        },
+                                                        "_displayWidth": {
+                                                            "int": "4596373777117348127",
+                                                            "int_low32": "287"
+                                                        },
+                                                        "_height": "16",
+                                                        "_displayY": "0"
+                                                    },
+                                                    "otherDictEntriesKeys": null,
+                                                    "children": [
+                                                        {
+                                                            "pythonObjectAddress": "2188619533056",
+                                                            "pythonObjectTypeName": "Slider",
+                                                            "dictEntriesOfInterest": {
+                                                                "_displayHeight": "16",
+                                                                "_top": "0",
+                                                                "_displayX": "0",
+                                                                "children": {
+                                                                    "address": "2188619531936",
+                                                                    "pythonObjectTypeName": "PyChildrenList"
+                                                                },
+                                                                "_displayWidth": "90",
+                                                                "_left": "0",
+                                                                "_height": "16",
+                                                                "_displayY": "0",
+                                                                "_width": "90",
+                                                                "_name": "distanceSlider"
+                                                            },
+                                                            "otherDictEntriesKeys": null,
+                                                            "children": [
+                                                                {
+                                                                    "pythonObjectAddress": "2188619532776",
+                                                                    "pythonObjectTypeName": "Container",
+                                                                    "dictEntriesOfInterest": {
+                                                                        "_displayHeight": "20",
+                                                                        "_top": "0",
+                                                                        "_displayX": "0",
+                                                                        "children": {
+                                                                            "address": "2188619530648",
+                                                                            "pythonObjectTypeName": "PyChildrenList"
+                                                                        },
+                                                                        "_displayWidth": "90",
+                                                                        "_left": "0",
+                                                                        "_height": "20",
+                                                                        "_width": "0",
+                                                                        "_displayY": "0",
+                                                                        "_name": "barCont"
+                                                                    },
+                                                                    "otherDictEntriesKeys": null,
+                                                                    "children": [
+                                                                        {
+                                                                            "pythonObjectAddress": "2188619532440",
+                                                                            "pythonObjectTypeName": "SpriteThemeColored",
+                                                                            "dictEntriesOfInterest": {
+                                                                                "_displayHeight": "12",
+                                                                                "_top": "0",
+                                                                                "_displayX": "3",
+                                                                                "_displayWidth": "12",
+                                                                                "_left": "3",
+                                                                                "_height": "12",
+                                                                                "_width": "12",
+                                                                                "_displayY": "4",
+                                                                                "_name": "diode",
+                                                                                "_color": {
+                                                                                    "aPercent": "100",
+                                                                                    "rPercent": "25",
+                                                                                    "gPercent": "25",
+                                                                                    "bPercent": "25"
+                                                                                }
+                                                                            },
+                                                                            "otherDictEntriesKeys": null,
+                                                                            "children": null
+                                                                        },
+                                                                        {
+                                                                            "pythonObjectAddress": "2188772717400",
+                                                                            "pythonObjectTypeName": "Container",
+                                                                            "dictEntriesOfInterest": {
+                                                                                "_displayHeight": "20",
+                                                                                "_displayX": "0",
+                                                                                "children": {
+                                                                                    "address": "2188772720368",
+                                                                                    "pythonObjectTypeName": "PyChildrenList"
+                                                                                },
+                                                                                "_displayWidth": "90",
+                                                                                "_displayY": "0",
+                                                                                "_name": "ticksCont"
+                                                                            },
+                                                                            "otherDictEntriesKeys": null,
+                                                                            "children": [
+                                                                                {
+                                                                                    "pythonObjectAddress": "2188772717064",
+                                                                                    "pythonObjectTypeName": "Line",
+                                                                                    "dictEntriesOfInterest": {
+                                                                                        "_displayHeight": "8",
+                                                                                        "_displayX": "4",
+                                                                                        "_displayWidth": "1",
+                                                                                        "_height": "1",
+                                                                                        "_width": "1",
+                                                                                        "_displayY": "6",
+                                                                                        "_name": "tickLine",
+                                                                                        "_color": {
+                                                                                            "aPercent": "20",
+                                                                                            "rPercent": "100",
+                                                                                            "gPercent": "100",
+                                                                                            "bPercent": "100"
+                                                                                        }
+                                                                                    },
+                                                                                    "otherDictEntriesKeys": null,
+                                                                                    "children": null
+                                                                                },
+                                                                                {
+                                                                                    "pythonObjectAddress": "2188772717624",
+                                                                                    "pythonObjectTypeName": "Line",
+                                                                                    "dictEntriesOfInterest": {
+                                                                                        "_displayHeight": "6",
+                                                                                        "_displayX": "9",
+                                                                                        "_displayWidth": "1",
+                                                                                        "_height": "1",
+                                                                                        "_width": "1",
+                                                                                        "_displayY": "7",
+                                                                                        "_name": "tickLine",
+                                                                                        "_color": {
+                                                                                            "aPercent": "20",
+                                                                                            "rPercent": "100",
+                                                                                            "gPercent": "100",
+                                                                                            "bPercent": "100"
+                                                                                        }
+                                                                                    },
+                                                                                    "otherDictEntriesKeys": null,
+                                                                                    "children": null
+                                                                                },
+                                                                                {
+                                                                                    "pythonObjectAddress": "2187411972728",
+                                                                                    "pythonObjectTypeName": "Line",
+                                                                                    "dictEntriesOfInterest": {
+                                                                                        "_displayHeight": "6",
+                                                                                        "_displayX": "32",
+                                                                                        "_displayWidth": "1",
+                                                                                        "_height": "1",
+                                                                                        "_width": "1",
+                                                                                        "_displayY": "7",
+                                                                                        "_name": "tickLine",
+                                                                                        "_color": {
+                                                                                            "aPercent": "20",
+                                                                                            "rPercent": "100",
+                                                                                            "gPercent": "100",
+                                                                                            "bPercent": "100"
+                                                                                        }
+                                                                                    },
+                                                                                    "otherDictEntriesKeys": null,
+                                                                                    "children": null
+                                                                                },
+                                                                                {
+                                                                                    "pythonObjectAddress": "2187411972336",
+                                                                                    "pythonObjectTypeName": "Line",
+                                                                                    "dictEntriesOfInterest": {
+                                                                                        "_displayHeight": "6",
+                                                                                        "_displayX": "61",
+                                                                                        "_displayWidth": "1",
+                                                                                        "_height": "1",
+                                                                                        "_width": "1",
+                                                                                        "_displayY": "7",
+                                                                                        "_name": "tickLine",
+                                                                                        "_color": {
+                                                                                            "aPercent": "20",
+                                                                                            "rPercent": "100",
+                                                                                            "gPercent": "100",
+                                                                                            "bPercent": "100"
+                                                                                        }
+                                                                                    },
+                                                                                    "otherDictEntriesKeys": null,
+                                                                                    "children": null
+                                                                                },
+                                                                                {
+                                                                                    "pythonObjectAddress": "2188787147888",
+                                                                                    "pythonObjectTypeName": "Line",
+                                                                                    "dictEntriesOfInterest": {
+                                                                                        "_displayHeight": "8",
+                                                                                        "_displayX": "86",
+                                                                                        "_displayWidth": "1",
+                                                                                        "_height": "1",
+                                                                                        "_width": "1",
+                                                                                        "_displayY": "6",
+                                                                                        "_name": "tickLine",
+                                                                                        "_color": {
+                                                                                            "aPercent": "20",
+                                                                                            "rPercent": "100",
+                                                                                            "gPercent": "100",
+                                                                                            "bPercent": "100"
+                                                                                        }
+                                                                                    },
+                                                                                    "otherDictEntriesKeys": null,
+                                                                                    "children": null
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "pythonObjectAddress": "2188787148392",
+                                                            "pythonObjectTypeName": "ContainerAutoSize",
+                                                            "dictEntriesOfInterest": {
+                                                                "_displayHeight": "14",
+                                                                "_top": "0",
+                                                                "_displayX": "94",
+                                                                "children": {
+                                                                    "address": "2188787148168",
+                                                                    "pythonObjectTypeName": "UIChildrenListAutoSize"
+                                                                },
+                                                                "_displayWidth": "88",
+                                                                "_left": "0",
+                                                                "_height": "14",
+                                                                "_width": "88",
+                                                                "_displayY": "0"
+                                                            },
+                                                            "otherDictEntriesKeys": null,
+                                                            "children": [
+                                                                {
+                                                                    "pythonObjectAddress": "2188787147944",
+                                                                    "pythonObjectTypeName": "SingleLineEditFloat",
+                                                                    "dictEntriesOfInterest": {
+                                                                        "children": {
+                                                                            "address": "2188787148112",
+                                                                            "pythonObjectTypeName": "PyChildrenList"
+                                                                        },
+                                                                        "_top": "0",
+                                                                        "_left": "0",
+                                                                        "_display": true,
+                                                                        "_displayWidth": "45",
+                                                                        "_width": "45",
+                                                                        "_name": "auInput",
+                                                                        "_displayHeight": "14",
+                                                                        "_displayY": "0",
+                                                                        "_displayX": "0",
+                                                                        "_height": "18"
+                                                                    },
+                                                                    "otherDictEntriesKeys": null,
+                                                                    "children": [
+                                                                        {
+                                                                            "pythonObjectAddress": "2188914988032",
+                                                                            "pythonObjectTypeName": "Container",
+                                                                            "dictEntriesOfInterest": {
+                                                                                "_displayHeight": "12",
+                                                                                "_top": "0",
+                                                                                "_displayX": "34",
+                                                                                "children": {
+                                                                                    "address": "2188914987528",
+                                                                                    "pythonObjectTypeName": "PyChildrenList"
+                                                                                },
+                                                                                "_displayWidth": "10",
+                                                                                "_left": "0",
+                                                                                "_height": "0",
+                                                                                "_width": "10",
+                                                                                "_displayY": "1",
+                                                                                "_name": "numericControlsCont"
+                                                                            },
+                                                                            "otherDictEntriesKeys": null,
+                                                                            "children": [
+                                                                                {
+                                                                                    "pythonObjectAddress": "2188914988144",
+                                                                                    "pythonObjectTypeName": "ButtonIcon",
+                                                                                    "dictEntriesOfInterest": {
+                                                                                        "_displayHeight": "10",
+                                                                                        "_top": {
+                                                                                            "int": "4294967292",
+                                                                                            "int_low32": "-4"
+                                                                                        },
+                                                                                        "children": {
+                                                                                            "address": "2188914987304",
+                                                                                            "pythonObjectTypeName": "PyChildrenList"
+                                                                                        },
+                                                                                        "texturePath": "res:/UI/Texture/Shared/up.png",
+                                                                                        "_displayWidth": "9",
+                                                                                        "_left": "0",
+                                                                                        "_height": "9",
+                                                                                        "_displayY": {
+                                                                                            "int": "4294967293",
+                                                                                            "int_low32": "-3"
+                                                                                        },
+                                                                                        "_width": "9",
+                                                                                        "_name": "upButton",
+                                                                                        "_displayX": "1"
+                                                                                    },
+                                                                                    "otherDictEntriesKeys": null,
+                                                                                    "children": [
+                                                                                        {
+                                                                                            "pythonObjectAddress": "2188914987136",
+                                                                                            "pythonObjectTypeName": "GlowSprite",
+                                                                                            "dictEntriesOfInterest": {
+                                                                                                "_displayHeight": "7",
+                                                                                                "_top": "0",
+                                                                                                "children": {
+                                                                                                    "address": "2188914988312",
+                                                                                                    "pythonObjectTypeName": "PyChildrenList"
+                                                                                                },
+                                                                                                "texturePath": "res:/UI/Texture/Shared/up.png",
+                                                                                                "_displayWidth": "7",
+                                                                                                "_left": "0",
+                                                                                                "_height": "7",
+                                                                                                "_width": "7",
+                                                                                                "_displayY": "2",
+                                                                                                "_name": "icon",
+                                                                                                "_displayX": "1"
+                                                                                            },
+                                                                                            "otherDictEntriesKeys": null,
+                                                                                            "children": null
+                                                                                        },
+                                                                                        {
+                                                                                            "pythonObjectAddress": "2188914990328",
+                                                                                            "pythonObjectTypeName": "Container",
+                                                                                            "dictEntriesOfInterest": {
+                                                                                                "_displayHeight": "9",
+                                                                                                "_top": "0",
+                                                                                                "_displayX": "0",
+                                                                                                "children": {
+                                                                                                    "address": "2188914990664",
+                                                                                                    "pythonObjectTypeName": "PyChildrenList"
+                                                                                                },
+                                                                                                "_displayWidth": "9",
+                                                                                                "_left": "0",
+                                                                                                "_height": "9",
+                                                                                                "_width": "9",
+                                                                                                "_displayY": "1",
+                                                                                                "_name": "bgCont"
+                                                                                            },
+                                                                                            "otherDictEntriesKeys": null,
+                                                                                            "children": null
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                {
+                                                                                    "pythonObjectAddress": "2188914989432",
+                                                                                    "pythonObjectTypeName": "ButtonIcon",
+                                                                                    "dictEntriesOfInterest": {
+                                                                                        "_displayHeight": "9",
+                                                                                        "_top": "4",
+                                                                                        "children": {
+                                                                                            "address": "2188914989824",
+                                                                                            "pythonObjectTypeName": "PyChildrenList"
+                                                                                        },
+                                                                                        "texturePath": "res:/UI/Texture/Shared/down.png",
+                                                                                        "_displayWidth": "9",
+                                                                                        "_left": "0",
+                                                                                        "_height": "9",
+                                                                                        "_displayY": "6",
+                                                                                        "_width": "9",
+                                                                                        "_name": "downButton",
+                                                                                        "_displayX": "1"
+                                                                                    },
+                                                                                    "otherDictEntriesKeys": null,
+                                                                                    "children": [
+                                                                                        {
+                                                                                            "pythonObjectAddress": "2188914988760",
+                                                                                            "pythonObjectTypeName": "GlowSprite",
+                                                                                            "dictEntriesOfInterest": {
+                                                                                                "_displayHeight": "7",
+                                                                                                "_top": "0",
+                                                                                                "children": {
+                                                                                                    "address": "2188914989992",
+                                                                                                    "pythonObjectTypeName": "PyChildrenList"
+                                                                                                },
+                                                                                                "texturePath": "res:/UI/Texture/Shared/down.png",
+                                                                                                "_displayWidth": "7",
+                                                                                                "_left": "0",
+                                                                                                "_height": "7",
+                                                                                                "_width": "7",
+                                                                                                "_displayY": "1",
+                                                                                                "_name": "icon",
+                                                                                                "_displayX": "1"
+                                                                                            },
+                                                                                            "otherDictEntriesKeys": null,
+                                                                                            "children": null
+                                                                                        },
+                                                                                        {
+                                                                                            "pythonObjectAddress": "2188914989488",
+                                                                                            "pythonObjectTypeName": "Container",
+                                                                                            "dictEntriesOfInterest": {
+                                                                                                "_displayHeight": "9",
+                                                                                                "_top": "0",
+                                                                                                "_displayX": "0",
+                                                                                                "children": {
+                                                                                                    "address": "2188914990440",
+                                                                                                    "pythonObjectTypeName": "PyChildrenList"
+                                                                                                },
+                                                                                                "_displayWidth": "9",
+                                                                                                "_left": "0",
+                                                                                                "_height": "9",
+                                                                                                "_width": "9",
+                                                                                                "_displayY": "0",
+                                                                                                "_name": "bgCont"
+                                                                                            },
+                                                                                            "otherDictEntriesKeys": null,
+                                                                                            "children": null
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "pythonObjectAddress": "2188914987864",
+                                                                            "pythonObjectTypeName": "EveLabelSmall",
+                                                                            "dictEntriesOfInterest": {
+                                                                                "_displayHeight": "0",
+                                                                                "_displayX": "0",
+                                                                                "_displayWidth": "0",
+                                                                                "_displayY": "0",
+                                                                                "_name": "__caption",
+                                                                                "_color": {
+                                                                                    "aPercent": "60",
+                                                                                    "rPercent": "100",
+                                                                                    "gPercent": "100",
+                                                                                    "bPercent": "100"
+                                                                                }
+                                                                            },
+                                                                            "otherDictEntriesKeys": null,
+                                                                            "children": null
+                                                                        },
+                                                                        {
+                                                                            "pythonObjectAddress": "2188787147272",
+                                                                            "pythonObjectTypeName": "Container",
+                                                                            "dictEntriesOfInterest": {
+                                                                                "_displayHeight": "14",
+                                                                                "_displayX": "1",
+                                                                                "children": {
+                                                                                    "address": "2188787148448",
+                                                                                    "pythonObjectTypeName": "PyChildrenList"
+                                                                                },
+                                                                                "_displayWidth": "32",
+                                                                                "_displayY": "0",
+                                                                                "_name": "_textClipper"
+                                                                            },
+                                                                            "otherDictEntriesKeys": null,
+                                                                            "children": [
+                                                                                {
+                                                                                    "pythonObjectAddress": "2188914988816",
+                                                                                    "pythonObjectTypeName": "LabelOverride",
+                                                                                    "dictEntriesOfInterest": {
+                                                                                        "_top": "0",
+                                                                                        "_displayX": "4",
+                                                                                        "_displayWidth": "17",
+                                                                                        "_setText": "1,0",
+                                                                                        "_left": "4",
+                                                                                        "_height": "17",
+                                                                                        "_width": "17",
+                                                                                        "_displayY": {
+                                                                                            "int": "4294967294",
+                                                                                            "int_low32": "-2"
+                                                                                        },
+                                                                                        "_displayHeight": "18",
+                                                                                        "_name": "textLabel",
+                                                                                        "_color": {
+                                                                                            "aPercent": "60",
+                                                                                            "rPercent": "100",
+                                                                                            "gPercent": "100",
+                                                                                            "bPercent": "100"
+                                                                                        }
+                                                                                    },
+                                                                                    "otherDictEntriesKeys": null,
+                                                                                    "children": null
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "pythonObjectAddress": "2189055206680",
+                                                                    "pythonObjectTypeName": "Button",
+                                                                    "dictEntriesOfInterest": {
+                                                                        "children": {
+                                                                            "address": "2189055207240",
+                                                                            "pythonObjectTypeName": "PyChildrenList"
+                                                                        },
+                                                                        "_displayWidth": "40",
+                                                                        "_top": "0",
+                                                                        "_sr": {
+                                                                            "entriesOfInterest": {
+                                                                            }
+                                                                        },
+                                                                        "_left": "0",
+                                                                        "_height": "18",
+                                                                        "_width": "40",
+                                                                        "_displayY": "0",
+                                                                        "_displayHeight": "14",
+                                                                        "_displayX": "48"
+                                                                    },
+                                                                    "otherDictEntriesKeys": null,
+                                                                    "children": [
+                                                                        {
+                                                                            "pythonObjectAddress": "2189055206512",
+                                                                            "pythonObjectTypeName": "LabelThemeColored",
+                                                                            "dictEntriesOfInterest": {
+                                                                                "_width": "12",
+                                                                                "_displayX": "14",
+                                                                                "_displayWidth": "12",
+                                                                                "_setText": "AU",
+                                                                                "_height": "14",
+                                                                                "_displayY": "0",
+                                                                                "_displayHeight": "14",
+                                                                                "_color": {
+                                                                                    "aPercent": "75",
+                                                                                    "rPercent": "100",
+                                                                                    "gPercent": "100",
+                                                                                    "bPercent": "100"
+                                                                                }
+                                                                            },
+                                                                            "otherDictEntriesKeys": null,
+                                                                            "children": null
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "pythonObjectAddress": "2188999295048",
+                                                    "pythonObjectTypeName": "LayoutGrid",
+                                                    "dictEntriesOfInterest": {
+                                                        "_displayHeight": "20",
+                                                        "_displayX": "2",
+                                                        "children": {
+                                                            "address": "2188999298016",
+                                                            "pythonObjectTypeName": "PyChildrenList"
+                                                        },
+                                                        "_displayWidth": {
+                                                            "int": "4607182418800017736",
+                                                            "int_low32": "328"
+                                                        },
+                                                        "_height": "20",
+                                                        "_displayY": "16"
+                                                    },
+                                                    "otherDictEntriesKeys": null,
+                                                    "children": [
+                                                        {
+                                                            "pythonObjectAddress": "2188999298240",
+                                                            "pythonObjectTypeName": "LayoutGridCell",
+                                                            "dictEntriesOfInterest": {
+                                                                "_displayHeight": "20",
+                                                                "_top": "0",
+                                                                "children": {
+                                                                    "address": "2188999297568",
+                                                                    "pythonObjectTypeName": "PyChildrenList"
+                                                                },
+                                                                "_displayWidth": "37",
+                                                                "_left": "0",
+                                                                "_height": "20",
+                                                                "_width": "37",
+                                                                "_displayX": "0",
+                                                                "_displayY": "0",
+                                                                "_name": "Row0_Col0"
+                                                            },
+                                                            "otherDictEntriesKeys": null,
+                                                            "children": [
+                                                                {
+                                                                    "pythonObjectAddress": "2188999298576",
+                                                                    "pythonObjectTypeName": "Container",
+                                                                    "dictEntriesOfInterest": {
+                                                                        "_displayHeight": "20",
+                                                                        "_displayX": "0",
+                                                                        "children": {
+                                                                            "address": "2188999295104",
+                                                                            "pythonObjectTypeName": "PyChildrenList"
+                                                                        },
+                                                                        "_displayWidth": "37",
+                                                                        "_displayY": "0",
+                                                                        "_name": "Content"
+                                                                    },
+                                                                    "otherDictEntriesKeys": null,
+                                                                    "children": [
+                                                                        {
+                                                                            "pythonObjectAddress": "2188999295328",
+                                                                            "pythonObjectTypeName": "Container",
+                                                                            "dictEntriesOfInterest": {
+                                                                                "_displayHeight": "20",
+                                                                                "_top": "0",
+                                                                                "children": {
+                                                                                    "address": "2188999296168",
+                                                                                    "pythonObjectTypeName": "PyChildrenList"
+                                                                                },
+                                                                                "_displayWidth": "37",
+                                                                                "_left": "0",
+                                                                                "_height": "20",
+                                                                                "_width": "37",
+                                                                                "_displayY": "0",
+                                                                                "_displayX": "0"
+                                                                            },
+                                                                            "otherDictEntriesKeys": null,
+                                                                            "children": [
+                                                                                {
+                                                                                    "pythonObjectAddress": "2188999295664",
+                                                                                    "pythonObjectTypeName": "EveLabelSmall",
+                                                                                    "dictEntriesOfInterest": {
+                                                                                        "_width": "35",
+                                                                                        "_displayX": "0",
+                                                                                        "_displayWidth": "35",
+                                                                                        "_setText": "Angle",
+                                                                                        "_height": "14",
+                                                                                        "_displayY": "3",
+                                                                                        "_displayHeight": "14",
+                                                                                        "_color": {
+                                                                                            "aPercent": "60",
+                                                                                            "rPercent": "100",
+                                                                                            "gPercent": "100",
+                                                                                            "bPercent": "100"
+                                                                                        }
+                                                                                    },
+                                                                                    "otherDictEntriesKeys": null,
+                                                                                    "children": null
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "pythonObjectAddress": "2188993815440",
+                                                            "pythonObjectTypeName": "LayoutGridCell",
+                                                            "dictEntriesOfInterest": {
+                                                                "_displayHeight": "20",
+                                                                "_top": "0",
+                                                                "children": {
+                                                                    "address": "2188993818408",
+                                                                    "pythonObjectTypeName": "PyChildrenList"
+                                                                },
+                                                                "_displayWidth": "90",
+                                                                "_left": "41",
+                                                                "_height": "20",
+                                                                "_width": "90",
+                                                                "_displayX": "41",
+                                                                "_displayY": "0",
+                                                                "_name": "Row0_Col1"
+                                                            },
+                                                            "otherDictEntriesKeys": null,
+                                                            "children": [
+                                                                {
+                                                                    "pythonObjectAddress": "2187406738152",
+                                                                    "pythonObjectTypeName": "Container",
+                                                                    "dictEntriesOfInterest": {
+                                                                        "_displayHeight": "20",
+                                                                        "_displayX": "0",
+                                                                        "children": {
+                                                                            "address": "2187406738824",
+                                                                            "pythonObjectTypeName": "PyChildrenList"
+                                                                        },
+                                                                        "_displayWidth": "90",
+                                                                        "_displayY": "0",
+                                                                        "_name": "Content"
+                                                                    },
+                                                                    "otherDictEntriesKeys": null,
+                                                                    "children": [
+                                                                        {
+                                                                            "pythonObjectAddress": "2188999295384",
+                                                                            "pythonObjectTypeName": "Slider",
+                                                                            "dictEntriesOfInterest": {
+                                                                                "_displayHeight": "20",
+                                                                                "_top": "0",
+                                                                                "children": {
+                                                                                    "address": "2188993818016",
+                                                                                    "pythonObjectTypeName": "PyChildrenList"
+                                                                                },
+                                                                                "_displayWidth": "90",
+                                                                                "_left": "0",
+                                                                                "_height": "20",
+                                                                                "_displayY": "0",
+                                                                                "_width": "90",
+                                                                                "_name": "angleSlider",
+                                                                                "_displayX": "0"
+                                                                            },
+                                                                            "otherDictEntriesKeys": null,
+                                                                            "children": [
+                                                                                {
+                                                                                    "pythonObjectAddress": "2187406737984",
+                                                                                    "pythonObjectTypeName": "Container",
+                                                                                    "dictEntriesOfInterest": {
+                                                                                        "_displayHeight": "20",
+                                                                                        "_top": "0",
+                                                                                        "_displayX": "0",
+                                                                                        "children": {
+                                                                                            "address": "2187406739384",
+                                                                                            "pythonObjectTypeName": "PyChildrenList"
+                                                                                        },
+                                                                                        "_displayWidth": "90",
+                                                                                        "_left": "0",
+                                                                                        "_height": "20",
+                                                                                        "_width": "0",
+                                                                                        "_displayY": "0",
+                                                                                        "_name": "barCont"
+                                                                                    },
+                                                                                    "otherDictEntriesKeys": null,
+                                                                                    "children": [
+                                                                                        {
+                                                                                            "pythonObjectAddress": "2188772766832",
+                                                                                            "pythonObjectTypeName": "SpriteThemeColored",
+                                                                                            "dictEntriesOfInterest": {
+                                                                                                "_displayHeight": "12",
+                                                                                                "_top": "0",
+                                                                                                "_displayX": "80",
+                                                                                                "_displayWidth": "12",
+                                                                                                "_left": "80",
+                                                                                                "_height": "12",
+                                                                                                "_width": "12",
+                                                                                                "_displayY": "4",
+                                                                                                "_name": "diode",
+                                                                                                "_color": {
+                                                                                                    "aPercent": "100",
+                                                                                                    "rPercent": "25",
+                                                                                                    "gPercent": "25",
+                                                                                                    "bPercent": "25"
+                                                                                                }
+                                                                                            },
+                                                                                            "otherDictEntriesKeys": null,
+                                                                                            "children": null
+                                                                                        },
+                                                                                        {
+                                                                                            "pythonObjectAddress": "2188772767616",
+                                                                                            "pythonObjectTypeName": "Container",
+                                                                                            "dictEntriesOfInterest": {
+                                                                                                "_displayHeight": "20",
+                                                                                                "_displayX": "0",
+                                                                                                "children": {
+                                                                                                    "address": "2188772768792",
+                                                                                                    "pythonObjectTypeName": "PyChildrenList"
+                                                                                                },
+                                                                                                "_displayWidth": "90",
+                                                                                                "_displayY": "0",
+                                                                                                "_name": "ticksCont"
+                                                                                            },
+                                                                                            "otherDictEntriesKeys": null,
+                                                                                            "children": [
+                                                                                                {
+                                                                                                    "pythonObjectAddress": "2188772766216",
+                                                                                                    "pythonObjectTypeName": "Line",
+                                                                                                    "dictEntriesOfInterest": {
+                                                                                                        "_displayHeight": "8",
+                                                                                                        "_displayX": "4",
+                                                                                                        "_displayWidth": "1",
+                                                                                                        "_height": "1",
+                                                                                                        "_width": "1",
+                                                                                                        "_displayY": "6",
+                                                                                                        "_name": "tickLine",
+                                                                                                        "_color": {
+                                                                                                            "aPercent": "20",
+                                                                                                            "rPercent": "100",
+                                                                                                            "gPercent": "100",
+                                                                                                            "bPercent": "100"
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "otherDictEntriesKeys": null,
+                                                                                                    "children": null
+                                                                                                },
+                                                                                                {
+                                                                                                    "pythonObjectAddress": "2188772768512",
+                                                                                                    "pythonObjectTypeName": "Line",
+                                                                                                    "dictEntriesOfInterest": {
+                                                                                                        "_displayHeight": "6",
+                                                                                                        "_displayX": "17",
+                                                                                                        "_displayWidth": "1",
+                                                                                                        "_height": "1",
+                                                                                                        "_width": "1",
+                                                                                                        "_displayY": "7",
+                                                                                                        "_name": "tickLine",
+                                                                                                        "_color": {
+                                                                                                            "aPercent": "20",
+                                                                                                            "rPercent": "100",
+                                                                                                            "gPercent": "100",
+                                                                                                            "bPercent": "100"
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "otherDictEntriesKeys": null,
+                                                                                                    "children": null
+                                                                                                },
+                                                                                                {
+                                                                                                    "pythonObjectAddress": "2188772765768",
+                                                                                                    "pythonObjectTypeName": "Line",
+                                                                                                    "dictEntriesOfInterest": {
+                                                                                                        "_displayHeight": "6",
+                                                                                                        "_displayX": "31",
+                                                                                                        "_displayWidth": "1",
+                                                                                                        "_height": "1",
+                                                                                                        "_width": "1",
+                                                                                                        "_displayY": "7",
+                                                                                                        "_name": "tickLine",
+                                                                                                        "_color": {
+                                                                                                            "aPercent": "20",
+                                                                                                            "rPercent": "100",
+                                                                                                            "gPercent": "100",
+                                                                                                            "bPercent": "100"
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "otherDictEntriesKeys": null,
+                                                                                                    "children": null
+                                                                                                },
+                                                                                                {
+                                                                                                    "pythonObjectAddress": "2188772766664",
+                                                                                                    "pythonObjectTypeName": "Line",
+                                                                                                    "dictEntriesOfInterest": {
+                                                                                                        "_displayHeight": "6",
+                                                                                                        "_displayX": "45",
+                                                                                                        "_displayWidth": "1",
+                                                                                                        "_height": "1",
+                                                                                                        "_width": "1",
+                                                                                                        "_displayY": "7",
+                                                                                                        "_name": "tickLine",
+                                                                                                        "_color": {
+                                                                                                            "aPercent": "20",
+                                                                                                            "rPercent": "100",
+                                                                                                            "gPercent": "100",
+                                                                                                            "bPercent": "100"
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "otherDictEntriesKeys": null,
+                                                                                                    "children": null
+                                                                                                },
+                                                                                                {
+                                                                                                    "pythonObjectAddress": "2188831062728",
+                                                                                                    "pythonObjectTypeName": "Line",
+                                                                                                    "dictEntriesOfInterest": {
+                                                                                                        "_displayHeight": "6",
+                                                                                                        "_displayX": "58",
+                                                                                                        "_displayWidth": "1",
+                                                                                                        "_height": "1",
+                                                                                                        "_width": "1",
+                                                                                                        "_displayY": "7",
+                                                                                                        "_name": "tickLine",
+                                                                                                        "_color": {
+                                                                                                            "aPercent": "20",
+                                                                                                            "rPercent": "100",
+                                                                                                            "gPercent": "100",
+                                                                                                            "bPercent": "100"
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "otherDictEntriesKeys": null,
+                                                                                                    "children": null
+                                                                                                },
+                                                                                                {
+                                                                                                    "pythonObjectAddress": "2188927130256",
+                                                                                                    "pythonObjectTypeName": "Line",
+                                                                                                    "dictEntriesOfInterest": {
+                                                                                                        "_displayHeight": "6",
+                                                                                                        "_displayX": "72",
+                                                                                                        "_displayWidth": "1",
+                                                                                                        "_height": "1",
+                                                                                                        "_width": "1",
+                                                                                                        "_displayY": "7",
+                                                                                                        "_name": "tickLine",
+                                                                                                        "_color": {
+                                                                                                            "aPercent": "20",
+                                                                                                            "rPercent": "100",
+                                                                                                            "gPercent": "100",
+                                                                                                            "bPercent": "100"
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "otherDictEntriesKeys": null,
+                                                                                                    "children": null
+                                                                                                },
+                                                                                                {
+                                                                                                    "pythonObjectAddress": "2188927129752",
+                                                                                                    "pythonObjectTypeName": "Line",
+                                                                                                    "dictEntriesOfInterest": {
+                                                                                                        "_displayHeight": "8",
+                                                                                                        "_displayX": "86",
+                                                                                                        "_displayWidth": "1",
+                                                                                                        "_height": "1",
+                                                                                                        "_width": "1",
+                                                                                                        "_displayY": "6",
+                                                                                                        "_name": "tickLine",
+                                                                                                        "_color": {
+                                                                                                            "aPercent": "20",
+                                                                                                            "rPercent": "100",
+                                                                                                            "gPercent": "100",
+                                                                                                            "bPercent": "100"
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "otherDictEntriesKeys": null,
+                                                                                                    "children": null
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "pythonObjectAddress": "2188927127792",
+                                                            "pythonObjectTypeName": "LayoutGridCell",
+                                                            "dictEntriesOfInterest": {
+                                                                "_displayHeight": "20",
+                                                                "_top": "0",
+                                                                "children": {
+                                                                    "address": "2188927128800",
+                                                                    "pythonObjectTypeName": "PyChildrenList"
+                                                                },
+                                                                "_displayWidth": "30",
+                                                                "_left": "135",
+                                                                "_height": "20",
+                                                                "_width": "30",
+                                                                "_displayX": "135",
+                                                                "_displayY": "0",
+                                                                "_name": "Row0_Col2"
+                                                            },
+                                                            "otherDictEntriesKeys": null,
+                                                            "children": [
+                                                                {
+                                                                    "pythonObjectAddress": "2188927130984",
+                                                                    "pythonObjectTypeName": "Container",
+                                                                    "dictEntriesOfInterest": {
+                                                                        "_displayHeight": "20",
+                                                                        "_displayX": "0",
+                                                                        "children": {
+                                                                            "address": "2188927130088",
+                                                                            "pythonObjectTypeName": "PyChildrenList"
+                                                                        },
+                                                                        "_displayWidth": "30",
+                                                                        "_displayY": "0",
+                                                                        "_name": "Content"
+                                                                    },
+                                                                    "otherDictEntriesKeys": null,
+                                                                    "children": [
+                                                                        {
+                                                                            "pythonObjectAddress": "2188927127904",
+                                                                            "pythonObjectTypeName": "EveLabelSmall",
+                                                                            "dictEntriesOfInterest": {
+                                                                                "_top": "0",
+                                                                                "_setText": "360°",
+                                                                                "_displayWidth": "26",
+                                                                                "_displayX": "4",
+                                                                                "_left": "4",
+                                                                                "_height": "14",
+                                                                                "_width": "26",
+                                                                                "_displayY": "3",
+                                                                                "_displayHeight": "14",
+                                                                                "_color": {
+                                                                                    "aPercent": "60",
+                                                                                    "rPercent": "100",
+                                                                                    "gPercent": "100",
+                                                                                    "bPercent": "100"
+                                                                                }
+                                                                            },
+                                                                            "otherDictEntriesKeys": null,
+                                                                            "children": null
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "pythonObjectAddress": "2188921819088",
+                                            "pythonObjectTypeName": "Container",
+                                            "dictEntriesOfInterest": {
+                                                "_displayHeight": "20",
+                                                "_top": "0",
+                                                "_displayX": "0",
+                                                "children": {
+                                                    "address": "2188921816568",
+                                                    "pythonObjectTypeName": "PyChildrenList"
+                                                },
+                                                "_displayWidth": {
+                                                    "int": "4607182418800017830",
+                                                    "int_low32": "422"
+                                                },
+                                                "_left": "0",
+                                                "_height": "20",
+                                                "_width": "0",
+                                                "_displayY": "0",
+                                                "_name": "headerParent"
+                                            },
+                                            "otherDictEntriesKeys": null,
+                                            "children": [
+                                                {
+                                                    "pythonObjectAddress": "2188680376672",
+                                                    "pythonObjectTypeName": "EveLabelMedium",
+                                                    "dictEntriesOfInterest": {
+                                                        "_top": "0",
+                                                        "_displayX": "2",
+                                                        "_displayWidth": "74",
+                                                        "_setText": "Scan Results",
+                                                        "_left": "2",
+                                                        "_height": "17",
+                                                        "_width": "74",
+                                                        "_displayY": "2",
+                                                        "_displayHeight": "17",
+                                                        "_color": {
+                                                            "aPercent": "60",
+                                                            "rPercent": "100",
+                                                            "gPercent": "100",
+                                                            "bPercent": "100"
+                                                        }
+                                                    },
+                                                    "otherDictEntriesKeys": null,
+                                                    "children": null
+                                                },
+                                                {
+                                                    "pythonObjectAddress": "2188994970736",
+                                                    "pythonObjectTypeName": "FilterBox",
+                                                    "dictEntriesOfInterest": {
+                                                        "_displayHeight": "20",
+                                                        "_displayX": {
+                                                            "int": "4626898861309296953",
+                                                            "int_low32": "313"
+                                                        },
+                                                        "children": {
+                                                            "address": "2188994969784",
+                                                            "pythonObjectTypeName": "PyChildrenList"
+                                                        },
+                                                        "_displayWidth": "109",
+                                                        "_height": "19",
+                                                        "_width": "109",
+                                                        "_displayY": "0"
+                                                    },
+                                                    "otherDictEntriesKeys": null,
+                                                    "children": [
+                                                        {
+                                                            "pythonObjectAddress": "2188994972920",
+                                                            "pythonObjectTypeName": "LabelThemeColored",
+                                                            "dictEntriesOfInterest": {
+                                                                "_top": "0",
+                                                                "_displayX": "5",
+                                                                "_displayWidth": "87",
+                                                                "_setText": "0 Filtered (PvP)",
+                                                                "_left": "5",
+                                                                "_height": "17",
+                                                                "_width": "87",
+                                                                "_displayY": "2",
+                                                                "_displayHeight": "17",
+                                                                "_color": {
+                                                                    "aPercent": "60",
+                                                                    "rPercent": "100",
+                                                                    "gPercent": "100",
+                                                                    "bPercent": "100"
+                                                                }
+                                                            },
+                                                            "otherDictEntriesKeys": null,
+                                                            "children": null
+                                                        },
+                                                        {
+                                                            "pythonObjectAddress": "2188994969672",
+                                                            "pythonObjectTypeName": "SpriteThemeColored",
+                                                            "dictEntriesOfInterest": {
+                                                                "_displayHeight": "7",
+                                                                "_top": {
+                                                                    "int": "4294967295",
+                                                                    "int_low32": "-1"
+                                                                },
+                                                                "_displayX": "97",
+                                                                "_displayWidth": "7",
+                                                                "_left": "5",
+                                                                "_height": "7",
+                                                                "_width": "7",
+                                                                "_displayY": "6",
+                                                                "_color": {
+                                                                    "aPercent": "50",
+                                                                    "rPercent": "100",
+                                                                    "gPercent": "100",
+                                                                    "bPercent": "100"
+                                                                }
+                                                            },
+                                                            "otherDictEntriesKeys": null,
+                                                            "children": null
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "pythonObjectAddress": "2188994971184",
+                                                    "pythonObjectTypeName": "Button",
+                                                    "dictEntriesOfInterest": {
+                                                        "_hint": "Solar System Map",
+                                                        "children": {
+                                                            "address": "2188994971688",
+                                                            "pythonObjectTypeName": "PyChildrenList"
+                                                        },
+                                                        "_displayWidth": "18",
+                                                        "_top": "0",
+                                                        "_sr": {
+                                                            "entriesOfInterest": {
+                                                            }
+                                                        },
+                                                        "_left": "4",
+                                                        "_height": "18",
+                                                        "_width": "18",
+                                                        "_displayY": "0",
+                                                        "_displayHeight": "20",
+                                                        "_name": "solarSystemMapButton",
+                                                        "_displayX": {
+                                                            "int": "4604930618986332451",
+                                                            "int_low32": "291"
+                                                        }
+                                                    },
+                                                    "otherDictEntriesKeys": null,
+                                                    "children": [
+                                                        {
+                                                            "pythonObjectAddress": "2188994972024",
+                                                            "pythonObjectTypeName": "GlowSprite",
+                                                            "dictEntriesOfInterest": {
+                                                                "_displayHeight": "18",
+                                                                "_top": "0",
+                                                                "children": {
+                                                                    "address": "2188994973648",
+                                                                    "pythonObjectTypeName": "PyChildrenList"
+                                                                },
+                                                                "texturePath": "res:/UI/Texture/classes/MapView/solarSystemMap.png",
+                                                                "_displayWidth": "18",
+                                                                "_left": "0",
+                                                                "_height": "18",
+                                                                "_width": "18",
+                                                                "_displayY": "1",
+                                                                "_displayX": "0"
+                                                            },
+                                                            "otherDictEntriesKeys": null,
+                                                            "children": null
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "pythonObjectAddress": "2188927216160",
+                                                    "pythonObjectTypeName": "ButtonIcon",
+                                                    "dictEntriesOfInterest": {
+                                                        "_displayHeight": "20",
+                                                        "_top": "0",
+                                                        "_hint": "Show Scan Cone",
+                                                        "children": {
+                                                            "address": "2188927216944",
+                                                            "pythonObjectTypeName": "PyChildrenList"
+                                                        },
+                                                        "texturePath": "res:/UI/Texture/classes/MapView/dScanIcon.png",
+                                                        "_displayWidth": "16",
+                                                        "_left": "4",
+                                                        "_height": "16",
+                                                        "_displayY": "0",
+                                                        "_width": "16",
+                                                        "_name": "showConeBtn",
+                                                        "_displayX": "267"
+                                                    },
+                                                    "otherDictEntriesKeys": null,
+                                                    "children": [
+                                                        {
+                                                            "pythonObjectAddress": "2188927215320",
+                                                            "pythonObjectTypeName": "GlowSprite",
+                                                            "dictEntriesOfInterest": {
+                                                                "_displayHeight": "16",
+                                                                "_top": "0",
+                                                                "children": {
+                                                                    "address": "2188927216440",
+                                                                    "pythonObjectTypeName": "PyChildrenList"
+                                                                },
+                                                                "texturePath": "res:/UI/Texture/classes/MapView/dScanIcon.png",
+                                                                "_displayWidth": "16",
+                                                                "_left": "0",
+                                                                "_height": "16",
+                                                                "_width": "16",
+                                                                "_displayY": "2",
+                                                                "_name": "icon",
+                                                                "_displayX": "0"
+                                                            },
+                                                            "otherDictEntriesKeys": null,
+                                                            "children": null
+                                                        },
+                                                        {
+                                                            "pythonObjectAddress": "2188927216776",
+                                                            "pythonObjectTypeName": "Container",
+                                                            "dictEntriesOfInterest": {
+                                                                "_displayHeight": "16",
+                                                                "_top": "0",
+                                                                "_displayX": "0",
+                                                                "children": {
+                                                                    "address": "2188927215208",
+                                                                    "pythonObjectTypeName": "PyChildrenList"
+                                                                },
+                                                                "_displayWidth": "16",
+                                                                "_left": "0",
+                                                                "_height": "16",
+                                                                "_width": "16",
+                                                                "_displayY": "2",
+                                                                "_name": "bgCont"
+                                                            },
+                                                            "otherDictEntriesKeys": null,
+                                                            "children": null
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "pythonObjectAddress": "2188927217392",
+                                                    "pythonObjectTypeName": "ButtonIcon",
+                                                    "dictEntriesOfInterest": {
+                                                        "_displayHeight": "20",
+                                                        "_top": "0",
+                                                        "_hint": "Align with Camera",
+                                                        "children": {
+                                                            "address": "2188927213920",
+                                                            "pythonObjectTypeName": "PyChildrenList"
+                                                        },
+                                                        "texturePath": "res:/UI/Texture/classes/MapView/alignwithCamera.png",
+                                                        "_displayWidth": "16",
+                                                        "_left": "2",
+                                                        "_height": "16",
+                                                        "_displayY": "0",
+                                                        "_width": "16",
+                                                        "_name": "alignWithCameraBtn",
+                                                        "_displayX": "249"
+                                                    },
+                                                    "otherDictEntriesKeys": null,
+                                                    "children": [
+                                                        {
+                                                            "pythonObjectAddress": "2187943476920",
+                                                            "pythonObjectTypeName": "GlowSprite",
+                                                            "dictEntriesOfInterest": {
+                                                                "_displayHeight": "16",
+                                                                "_top": "0",
+                                                                "children": {
+                                                                    "address": "2187943475352",
+                                                                    "pythonObjectTypeName": "PyChildrenList"
+                                                                },
+                                                                "texturePath": "res:/UI/Texture/classes/MapView/alignwithCamera.png",
+                                                                "_displayWidth": "16",
+                                                                "_left": "0",
+                                                                "_height": "16",
+                                                                "_width": "16",
+                                                                "_displayY": "2",
+                                                                "_name": "icon",
+                                                                "_displayX": "0"
+                                                            },
+                                                            "otherDictEntriesKeys": null,
+                                                            "children": null
+                                                        },
+                                                        {
+                                                            "pythonObjectAddress": "2187943473952",
+                                                            "pythonObjectTypeName": "Container",
+                                                            "dictEntriesOfInterest": {
+                                                                "_displayHeight": "16",
+                                                                "_top": "0",
+                                                                "_displayX": "0",
+                                                                "children": {
+                                                                    "address": "2187943474232",
+                                                                    "pythonObjectTypeName": "PyChildrenList"
+                                                                },
+                                                                "_displayWidth": "16",
+                                                                "_left": "0",
+                                                                "_height": "16",
+                                                                "_width": "16",
+                                                                "_displayY": "2",
+                                                                "_name": "bgCont"
+                                                            },
+                                                            "otherDictEntriesKeys": null,
+                                                            "children": null
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "pythonObjectAddress": "2188680378520",
+                                            "pythonObjectTypeName": "Scroll",
+                                            "dictEntriesOfInterest": {
+                                                "_displayY": "22",
+                                                "children": {
+                                                    "address": "2188680379808",
+                                                    "pythonObjectTypeName": "PyChildrenList"
+                                                },
+                                                "_displayX": "0",
+                                                "_displayWidth": {
+                                                    "int": "4599057908339048870",
+                                                    "int_low32": "422"
+                                                },
+                                                "_sr": {
+                                                    "entriesOfInterest": {
+                                                    }
+                                                },
+                                                "_displayHeight": {
+                                                    "int": "4685424765744185713",
+                                                    "int_low32": "369"
+                                                },
+                                                "_name": "dirscroll"
+                                            },
+                                            "otherDictEntriesKeys": null,
+                                            "children": [
+                                                {
+                                                    "pythonObjectAddress": "2188680379640",
+                                                    "pythonObjectTypeName": "Container",
+                                                    "dictEntriesOfInterest": {
+                                                        "_displayHeight": {
+                                                            "int": "4616189618054758767",
+                                                            "int_low32": "367"
+                                                        },
+                                                        "_displayX": "1",
+                                                        "children": {
+                                                            "address": "2188680380088",
+                                                            "pythonObjectTypeName": "PyChildrenList"
+                                                        },
+                                                        "_displayWidth": "420",
+                                                        "_displayY": "1",
+                                                        "_name": "maincontainer"
+                                                    },
+                                                    "otherDictEntriesKeys": null,
+                                                    "children": [
+                                                        {
+                                                            "pythonObjectAddress": "2188927273560",
+                                                            "pythonObjectTypeName": "Container",
+                                                            "dictEntriesOfInterest": {
+                                                                "_displayHeight": {
+                                                                    "int": "4654458180389044591",
+                                                                    "int_low32": "367"
+                                                                },
+                                                                "_displayX": "0",
+                                                                "children": {
+                                                                    "address": "2188927271264",
+                                                                    "pythonObjectTypeName": "PyChildrenList"
+                                                                },
+                                                                "_displayWidth": {
+                                                                    "int": "-4531932366981037660",
+                                                                    "int_low32": "420"
+                                                                },
+                                                                "_displayY": "0",
+                                                                "_name": "__clipper"
+                                                            },
+                                                            "otherDictEntriesKeys": null,
+                                                            "children": [
+                                                                {
+                                                                    "pythonObjectAddress": "2188927273056",
+                                                                    "pythonObjectTypeName": "Container",
+                                                                    "dictEntriesOfInterest": {
+                                                                        "_displayHeight": {
+                                                                            "int": "4649016637213639023",
+                                                                            "int_low32": "367"
+                                                                        },
+                                                                        "_displayX": "0",
+                                                                        "children": {
+                                                                            "address": "2188927273112",
+                                                                            "pythonObjectTypeName": "PyChildrenList"
+                                                                        },
+                                                                        "_displayWidth": {
+                                                                            "int": "4790436059001389476",
+                                                                            "int_low32": "420"
+                                                                        },
+                                                                        "_height": {
+                                                                            "int": "4607182418800017775",
+                                                                            "int_low32": "367"
+                                                                        },
+                                                                        "_sr": {
+                                                                            "entriesOfInterest": {
+                                                                            }
+                                                                        },
+                                                                        "_width": {
+                                                                            "int": "4651936940097012132",
+                                                                            "int_low32": "420"
+                                                                        },
+                                                                        "_displayY": "0",
+                                                                        "_name": "__content"
+                                                                    },
+                                                                    "otherDictEntriesKeys": null,
+                                                                    "children": null
+                                                                },
+                                                                {
+                                                                    "pythonObjectAddress": "2187943476864",
+                                                                    "pythonObjectTypeName": "Container",
+                                                                    "dictEntriesOfInterest": {
+                                                                        "_displayHeight": {
+                                                                            "int": "4631952216750555503",
+                                                                            "int_low32": "367"
+                                                                        },
+                                                                        "_displayX": "0",
+                                                                        "children": {
+                                                                            "address": "2187943474736",
+                                                                            "pythonObjectTypeName": "PyChildrenList"
+                                                                        },
+                                                                        "_displayWidth": {
+                                                                            "int": "2186138354084",
+                                                                            "int_low32": "420"
+                                                                        },
+                                                                        "_displayY": "0",
+                                                                        "_name": "noResultsContainer",
+                                                                        "_display": true
+                                                                    },
+                                                                    "otherDictEntriesKeys": null,
+                                                                    "children": [
+                                                                        {
+                                                                            "pythonObjectAddress": "2187943475184",
+                                                                            "pythonObjectTypeName": "ContainerAutoSize",
+                                                                            "dictEntriesOfInterest": {
+                                                                                "_displayHeight": "47",
+                                                                                "_displayX": "0",
+                                                                                "children": {
+                                                                                    "address": "2187943474960",
+                                                                                    "pythonObjectTypeName": "UIChildrenListAutoSize"
+                                                                                },
+                                                                                "_displayWidth": {
+                                                                                    "int": "4625196817309499812",
+                                                                                    "int_low32": "420"
+                                                                                },
+                                                                                "_height": "47",
+                                                                                "_displayY": "0",
+                                                                                "_name": "cont"
+                                                                            },
+                                                                            "otherDictEntriesKeys": null,
+                                                                            "children": [
+                                                                                {
+                                                                                    "pythonObjectAddress": "2187943475632",
+                                                                                    "pythonObjectTypeName": "EveLabelMediumBold",
+                                                                                    "dictEntriesOfInterest": {
+                                                                                        "_displayHeight": "17",
+                                                                                        "_displayX": "0",
+                                                                                        "_displayWidth": {
+                                                                                            "int": "4591870177489977764",
+                                                                                            "int_low32": "420"
+                                                                                        },
+                                                                                        "_setText": "<center>No Scan Results</center>",
+                                                                                        "_height": "17",
+                                                                                        "_displayY": "15",
+                                                                                        "_name": "noResultsLabel",
+                                                                                        "_color": {
+                                                                                            "aPercent": "60",
+                                                                                            "rPercent": "100",
+                                                                                            "gPercent": "100",
+                                                                                            "bPercent": "100"
+                                                                                        }
+                                                                                    },
+                                                                                    "otherDictEntriesKeys": null,
+                                                                                    "children": null
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "pythonObjectAddress": "2188927271432",
+                                                    "pythonObjectTypeName": "BumpedUnderlay",
+                                                    "dictEntriesOfInterest": {
+                                                        "_displayHeight": {
+                                                            "int": "4607182418800017777",
+                                                            "int_low32": "369"
+                                                        },
+                                                        "children": {
+                                                            "address": "2188927271824",
+                                                            "pythonObjectTypeName": "PyChildrenList"
+                                                        },
+                                                        "_displayWidth": {
+                                                            "int": "4636033603912860070",
+                                                            "int_low32": "422"
+                                                        },
+                                                        "_displayY": "0",
+                                                        "_name": "background",
+                                                        "_displayX": "0"
+                                                    },
+                                                    "otherDictEntriesKeys": null,
+                                                    "children": null
+                                                },
+                                                {
+                                                    "pythonObjectAddress": "2188994970064",
+                                                    "pythonObjectTypeName": "Container",
+                                                    "dictEntriesOfInterest": {
+                                                        "_displayHeight": {
+                                                            "int": "4626322717216342385",
+                                                            "int_low32": "369"
+                                                        },
+                                                        "_displayX": "0",
+                                                        "children": {
+                                                            "address": "2188994971800",
+                                                            "pythonObjectTypeName": "PyChildrenList"
+                                                        },
+                                                        "_displayWidth": "422",
+                                                        "_displayY": "0"
+                                                    },
+                                                    "otherDictEntriesKeys": null,
+                                                    "children": [
+                                                        {
+                                                            "pythonObjectAddress": "2188994971576",
+                                                            "pythonObjectTypeName": "GradientSprite",
+                                                            "dictEntriesOfInterest": {
+                                                                "_displayHeight": {
+                                                                    "int": "4607138395385233777",
+                                                                    "int_low32": "369"
+                                                                },
+                                                                "_top": "0",
+                                                                "_displayWidth": "0",
+                                                                "_displayX": {
+                                                                    "int": "4691455247720120742",
+                                                                    "int_low32": "422"
+                                                                },
+                                                                "_left": "0",
+                                                                "_height": "0",
+                                                                "_width": 9.5367431640625E-07,
+                                                                "_displayY": "0",
+                                                                "_color": {
+                                                                    "aPercent": "0",
+                                                                    "rPercent": "22",
+                                                                    "gPercent": "75",
+                                                                    "bPercent": "50"
+                                                                }
+                                                            },
+                                                            "otherDictEntriesKeys": null,
+                                                            "children": null
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "pythonObjectAddress": "2188999193824",
+                    "pythonObjectTypeName": "WindowUnderlay",
+                    "dictEntriesOfInterest": {
+                        "_displayHeight": {
+                            "int": "4604210039438180803",
+                            "int_low32": "451"
+                        },
+                        "_displayX": "1",
+                        "children": {
+                            "address": "2188999196176",
+                            "pythonObjectTypeName": "PyChildrenList"
+                        },
+                        "_displayWidth": "428",
+                        "_displayY": "1"
+                    },
+                    "otherDictEntriesKeys": null,
+                    "children": null
+                }
+            ]
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+    ]
+}

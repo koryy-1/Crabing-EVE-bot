@@ -14,7 +14,7 @@ namespace EVE_Bot.Scripts
             {
                 if (i % 10 == 0)
                     MainScripts.CheckForConnectionLost();
-                if (MainScripts.GotoNextSystem(false))
+                if (!MainScripts.GotoNextSystem(false))
                 {
                     Console.WriteLine("route completed");
                     Environment.Exit(10);

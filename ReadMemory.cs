@@ -714,17 +714,13 @@ namespace read_memory_64_bit
                 if (childrenDictEntry == null)
                     return null;
 
-                //!!!!!!!!
-                //System.InvalidCastException: "Unable to cast object of type '<>f__AnonymousType1`
-                //4[System.Nullable`1[System.Int32],System.Nullable`1[System.Int32],System.Nullable`1[System.Int32],
-                //System.Nullable`1[System.Int32]]' to type 'DictEntryValueGenericRepresentation'."
                 ulong childrenEntryObjectAddress;
                 try
                 {
                     childrenEntryObjectAddress =
                     ((UITreeNode.DictEntryValueGenericRepresentation)childrenDictEntry.value).address;
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     Console.WriteLine("Unable to cast object of type '<>f__AnonymousType1 to type 'DictEntryValueGenericRepresentation'.");
                     Console.WriteLine(childrenDictEntry.value);
@@ -1100,6 +1096,7 @@ namespace read_memory_64_bit
             VK_F = 0x46,
             VK_G = 0x47,
             VK_H = 0x48,
+            VK_V = 0x56,
             VK_F1 = 0x70,
             VK_F2 = 0x71,
             VK_F3 = 0x72,
@@ -1166,7 +1163,7 @@ namespace read_memory_64_bit
 
         public UITreeNode handleEntity(string str)
         {
-            UITreeNode Entity =  new UITreeNode
+            UITreeNode Entity = new UITreeNode
             {
                 pythonObjectAddress = pythonObjectAddress,
                 pythonObjectTypeName = pythonObjectTypeName,

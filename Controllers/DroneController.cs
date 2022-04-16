@@ -13,19 +13,14 @@ namespace EVE_Bot.Controllers
         static public bool DropDrones()
         {
             Emulators.PressButton((int)WinApi.VirtualKeyShort.VK_G);
-            System.Threading.Thread.Sleep(1000 * 3);
+            System.Threading.Thread.Sleep(1000 * 2);
 
             for (int i = 0; i < 5; i++)
             {
-                UITreeNode uiTreePreparedForFile = null;
-                UITreeNode deepDrones = null;
-                UITreeNode needDrone = null;
-
-                uiTreePreparedForFile = GetUITrees();
-                deepDrones = uiTreePreparedForFile.FindEntityOfString("DroneEntry");
+                var deepDrones = GetUITrees().FindEntityOfString("DroneEntry");
                 if (deepDrones == null)
                     continue;
-                needDrone = deepDrones.handleEntity("DroneEntry");
+                var needDrone = deepDrones.handleEntity("DroneEntry");
 
                 //вывод инфы по дронам
                 for (int k = 0; k < needDrone.children.Length; k++)
@@ -115,8 +110,9 @@ namespace EVE_Bot.Controllers
 
         static public void EngageTarget()
         {
-            var uiTreePreparedForFile = GetUITrees();
-            var deepDrones = uiTreePreparedForFile.FindEntityOfString("DroneEntry");
+            var deepDrones = GetUITrees().FindEntityOfString("DroneEntry");
+            if (deepDrones == null)
+                return;
             var needDrone = deepDrones.handleEntity("DroneEntry");
 
             for (int k = 0; k < needDrone.children.Length; k++)

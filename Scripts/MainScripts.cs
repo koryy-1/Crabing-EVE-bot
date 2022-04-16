@@ -27,6 +27,8 @@ namespace EVE_Bot.Scripts
                 DateTime StartTime = DateTime.Now;
                 Console.WriteLine(StartTime);
 
+                TimeToFarmExp();
+
                 FarmAnomalies(StartTime);
                 if ((DateTime.Now - TimeForBreak).TotalHours > RandomHours)
                 {
@@ -36,7 +38,7 @@ namespace EVE_Bot.Scripts
                     Console.WriteLine("pause for {0} minutes, continue at {1}", PauseDuration, TimeForBreak);
                     sleep(PauseDuration * 60 * 1000);
                 }
-                TimeToFarmExp();
+                
 
                 //SecondaryScripts.RemoveWaypoint();
             }
@@ -84,7 +86,6 @@ namespace EVE_Bot.Scripts
 
         static public void ClearRoom()
         {
-
             var CheckForEnemies = Checkers.GetCoordsEnemies();
 
             if (0 == CheckForEnemies.Count)
@@ -93,6 +94,7 @@ namespace EVE_Bot.Scripts
                 return;
             }
             Console.WriteLine("start clear at: {0}", DateTime.Now);
+            ThreadManager.MultiplierSleep = 1;
             ThreadManager.AllowDroneControl = true;
             ThreadManager.AllowDroneRescoop = true;
 
@@ -111,15 +113,9 @@ namespace EVE_Bot.Scripts
                     continue;
                 }
 
-
                 Emulators.LockTargets(EnemyCoordsArray);
 
-                Thread.Sleep(1000);
-
-
-                var ActiveTarget = Checkers.CheckLocking();// если таргет не лочится подлететь
-
-                if (!ActiveTarget)
+                if (!Checkers.CheckLocking())
                     continue;
 
                 ThreadManager.AllowToAttack = true;
@@ -150,6 +146,7 @@ namespace EVE_Bot.Scripts
 
             if (SecondaryScripts.CheckCargo())
                 SecondaryScripts.UnloadCargo();
+            ThreadManager.MultiplierSleep = 5;
         }
 
         static public void TimeToFarmExp()
@@ -164,6 +161,7 @@ namespace EVE_Bot.Scripts
                     if (!GotoNextSystem(false))
                         break;
                 }
+
                 if (!WarpToLocExp())
                     continue;
                 Checkers.WatchState();
@@ -469,13 +467,10 @@ namespace EVE_Bot.Scripts
 
         static public bool CheckForSuicidesInChat()
         {
-            var ChatWnd = GetUITrees().FindEntityOfString("ChatWindowStack");
-            if (ChatWnd == null)
-                return false;
-            var ChatWndEntry = ChatWnd.handleEntity("ChatWindowStack");
-            var Persons = ChatWndEntry.FindEntityOfString("XmppChatSimpleUserEntry");
+            var Persons = GetUITrees().FindEntityOfString("XmppChatSimpleUserEntry");
             if (Persons == null)
                 return false;
+            //Unhandled exception. System.NullReferenceException: Object reference not set to an instance of an object. wrote about
             var PersonsEntry = Persons.handleEntity("XmppChatSimpleUserEntry");
             var IsCriminal = false;
             for (int i = 0; i < PersonsEntry.children.Length; i++)
@@ -515,6 +510,58 @@ namespace EVE_Bot.Scripts
             //Pilot is a criminal
             //Pilot is a suspect
             //FlagIconWithState
+        }
+
+        static public bool CheckDScan()
+        {
+            var DScanWnd = GetUITrees().FindEntityOfString("DirectionalScanner");
+            if (DScanWnd == null) // docked
+                return false;
+
+            if (!ThreadManager.AllowDScan)
+                return false;
+
+            Emulators.PressButton((int)WinApi.VirtualKeyShort.VK_V);
+            Thread.Sleep(500);
+
+            DScanWnd = GetUITrees().FindEntityOfStringByDictEntriesOfInterest("_name", "noResultsLabel");
+            if (DScanWnd != null) // no Results
+                return false;
+
+            DScanWnd = GetUITrees().FindEntityOfString("DirectionalScanResultEntry");
+            if (DScanWnd == null) // xyeta
+            {
+                Console.WriteLine("dscan not work");
+                return false;
+            }
+            var DScanWndEntries = DScanWnd.handleEntity("DirectionalScanResultEntry");
+            for (int i = 0; i < DScanWndEntries.children.Length; i++)
+            {
+                if (DScanWndEntries.children[i] == null)
+                    continue;
+                if (DScanWndEntries.children[i].children == null)
+                    continue;
+                if (DScanWndEntries.children[i].children.Length < 2)
+                    continue;
+                if (DScanWndEntries.children[i].children[2] == null)
+                    continue;
+                if (DScanWndEntries.children[i].children[2].children == null)
+                    continue;
+                if (DScanWndEntries.children[i].children[2].children.Length == 0)
+                    continue;
+                if (DScanWndEntries.children[i].children[2].children[0] == null)
+                    continue;
+
+                if (DScanWndEntries.children[i].children[2].children[0]
+                        .dictEntriesOfInterest["_setText"].ToString().Contains("Catalyst"))
+                {
+                    Console.WriteLine("pidaras detected");
+                    return true;
+                }
+            }
+            var results = DScanWndEntries; // linq
+
+            return false;
         }
 
         static public void DockingFromSuicides()
@@ -569,11 +616,19 @@ namespace EVE_Bot.Scripts
                 Thread.Sleep(1000);
                 return false;
             }
-            if (YGate == 0 && NeedToLayRoute)
+            if (YGate == 0)
             {
-                Console.WriteLine("no route, start to laying a new route");
-                SecondaryScripts.StartLayRoute();
-                return false;
+                if (NeedToLayRoute)
+                {
+                    Console.WriteLine("no route, start to laying a new route");
+                    SecondaryScripts.StartLayRoute();
+                    return false;
+                }
+                else
+                {
+                    Console.WriteLine("route completed");
+                    return false;
+                }
             }
             Emulators.ClickLB(XGate, YGate);
             Thread.Sleep(500);
@@ -683,9 +738,7 @@ namespace EVE_Bot.Scripts
                 
                 Emulators.LockTargets(EnemyCoordsArray);
 
-                Thread.Sleep(1000);
-
-                if (!Checkers.CheckLocking())// если таргет не лочится подлететь
+                if (!Checkers.CheckLocking())
                     continue;
                 ThreadManager.AllowToAttack = true;
 
@@ -725,26 +778,33 @@ namespace EVE_Bot.Scripts
                     Console.WriteLine("enemies are far away");
                     Thread.Sleep(1000 * 5);
                 }
-                //3 проверки на наличие ExpBlock AccelerationGate
+                //3 проверки на наличие ExpBlock AccelerationGate или cargo container
                 //если нет то выход
                 (int XBlock, int YBlock) = Finders.FindExpBlock();
-                (int XAcGate, int YAcGate) = Finders.FindAccelerationGate();
-                if (XBlock != 0 || XAcGate != 0)
+                if (XBlock != 0)
                 {
-                    if (XBlock != 0)
-                    {
-                        Emulators.ClickLB(XBlock, YBlock);
-                        Thread.Sleep(500);
-                        Emulators.ClickLB(2200, 100); //3 button
-                    }
-                    else if (XAcGate != 0)
-                    {
-                        Emulators.ClickLB(XAcGate, YAcGate);
-                        Thread.Sleep(500);
-                        Emulators.ClickLB(2200 + 33, 100); //4 button
-                    }
-                    MainScripts.ClearExpRoom();
-                    MainScripts.StartClearExp();
+                    Emulators.ClickLB(XBlock, YBlock);
+                    Thread.Sleep(500);
+                    Emulators.ClickLB(2200, 100); //3 button
+                    continue;
+                }
+
+                (int XAcGate, int YAcGate) = Finders.FindAccelerationGate();
+                if (XAcGate != 0)
+                {
+                    Emulators.ClickLB(XAcGate, YAcGate);
+                    Thread.Sleep(500);
+                    Emulators.ClickLB(2200 + 33, 100); //4 button
+                    continue;
+                }
+
+                (int XCont, int YCont) = Finders.FindObjectByWordInOverview("Cargo Container");
+                if (XCont != 0)
+                {
+                    Emulators.ClickLB(XCont, YCont);
+                    Thread.Sleep(500);
+                    Emulators.ClickLB(2200 + 33, 100); //4 button orbit
+                    continue;
                 }
                 else
                 {
@@ -830,7 +890,7 @@ namespace EVE_Bot.Scripts
                 }
                 else
                 {
-                    Console.WriteLine("carbage in loot");
+                    Console.WriteLine("garbage in loot");
                     return;
                 }
                 

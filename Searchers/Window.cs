@@ -49,11 +49,11 @@ namespace EVE_Bot.Searchers
             {
                 RootAddress = "";
 
-                Console.WriteLine("waiting to find root adress");
+                Console.WriteLine("waiting to find root address");
                 RootAddress = GetRootAdress(RootAddress, processId);
                 if (0 == RootAddress?.Length)
                 {
-                    Console.WriteLine("failed to find root adress by pid or HWND");
+                    Console.WriteLine("failed to find root address by pid or HWND");
                     Environment.Exit(10);
                 }
                 config.AppSettings.Settings["pid"].Value = processId.ToString();

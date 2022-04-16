@@ -57,6 +57,7 @@ namespace EVE_Bot.Searchers
                         OverviewEntry.children[k].children.Last().children[j].dictEntriesOfInterest["_name"].ToString() == "iconSprite")
                     {
                         var RGBColorIcon = OverviewEntry.children[k].children.Last().children[j].dictEntriesOfInterest["_color"];
+                        //NullReferenceException
                         if (Convert.ToInt32(RGBColorIcon["rPercent"]) == 100
                         && Convert.ToInt32(RGBColorIcon["gPercent"]) == 10
                         && Convert.ToInt32(RGBColorIcon["bPercent"]) == 10)
