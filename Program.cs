@@ -7,6 +7,7 @@ using System.Configuration;
 using EVE_Bot.Searchers;
 using EVE_Bot.Controllers;
 using EVE_Bot.Scripts;
+using EVE_Bot.Configs;
 using System.Threading.Tasks;
 using System.Threading;
 using read_memory_64_bit;
@@ -65,7 +66,7 @@ static public class Program
                                 //Console.WriteLine("PVEModeRunning = true");
                             }
                             
-                            if (!MainScripts.CheckForSuicidesInChat())
+                            if (!MainScripts.CurrentSystemIsDanger())
                             {
                                 ThreadManager.AllowShipControl = true;
                             }
@@ -96,7 +97,7 @@ static public class Program
                     {
                         if (!ScriptExecutor.IsAlive)
                         {
-                            Console.WriteLine("starting thread CleanerRoom");
+                            Console.WriteLine("starting ScriptExecutor thread");
                             ThreadManager.PVEModeRunning = true;
                             ScriptExecutor.Start();
                         }
@@ -107,7 +108,7 @@ static public class Program
                         {
                             ThreadManager.AllowDroneControl = false;
                             ThreadManager.AllowDroneRescoop = false;
-                            Console.WriteLine("stoping thread CleanerRoom");
+                            Console.WriteLine("stoping ScriptExecutor thread");
                             ScriptExecutor.Interrupt();
                             ScriptExecutor.Join();
 
@@ -135,7 +136,7 @@ static public class Program
                 {
                     try
                     {
-                        SecondaryScripts.FlyOffInLowHP();
+                        SecScripts.FlyOffInLowHP();
                     }
                     catch (ThreadInterruptedException e)
                     {
@@ -154,7 +155,7 @@ static public class Program
                                 {
                                     try
                                     {
-                                        SecondaryScripts.FlyOffInLowHP();
+                                        SecScripts.FlyOffInLowHP();
                                     }
                                     catch (ThreadInterruptedException e)
                                     {
@@ -196,89 +197,15 @@ static public class Program
                 }
             });
 
-            var DroneRescoopController = new Thread(() =>
-            {
-                Thread DroneRescooper = new Thread(() =>
-                {
-                    try
-                    {
-                        DroneController.RescoopDrones();
-                    }
-                    catch (ThreadInterruptedException e)
-                    {
-                        Console.WriteLine(e.Message);
-                    }
-                });
-                while (true)
-                {
-                    if (ThreadManager.AllowDroneRescoop && ThreadManager.AllowShipControl)
-                    {
-                        if (DroneController.GetInfoHPDrones())
-                        {
-                            if (!DroneRescooper.IsAlive)
-                            {
-                                DroneRescooper = new Thread(() =>
-                                {
-                                    try
-                                    {
-                                        DroneController.RescoopDrones();
-                                    }
-                                    catch (ThreadInterruptedException e)
-                                    {
-                                        Console.WriteLine(e.Message);
-                                    }
-                                });
-                                DroneRescooper.Start();
-                            }
-
-                        }
-                    }
-                    else
-                    {
-                        if (DroneRescooper.IsAlive)
-                        {
-                            Console.WriteLine("stoping thread DroneRescooper");
-                            DroneRescooper.Interrupt();
-                            DroneRescooper.Join();
-                        }
-                    }
-
-                    Thread.Sleep(3 * 1000);
-                }
-            });
-
-            var DroneControl = new Thread(() =>
-            {
-                while (true)
-                {
-                    if (ThreadManager.AllowDroneControl && ThreadManager.AllowShipControl)
-                    {
-                        if (!DroneController.DronesDroped)
-                        {
-                            DroneController.DropDrones();
-                        }
-
-                        DroneController.EngageTarget();
-                    }
-                    else
-                    {
-                        if (DroneController.DronesDroped)
-                        {
-                            DroneController.ScoopDrones();
-                        }
-                    }
-
-                    Thread.Sleep(3 * 1000);
-                }
-            });
+            
 
             var CheckerRedMarker = new Thread(() =>
             {
                 while (true)
                 {
-                    if (ThreadManager.AllowCheckRedMarker)
+                    if (ThreadManager.DangerAnalyzerEnable)
                     {
-                        if (MainScripts.CheckForSuicidesInChat() || MainScripts.CheckDScan())
+                        if (MainScripts.CurrentSystemIsDanger() || MainScripts.CheckDScan())
                         {
                             ThreadManager.AllowShipControl = false;
                             while (ThreadManager.PVEModeRunning)
@@ -299,17 +226,22 @@ static public class Program
             PVEMode.Start();
             ShipHPWatcher.Start();
             //EnemyWatcher.Start();
-            DroneControl.Start();
-            DroneRescoopController.Start();
+            //DroneController.DroneControl.Start();
+            //DroneController.DroneRescoopControl.Start();
+            MissileController.MissileControlSystem.Start();
             CheckerRedMarker.Start();
 
             PVEMode.Join();
             Console.WriteLine("threads have completed.");
         }
 
-        StartThreads();
+        if (!Config.AutopilotMode)
+            StartThreads();
+        else if (Config.AutopilotMode)
+            Autopilot.Start();
 
-        //Autopilot.Start();
+        //SecScripts.StartLayRoute();
+
 
         return 0;
     }

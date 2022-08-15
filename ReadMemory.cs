@@ -283,7 +283,7 @@ namespace read_memory_64_bit
         }
 
         static readonly IImmutableSet<string> DictEntriesOfInterestKeys = ImmutableHashSet.Create(
-            "_top", "_left", "_width", "_height", "_displayX", "_displayY",
+            "_top", "_left", "_width", "_height", "_displayX", "_displayY", 
             "_displayHeight", "_displayWidth",
             "_name", "_text", "_setText",
             "children",
@@ -722,8 +722,8 @@ namespace read_memory_64_bit
                 }
                 catch (Exception)
                 {
-                    Console.WriteLine("Unable to cast object of type '<>f__AnonymousType1 to type 'DictEntryValueGenericRepresentation'.");
-                    Console.WriteLine(childrenDictEntry.value);
+                    //Console.WriteLine("Unable to cast object of type '<>f__AnonymousType1 to type 'DictEntryValueGenericRepresentation'.");
+                    //Console.WriteLine(childrenDictEntry.value);
                     return null;
                 }
                 
@@ -963,6 +963,12 @@ namespace read_memory_64_bit
         [DllImport("user32.dll")]
         static public extern bool PostMessage(IntPtr hWnd, uint Msg, int wParam, int lParam);
 
+        [DllImport("User32.Dll")]
+        public static extern long SetCursorPos(int x, int y);
+
+        [DllImport("user32.dll")]
+        public static extern bool GetCursorPos(out Point lpPoint);
+
         static public int MakeLParam(int LoWord, int HiWord)
         {
             return (int)((HiWord << 16) | (LoWord & 0xFFFF));
@@ -1102,6 +1108,9 @@ namespace read_memory_64_bit
             VK_F3 = 0x72,
             VK_UP = 0x26,
             VK_DOWN = 0x28,
+            VK_NUMPAD1 = 0x61,
+            VK_NUMPAD2 = 0x62,
+            VK_NUMPAD3 = 0x63,
         }
 
     }
@@ -1198,7 +1207,7 @@ namespace read_memory_64_bit
                     .dictEntriesOfInterest.ContainsKey(key))
                 {
                     if (Entity.children[Convert.ToInt32(Entity.dictEntriesOfInterest["needIndex"].ToString())]
-                    .dictEntriesOfInterest[key].ToString() == value)
+                    .dictEntriesOfInterest[key].ToString().Contains(value))
                     {
                         return Entity;
                     }
@@ -1277,7 +1286,7 @@ namespace read_memory_64_bit
                     {
                         if (child.dictEntriesOfInterest.ContainsKey(key))
                         {
-                            if (child.dictEntriesOfInterest[key].ToString() == value)
+                            if (child.dictEntriesOfInterest[key].ToString().Contains(value))
                                 return child;
                         }
                         if (child.children != null)
@@ -1596,9 +1605,16 @@ namespace read_memory_64_bit
 
         public static UITreeNode GetUITrees(string RootAddress, int processId)
         {
+            //int i = 0;
             while (!AllowGetUITree)
             {
                 System.Threading.Thread.Sleep(20);
+                //i++;
+                //if (i % 50 == 0 && i != 0)
+                //{
+                //    Console.WriteLine(i/50);
+                //}
+                
             }
             AllowGetUITree = false;
 
@@ -1678,9 +1694,9 @@ namespace read_memory_64_bit
 
             var sampleId = Kalmit.CommonConversion.StringBase16FromByteArray(Kalmit.CommonConversion.HashSHA256(fileContent));
 
-            var outputFileName = "eve-snapshot-memory-" + EntryName + ".json";
+            var outputFileName = /*"eve-snapshot-memory-" +*/ EntryName + ".json";
 
-            var outputFilePath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), outputFileName);
+            var outputFilePath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory() + "\\Snapshots", outputFileName);
 
             Console.WriteLine(
                 "I found no configuration of an output file path, so I use '" +

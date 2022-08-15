@@ -3,8 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Configuration;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace EVE_Bot.Searchers
 {
@@ -32,6 +36,7 @@ namespace EVE_Bot.Searchers
 
 
             hWnd = WinApi.FindWindow("trinityWindow", null);
+            // hWnd = WinApi.FindWindow("trinityWindow", $"EVE - {Config.NickName}");
 
             if (hWnd.ToInt32() == 0)
             {
@@ -47,10 +52,26 @@ namespace EVE_Bot.Searchers
 
             if (processId.ToString() != PIDFromFile)
             {
+                //string Response = "";
+                //for (int i = 0; i < 40; i++) // 20 min
+                //{
+                //    Response = PostRequestAsync("get root address").Result;
+                //    if (Response == "access to find root address allowed")
+                //    {
+                //        break;
+                //    }
+                //    Console.WriteLine("wait for 30 sec to send request");
+                //    Thread.Sleep(30 * 1000);
+                //}
+                //if (Response == "access to find root address denied" || Response == "")
+                //{
+                //    Console.WriteLine("слишком долго стоял в очереди");
+                //    Environment.Exit(10);
+                //}
                 RootAddress = "";
 
                 Console.WriteLine("waiting to find root address");
-                RootAddress = GetRootAdress(RootAddress, processId);
+                RootAddress = GetRootAddress(RootAddress, processId);
                 if (0 == RootAddress?.Length)
                 {
                     Console.WriteLine("failed to find root address by pid or HWND");
@@ -65,12 +86,60 @@ namespace EVE_Bot.Searchers
                     config.AppSettings.Settings["pid"].Value);
                 Console.WriteLine("new RootAddress in file = {0}",
                     config.AppSettings.Settings["RootAddress"].Value);
+
+                //PostRequestAsync("release queue for root address").Wait();
             }
             return hWnd;
         }
 
+        static async Task<string> PostRequestAsync(string message)
+        {
+            string Response = "";
+            WebRequest request = WebRequest.Create("http://localhost:3000");
+            request.Method = "POST"; // для отправки используется метод Post
+                                     // данные для отправки
+            string data = "{ \"NickName\":\"" + Configs.Config.NickName + "\",  \"message\": \"" + message + "\" }";
+            // преобразуем данные в массив байтов
+            byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(data);
+            // устанавливаем тип содержимого - параметр ContentType
+            request.ContentType = "application/x-www-form-urlencoded";
+            // Устанавливаем заголовок Content-Length запроса - свойство ContentLength
+            request.ContentLength = byteArray.Length;
 
-        static string GetRootAdress(string RootAddress, int processId)
+            //записываем данные в поток запроса
+            using (Stream dataStream = request.GetRequestStream())
+            {
+                dataStream.Write(byteArray, 0, byteArray.Length);
+            }
+
+            try
+            {
+                WebResponse response = await request.GetResponseAsync();
+
+                using (Stream stream = response.GetResponseStream())
+                {
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
+                        Response = reader.ReadToEnd();
+                        Console.WriteLine(Response);
+
+                    }
+                }
+                response.Close();
+                Console.WriteLine("Запрос выполнен...");
+                return Response;
+            }
+            catch (WebException ex)
+            {
+                if (ex.Response == null) throw;
+                Console.WriteLine("Запрос выполнен...");
+                return Response;
+            }
+
+        }
+
+
+        static string GetRootAddress(string RootAddress, int processId)
         {
 
             var (uiRootCandidatesAddresses, memoryReader) = ReadMemory.GetRootAddressesAndMemoryReader(RootAddress, processId);

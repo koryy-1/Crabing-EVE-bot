@@ -1,4 +1,7 @@
-﻿using EVE_Bot.Controllers;
+﻿using EVE_Bot.Configs;
+using EVE_Bot.Controllers;
+using EVE_Bot.Models;
+using EVE_Bot.Parsers;
 using EVE_Bot.Searchers;
 using read_memory_64_bit;
 using System;
@@ -11,38 +14,80 @@ namespace EVE_Bot.Scripts
 {
     static public class MainScripts
     {
+        static public Random r = new Random();
+        static public int AvgDeley = Config.AverageDelay;
+
         static public void BotStart()
         {
-            Random r = new Random();
             int RandomHours = r.Next(2, 4); //for ints
             DateTime TimeForBreak = DateTime.Now;
             Console.WriteLine("RandomHours {0}", RandomHours);
             Console.WriteLine("TimeForBreak {0}", TimeForBreak);
-            int PauseDuration;
+            int PauseDuration = r.Next(10, 40);
 
-            SecondaryScripts.CheckSituation();
+            SecScripts.CheckSituation();
 
             for (int i = 0; i < 300; i++)
             {
                 DateTime StartTime = DateTime.Now;
                 Console.WriteLine(StartTime);
 
-                TimeToFarmExp();
-
                 FarmAnomalies(StartTime);
-                if ((DateTime.Now - TimeForBreak).TotalHours > RandomHours)
-                {
-                    RandomHours = r.Next(2, 4); //for ints
-                    TimeForBreak = DateTime.Now;
-                    PauseDuration = r.Next(10, 40);
-                    Console.WriteLine("pause for {0} minutes, continue at {1}", PauseDuration, TimeForBreak);
-                    sleep(PauseDuration * 60 * 1000);
-                }
-                
+                if (i % 4 == 0)
+                    (RandomHours, TimeForBreak) = Pause(TimeForBreak, RandomHours, PauseDuration);
 
-                //SecondaryScripts.RemoveWaypoint();
+                if (Config.FarmExp)
+                {
+                    GotoFarmExp();
+                }
             }
-            Console.WriteLine("Automatic system for farming isk has successfully worked");
+        }
+
+        static public (int, DateTime) Pause(DateTime TimeForBreak, int RandomHours, int PauseDuration)
+        {
+            if ((DateTime.Now - TimeForBreak).TotalHours > RandomHours)
+            {
+                RandomHours = r.Next(3, 5); //for ints
+                TimeForBreak = DateTime.Now;
+                PauseDuration = r.Next(20, 40);
+
+
+                (int XStationCoords, int YStationCoords) = Finders.FindObjectByWordInOverview("Station");
+                if (XStationCoords == 0)
+                {
+                    Console.WriteLine("Station not found");
+                    Console.WriteLine("pause for {0} minutes, start at {1}", PauseDuration, TimeForBreak);
+                    sleep(PauseDuration * 60 * 1000);
+                    return (RandomHours, TimeForBreak);
+                }
+                ThreadManager.AllowDocking = true;
+                ThreadManager.AllowDScan = false;
+                //Console.WriteLine("unload cargo");
+
+                General.GotoInActiveItem("Station", "Dock");
+
+                Console.WriteLine("wait 1 min for dock");
+                Checkers.WatchState();
+
+                var LobbyWnd = GetUITrees().FindEntityOfString("LobbyWnd");
+                while (LobbyWnd == null)
+                {
+                    Thread.Sleep(1000 + r.Next(-100, 100));
+                    LobbyWnd = GetUITrees().FindEntityOfString("LobbyWnd");
+                }
+                Thread.Sleep(5 * 1000 + r.Next(-100, 100));
+
+                //SecondaryScripts.UnloadCargo();
+
+
+                Console.WriteLine("pause for {0} minutes, start at {1}", PauseDuration, TimeForBreak);
+                sleep(PauseDuration * 60 * 1000);
+
+                General.Undock();
+                ThreadManager.AllowDocking = false;
+                ThreadManager.AllowDScan = true;
+            }
+            return (RandomHours, TimeForBreak);
         }
 
         static public void FarmAnomalies(DateTime StartTime)
@@ -71,10 +116,9 @@ namespace EVE_Bot.Scripts
                     continue;
                 }
 
-                ClearRoom();
+                DestroyTargetsInRoom();
 
-                if (Checkers.CheckQuantityDrones() < 3)
-                    SecondaryScripts.DockToStationAndExit();
+                SecScripts.CheckMissilesAmount();
 
                 if (i % 10 == 0)
                 {
@@ -84,7 +128,7 @@ namespace EVE_Bot.Scripts
             }
         }
 
-        static public void ClearRoom()
+        static public void DestroyTargetsInRoom()
         {
             var CheckForEnemies = Checkers.GetCoordsEnemies();
 
@@ -94,9 +138,8 @@ namespace EVE_Bot.Scripts
                 return;
             }
             Console.WriteLine("start clear at: {0}", DateTime.Now);
-            ThreadManager.MultiplierSleep = 1;
-            ThreadManager.AllowDroneControl = true;
-            ThreadManager.AllowDroneRescoop = true;
+
+            PreparationForCombatReadiness();
 
             for (int i = 0; i < 15; i++)
             {
@@ -112,12 +155,16 @@ namespace EVE_Bot.Scripts
                     WatchDistance();
                     continue;
                 }
+                if (2 != EnemyCoordsArray.Last())
+                {
+                    Emulators.LockTargets(EnemyCoordsArray);
 
-                Emulators.LockTargets(EnemyCoordsArray);
+                    if (!Checkers.CheckLocking())
+                        continue;
+                }
 
-                if (!Checkers.CheckLocking())
-                    continue;
-
+                //CheckLockedTargets();
+                General.UnlockNotEnemyTargets();
                 ThreadManager.AllowToAttack = true;
 
                 //процесс захвата цели
@@ -132,24 +179,51 @@ namespace EVE_Bot.Scripts
                         ThreadManager.AllowToAttack = false;
                         break;
                     }
+                    if (j % 3 == 0 && ThreadManager.AllowDroneControl)
+                    {
+                        General.UnlockNotEnemyTargets();
+                        //Emulators.PressButton((int)WinApi.VirtualKeyShort.VK_F);
+                    }
                     Thread.Sleep(1000 * 3);
                 }
             }
             Console.WriteLine("end clear at: {0}", DateTime.Now);
-            ThreadManager.AllowDroneControl = false;
-            ThreadManager.AllowDroneRescoop = false;
+
+            СancellationOfCombatReadiness();
+
+            // поменять вкладку
+            General.ChangeTab("Mining");
+            Thread.Sleep(1000);
             GotoLootCont("Dread Guristas", 1);
             GotoLootCont("Shadow Serpentis", 1);
+            General.ChangeTab("General");
 
-            while (DroneController.DronesDroped)
-                Thread.Sleep(1000);
+            //while (DroneController.DroneLaunchInProgress)
+            //    Thread.Sleep(1000);
 
-            if (SecondaryScripts.CheckCargo())
-                SecondaryScripts.UnloadCargo();
-            ThreadManager.MultiplierSleep = 5;
+            //while (DroneController.DronesDroped)
+            //    Thread.Sleep(1000);
+
+            if (General.CheckCargo())
+                SecScripts.UnloadCargo();
+            ThreadManager.MultiplierSleep = 10;
         }
 
-        static public void TimeToFarmExp()
+        static public void PreparationForCombatReadiness()
+        {
+            ThreadManager.MultiplierSleep = 2;
+            ThreadManager.AllowDroneControl = true;
+            ThreadManager.AllowDroneRescoop = true;
+            DroneController.DroneLaunchInProgress = true;
+        }
+
+        static public void СancellationOfCombatReadiness()
+        {
+            ThreadManager.AllowDroneControl = false;
+            ThreadManager.AllowDroneRescoop = false;
+        }
+
+        static public void GotoFarmExp()
         {
             for (int i = 0; i < 10; i++)
             {
@@ -167,11 +241,10 @@ namespace EVE_Bot.Scripts
                 Checkers.WatchState();
 
                 StartClearExp();
-                if (SecondaryScripts.CheckCargo())
-                    SecondaryScripts.UnloadCargo();
+                if (General.CheckCargo())
+                    SecScripts.UnloadCargo();
 
-                if (Checkers.CheckQuantityDrones() < 3)
-                    SecondaryScripts.DockToStationAndExit();
+                SecScripts.CheckMissilesAmount();
             }
         }
 
@@ -293,31 +366,19 @@ namespace EVE_Bot.Scripts
                 Emulators.ClickLB(XlocAgencyWnd + 360, YlocAgencyWnd + 270);
                 Thread.Sleep(200);
                 Emulators.PressButton((int)WinApi.VirtualKeyShort.VK_DOWN);
-                Thread.Sleep(500);
+                Thread.Sleep(AvgDeley + r.Next(-100, 100));
             }
             Console.WriteLine("no highsec exp");
             if (Routed)
             {
-                //SecondaryScripts.RemoveWaypoint();
-                Console.WriteLine("remove waypoint");
-                //Emulators.ClickRB(157, 327);
-                //Thread.Sleep(500);
-                //Emulators.ClickLB(157 + 70, 327 + 126);
-
-                (int XlocNotepadWindow, int YlocNotepadWindow) = Finders.FindLocWnd("NotepadWindow");
-                if (XlocNotepadWindow == 0)
+                if (SecScripts.RemoveWaypoint())
                 {
-                    Emulators.ClickRB(157, 327);
-                    Thread.Sleep(500);
-                    Emulators.ClickLB(157 + 70, 327 + 126);
+                    Console.WriteLine("bad try to remove waypoint");
+                    General.DockToStationAndExit();
                 }
-                Emulators.ClickRB(XlocNotepadWindow + 310, YlocNotepadWindow + 215);
-                System.Threading.Thread.Sleep(1000);
-                Emulators.ClickLB(XlocNotepadWindow + 310 + 60, YlocNotepadWindow + 215 + 40); // set destination
-                System.Threading.Thread.Sleep(500);
             }
-            Thread.Sleep(500);
-            Emulators.ClickLB(XlocAgencyWnd + 1150, YlocAgencyWnd + 10);
+            Thread.Sleep(AvgDeley + r.Next(-100, 100));
+            Emulators.ClickLB(XlocAgencyWnd + 1150, YlocAgencyWnd + 10); // close agency
             return false;
         }
 
@@ -340,7 +401,7 @@ namespace EVE_Bot.Scripts
 
             var (XlocAgencyWnd, YlocAgencyWnd) = Finders.FindLocWnd("AgencyWndNew");
 
-            Thread.Sleep(500);
+            Thread.Sleep(AvgDeley + r.Next(-100, 100));
             Emulators.ClickLB(XlocAgencyWnd + 900, YlocAgencyWnd + 590);
             Thread.Sleep(1000 * 2);
             Emulators.ClickLB(XlocAgencyWnd + 1150, YlocAgencyWnd + 10);
@@ -350,7 +411,7 @@ namespace EVE_Bot.Scripts
         static public void StartClearExp()
         {
             Console.WriteLine(DateTime.Now);
-            Emulators.PressButton((int)WinApi.VirtualKeyShort.VK_F2);
+            //General.ModuleActivityManager(2, true); // shield
             for (int i = 0; i < 5; i++)
             {
                 (int XAcGate, int YAcGate) = Finders.FindAccelerationGate();
@@ -358,7 +419,12 @@ namespace EVE_Bot.Scripts
                     break;
                 Emulators.ClickLB(XAcGate, YAcGate);
                 Thread.Sleep(200);
-                Emulators.ClickLB(2200, 100); //3 button jump
+                var JumpBtn = General.GetCoordsButtonActiveItem("Jump");
+                if (JumpBtn.Item1 == 0)
+                {
+                    JumpBtn = General.GetCoordsButtonActiveItem("ActivateGate");
+                }
+                Emulators.ClickLB(JumpBtn.Item1, JumpBtn.Item2);
                 Checkers.WatchState();
 
                 (XAcGate, YAcGate) = Finders.FindAccelerationGate();
@@ -366,8 +432,9 @@ namespace EVE_Bot.Scripts
                     break;
                 Emulators.ClickLB(XAcGate, YAcGate);
                 Thread.Sleep(200);
-                Emulators.ClickLB(2200 + 33, 100); //4 button orbit
-                Emulators.PressButton((int)WinApi.VirtualKeyShort.VK_F1);
+                var OrbBtn = General.GetCoordsButtonActiveItem("Orbit");
+                Emulators.ClickLB(OrbBtn.Item1, OrbBtn.Item2);
+                General.ModuleActivityManager(1, true);
                 MainScripts.ClearExpRoom();
             }
 
@@ -377,21 +444,22 @@ namespace EVE_Bot.Scripts
 
             Console.WriteLine("try to find ExpBlock");
             (int XBlock, int YBlock) = Finders.FindExpBlock();
-            if (XBlock != 0 && YBlock != 0)
+            if (XBlock != 0)
             {
                 Emulators.ClickLB(XBlock, YBlock);
                 Thread.Sleep(200);
-                Emulators.ClickLB(2200, 100); //3 button orbit
-                Emulators.PressButton((int)WinApi.VirtualKeyShort.VK_F1);
+                var OrbBtn = General.GetCoordsButtonActiveItem("Orbit");
+                Emulators.ClickLB(OrbBtn.Item1, OrbBtn.Item2);
+                General.ModuleActivityManager(1, true);
                 Thread.Sleep(200);
                 Emulators.ClickLB(XBlock, YBlock + 200);
                 Thread.Sleep(200);
             }
-            else
-                Emulators.PressButton((int)WinApi.VirtualKeyShort.VK_F3);
+            //else
+            //    Emulators.PressButton((int)WinApi.VirtualKeyShort.VK_F3);
             MainScripts.ClearExpRoom();
 
-            Emulators.PressButton((int)WinApi.VirtualKeyShort.VK_F1);
+            General.ModuleActivityManager(1, false); // off prop module
             Console.WriteLine("try to find ExpBlock");
             (XBlock, YBlock) = Finders.FindExpBlock();
             if (XBlock != 0 && YBlock != 0)
@@ -401,9 +469,10 @@ namespace EVE_Bot.Scripts
                 Coords.Add(YBlock);
 
                 Emulators.LockTargets(Coords);
-                Thread.Sleep(500);
-                Emulators.ClickLB(2200 - 66, 100); //1 button approach
-                Thread.Sleep(500);
+                Thread.Sleep(AvgDeley + r.Next(-100, 100));
+                var ApproachBtn = General.GetCoordsButtonActiveItem("Approach");
+                Emulators.ClickLB(ApproachBtn.Item1, ApproachBtn.Item2); //1 button approach
+                Thread.Sleep(AvgDeley + r.Next(-100, 100));
 
                 ThreadManager.AllowDroneControl = true;
                 ThreadManager.AllowDroneRescoop = true;
@@ -465,102 +534,49 @@ namespace EVE_Bot.Scripts
             Environment.Exit(0);
         }
 
-        static public bool CheckForSuicidesInChat()
+        static public bool CurrentSystemIsDanger()
         {
-            var Persons = GetUITrees().FindEntityOfString("XmppChatSimpleUserEntry");
-            if (Persons == null)
+            List<ChatPlayer> ChatInfo = Chat.GetInfo();
+            if (ChatInfo == null)
                 return false;
-            //Unhandled exception. System.NullReferenceException: Object reference not set to an instance of an object. wrote about
-            var PersonsEntry = Persons.handleEntity("XmppChatSimpleUserEntry");
-            var IsCriminal = false;
-            for (int i = 0; i < PersonsEntry.children.Length; i++)
+
+            for (int i = 0; i < ChatInfo.Count; i++)
             {
-                if (PersonsEntry.children[i] == null)
-                    continue;
-                if (PersonsEntry.children[i].children == null)
-                    continue;
-                if (PersonsEntry.children[i].children.Length < 3)
-                    continue;
-                //Unhandled exception. System.IndexOutOfRangeException: Index was outside the bounds of the array.
-                if (PersonsEntry.children[i].children[2] == null)
-                    continue;
-                if (PersonsEntry.children[i].children[2].children == null)
-                    continue;
-                if (PersonsEntry.children[i].children[2].children.Length == 0)
-                    continue;
-
-                //System.IndexOutOfRangeException: Index was outside the bounds of the array.
-                if (PersonsEntry.children[i].children[2].children[0].pythonObjectTypeName != "FlagIconWithState")
-                    continue;
-
-                if (PersonsEntry.children[i].children[2].children[0]
-                .dictEntriesOfInterest["_hint"].ToString() == "Pilot is a suspect")
+                if (ChatInfo[i].PlayerType == "Pilot is a suspect")
                 {
                     Console.WriteLine("suspect pilot in system");
                 }
-                if (PersonsEntry.children[i].children[2].children[0]
-                .dictEntriesOfInterest["_hint"].ToString() == "Pilot is a criminal")
+                if (ChatInfo[i].PlayerType == "Pilot is a criminal")
                 {
-                    IsCriminal = true;
                     Console.WriteLine("criminal pilot in system");
-                    break;
+                    return true;
                 }
             }
-            return IsCriminal;
-            //Pilot is a criminal
-            //Pilot is a suspect
-            //FlagIconWithState
+            return false;
         }
 
         static public bool CheckDScan()
         {
-            var DScanWnd = GetUITrees().FindEntityOfString("DirectionalScanner");
-            if (DScanWnd == null) // docked
-                return false;
-
             if (!ThreadManager.AllowDScan)
                 return false;
 
             Emulators.PressButton((int)WinApi.VirtualKeyShort.VK_V);
-            Thread.Sleep(500);
+            Thread.Sleep(AvgDeley + r.Next(-100, 100));
 
-            DScanWnd = GetUITrees().FindEntityOfStringByDictEntriesOfInterest("_name", "noResultsLabel");
-            if (DScanWnd != null) // no Results
-                return false;
-
-            DScanWnd = GetUITrees().FindEntityOfString("DirectionalScanResultEntry");
-            if (DScanWnd == null) // xyeta
+            List<DScanItem> DScanInfo = DS.GetInfo();
+            if (DScanInfo == null)
             {
-                Console.WriteLine("dscan not work");
                 return false;
             }
-            var DScanWndEntries = DScanWnd.handleEntity("DirectionalScanResultEntry");
-            for (int i = 0; i < DScanWndEntries.children.Length; i++)
+            for (int i = 0; i < DScanInfo.Count; i++)
             {
-                if (DScanWndEntries.children[i] == null)
-                    continue;
-                if (DScanWndEntries.children[i].children == null)
-                    continue;
-                if (DScanWndEntries.children[i].children.Length < 2)
-                    continue;
-                if (DScanWndEntries.children[i].children[2] == null)
-                    continue;
-                if (DScanWndEntries.children[i].children[2].children == null)
-                    continue;
-                if (DScanWndEntries.children[i].children[2].children.Length == 0)
-                    continue;
-                if (DScanWndEntries.children[i].children[2].children[0] == null)
-                    continue;
-
-                if (DScanWndEntries.children[i].children[2].children[0]
-                        .dictEntriesOfInterest["_setText"].ToString().Contains("Catalyst"))
+                if (DScanInfo[i].Type.Contains("Catalyst"))
                 {
+                    Console.WriteLine("catalyst called {0} is in system", DScanInfo[i].Name);
                     Console.WriteLine("pidaras detected");
                     return true;
                 }
             }
-            var results = DScanWndEntries; // linq
-
             return false;
         }
 
@@ -569,19 +585,21 @@ namespace EVE_Bot.Scripts
             (int XlocNotepadWindow, int YlocNotepadWindow) = Finders.FindLocWnd("OverView");
             if (XlocNotepadWindow == 0) //ship docked
             {
-                SecondaryScripts.DockingAndCheckingForSuicides();
+                SecScripts.DockingAndCheckingForSuicides();
                 return;
             }
 
-            Emulators.PressButton((int)WinApi.VirtualKeyShort.VK_H);
+            //Emulators.PressButton((int)WinApi.VirtualKeyShort.VK_H);
             (int XStationCoords, int YStationCoords) = Finders.FindObjectByWordInOverview("Station");
             var TryTosebat = false;
             if (XStationCoords > 0)
             {
                 Emulators.ClickLB(XStationCoords, YStationCoords);
-                Thread.Sleep(500);
-                Emulators.ClickLB(2200, 100); //3 button
-                SecondaryScripts.DockingAndCheckingForSuicides();
+                Thread.Sleep(AvgDeley + r.Next(-100, 100));
+                var DockBtn = General.GetCoordsButtonActiveItem("Dock");
+                Emulators.ClickLB(DockBtn.Item1, DockBtn.Item2);
+
+                SecScripts.DockingAndCheckingForSuicides();
             }
             else
             {
@@ -590,8 +608,9 @@ namespace EVE_Bot.Scripts
                 {
                     TryTosebat = true;
                     Emulators.ClickLB(XGate, YGate);
-                    Thread.Sleep(500);
-                    Emulators.ClickLB(2200, 100); //3 button
+                    Thread.Sleep(AvgDeley + r.Next(-100, 100));
+                    var JumpBtn = General.GetCoordsButtonActiveItem("Jump");
+                    Emulators.ClickLB(JumpBtn.Item1, JumpBtn.Item2);
                     Checkers.WatchState();
                     Thread.Sleep(1000 * 10);
                 }
@@ -601,8 +620,9 @@ namespace EVE_Bot.Scripts
                     if (XStargateCoords > 0)
                     {
                         Emulators.ClickLB(XStargateCoords, YStargateCoords);
-                        Thread.Sleep(500);
-                        Emulators.ClickLB(2200, 100); //3 button
+                        Thread.Sleep(AvgDeley + r.Next(-100, 100));
+                        var JumpBtn = General.GetCoordsButtonActiveItem("Jump");
+                        Emulators.ClickLB(JumpBtn.Item1, JumpBtn.Item2);
                     }
                 }
             }
@@ -621,18 +641,20 @@ namespace EVE_Bot.Scripts
                 if (NeedToLayRoute)
                 {
                     Console.WriteLine("no route, start to laying a new route");
-                    SecondaryScripts.StartLayRoute();
+                    SecScripts.StartLayRoute();
                     return false;
                 }
                 else
-                {
-                    Console.WriteLine("route completed");
                     return false;
-                }
             }
             Emulators.ClickLB(XGate, YGate);
-            Thread.Sleep(500);
-            Emulators.ClickLB(2200, 100); //3 button
+            Thread.Sleep(AvgDeley + r.Next(-100, 100));
+            var JumpBtn = General.GetCoordsButtonActiveItem("Jump");
+            if (JumpBtn.Item1 == 0)
+            {
+                JumpBtn = General.GetCoordsButtonActiveItem("Dock");
+            }
+            Emulators.ClickLB(JumpBtn.Item1, JumpBtn.Item2);
 
             Checkers.WatchState();
             Thread.Sleep(1000 * 10);
@@ -641,89 +663,30 @@ namespace EVE_Bot.Scripts
 
         static public (int, int) GetCoordsNextSystem()
         {
-            var Overview = GetUITrees().FindEntityOfString("OverviewScrollEntry");
-            if (Overview == null)
+            List<OverviewItem> OverviewInfo = OV.GetInfo();
+            if (OverviewInfo == null)
             {
                 return (1, 1);
             }
-
-            (int XlocOverview, int YlocOverview) = Finders.FindLocWnd("OverView");
-
-            var OverviewEntry = Overview.handleEntity("OverviewScrollEntry");
-            for (int k = 0; k < OverviewEntry.children.Length; k++)
+            for (int i = 0; i < OverviewInfo.Count; i++)
             {
-                if (OverviewEntry.children[k] == null)
-                    continue;
-                if (OverviewEntry.children[k].children == null)
-                    continue;
-                if (OverviewEntry.children[k].children.Length == 0)
-                    continue;
-
-                int YLocEnemyRelOverview = 0;
-                if (OverviewEntry.children[k].dictEntriesOfInterest["_displayY"] is Newtonsoft.Json.Linq.JObject)
+                if (OV.GetColorInfo(OverviewInfo[i].Colors) is "yellow"
+                    &&
+                    (OverviewInfo[i].Type.Contains("Stargate") ||
+                    OverviewInfo[i].Type.Contains("Station") ||
+                    OverviewInfo[i].Type.Contains("Hub")))
                 {
-                    YLocEnemyRelOverview = Convert.ToInt32(OverviewEntry.children[k].dictEntriesOfInterest["_displayY"]["int_low32"]);
-                }
-                else
-                {
-                    YLocEnemyRelOverview = Convert.ToInt32(OverviewEntry.children[k].dictEntriesOfInterest["_displayY"]);
-                }
-
-                var IsCargo = false;
-                for (int j = 0; j < OverviewEntry.children[k].children.Length - 1; j++)// without SpaceObjectIcon
-                {
-                    if (OverviewEntry.children[k].children[j] == null)
-                    {
-                        continue;
-                    }
-                    // Unhandled exception. System.NullReferenceException: Object reference not set to an instance of an object.
-                    if (OverviewEntry.children[k].children[j].dictEntriesOfInterest.ContainsKey("_text"))
-                    {
-                        if (OverviewEntry.children[k].children[j].dictEntriesOfInterest["_text"].ToString().Contains("Cargo Container")
-                        ||
-                        OverviewEntry.children[k].children[j].dictEntriesOfInterest["_text"].ToString().Contains("Hangar Container")
-                        ||
-                        OverviewEntry.children[k].children[j].dictEntriesOfInterest["_text"].ToString().Contains("Wreck"))
-                        {
-                            IsCargo = true;
-                            break;
-                        }
-                    }
-                }
-                if (IsCargo)
-                    continue;
-
-                if (OverviewEntry.children[k].children.Last().pythonObjectTypeName == "SpaceObjectIcon")
-                {
-                    for (int j = 0; j < OverviewEntry.children[k].children.Last().children.Length; j++)
-                    {
-                        if (OverviewEntry.children[k].children.Last().children[j].pythonObjectTypeName == "Sprite"
-                            &&
-                            OverviewEntry.children[k].children.Last().children[j].dictEntriesOfInterest["_name"].ToString() == "iconSprite")
-                        {
-                            var RGBColorIcon = OverviewEntry.children[k].children.Last().children[j].dictEntriesOfInterest["_color"];
-                            if (RGBColorIcon == null)
-                                break;
-                            if (Convert.ToInt32(RGBColorIcon["rPercent"]) == 100
-                            && Convert.ToInt32(RGBColorIcon["gPercent"]) == 100
-                            && Convert.ToInt32(RGBColorIcon["bPercent"]) == 0)
-                            {
-                                Console.WriteLine(YLocEnemyRelOverview); // расоложение строки по Y
-                                Console.WriteLine("routed gate on X : {0}, Y : {1}!", XlocOverview + 50, YlocOverview + YLocEnemyRelOverview + 77 + 23);
-                                return (XlocOverview + 50, YlocOverview + YLocEnemyRelOverview + 77);
-                            }
-                        }
-                    }
+                    return (OverviewInfo[i].Pos.x, OverviewInfo[i].Pos.y);
                 }
             }
             return (0, 0);
         }
 
-        static public void DestroyTargets()
+        static public void DestroyTargets(string ExcludeTarget = null)
         {
             for (int i = 0; i < 40; i++)
             {
-                var EnemyCoordsArray = Checkers.GetCoordsEnemies();
+                var EnemyCoordsArray = Checkers.GetCoordsEnemies(ExcludeTarget);
 
                 if (0 == EnemyCoordsArray.Count)
                 {
@@ -735,84 +698,112 @@ namespace EVE_Bot.Scripts
                     WatchDistance();
                     continue;
                 }
-                
-                Emulators.LockTargets(EnemyCoordsArray);
-
-                if (!Checkers.CheckLocking())
-                    continue;
-                ThreadManager.AllowToAttack = true;
-
-                for (int j = 0; j < 60; j++)
+                if (2 != EnemyCoordsArray.Last())
                 {
-                    if (!Checkers.WatchLockingTargets())
-                    {
-                        ThreadManager.AllowToAttack = false;
-                        break;
-                    }
-                    if (j % 3 == 0 && ThreadManager.AllowDroneControl)
-                        Emulators.PressButton((int)WinApi.VirtualKeyShort.VK_F);
-                    Thread.Sleep(1000 * 5);
+                    Emulators.LockTargets(EnemyCoordsArray);
+
+                    if (!Checkers.CheckLocking())
+                        continue;
                 }
+
+                EngageTarget();
             }
             Console.WriteLine("слишком долгий процесс уничтожения");
-            SecondaryScripts.DockToStationAndExit();
+            General.DockToStationAndExit();
+        }
+
+        static public void EngageTarget()
+        {
+            General.UnlockNotEnemyTargets();
+            ThreadManager.AllowToAttack = true;
+
+            for (int j = 0; j < 100; j++)
+            {
+                if (!Checkers.WatchLockingTargets())
+                {
+                    ThreadManager.AllowToAttack = false;
+                    break;
+                }
+                if (j % (9 / ThreadManager.MultipleSleepForDrones) == 0 && ThreadManager.AllowDroneControl)
+                {
+                    General.UnlockNotEnemyTargets();
+                    //Emulators.PressButton((int)WinApi.VirtualKeyShort.VK_F);
+                }
+                Thread.Sleep(1000 * ThreadManager.MultipleSleepForDrones);
+            }
         }
 
         static public void WatchDistance()
         {
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 1; i++)
             {
-                for (int j = 0; j < 20; j++) // 2 min
+                var EnemyCoordsArray = Checkers.GetCoordsEnemies();
+                if (EnemyCoordsArray.Count == 0 || EnemyCoordsArray[0] != 1)
                 {
-                    var EnemyCoordsArray = Checkers.GetCoordsEnemies();
-                    if (EnemyCoordsArray == null || EnemyCoordsArray.Count == 0)
-                    {
-                        return;
-                    }
-                    //Unhandled exception. System.ArgumentOutOfRangeException: Index was out of range.
-                    //Must be non-negative and less than the size of the collection. (Parameter 'index')
-                    if (1 != EnemyCoordsArray[0])
-                    {
-                        return;
-                    }
-                    Console.WriteLine("enemies are far away");
-                    Thread.Sleep(1000 * 5);
+                    return;
                 }
-                //3 проверки на наличие ExpBlock AccelerationGate или cargo container
-                //если нет то выход
-                (int XBlock, int YBlock) = Finders.FindExpBlock();
-                if (XBlock != 0)
-                {
-                    Emulators.ClickLB(XBlock, YBlock);
-                    Thread.Sleep(500);
-                    Emulators.ClickLB(2200, 100); //3 button
-                    continue;
-                }
-
-                (int XAcGate, int YAcGate) = Finders.FindAccelerationGate();
-                if (XAcGate != 0)
-                {
-                    Emulators.ClickLB(XAcGate, YAcGate);
-                    Thread.Sleep(500);
-                    Emulators.ClickLB(2200 + 33, 100); //4 button
-                    continue;
-                }
-
-                (int XCont, int YCont) = Finders.FindObjectByWordInOverview("Cargo Container");
-                if (XCont != 0)
-                {
-                    Emulators.ClickLB(XCont, YCont);
-                    Thread.Sleep(500);
-                    Emulators.ClickLB(2200 + 33, 100); //4 button orbit
-                    continue;
-                }
-                else
-                {
-                    Console.WriteLine("слишком долго летел к цели");
-                    SecondaryScripts.DockToStationAndExit();
-                }
+                //if (1 != EnemyCoordsArray[0])
+                //{
+                //    return;
+                //}
+                Console.WriteLine("enemies are far away");
+                Thread.Sleep(1000 * 5);
             }
-            
+            Console.WriteLine("okay, orbit enemy");
+
+            OverviewItem EnemyInfo = OV.GetInfo()
+                .OrderBy(item => item.Distance.value).ToList()
+                .Find(item => OV.GetColorInfo(item.Colors) is "red");
+
+            //OverviewInfo = OverviewInfo.OrderBy(item => item.Distance.value).ToList();
+
+            //var EnemyInfo = OverviewInfo.Find(item => OV.GetColorInfo(item.Colors) is "red");
+
+            General.Orbiting(EnemyInfo.Name);
+            //Emulators.ClickLB(EnemyInfo.Pos.x, EnemyInfo.Pos.y);
+            //Thread.Sleep(AvgDeley + r.Next(-100, 100));
+            //var OrbitBtn = General.GetCoordsButtonActiveItem("Orbit");
+            //Emulators.ClickLB(OrbitBtn.Item1, OrbitBtn.Item2);
+
+            General.ModuleActivityManager(1, true);
+
+            for (int i = 0; i < 6; i++)
+            {
+                var EnemyCoordsArray = Checkers.GetCoordsEnemies();
+                if (EnemyCoordsArray.Count == 0 || EnemyCoordsArray[0] != 1)
+                {
+                    //3 проверки на наличие ExpBlock AccelerationGate или cargo container
+                    //если нет то выход
+                    (int XBlock, int YBlock) = Finders.FindExpBlock();
+                    (int XAcGate, int YAcGate) = Finders.FindAccelerationGate();
+                    (int XCont, int YCont) = Finders.FindObjectByWordInOverview("Cargo Container");
+                    if (XBlock != 0)
+                    {
+                        Emulators.ClickLB(XBlock, YBlock);
+                    }
+                    else if (XAcGate != 0)
+                    {
+                        Emulators.ClickLB(XAcGate, YAcGate);
+                    }
+                    else if (XCont != 0)
+                    {
+                        Emulators.ClickLB(XCont, YCont);
+                    }
+                    else
+                    {
+                        //ship stop
+                        General.ModuleActivityManager(1, false);
+                        General.SetSpeed(0);
+                        break;
+                    }
+                    Thread.Sleep(AvgDeley + r.Next(-100, 100));
+                    var OrbitBtn = General.GetCoordsButtonActiveItem("Orbit");
+                    Emulators.ClickLB(OrbitBtn.Item1, OrbitBtn.Item2);
+                    break;
+                }
+                Console.WriteLine("enemies are far away");
+                Thread.Sleep(1000 * 5);
+            }
         }
 
         static public void GotoLootCont(string ContName, int NeedPrice = 0)
@@ -843,22 +834,31 @@ namespace EVE_Bot.Scripts
             if (ContName == "Dread Guristas" || ContName == "Shadow Serpentis" || ContName == "Wreck")
                 ContNameInCargo = "ItemWreck";
 
+            (int XContCoords, int YContCoords) = Finders.FindObjectByWordInOverview(ContName);
+
+            if (XContCoords == 0)
+            {
+                Console.WriteLine("no {0}", ContName);
+                return;
+            }
+
             for (int i = 0; i < 10; i++)
             {
-                (int XContCoords, int YContCoords) = Finders.FindObjectByWordInOverview(ContName);
+                General.GotoInActiveItem(ContName, "OpenCargo");
+                if (!Checkers.CheckDistance(ContName, 2500) && !Checkers.CheckState("Approaching"))
+                    continue;
 
-                if (XContCoords == 0)
-                {
-                    Console.WriteLine("no {0}", ContName);
-                    return;
-                }
-
-                Emulators.ClickLB(XContCoords, YContCoords);
-                Thread.Sleep(200);
-                Emulators.ClickLB(2200, 100); //3 button loot
+                var (XOpenCargo, YOpenCargo) = General.GetCoordsButtonActiveItem("OpenCargo");
+                if (XOpenCargo == 0)
+                    continue;
+                Thread.Sleep(AvgDeley + r.Next(-100, 100));
                 UITreeNode OpenedCont = null;
                 for (int j = 0; j < 300; j++)
                 {
+                    if (Checkers.CheckDistance(ContName, 3500))
+                    {
+                        Emulators.ClickLB(XOpenCargo, YOpenCargo + 10); //3 button loot
+                    }
                     try
                     {
                         OpenedCont = GetUITrees().FindEntityOfString(ContNameInCargo);
@@ -875,7 +875,7 @@ namespace EVE_Bot.Scripts
                     Thread.Sleep(1000);
                 }
                 Thread.Sleep(1000);
-                if (SecondaryScripts.CheckCargoPrice(NeedPrice))
+                if (General.CheckCargoPrice(NeedPrice))
                 {
                     (XlocInventory, YlocInventory) = Finders.FindLocWnd("InventoryPrimary");
 
@@ -885,7 +885,15 @@ namespace EVE_Bot.Scripts
                     Console.WriteLine("button loot all: {0}, {1}", XlocInventory + WidthLeftSidebar + 30, YlocInventory + HeightInventory - 20 + 23);
 
                     Emulators.ClickLB(XlocInventory + WidthLeftSidebar + 30, YlocInventory + HeightInventory - 20); // Loot all
-                    Console.WriteLine("cont looted");
+
+                    Thread.Sleep(2 * 1000);
+                    //проверка что конт залутан
+                    OpenedCont = GetUITrees().FindEntityOfString(ContNameInCargo);
+                    if (OpenedCont == null)
+                    {
+                        Console.WriteLine("cont looted");
+                        //break;
+                    }
                     Thread.Sleep(1000 * 5);
                 }
                 else

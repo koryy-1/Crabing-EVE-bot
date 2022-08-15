@@ -1,0 +1,16 @@
+{
+  "AutopilotMode" : false,
+  "FarmExp": true,
+  "SpotName" : "dange1",
+  "LockRange" : 57,
+  "WeaponsRange" : 24,
+  "PropModule" : "AB",
+  "ActiveTank" : false,
+  "AutoMissile" : false,
+  "NickName" : "Kitness",
+  "ShipName" : "Kestrel",
+  "SecondModule" : false,
+  "AverageDelay" : 500,
+  "SpecialUnloadingMode" : false,
+  "StationForUnload" : "Jita V - Moon 17"
+}

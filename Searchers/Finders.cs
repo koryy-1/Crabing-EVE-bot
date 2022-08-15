@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using EVE_Bot.Models;
+using EVE_Bot.Parsers;
 
 namespace EVE_Bot.Searchers
 {
@@ -101,162 +103,90 @@ namespace EVE_Bot.Searchers
 
         static public (int, int) FindObjectByWordInOverview(string ObjectName)
         {
-            var (XlocOverview, YlocOverview) = Finders.FindLocWnd("OverView");
-
-            var Overview = GetUITrees().FindEntityOfString("OverviewScrollEntry");
-            if (Overview == null)
-            {
+            List<OverviewItem> OverviewInfo = OV.GetInfo();
+            if (OverviewInfo == null)
                 return (0, 0);
-            }
-            var OverviewEntry = Overview.handleEntity("OverviewScrollEntry");
 
-            for (int k = 0; k < OverviewEntry.children.Length; k++)
+            for (int i = 0; i < OverviewInfo.Count; i++)
             {
-                if (OverviewEntry.children[k] != null)
+                // check cont color
+                if (GetColorInfo(OverviewInfo[i].Colors) is "yellow"
+                    ||
+                    GetColorInfo(OverviewInfo[i].Colors) is "gray")
                 {
-                    int YLocGateRelOverview = 0;
-                    if (OverviewEntry.children[k].dictEntriesOfInterest["_displayY"] is Newtonsoft.Json.Linq.JObject)
-                    {
-                        YLocGateRelOverview = Convert.ToInt32(OverviewEntry.children[k].dictEntriesOfInterest["_displayY"]["int_low32"]);
-                    }
-                    else
-                    {
-                        YLocGateRelOverview = Convert.ToInt32(OverviewEntry.children[k].dictEntriesOfInterest["_displayY"]);
-                    }
+                    continue;
+                }
 
-                    var IsMyUnlootedCont = true;
-
-                    if (OverviewEntry.children[k].children.Last().pythonObjectTypeName == "SpaceObjectIcon")
-                    {
-                        for (int j = 0; j < OverviewEntry.children[k].children.Last().children.Length; j++)
-                        {
-                            if (OverviewEntry.children[k].children.Last().children[j].pythonObjectTypeName == "Sprite"
-                                &&
-                                OverviewEntry.children[k].children.Last().children[j].dictEntriesOfInterest["_name"].ToString() == "iconSprite")
-                            {
-                                var RGBColorIcon = OverviewEntry.children[k].children.Last().children[j].dictEntriesOfInterest["_color"];
-                                if (RGBColorIcon == null)
-                                    break;
-                                if ((Convert.ToInt32(RGBColorIcon["rPercent"]) == 100
-                                && Convert.ToInt32(RGBColorIcon["gPercent"]) == 100
-                                && Convert.ToInt32(RGBColorIcon["bPercent"]) == 0)
-                                ||
-                                (Convert.ToInt32(RGBColorIcon["rPercent"]) == 55
-                                && Convert.ToInt32(RGBColorIcon["gPercent"]) == 55
-                                && Convert.ToInt32(RGBColorIcon["bPercent"]) == 55))
-                                {
-                                    IsMyUnlootedCont = false;
-                                }
-                            }
-                        }
-                    }
-                    if (!IsMyUnlootedCont)
-                        continue;
-
-                    for (int j = 0; j < OverviewEntry.children[k].children.Length - 1; j++) // without SpaceObjectIcon
-                    {
-                        if (OverviewEntry.children[k].children[j] == null)
-                            continue;
-                        if (!OverviewEntry.children[k].children[j].dictEntriesOfInterest.ContainsKey("_text"))
-                            continue;
-
-                        if (OverviewEntry.children[k].children[j].dictEntriesOfInterest["_text"].ToString().Contains(ObjectName))
-                        {
-                            Console.WriteLine("{0} on X : {1}, Y : {2}!", ObjectName, XlocOverview + 50, YlocOverview + YLocGateRelOverview + 77 + 23);
-                            return (XlocOverview + 50, YlocOverview + YLocGateRelOverview + 77);
-                        }
-                    }
+                if (OverviewInfo[i].Name.Contains(ObjectName) || OverviewInfo[i].Type.Contains(ObjectName))
+                {
+                    return (OverviewInfo[i].Pos.x, OverviewInfo[i].Pos.y);
                 }
             }
             return (0, 0);
         }
 
+        static public (int, int) FindObjectByWordsInOverview(List<string> EnemyTypes)
+        {
+            List<OverviewItem> OverviewInfo = OV.GetInfo();
+            if (OverviewInfo == null)
+                return (0, 0);
+
+            for (int i = 0; i < OverviewInfo.Count; i++)
+            {
+                foreach (var item in EnemyTypes)
+                {
+                    if (OverviewInfo[i].Type.Contains(item))
+                        return (OverviewInfo[i].Pos.x, OverviewInfo[i].Pos.y);
+                }
+            }
+            return (0, 0);
+        }
+
+        static public string GetColorInfo(Colors ComparedColor)
+        {
+            if (ComparedColor.Red == 100
+            && ComparedColor.Green == 100
+            && ComparedColor.Blue == 0)
+                return "yellow";
+
+            if (ComparedColor.Red == 55
+            && ComparedColor.Green == 55
+            && ComparedColor.Blue == 55)
+                return "gray";
+
+            if (ComparedColor.Red == 100
+            && ComparedColor.Green == 10
+            && ComparedColor.Blue == 10)
+                return "red";
+
+            return null;
+        }
 
         static public (int, int) FindAccelerationGate()
         {
-            var (XlocOverview, YlocOverview) = Finders.FindLocWnd("OverView");
+            List<OverviewItem> OverviewInfo = OV.GetInfo();
+            if (OverviewInfo == null)
+                return (0, 0);
 
-
-            var OverviewEntry = GetUITrees().FindEntityOfString("OverviewScrollEntry").handleEntity("OverviewScrollEntry");
-
-
-            for (int k = 0; k < OverviewEntry.children.Length; k++)
+            foreach (var item in OverviewInfo)
             {
-                if (OverviewEntry.children[k] == null)
-                    continue;
-
-                int YLocGateRelOverview = 0;
-                if (OverviewEntry.children[k].dictEntriesOfInterest["_displayY"] is Newtonsoft.Json.Linq.JObject)
-                {
-                    YLocGateRelOverview = Convert.ToInt32(OverviewEntry.children[k].dictEntriesOfInterest["_displayY"]["int_low32"]);
-                }
-                else
-                {
-                    YLocGateRelOverview = Convert.ToInt32(OverviewEntry.children[k].dictEntriesOfInterest["_displayY"]);
-                }
-
-                // null Exception
-                for (int j = 0; j < OverviewEntry.children[k].children.Length - 1; j++) // without SpaceObjectIcon
-                {
-                    if (OverviewEntry.children[k].children[j] == null)
-                        continue;
-                    if (!OverviewEntry.children[k].children[j].dictEntriesOfInterest.ContainsKey("_text"))
-                        continue;
-
-                    if (OverviewEntry.children[k].children[j].dictEntriesOfInterest["_text"].ToString() == "Ancient Acceleration Gate"
-                        ||
-                        OverviewEntry.children[k].children[j].dictEntriesOfInterest["_text"].ToString() == "Security Acceleration Gate")
-                    {
-                        Console.WriteLine(YLocGateRelOverview); // расоложение строки по Y
-                        Console.WriteLine("Ancient Acceleration Gate on X : {0}, Y : {1}!", XlocOverview + 50, YlocOverview + YLocGateRelOverview + 77 + 23);
-                        return (XlocOverview + 50, YlocOverview + YLocGateRelOverview + 77);
-
-                    }
-                }
+                if (item.Name.Contains("Acceleration Gate") || item.Type.Contains("Acceleration Gate"))
+                    return (item.Pos.x, item.Pos.y);
             }
             return (0, 0);
         }
 
         static public (int, int) FindExpBlock()
         {
-            var (XlocOverview, YlocOverview) = Finders.FindLocWnd("OverView");
+            List<OverviewItem> OverviewInfo = OV.GetInfo();
+            if (OverviewInfo == null)
+                return (0, 0);
 
-
-            var OverviewEntry = GetUITrees().FindEntityOfString("OverviewScrollEntry").handleEntity("OverviewScrollEntry");
-
-
-            for (int k = 0; k < OverviewEntry.children.Length; k++)
+            foreach (var item in OverviewInfo)
             {
-                if (OverviewEntry.children[k] == null)
-                    continue;
-
-                int YLocGateRelOverview = 0;
-                if (OverviewEntry.children[k].dictEntriesOfInterest["_displayY"] is Newtonsoft.Json.Linq.JObject)
-                {
-                    YLocGateRelOverview = Convert.ToInt32(OverviewEntry.children[k].dictEntriesOfInterest["_displayY"]["int_low32"]);
-                }
-                else
-                {
-                    YLocGateRelOverview = Convert.ToInt32(OverviewEntry.children[k].dictEntriesOfInterest["_displayY"]);
-                }
-
-                for (int j = 0; j < OverviewEntry.children[k].children.Length - 1; j++) // without SpaceObjectIcon
-                {
-                    if (OverviewEntry.children[k].children[j] == null)
-                        continue;
-                    if (!OverviewEntry.children[k].children[j].dictEntriesOfInterest.ContainsKey("_text"))
-                        continue;
-
-                    if (OverviewEntry.children[k].children[j].dictEntriesOfInterest["_text"].ToString() == "Radiating Telescope"
-                        ||
-                        OverviewEntry.children[k].children[j].dictEntriesOfInterest["_text"].ToString() == "Serpentis Supply Stronghold")
-                    {
-                        Console.WriteLine(YLocGateRelOverview); // расоложение строки по Y
-                        Console.WriteLine("Telescope or Supply on X : {0}, Y : {1}!", XlocOverview + 50, YlocOverview + YLocGateRelOverview + 77 + 23);
-                        return (XlocOverview + 50, YlocOverview + YLocGateRelOverview + 77);
-
-                    }
-                }
+                if (item.Name.Contains("Radiating Telescope") || item.Type.Contains("Radiating Telescope")
+                    || item.Name.Contains("Serpentis Supply Stronghold") || item.Type.Contains("Serpentis Supply Stronghold"))
+                    return (item.Pos.x, item.Pos.y);
             }
             return (0, 0);
         }

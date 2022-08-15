@@ -10,32 +10,16 @@ namespace EVE_Bot.Scripts
     {
         static public void Start()
         {
+            General.EnsureUndocked();
             for (int i = 0; i < 100; i++)
             {
                 if (i % 10 == 0)
                     MainScripts.CheckForConnectionLost();
-                if (!MainScripts.GotoNextSystem(false))
+                if (!MainScripts.GotoNextSystem(NeedToLayRoute: false))
                 {
                     Console.WriteLine("route completed");
                     Environment.Exit(10);
                 }
-                
-
-                //(int XGate, int YGate) = MainScripts.GetCoordsNextSystem();
-                //if (XGate == 1)
-                //{
-                //    continue;
-                //}
-                //if (YGate == 0)
-                //{
-                //    Console.WriteLine("no route, please set dest");
-                //    return;
-                //}
-                //Emulators.ClickLB(XGate, YGate);
-                //System.Threading.Thread.Sleep(500);
-                //Emulators.ClickLB(2200, 100); //3 button
-                //Checkers.WatchState();
-                //System.Threading.Thread.Sleep(1000 * 10);
             }
         }
     }
