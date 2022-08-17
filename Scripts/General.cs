@@ -16,147 +16,82 @@ namespace EVE_Bot.Scripts
     {
         static public Random r = new Random();
         static public int AvgDeley = Config.AverageDelay;
+        static ModulesInfo ModulesInfo = new ModulesInfo();
 
-        static public void ModuleActivityManager(int SlotNum, bool ModuleMustBeActive, string SlotType = "Medium")
+        static public void ModuleActivityManager(string ModuleName, bool ModuleEnable)
         {
-            if (ModuleMustBeActive)
-                ActivateModuleMediumSlot(SlotNum, SlotType);
+            if (ModuleEnable)
+                ActivateModuleMediumSlot(ModuleName);
             else
-                DeactivateModuleMediumSlot(SlotNum, SlotType);
+                DeactivateModuleMediumSlot(ModuleName);
         }
 
-        static public void ActivateModuleMediumSlot(int SlotNum, string SlotType)
+        static public void ActivateModuleMediumSlot(string ModuleName)
         {
-            int Vkey = 0;
-            if (SlotNum == 1 && SlotType != "High")
-                Vkey = (int)WinApi.VirtualKeyShort.VK_F1;
-            else if (SlotNum == 2 || SlotType == "High")
-                Vkey = (int)WinApi.VirtualKeyShort.VK_F2;
+            var AllModules = HI.GetAllModulesInfo(HI.GetHudContainer());
 
-            var Slot = GetUITrees().FindEntityOfString("HudContainer");
-            if (Slot == null)
+
+            var DesiredModule = AllModules.Find(item => item.Name == ModuleName);
+
+            if (DesiredModule.Mode != "idle")
             {
-                Emulators.PressButton(Vkey);
+                Console.WriteLine($"Module {ModuleName} already active");
                 return;
             }
 
-            Slot = Slot.handleEntity("HudContainer").FindEntityOfStringByDictEntriesOfInterest("_name", $"inFlight{SlotType}Slot{SlotNum}");
-            if (Slot == null)
+            Emulators.PressButton(DesiredModule.VirtualKey);
+            Thread.Sleep(1000);
+            DesiredModule = HI.GetAllModulesInfo(HI.GetHudContainer()).Find(item => item.Name == ModuleName);
+
+            if (DesiredModule.Mode == "glow")
             {
-                Emulators.PressButton(Vkey);
+                Console.WriteLine($"{DesiredModule.Name} activated successfully");
                 return;
             }
-
-            Slot = Slot.handleEntityByDictEntriesOfInterest("_name", $"inFlight{SlotType}Slot{SlotNum}").FindEntityOfString("ShipModuleButtonRamps");
-            if (Slot != null)
+            else if (DesiredModule.Mode == "busy")
             {
-                Console.WriteLine($"{SlotType} Module {SlotNum} already active");
+                Console.WriteLine($"{DesiredModule.Name} activated unsuccessfully");
                 return;
             }
-            var TryCount = 5;
-            if (SlotType == "High")
-                TryCount = 2;
-
-            for (int i = 0; i < TryCount; i++)
+            else if (DesiredModule.Mode == "reloading")
             {
-                Emulators.PressButton(Vkey);
-                Thread.Sleep(1000);
-                Slot = GetUITrees().FindEntityOfString("HudContainer").handleEntity("HudContainer")
-                    .FindEntityOfStringByDictEntriesOfInterest("_name", $"inFlight{SlotType}Slot{SlotNum}")
-                    .handleEntityByDictEntriesOfInterest("_name", $"inFlight{SlotType}Slot{SlotNum}").FindEntityOfString("ShipModuleButtonRamps");
-                if (Slot != null)
-                {
-                    var CheckSuccess = GetUITrees()
-                        .FindEntityOfString("HudContainer").handleEntity("HudContainer")
-                        .FindEntityOfStringByDictEntriesOfInterest("_name", $"inFlight{SlotType}Slot{SlotNum}")
-                        .handleEntityByDictEntriesOfInterest("_name", $"inFlight{SlotType}Slot{SlotNum}");
-                    var CheckSuccess1 = CheckSuccess.children[Convert.ToInt32(CheckSuccess.dictEntriesOfInterest["needIndex"])]
-                        .FindEntityOfStringByDictEntriesOfInterest("_name", "glow");
-                    if (CheckSuccess1 != null)
-                    {
-                        Console.WriteLine($"{SlotType} Module {SlotNum} activated successfully");
-                        return;
-                    }
-                    CheckSuccess1 = CheckSuccess.children[Convert.ToInt32(CheckSuccess.dictEntriesOfInterest["needIndex"])]
-                        .FindEntityOfStringByDictEntriesOfInterest("_name", "busy");
-                    if (CheckSuccess1 != null)
-                    {
-                        Console.WriteLine($"{SlotType} Module {SlotNum} activated unsuccessfully");
-                        return;
-                    }
-                    else if (SlotType == "High")
-                    {
-                        Console.WriteLine($"{SlotType} Module {SlotNum} is reloading");
-                        return;
-                    }
-                }
+                Console.WriteLine($"{DesiredModule.Name} is reloading");
+                return;
             }
         }
 
-        static public void DeactivateModuleMediumSlot(int SlotNum, string SlotType)
+        static public void DeactivateModuleMediumSlot(string ModuleName)
         {
-            int Vkey = 0;
-            if (SlotNum == 1 && SlotType != "High")
-                Vkey = (int)WinApi.VirtualKeyShort.VK_F1;
-            else if (SlotNum == 2 || SlotType == "High")
-                Vkey = (int)WinApi.VirtualKeyShort.VK_F2;
+            var AllModules = HI.GetAllModulesInfo(HI.GetHudContainer());
 
-            var ActiveModule = GetUITrees().FindEntityOfString("HudContainer");
-            if (ActiveModule == null)
+
+            var DesiredModule = AllModules.Find(item => item.Name == ModuleName);
+
+            if (DesiredModule.Mode == "idle")
             {
-                Emulators.PressButton(Vkey);
+                Console.WriteLine($"Module {ModuleName} is inactive");
                 return;
             }
 
-            ActiveModule = ActiveModule.handleEntity("HudContainer").FindEntityOfStringByDictEntriesOfInterest("_name", $"inFlight{SlotType}Slot{SlotNum}");
-            if (ActiveModule == null)
-            {
-                Emulators.PressButton(Vkey);
-                return;
-            }
+            Emulators.PressButton(DesiredModule.VirtualKey);
+            Thread.Sleep(1000);
+            DesiredModule = HI.GetAllModulesInfo(HI.GetHudContainer()).Find(item => item.Name == ModuleName);
 
-            ActiveModule = ActiveModule.handleEntityByDictEntriesOfInterest("_name", $"inFlight{SlotType}Slot{SlotNum}").FindEntityOfString("ShipModuleButtonRamps");
-            if (ActiveModule == null)
+            if (DesiredModule.Mode == "busy")
             {
-                Console.WriteLine($"{SlotType} Module {SlotNum} is inactive");
+                Console.WriteLine($"{DesiredModule.Name} deactivated successfully");
                 return;
             }
-            for (int i = 0; i < 5; i++)
+            else if (DesiredModule.Mode == "glow")
             {
-                Emulators.PressButton(Vkey);
-                Thread.Sleep(200);
-                ActiveModule = GetUITrees().FindEntityOfString("HudContainer").handleEntity("HudContainer")
-                    .FindEntityOfStringByDictEntriesOfInterest("_name", $"inFlight{SlotType}Slot{SlotNum}")
-                    .handleEntityByDictEntriesOfInterest("_name", $"inFlight{SlotType}Slot{SlotNum}").FindEntityOfString("ShipModuleButtonRamps");
-                if (ActiveModule != null)
-                {
-                    var CheckSuccess = GetUITrees()
-                        .FindEntityOfString("HudContainer").handleEntity("HudContainer")
-                        .FindEntityOfStringByDictEntriesOfInterest("_name", $"inFlight{SlotType}Slot{SlotNum}")
-                        .handleEntityByDictEntriesOfInterest("_name", $"inFlight{SlotType}Slot{SlotNum}");
-                    var CheckSuccess1 = CheckSuccess.children[Convert.ToInt32(CheckSuccess.dictEntriesOfInterest["needIndex"])]
-                        .FindEntityOfStringByDictEntriesOfInterest("_name", "busy");
-                    if (CheckSuccess1 != null)
-                    {
-                        Console.WriteLine($"{SlotType} Module {SlotNum} deactivated successfully");
-                        return;
-                    }
-                    CheckSuccess1 = CheckSuccess.children[Convert.ToInt32(CheckSuccess.dictEntriesOfInterest["needIndex"])]
-                        .FindEntityOfStringByDictEntriesOfInterest("_name", "glow");
-                    if (CheckSuccess1 != null)
-                    {
-                        Console.WriteLine($"{SlotType} Module {SlotNum} deactivated unsuccessfully");
-                    }
-                    else if (SlotType == "High")
-                    {
-                        Console.WriteLine($"{SlotType} Module {SlotNum} is reloading or already deactivated");
-                        return;
-                    }
-                }
-                else
-                    break;
+                Console.WriteLine($"{DesiredModule.Name} deactivated unsuccessfully");
+                return;
             }
-            Console.WriteLine($"{SlotType} Module {SlotNum} already deactivated successfully");
+            else if (DesiredModule.Mode == "reloading")
+            {
+                Console.WriteLine($"{DesiredModule.Name} is reloading");
+                return;
+            }
         }
 
         static public void EnsureUndocked()
@@ -485,6 +420,7 @@ namespace EVE_Bot.Scripts
                     );
 
                 Emulators.ClickLB(XSelectedItem + XManeuver + 16, YSelectedItem + 85);
+                Thread.Sleep(AvgDeley + r.Next(-100, 100));
 
                 if (Maneuver == "Approach" && Checkers.CheckState("Approaching"))
                     return;
@@ -850,7 +786,7 @@ namespace EVE_Bot.Scripts
             {
                 return;
             }
-            Emulators.PressButton((int)WinApi.VirtualKeyShort.VK_F2);
+            ModuleActivityManager(ModulesInfo.MissileLauncher, false);
 
             for (int i = 0; i < 5; i++) // 15 sec
             {
@@ -872,7 +808,7 @@ namespace EVE_Bot.Scripts
 
             Emulators.ClickLB(Target.Pos.x, Target.Pos.y);
             Thread.Sleep(AvgDeley + r.Next(-100, 100));
-            Emulators.PressButton((int)WinApi.VirtualKeyShort.VK_F2);
+            ModuleActivityManager(ModulesInfo.MissileLauncher, true);
             Console.WriteLine("target changed");
         }
 

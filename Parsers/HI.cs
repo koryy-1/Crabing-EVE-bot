@@ -119,7 +119,18 @@ namespace EVE_Bot.Parsers
                 Module Module = new Module();
 
                 //Name
-                Module.Name = SlotsContainer.children[i].children[0].dictEntriesOfInterest["_name"].ToString();
+                var RawModuleName = SlotsContainer.children[i].children[0].dictEntriesOfInterest["_name"].ToString();
+
+                var ModulesInfo = new ModulesInfo();
+                if (ModulesInfo.ModuleNamesDict.ContainsKey(RawModuleName))
+                    Module.Name = ModulesInfo.ModuleNamesDict[RawModuleName];
+                else
+                    Module.Name = RawModuleName;
+
+                //Virtual key
+                var (X, Y) = General.GetCoordsEntityOnScreen(SlotsContainer.children[i]);
+                if (Y == 0)
+                    Module.VirtualKey = X / 51 + 0x70;
 
                 //SlotNum
                 var ModuleType = SlotsContainer.children[i].dictEntriesOfInterest["_name"].ToString();
@@ -202,18 +213,13 @@ namespace EVE_Bot.Parsers
         }
         static public UITreeNode GetHudContainer()
         {
-            var HudContainer = GetUITrees().FindEntityOfString("HudContainer");
+            var HudContainer = UITreeReader.GetUITrees("ShipUI", 3);
             if (HudContainer == null)
             {
                 return null;
             }
-            HudContainer = HudContainer.handleEntity("HudContainer");
 
             return HudContainer;
-        }
-        static public UITreeNode GetUITrees()
-        {
-            return ReadMemory.GetUITrees(Window.RootAddress, Window.processId);
         }
     }
 }

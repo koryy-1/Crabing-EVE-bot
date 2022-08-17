@@ -11,7 +11,11 @@ namespace EVE_Bot.Parsers
     {
         static public List<ChatPlayer> GetInfo()
         {
-            var Persons = GetUITrees().FindEntityOfString("XmppChatSimpleUserEntry");
+            var Persons = UITreeReader.GetUITrees("ChatWindowStack");
+            if (Persons == null)
+                return null;
+
+            Persons = Persons.FindEntityOfString("XmppChatSimpleUserEntry");
             if (Persons == null)
                 return null;
             var PersonsEntry = Persons.handleEntity("XmppChatSimpleUserEntry");
@@ -46,10 +50,6 @@ namespace EVE_Bot.Parsers
             //Pilot is a criminal
             //Pilot is a suspect
             //FlagIconWithState
-        }
-        static public UITreeNode GetUITrees()
-        {
-            return ReadMemory.GetUITrees(Window.RootAddress, Window.processId);
         }
     }
 }

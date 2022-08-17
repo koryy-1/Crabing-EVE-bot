@@ -1,6 +1,6 @@
 {
   "AutopilotMode" : false,
-  "FarmExp": true,
+  "FarmExp": false,
   "SpotName" : "dange1",
   "LockRange" : 57,
   "WeaponsRange" : 24,

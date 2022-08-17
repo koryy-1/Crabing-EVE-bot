@@ -11,6 +11,9 @@ namespace EVE_Bot.Controllers
 {
     static public class MissileController
     {
+        static ModulesInfo ModulesInfo = new ModulesInfo();
+
+
         static public Thread MissileControlSystem = new Thread(() =>
         {
             Thread MissileMonitor = new Thread(Wrapper);
@@ -50,7 +53,7 @@ namespace EVE_Bot.Controllers
                     if (Module.Type == "high" && Module.Mode == "idle" && Module.AmountСharges != 0)
                     {
                         Console.WriteLine("missiles are idle");
-                        Emulators.PressButton((int)WinApi.VirtualKeyShort.VK_F2);
+                        General.ModuleActivityManager(ModulesInfo.MissileLauncher, true);
                     }
                     else if (Module.Type == "high" && Module.Mode == "idle" && Module.AmountСharges == 0)
                     {
@@ -86,9 +89,9 @@ namespace EVE_Bot.Controllers
             {
                 MonitorWorkingMissiles();
             }
-            catch (ThreadInterruptedException e)
+            catch (ThreadInterruptedException)
             {
-                Emulators.PressButton((int)WinApi.VirtualKeyShort.VK_F2);
+                General.ModuleActivityManager(ModulesInfo.MissileLauncher, false);
                 //Console.WriteLine(e.Message);
             }
         }

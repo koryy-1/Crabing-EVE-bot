@@ -14,7 +14,10 @@ namespace EVE_Bot.Parsers
         {
             var (XlocOverview, YlocOverview) = Finders.FindLocWnd("OverView");
 
-            var Overview = GetUITrees().FindEntityOfString("OverviewScrollEntry");
+            var Overview = UITreeReader.GetUITrees("OverView");
+            if (Overview == null)
+                return null;
+            Overview = Overview.FindEntityOfString("OverviewScrollEntry");
             if (Overview == null)
                 return null;
 
@@ -153,11 +156,6 @@ namespace EVE_Bot.Parsers
                 return "red";
 
             return null;
-        }
-
-        static public UITreeNode GetUITrees()
-        {
-            return ReadMemory.GetUITrees(Window.RootAddress, Window.processId);
         }
     }
 }

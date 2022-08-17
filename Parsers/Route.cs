@@ -12,7 +12,12 @@ namespace EVE_Bot.Parsers
         static public List<SystemInfo> GetInfo()
         {
             List<SystemInfo> Route = new List<SystemInfo>();
-            var AutopilotDestinationIcon = GetUITrees().FindEntityOfString("AutopilotDestinationIcon");
+            var AutopilotDestinationIcon = UITreeReader.GetUITrees("InfoPanelRoute", 7);
+            if (AutopilotDestinationIcon == null)
+            {
+                return null;
+            }
+            AutopilotDestinationIcon = AutopilotDestinationIcon.FindEntityOfString("AutopilotDestinationIcon");
             if (AutopilotDestinationIcon == null)
             {
                 return null;
@@ -29,10 +34,6 @@ namespace EVE_Bot.Parsers
                 Route.Add(SystemInfo);
             }
             return Route;
-        }
-        static public UITreeNode GetUITrees()
-        {
-            return ReadMemory.GetUITrees(Window.RootAddress, Window.processId);
         }
     }
 }

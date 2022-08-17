@@ -16,6 +16,7 @@ namespace EVE_Bot.Scripts
     {
         static public Random r = new Random();
         static public int AvgDeley = Config.AverageDelay;
+        static ModulesInfo ModulesInfo = new ModulesInfo();
 
         static public void BotStart()
         {
@@ -434,7 +435,7 @@ namespace EVE_Bot.Scripts
                 Thread.Sleep(200);
                 var OrbBtn = General.GetCoordsButtonActiveItem("Orbit");
                 Emulators.ClickLB(OrbBtn.Item1, OrbBtn.Item2);
-                General.ModuleActivityManager(1, true);
+                General.ModuleActivityManager(ModulesInfo.MWD, true);
                 MainScripts.ClearExpRoom();
             }
 
@@ -450,7 +451,7 @@ namespace EVE_Bot.Scripts
                 Thread.Sleep(200);
                 var OrbBtn = General.GetCoordsButtonActiveItem("Orbit");
                 Emulators.ClickLB(OrbBtn.Item1, OrbBtn.Item2);
-                General.ModuleActivityManager(1, true);
+                General.ModuleActivityManager(ModulesInfo.MWD, true);
                 Thread.Sleep(200);
                 Emulators.ClickLB(XBlock, YBlock + 200);
                 Thread.Sleep(200);
@@ -459,7 +460,7 @@ namespace EVE_Bot.Scripts
             //    Emulators.PressButton((int)WinApi.VirtualKeyShort.VK_F3);
             MainScripts.ClearExpRoom();
 
-            General.ModuleActivityManager(1, false); // off prop module
+            General.ModuleActivityManager(ModulesInfo.MWD, false); // off prop module
             Console.WriteLine("try to find ExpBlock");
             (XBlock, YBlock) = Finders.FindExpBlock();
             if (XBlock != 0 && YBlock != 0)
@@ -765,7 +766,7 @@ namespace EVE_Bot.Scripts
             //var OrbitBtn = General.GetCoordsButtonActiveItem("Orbit");
             //Emulators.ClickLB(OrbitBtn.Item1, OrbitBtn.Item2);
 
-            General.ModuleActivityManager(1, true);
+            General.ModuleActivityManager(ModulesInfo.MWD, true);
 
             for (int i = 0; i < 6; i++)
             {
@@ -792,7 +793,7 @@ namespace EVE_Bot.Scripts
                     else
                     {
                         //ship stop
-                        General.ModuleActivityManager(1, false);
+                        General.ModuleActivityManager(ModulesInfo.MWD, false);
                         General.SetSpeed(0);
                         break;
                     }

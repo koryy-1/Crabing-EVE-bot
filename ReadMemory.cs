@@ -1603,7 +1603,7 @@ namespace read_memory_64_bit
             return ulong.Parse(asString);
         }
 
-        public static UITreeNode GetUITrees(string RootAddress, int processId)
+        public static UITreeNode GetUITrees(string RootAddress, int processId, int maxDepth = 99)
         {
             //int i = 0;
             while (!AllowGetUITree)
@@ -1622,7 +1622,7 @@ namespace read_memory_64_bit
 
             IImmutableList<UITreeNode> ReadUITrees() =>
                     uiRootCandidatesAddresses
-                    .Select(uiTreeRoot => EveOnline64.ReadUITreeFromAddress(uiTreeRoot, memoryReader, 99))
+                    .Select(uiTreeRoot => EveOnline64.ReadUITreeFromAddress(uiTreeRoot, memoryReader, maxDepth))
                     .Where(uiTree => uiTree != null)
                     .ToImmutableList();
 

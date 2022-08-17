@@ -11,7 +11,7 @@ namespace EVE_Bot.Parsers
     {
         static public List<DScanItem> GetInfo()
         {
-            var DScanWnd = GetUITrees().FindEntityOfString("DirectionalScanner");
+            var DScanWnd = UITreeReader.GetUITrees("DirectionalScanner");
             if (DScanWnd == null) // docked
                 return null;
 
@@ -19,7 +19,7 @@ namespace EVE_Bot.Parsers
             if (DScanWnd != null) // no Results
                 return null;
 
-            DScanWnd = GetUITrees().FindEntityOfString("DirectionalScanResultEntry");
+            DScanWnd = UITreeReader.GetUITrees().FindEntityOfString("DirectionalScanResultEntry");
             if (DScanWnd == null) // xyeta
             {
                 Console.WriteLine("dscan not work");
@@ -57,10 +57,6 @@ namespace EVE_Bot.Parsers
                 DScanInfo.Add(DScanItemInfo);
             }
             return DScanInfo;
-        }
-        static public UITreeNode GetUITrees()
-        {
-            return ReadMemory.GetUITrees(Window.RootAddress, Window.processId);
         }
     }
 }

@@ -12,12 +12,11 @@ namespace EVE_Bot.Parsers
     {
         static public List<InventoryItem> GetInfo()
         {
-            var CargoTree1 = GetUITrees().FindEntityOfString("InventoryPrimary");
+            var CargoTree1 = UITreeReader.GetUITrees("InventoryPrimary");
             if (CargoTree1 == null)
             {
                 return null;
             }
-            CargoTree1 = CargoTree1.handleEntity("InventoryPrimary");
 
             var CargoTree = CargoTree1.FindEntityOfString("Row");
             if (CargoTree == null)
@@ -70,11 +69,10 @@ namespace EVE_Bot.Parsers
                         continue;
                     if (CargoTree.children[i].children[k].children[1 + index].children == null)
                         continue;
-                    if (CargoTree.children[i].children[k].children[1 + index].children.Length < 2)
-                        continue;
-                    if (CargoTree.children[i].children[k].children[1 + index].children[1] == null)
-                        continue;
-
+                    //if (CargoTree.children[i].children[k].children[1 + index].children.Length < 2)
+                    //    continue;
+                    //if (CargoTree.children[i].children[k].children[1 + index].children[1] == null)
+                    //    continue;
 
                     //GetUITrees().FindEntityOfString("InventoryPrimary").handleEntity("InventoryPrimary").FindEntityOfString("OmegaCloneOverlayIcon") != null
 
@@ -100,7 +98,7 @@ namespace EVE_Bot.Parsers
 
                     Item.Name = ChildItemName;
 
-                    var ChildQuantity = Convert.ToInt32(CargoTree.children[i].children[k].children[index].children[0]
+                    var ChildQuantity = Convert.ToInt32(CargoTree.children[i].children[k].children[1 + index].children[0]
                             .dictEntriesOfInterest["_setText"].ToString().Replace(" ", ""));
                     Item.Amount = ChildQuantity;
 
@@ -113,10 +111,16 @@ namespace EVE_Bot.Parsers
 
         static public int GetVolumeInfo()
         {
-            var InventoryPrimary = GetUITrees().FindEntityOfStringByDictEntriesOfInterest("_name", "capacityText");
+            var InventoryPrimary = UITreeReader.GetUITrees("InventoryPrimary");
             if (InventoryPrimary == null)
             {
-                Console.WriteLine("InventoryPrimary and capacityText not found");
+                Console.WriteLine("InventoryPrimary not found");
+                return -1;
+            }
+            InventoryPrimary = InventoryPrimary.FindEntityOfStringByDictEntriesOfInterest("_name", "capacityText");
+            if (InventoryPrimary == null)
+            {
+                Console.WriteLine("capacityText not found");
                 return -1;
             }
             var InventoryPrimaryEntry = InventoryPrimary.handleEntityByDictEntriesOfInterest("_name", "capacityText");
@@ -153,10 +157,16 @@ namespace EVE_Bot.Parsers
 
         static public int GetPriceInfo()
         {
-            var InventoryPrimary = GetUITrees().FindEntityOfStringByDictEntriesOfInterest("_name", "totalPriceLabel");
+            var InventoryPrimary = UITreeReader.GetUITrees("InventoryPrimary");
             if (InventoryPrimary == null)
             {
-                Console.WriteLine("InventoryPrimary and totalPriceLabel not found");
+                Console.WriteLine("InventoryPrimary not found");
+                return -1;
+            }
+            InventoryPrimary = InventoryPrimary.FindEntityOfStringByDictEntriesOfInterest("_name", "totalPriceLabel");
+            if (InventoryPrimary == null)
+            {
+                Console.WriteLine("totalPriceLabel not found");
                 return -1;
             }
             var InventoryPrimaryEntry = InventoryPrimary.handleEntityByDictEntriesOfInterest("_name", "totalPriceLabel");
@@ -181,12 +191,6 @@ namespace EVE_Bot.Parsers
                 Console.WriteLine("totalPriceLabel in InventoryPrimary not found");
             }
             return -1;
-        }
-
-
-        static public UITreeNode GetUITrees()
-        {
-            return ReadMemory.GetUITrees(Window.RootAddress, Window.processId);
         }
     }
 }

@@ -13,7 +13,11 @@ namespace EVE_Bot.Parsers
         {
             var (XDroneView, YDroneView) = Finders.FindLocWnd("DroneView");
 
-            var deepDrones = GetUITrees().FindEntityOfString("DroneEntry");
+            var deepDrones = UITreeReader.GetUITrees("DroneView");
+            if (deepDrones == null)
+                return null;
+
+            deepDrones = deepDrones.FindEntityOfString("DroneEntry");
             if (deepDrones == null)
                 return null;
 
@@ -103,10 +107,6 @@ namespace EVE_Bot.Parsers
                 DronesInfo.Add(OneDroneInfo);
             }
             return DronesInfo;
-        }
-        static public UITreeNode GetUITrees()
-        {
-            return ReadMemory.GetUITrees(Window.RootAddress, Window.processId);
         }
     }
 }

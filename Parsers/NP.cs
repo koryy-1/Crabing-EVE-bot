@@ -14,11 +14,11 @@ namespace EVE_Bot.Parsers
         {
             var (XlocOverview, YlocOverview) = Finders.FindLocWnd("NotepadWindow");
 
-            var NotepadWindow = GetUITrees().FindEntityOfString("NotepadWindow");
+            var NotepadWindow = UITreeReader.GetUITrees("NotepadWindow");
             if (NotepadWindow == null)
                 return null;
 
-            var SE_EditTextlineCore = NotepadWindow.handleEntity("NotepadWindow").FindEntityOfString("SE_EditTextlineCore");
+            var SE_EditTextlineCore = NotepadWindow.FindEntityOfString("SE_EditTextlineCore");
             if (SE_EditTextlineCore == null)
                 return null;
 
@@ -72,11 +72,6 @@ namespace EVE_Bot.Parsers
             }
 
             return NotepadInfo;
-        }
-
-        static public UITreeNode GetUITrees()
-        {
-            return ReadMemory.GetUITrees(Window.RootAddress, Window.processId);
         }
     }
 }

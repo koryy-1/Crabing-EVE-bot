@@ -16,6 +16,7 @@ namespace EVE_Bot.Scripts
     {
         static public Random r = new Random();
         static public int AvgDeley = Config.AverageDelay;
+        static ModulesInfo ModulesInfo = new ModulesInfo();
 
         static public void CheckSituation()
         {
@@ -30,9 +31,18 @@ namespace EVE_Bot.Scripts
                 Thread.Sleep(AvgDeley + r.Next(-100, 100));
             }
 
+            //проверить расположение модулей на F кнопках
+            //if CheckModulesLocOnF_Buttons
+            // General.DockToStationAndExit();
+
             //определить где находится корабль
             General.EnsureUndocked();
             ThreadManager.AllowDocking = false;
+
+            //поменять вкладку в инвентаре
+            (int XlocInventory, int YlocInventory) = Finders.FindLocWnd("InventoryPrimary");
+            Emulators.ClickLB(XlocInventory + 60, YlocInventory + 55);
+            Thread.Sleep(AvgDeley + r.Next(-100, 100));
 
             //узнать количество ракет
             CheckMissilesAmount();
@@ -102,7 +112,7 @@ namespace EVE_Bot.Scripts
                 var OrbBtn = General.GetCoordsButtonActiveItem("Orbit");
                 Emulators.ClickLB(OrbBtn.Item1, OrbBtn.Item2);
                 Thread.Sleep(AvgDeley + r.Next(-100, 100));
-                General.ModuleActivityManager(1, true);
+                General.ModuleActivityManager(ModulesInfo.MWD, true);
 
                 MainScripts.ClearExpRoom();
                 MainScripts.StartClearExp();
@@ -354,11 +364,13 @@ namespace EVE_Bot.Scripts
                     General.DockToStationAndExit();
                 }
             }
-            
             foreach (var item in Inventory)
             {
+                Console.WriteLine(item.Name);
+                Console.WriteLine(item.Amount);
                 if (item.Name.Contains("Guristas Inferno Light Missile") && item.Amount < 100)
                 {
+                    Console.WriteLine("Not enough amount missiles = {0}", item.Amount);
                     General.DockToStationAndExit();
                 }
                 else if (item.Name.Contains("Guristas Inferno Light Missile") && item.Amount >= 100)

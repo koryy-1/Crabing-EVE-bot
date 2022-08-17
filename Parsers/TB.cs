@@ -13,11 +13,9 @@ namespace EVE_Bot.Parsers
     {
         static public List<TargetInBar> GetInfo()
         {
-            var Overview = GetUITrees().FindEntityOfString("TargetInBar");
-            if (Overview == null)
+            var TargetInBarEntry = UITreeReader.GetUITrees("TargetInBar", 6, true);
+            if (TargetInBarEntry == null)
                 return null;
-
-            var TargetInBarEntry = Overview.handleEntity("TargetInBar");
 
             List<TargetInBar> TargetsInBar = new List<TargetInBar>();
 
@@ -56,10 +54,6 @@ namespace EVE_Bot.Parsers
                 TargetsInBar.Add(Target);
             }
             return TargetsInBar;
-        }
-        static public UITreeNode GetUITrees()
-        {
-            return ReadMemory.GetUITrees(Window.RootAddress, Window.processId);
         }
     }
 }
