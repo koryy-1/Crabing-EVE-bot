@@ -33,10 +33,11 @@ namespace EVE_Bot.Controllers
 
         static public void LockTargets(List<int> EnemyCoordsArray)
         {
-            while (!AllowControlEmulator && !AllowHighLVLControl)
+            while (!AllowControlEmulator)
                 System.Threading.Thread.Sleep(20);
 
             AllowControlEmulator = false;
+            AllowHighLVLControl = true;
 
             WinApi.PostMessage(hWnd, (uint)WinApi.KeyboardMessages.WM_IME_KEYDOWN, (int)WinApi.VirtualKeyShort.VK_CONTROL, 0);
             System.Threading.Thread.Sleep(500);
@@ -48,6 +49,7 @@ namespace EVE_Bot.Controllers
             System.Threading.Thread.Sleep(500);
 
             AllowControlEmulator = true;
+            AllowHighLVLControl = false;
         }
 
         static public void ClickLBForLockTargets(int x, int y)
@@ -63,15 +65,22 @@ namespace EVE_Bot.Controllers
             System.Threading.Thread.Sleep(100);
         }
 
-        static public void ClickLB(int x, int y)
+        static public void ClickLB(int x, int y, bool PrivilegeControl = false)
         {
             x = x + r.Next(-2, 2);
             y = y + r.Next(-2, 2);
 
-            while (!AllowControlEmulator && !AllowHighLVLControl)
+            while (AllowHighLVLControl)
                 System.Threading.Thread.Sleep(20);
 
-            AllowControlEmulator = false;
+            if (!PrivilegeControl)
+            {
+                while (!AllowControlEmulator)
+                    System.Threading.Thread.Sleep(20);
+            }
+
+            if (!PrivilegeControl)
+                AllowControlEmulator = false;
 
             //WinApi.PostMessage(hWnd, (uint)WinApi.MouseMessages.WM_MOUSEMOVE, 0, WinApi.MakeLParam(x, y));
 
@@ -82,7 +91,8 @@ namespace EVE_Bot.Controllers
             WinApi.PostMessage(hWnd, (uint)WinApi.MouseMessages.WM_LBUTTONUP, (int)WinApi.VirtualKeyShort.LBUTTON, WinApi.MakeLParam(x, y));
             System.Threading.Thread.Sleep(100);
 
-            AllowControlEmulator = true;
+            if (!PrivilegeControl)
+                AllowControlEmulator = true;
         }
 
         static public void ClickRB(int x, int y)
@@ -90,7 +100,7 @@ namespace EVE_Bot.Controllers
             x = x + r.Next(-2, 2);
             y = y + r.Next(-2, 2);
 
-            while (!AllowControlEmulator && !AllowHighLVLControl)
+            while (!AllowControlEmulator)
                 System.Threading.Thread.Sleep(20);
 
             AllowControlEmulator = false;
@@ -114,7 +124,7 @@ namespace EVE_Bot.Controllers
             UpX = UpX + r.Next(-2, 2);
             UpY = UpY + r.Next(-2, 2);
 
-            while (!AllowControlEmulator && !AllowHighLVLControl)
+            while (!AllowControlEmulator)
                 System.Threading.Thread.Sleep(20);
 
             AllowControlEmulator = false;
@@ -134,19 +144,27 @@ namespace EVE_Bot.Controllers
             AllowControlEmulator = true;
         }
 
-        static public void PressButton(int Button)
+        static public void PressButton(int Button, bool PrivilegeControl = false)
         {
-            while (!AllowControlEmulator && !AllowHighLVLControl)
+            while (AllowHighLVLControl)
                 System.Threading.Thread.Sleep(20);
 
-            AllowControlEmulator = false;
+            if (!PrivilegeControl)
+            {
+                while (!AllowControlEmulator)
+                    System.Threading.Thread.Sleep(20);
+            }
+
+            if (!PrivilegeControl)
+                AllowControlEmulator = false;
 
             WinApi.PostMessage(hWnd, (uint)WinApi.KeyboardMessages.WM_IME_KEYDOWN, Button, 0);
             System.Threading.Thread.Sleep(100);
             WinApi.PostMessage(hWnd, (uint)WinApi.KeyboardMessages.WM_IME_KEYUP, Button, 0);
             System.Threading.Thread.Sleep(100);
 
-            AllowControlEmulator = true;
+            if (!PrivilegeControl)
+                AllowControlEmulator = true;
         }
     }
 

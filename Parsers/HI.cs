@@ -152,6 +152,23 @@ namespace EVE_Bot.Parsers
                 //Mode
                 var RampIsActive = SlotsContainer.children[i].children[2].pythonObjectTypeName;
 
+                var LeftRampStr = "";
+                var RightRampStr = "";
+
+                double LeftRamp = 0.0;
+                double RightRamp = 0.0;
+                if (RampIsActive == "ShipModuleButtonRamps")
+                {
+                    LeftRampStr = SlotsContainer.children[i].children[2].children[0].children[0]
+                        .dictEntriesOfInterest["_rotation"].ToString() + "1";
+                    RightRampStr = SlotsContainer.children[i].children[2].children[1].children[0]
+                        .dictEntriesOfInterest["_rotation"].ToString() + "1";
+
+                    double.TryParse(LeftRampStr, out LeftRamp);
+                    double.TryParse(RightRampStr, out RightRamp);
+                }
+
+
                 var IsGlowInActiveMode = SlotsContainer.children[i].children.Last().dictEntriesOfInterest["_name"].ToString();
 
                 if (IsGlowInActiveMode == "glow")
@@ -164,12 +181,15 @@ namespace EVE_Bot.Parsers
                 }
                 else if (RampIsActive == "ShipModuleButtonRamps"
                     &&
+                    !(LeftRamp == Math.PI && RightRamp == Math.PI)
+                    &&
                     IsGlowInActiveMode != "glow" && IsGlowInActiveMode != "busy")
                 {
                     Module.Mode = "reloading";
                 }
-                else if (RampIsActive != "ShipModuleButtonRamps"
-                    &&
+                else if (
+                    //RampIsActive != "ShipModuleButtonRamps"
+                    //&&
                     IsGlowInActiveMode != "glow" && IsGlowInActiveMode != "busy")
                 {
                     Module.Mode = "idle";
@@ -193,7 +213,7 @@ namespace EVE_Bot.Parsers
 
             return AllModules;
         }
-        static public string GetShipState(UITreeNode HudContainer)
+        static public ShipState GetShipState(UITreeNode HudContainer)
         {
             if (HudContainer == null)
             {
@@ -201,15 +221,26 @@ namespace EVE_Bot.Parsers
             }
 
             if (HudContainer.children[Convert.ToInt32(HudContainer.dictEntriesOfInterest["needIndex"])]
-                .children[4].children.Length == 0)
-            {
+                .children[4] == null)
                 return null;
-            }
+            if (HudContainer.children[Convert.ToInt32(HudContainer.dictEntriesOfInterest["needIndex"])]
+                .children[4].children == null)
+                return null;
+            if (HudContainer.children[Convert.ToInt32(HudContainer.dictEntriesOfInterest["needIndex"])]
+                .children[4].children.Length == 0)
+                return null;
 
+            ShipState ShipState = new ShipState();
+
+            var CurrentItem = HudContainer.children[Convert.ToInt32(HudContainer.dictEntriesOfInterest["needIndex"])]
+                .children[4].children[0].dictEntriesOfInterest["_setText"].ToString();
             var CurrentState = HudContainer.children[Convert.ToInt32(HudContainer.dictEntriesOfInterest["needIndex"])]
-                    .children[4].children[1].dictEntriesOfInterest["_setText"].ToString();
+                .children[4].children[1].dictEntriesOfInterest["_setText"].ToString();
 
-            return CurrentState;
+            ShipState.CurrentItemAndDistance = CurrentItem;
+            ShipState.CurrentState = CurrentState;
+
+            return ShipState;
         }
         static public UITreeNode GetHudContainer()
         {

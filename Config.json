@@ -1,16 +1,18 @@
 {
   "AutopilotMode" : false,
-  "FarmExp": false,
+  "FarmExp": true,
   "SpotName" : "dange1",
-  "LockRange" : 57,
-  "WeaponsRange" : 24,
+  "LockRange" : 66,
+  "WeaponsRange" : 41,
+  "Missiles" : "Scourge Light Missile",
   "PropModule" : "AB",
   "ActiveTank" : false,
   "AutoMissile" : false,
   "NickName" : "Kitness",
-  "ShipName" : "Kestrel",
+  "ShipName" : "Caracal",
   "SecondModule" : false,
   "AverageDelay" : 500,
+  "LimiteCargoVolumeForUnload" : 250,
   "SpecialUnloadingMode" : false,
   "StationForUnload" : "Jita V - Moon 17"
 }

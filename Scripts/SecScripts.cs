@@ -96,22 +96,20 @@ namespace EVE_Bot.Scripts
             General.ChangeTab("General");
 
             //продолжить фармить экспу или аномальку
-            (int XBlock, int YBlock) = Finders.FindExpBlock();
-            (int XAcGate, int YAcGate) = Finders.FindAccelerationGate();
-            if (XBlock != 0 || XAcGate != 0)
+            var Block = Finders.FindExpBlock();
+            var AcGate = Finders.FindAccelerationGate();
+            if (Block != null || AcGate != null)
             {
-                if (XBlock != 0)
+                ThreadManager.FlightManeuver = "Orbit";
+                ThreadManager.ExpectedState = "Orbiting";
+                if (Block != null)
                 {
-                    Emulators.ClickLB(XBlock, YBlock);
+                    ThreadManager.ItemInSpace = Block.Name;
                 }
-                else if (XAcGate != 0)
+                else if (AcGate != null)
                 {
-                    Emulators.ClickLB(XAcGate, YAcGate);
+                    ThreadManager.ItemInSpace = AcGate.Name;
                 }
-                Thread.Sleep(AvgDeley + r.Next(-100, 100));
-                var OrbBtn = General.GetCoordsButtonActiveItem("Orbit");
-                Emulators.ClickLB(OrbBtn.Item1, OrbBtn.Item2);
-                Thread.Sleep(AvgDeley + r.Next(-100, 100));
                 General.ModuleActivityManager(ModulesInfo.MWD, true);
 
                 MainScripts.ClearExpRoom();
@@ -123,6 +121,7 @@ namespace EVE_Bot.Scripts
             }
             ThreadManager.MultiplierSleep = 10;
         }
+
 
         static public void DockingAndCheckingForSuicides()
         {
@@ -149,106 +148,6 @@ namespace EVE_Bot.Scripts
                 }
             }
             General.Undock();
-        }
-
-        static public void FlyOffInLowHP()
-        {
-            FlyOff();
-            for (int j = 0; j < 38; j++) // прим 5 мин
-            {
-                if (!Checkers.ShipInLowHP(50))
-                {
-                    (int XBlock, int YBlock) = Finders.FindExpBlock();
-                    (int XAcGate, int YAcGate) = Finders.FindAccelerationGate();
-                    if (XBlock > 0)
-                    {
-                        while (!Emulators.AllowControlEmulator)
-                        {
-                            Thread.Sleep(20);
-                        }
-                        
-                        Emulators.AllowControlEmulator = false;
-                        for (int i = 0; i < 5; i++)
-                        {
-                            Emulators.ClickLBForLockTargets(XBlock, YBlock);
-                            Thread.Sleep(AvgDeley + r.Next(-100, 100));
-                            var OrbBtn = General.GetCoordsButtonActiveItem("Orbit");
-                            Emulators.ClickLBForLockTargets(OrbBtn.Item1, OrbBtn.Item1);
-                            if (Checkers.CheckState("Orbiting"))
-                                break;
-                        }
-                        Emulators.AllowControlEmulator = true;
-                    }
-                    else if (XAcGate > 0)
-                    {
-                        while (!Emulators.AllowControlEmulator)
-                        {
-                            Thread.Sleep(20);
-                        }
-
-                        Emulators.AllowControlEmulator = false;
-                        for (int i = 0; i < 5; i++)
-                        {
-                            Emulators.ClickLBForLockTargets(XAcGate, YAcGate);
-                            Thread.Sleep(AvgDeley + r.Next(-100, 100));
-                            var OrbBtn = General.GetCoordsButtonActiveItem("Orbit");
-                            Emulators.ClickLBForLockTargets(OrbBtn.Item1, OrbBtn.Item1);
-                            if (Checkers.CheckState("Orbiting"))
-                                break;
-                        }
-                        Emulators.AllowControlEmulator = true;
-                    }
-                    else
-                    {
-                        while (!Emulators.AllowControlEmulator)
-                        {
-                            Thread.Sleep(20);
-                        }
-
-                        (int XCont, int YCont) = Finders.FindObjectByWordInOverview("Cargo Container");
-                        Emulators.AllowControlEmulator = false;
-                        for (int i = 0; i < 5; i++)
-                        {
-                            Emulators.ClickLBForLockTargets(XCont, YCont);
-                            Thread.Sleep(AvgDeley + r.Next(-100, 100));
-                            var OrbBtn = General.GetCoordsButtonActiveItem("Orbit");
-                            Emulators.ClickLBForLockTargets(OrbBtn.Item1, OrbBtn.Item1);
-                            if (Checkers.CheckState("Orbiting"))
-                                break;
-                        }
-                        Emulators.AllowControlEmulator = true;
-                    }
-                    return;
-                }
-                Thread.Sleep(1000 * 8);
-            }
-        }
-
-        static public void FlyOff()
-        {
-            while (!Emulators.AllowControlEmulator)
-            {
-                Thread.Sleep(20);
-            }
-
-            (int XStationOrGate, int YStationOrGate) = Finders.FindObjectByWordInOverview("Station");
-
-            if (XStationOrGate == 0)
-            {
-                (XStationOrGate, YStationOrGate) = Finders.FindObjectByWordInOverview("Stargate");
-            }
-
-            Emulators.AllowControlEmulator = false;
-            for (int i = 0; i < 5; i++)
-            {
-                Emulators.ClickLBForLockTargets(XStationOrGate, YStationOrGate);
-                Thread.Sleep(AvgDeley + r.Next(-100, 100));
-                var OrbBtn = General.GetCoordsButtonActiveItem("Approach");
-                Emulators.ClickLBForLockTargets(OrbBtn.Item1, OrbBtn.Item1);
-                if (Checkers.CheckState("Approaching"))
-                    break;
-            }
-            Emulators.AllowControlEmulator = true;
         }
 
         static public void UnloadCargo()
@@ -287,12 +186,18 @@ namespace EVE_Bot.Scripts
                 ThreadManager.AllowDScan = true;
                 return;
             }
-            Emulators.ClickRB(XlocChatWindowStack + 170, YlocChatWindowStack + 75);
+
+            // unload
+            var Inventory = Invent.GetInfo();
+            var missiles = Inventory.Find(item => item.Name.Contains(Config.Missiles));
+            Emulators.ClickRB(missiles.Pos.x, missiles.Pos.y);
             Thread.Sleep(AvgDeley + r.Next(-100, 100));
-            Emulators.ClickLB(XlocChatWindowStack + 170 + 60, YlocChatWindowStack + 75 + 12);
+            General.ClickInContextMenu("Invert Selection");
             Thread.Sleep(AvgDeley + r.Next(-100, 100));
 
-            Emulators.Drag(XlocChatWindowStack + 210, YlocChatWindowStack + 115, XlocChatWindowStack + 60, YlocChatWindowStack + 125);
+            var anyItem = Inventory.Find(item => !item.Name.Contains(Config.Missiles));
+
+            Emulators.Drag(anyItem.Pos.x, anyItem.Pos.y, XlocChatWindowStack + 60, YlocChatWindowStack + 125);
             Thread.Sleep(AvgDeley + r.Next(-100, 100));
 
             General.Undock();
@@ -357,6 +262,7 @@ namespace EVE_Bot.Scripts
             {
                 Console.WriteLine("try to open inventary");
                 Emulators.PressButton((int)WinApi.VirtualKeyShort.VK_NUMPAD3);
+                Thread.Sleep(2000 + r.Next(-100, 100));
                 Inventory = Invent.GetInfo();
                 if (Inventory == null)
                 {
@@ -366,20 +272,20 @@ namespace EVE_Bot.Scripts
             }
             foreach (var item in Inventory)
             {
-                Console.WriteLine(item.Name);
-                Console.WriteLine(item.Amount);
-                if (item.Name.Contains("Guristas Inferno Light Missile") && item.Amount < 100)
+                //Console.WriteLine(item.Name);
+                //Console.WriteLine(item.Amount);
+                if (item.Name.Contains(Config.Missiles) && item.Amount < 1000)
                 {
                     Console.WriteLine("Not enough amount missiles = {0}", item.Amount);
                     General.DockToStationAndExit();
                 }
-                else if (item.Name.Contains("Guristas Inferno Light Missile") && item.Amount >= 100)
+                else if (item.Name.Contains(Config.Missiles) && item.Amount >= 1000)
                 {
                     Console.WriteLine("Amount missiles = {0}", item.Amount);
                 }
             }
 
-            //if (Inventory.Find(item => item.Name.Contains("Guristas Inferno Light Missile")).Amount < 100)
+            //if (Inventory.Find(item => item.Name.Contains(ModulesInfo.Missiles)).Amount < 100)
             //    General.DockToStationAndExit();
 
             //if (Checkers.CheckQuantityDrones() < 3)

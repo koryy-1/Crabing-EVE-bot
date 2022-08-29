@@ -12,6 +12,7 @@ namespace EVE_Bot.Controllers
     static public class MissileController
     {
         static ModulesInfo ModulesInfo = new ModulesInfo();
+        static int CountTimeFor0Amount = 0;
 
 
         static public Thread MissileControlSystem = new Thread(() =>
@@ -25,16 +26,18 @@ namespace EVE_Bot.Controllers
                     {
                         MissileMonitor = new Thread(Wrapper);
                         MissileMonitor.Start();
-                        Console.WriteLine("starting thread MissileMonitor");
+                        //Console.WriteLine("starting thread MissileMonitor");
                     }
                 }
                 else
                 {
                     if (MissileMonitor.IsAlive)
                     {
-                        Console.WriteLine("stoping thread MissileMonitor");
+                        //Console.WriteLine("stoping thread MissileMonitor");
                         MissileMonitor.Interrupt();
                         MissileMonitor.Join();
+                        Emulators.AllowControlEmulator = true;
+                        Emulators.ClickRB(500, 100);
                     }
                 }
 
@@ -45,24 +48,38 @@ namespace EVE_Bot.Controllers
         {
             while (true)
             {
-                List<Module> AllModules = HI.GetAllModulesInfo(HI.GetHudContainer());
+                Module MissileLauncher = HI.GetAllModulesInfo(HI.GetHudContainer())
+                    .Find(module => module.Name == ModulesInfo.MissileLauncher);
 
-                for (int i = 0; i < AllModules.Count; i++)
+                if (MissileLauncher == null)
                 {
-                    Module Module = AllModules[i];
-                    if (Module.Type == "high" && Module.Mode == "idle" && Module.AmountСharges != 0)
-                    {
-                        Console.WriteLine("missiles are idle");
-                        General.ModuleActivityManager(ModulesInfo.MissileLauncher, true);
-                    }
-                    else if (Module.Type == "high" && Module.Mode == "idle" && Module.AmountСharges == 0)
-                    {
-                        General.DockToStationAndExit();
-                    }
-                    General.EnsureTargetIsAvailable();
+                    Console.WriteLine($"{ModulesInfo.MissileLauncher} not found");
+                    General.DockToStationAndExit();
                 }
 
-                Thread.Sleep(500);
+                if (MissileLauncher.Mode == "idle" && MissileLauncher.AmountСharges != 0)
+                {
+                    //Console.WriteLine("missiles are idle");
+                    General.ModuleActivityManager(ModulesInfo.MissileLauncher, true);
+                    CountTimeFor0Amount = 0;
+                }
+                else if (MissileLauncher.Mode == "reloading")
+                {
+                    CountTimeFor0Amount = 0;
+                }
+                else if (MissileLauncher.Mode == "idle" && MissileLauncher.AmountСharges == 0)
+                {
+                    CountTimeFor0Amount++;
+                }
+                if (CountTimeFor0Amount > 10)
+                {
+                    Console.WriteLine("missiles are over, amount = {0}", MissileLauncher.AmountСharges);
+                    General.DockToStationAndExit();
+                }
+                
+                General.EnsureTargetIsAvailable();
+
+                Thread.Sleep(300);
             }
         }
         static void EnsureStartThread(Thread MissileMonitor)
@@ -91,7 +108,10 @@ namespace EVE_Bot.Controllers
             }
             catch (ThreadInterruptedException)
             {
-                General.ModuleActivityManager(ModulesInfo.MissileLauncher, false);
+                //if (OV.GetInfo().Exists(item => item.TargetLocked))
+                //{
+                //    General.ModuleActivityManager(ModulesInfo.RapidMissileLauncher, false);
+                //}
                 //Console.WriteLine(e.Message);
             }
         }

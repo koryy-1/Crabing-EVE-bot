@@ -159,43 +159,82 @@ namespace EVE_Bot.Searchers
             && ComparedColor.Blue == 10)
                 return "red";
 
+            if (ComparedColor.Red == 100
+            && ComparedColor.Green == 100
+            && ComparedColor.Blue == 100)
+                return "white";
+
             return null;
         }
 
-        static public (int, int) FindAccelerationGate()
+        static public OverviewItem FindAccelerationGate()
         {
             List<OverviewItem> OverviewInfo = OV.GetInfo();
             if (OverviewInfo == null)
-                return (0, 0);
+                return null;
 
             foreach (var item in OverviewInfo)
             {
                 if (item.Name.Contains("Acceleration Gate") || item.Type.Contains("Acceleration Gate"))
-                    return (item.Pos.x, item.Pos.y);
+                    return item;
             }
-            return (0, 0);
+            return null;
         }
 
-        static public (int, int) FindExpBlock()
+        static public OverviewItem FindExpBlock()
         {
             List<OverviewItem> OverviewInfo = OV.GetInfo();
             if (OverviewInfo == null)
-                return (0, 0);
+                return null;
 
             foreach (var item in OverviewInfo)
             {
                 if (item.Name.Contains("Radiating Telescope") || item.Type.Contains("Radiating Telescope")
                     || item.Name.Contains("Serpentis Supply Stronghold") || item.Type.Contains("Serpentis Supply Stronghold"))
-                    return (item.Pos.x, item.Pos.y);
+                    return item;
             }
-            return (0, 0);
+            return null;
+        }
+
+        static public string GetDirectionIconFilter()
+        {
+            var Overview = OV.GetInfo();
+
+            var Sun = Overview.Find(item => item.Type.StartsWith("Sun"));
+            if (Sun == null)
+                return "no info";
+            var Stargate = Overview.Find(item => GetColorInfo(item.Colors) is "white" && item.Type.Contains("Stargate"));
+
+            if (Sun.Pos.y < Stargate.Pos.y)
+                return "up";
+            else
+                return "down";
+        }
+
+        static public void SetIconFilter(string NeedDirection)
+        {
+            var CurrentDirection = GetDirectionIconFilter();
+
+            if (CurrentDirection == "no info")
+            {
+                Console.WriteLine("no info about icon filter");
+                var IconFilter = FindIconFilter();
+                Emulators.ClickLB(IconFilter.Item1, IconFilter.Item2);
+                return;
+            }
+            if (CurrentDirection != NeedDirection)
+            {
+                var IconFilter = FindIconFilter();
+                Emulators.ClickLB(IconFilter.Item1, IconFilter.Item2);
+                return;
+            }
         }
 
         static public (int, int) FindIconFilter()
         {
             var (XlocOverview, YlocOverview) = Finders.FindLocWnd("OverView");
 
-            Console.WriteLine("Icon filter on X : {0}, Y : {1}", XlocOverview + 16, YlocOverview + 57 + 23); // check filter down or up
+            //Console.WriteLine("Icon filter on X : {0}, Y : {1}", XlocOverview + 16, YlocOverview + 57 + 23);
             return (XlocOverview + 16, YlocOverview + 57);
         }
 

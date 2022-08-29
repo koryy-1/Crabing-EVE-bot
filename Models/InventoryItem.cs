@@ -12,6 +12,6 @@ namespace EVE_Bot.Models
         }
         public string Name { get; set; }
         public Point Pos { get; set; }
-        public int Amount { get; set; }
+        public int Amount { get; set; } = 1;
     }
 }

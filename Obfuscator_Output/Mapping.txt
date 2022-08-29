@@ -1,0 +1,2185 @@
+Renamed Types:
+
+[EVE-Bot]<>f__AnonymousType0`2 -> [EVE-Bot] . `2
+{
+	[EVE-Bot]<>f__AnonymousType0`2::get_uiTree[0]( ) ->  
+	[EVE-Bot]<>f__AnonymousType0`2::get_nodeCount[0]( ) ->  
+
+	[EVE-Bot]<>f__AnonymousType0`2::.ctor[2]( !0, !1 ) skipped:  special name
+	[EVE-Bot]<>f__AnonymousType0`2::Equals[1]( [System.Runtime]System.Object ) skipped:  external base class or interface
+	[EVE-Bot]<>f__AnonymousType0`2::GetHashCode[0]( ) skipped:  external base class or interface
+	[EVE-Bot]<>f__AnonymousType0`2::ToString[0]( ) skipped:  external base class or interface
+
+	<uiTree>j__TPar [EVE-Bot]<uiTree>j__TPar <>f__AnonymousType0`2::<uiTree>i__Field ->  
+	<nodeCount>j__TPar [EVE-Bot]<nodeCount>j__TPar <>f__AnonymousType0`2::<nodeCount>i__Field ->  
+
+	  [EVE-Bot]  <>f__AnonymousType0`2::uiTree -> dropped
+	  [EVE-Bot]  <>f__AnonymousType0`2::nodeCount -> dropped
+}
+
+[EVE-Bot]TimeJson -> [EVE-Bot] . 
+{
+	[EVE-Bot]TimeJson::get_Unixtime[0]( ) ->  
+	[EVE-Bot]TimeJson::set_Unixtime[1]( [System.Runtime]System.Int32 ) ->  
+
+	[EVE-Bot]TimeJson::.ctor[0]( ) skipped:  special name
+
+	System.Int32 [EVE-Bot]System.Int32 TimeJson::<Unixtime>k__BackingField ->  
+
+	System.Int32 [EVE-Bot]System.Int32 TimeJson::Unixtime -> dropped
+}
+
+[EVE-Bot]EVE_Bot.Searchers.Window -> [EVE-Bot] . 
+{
+	[EVE-Bot]EVE_Bot.Searchers.Window::GetSysValues[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.Window::PostRequestAsync[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.Window::GetRootAddress[2]( [System.Runtime]System.String, [System.Runtime]System.Int32 ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.Window::GetCoordWindow[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.Window::GetHeightWindow[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.Window::GetWidthWindow[1]( [System.Runtime]System.String ) ->  
+
+	[EVE-Bot]EVE_Bot.Searchers.Window::.cctor[0]( ) skipped:  special name
+
+	System.String [EVE-Bot]System.String EVE_Bot.Searchers.Window::RootAddress ->  
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Searchers.Window::processId ->  
+	System.IntPtr [EVE-Bot]System.IntPtr EVE_Bot.Searchers.Window::hWnd ->  
+}
+
+[EVE-Bot]EVE_Bot.Searchers.SomeWindow -> [EVE-Bot] . 
+{
+	[EVE-Bot]EVE_Bot.Searchers.SomeWindow::GetCoordWindow[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.SomeWindow::GetHeightWindow[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.SomeWindow::GetWidthWindow[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.SomeWindow::GetBtnLootAll[1]( [System.Runtime]System.String ) ->  
+
+	[EVE-Bot]EVE_Bot.Searchers.SomeWindow::.ctor[1]( [System.Runtime]System.String ) skipped:  special name
+
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Searchers.SomeWindow::XlocWnd ->  
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Searchers.SomeWindow::YlocWnd ->  
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Searchers.SomeWindow::WidthLeftSidebar ->  
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Searchers.SomeWindow::HeightInventory ->  
+}
+
+[EVE-Bot]EVE_Bot.Scripts.FV -> [EVE-Bot] . 
+{
+	[EVE-Bot]EVE_Bot.Scripts.FV::StartFarmingFV[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.FV::FarmFV[0]( ) ->  
+
+	[EVE-Bot]EVE_Bot.Scripts.FV::.cctor[0]( ) skipped:  special name
+
+	System.Random [EVE-Bot]System.Random EVE_Bot.Scripts.FV::r ->  
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Scripts.FV::AvgDeley ->  
+	EVE_Bot.Models.ModulesInfo [EVE-Bot]EVE_Bot.Models.ModulesInfo EVE_Bot.Scripts.FV::ModulesInfo ->  
+}
+
+[EVE-Bot]EVE_Bot.Scripts.General -> [EVE-Bot] . 
+{
+	[EVE-Bot]EVE_Bot.Scripts.General::ModuleActivityManager[3]( [System.Runtime]System.String, [System.Runtime]System.Boolean, [System.Runtime]System.Boolean ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General::ActivateModule[2]( [System.Runtime]System.String, [System.Runtime]System.Boolean ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General::DeactivateModule[2]( [System.Runtime]System.String, [System.Runtime]System.Boolean ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General::EnsureUndocked[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General::RepairShip[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General::Undock[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General::DockToStationAndExit[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General::Orbiting[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General::OrbitViaContextMenu[2]( [System.Runtime]System.String, [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General::ClickInContextMenu[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General::GetCoordsEntityOnScreen[1]( [EVE-Bot]read_memory_64_bit.UITreeNode ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General::GetCoordsButtonActiveItem[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General::GotoInActiveItem[2]( [System.Runtime]System.String, [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General::EnsureFormFleet[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General::SetSpeed[1]( [System.Runtime]System.Int32 ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General::ChangeTab[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General::FindItemInCargo[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General::CheckCargo[1]( [System.Runtime]System.Int32 ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General::CheckCargoPrice[1]( [System.Runtime]System.Int32 ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General::CheckVolumeCargo[1]( [System.Runtime]System.Int32 ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General::WarpToSpot[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General::SortItems[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General::UnlockNotEnemyTargets[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General::EnsureTargetIsAvailable[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General::AttackingTargetIsAvailable[1]( [System.Collections]System.Collections.Generic.List`1<[EVE-Bot]EVE_Bot.Models.OverviewItem> ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General::ChangeTarget[1]( [System.Collections]System.Collections.Generic.List`1<[EVE-Bot]EVE_Bot.Models.OverviewItem> ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General::LochedTargetsAreAvailable[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General::UnlockTargets[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General::GetUITrees[0]( ) ->  
+
+	[EVE-Bot]EVE_Bot.Scripts.General::.ctor[0]( ) skipped:  special name
+	[EVE-Bot]EVE_Bot.Scripts.General::.cctor[0]( ) skipped:  special name
+
+	System.Random [EVE-Bot]System.Random EVE_Bot.Scripts.General::r ->  
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Scripts.General::AvgDeley ->  
+	EVE_Bot.Models.ModulesInfo [EVE-Bot]EVE_Bot.Models.ModulesInfo EVE_Bot.Scripts.General::ModulesInfo ->  
+}
+
+[EVE-Bot]EVE_Bot.Scripts.MainScripts -> [EVE-Bot] . 
+{
+	[EVE-Bot]EVE_Bot.Scripts.MainScripts::BotStart[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.MainScripts::Pause[3]( [System.Runtime]System.DateTime, [System.Runtime]System.Int32, [System.Runtime]System.Int32 ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.MainScripts::FarmAnomalies[1]( [System.Runtime]System.DateTime ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.MainScripts::DestroyTargetsInRoom[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.MainScripts::PreparationForCombatReadiness[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.MainScripts::CancellationOfCombatReadiness[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.MainScripts::GotoFarmExp[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.MainScripts::FindExpidition[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.MainScripts::WarpToLocExp[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.MainScripts::StartClearExp[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.MainScripts::ClearExpRoom[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.MainScripts::CheckForConnectionLost[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.MainScripts::CurrentSystemIsDanger[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.MainScripts::CheckDScan[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.MainScripts::DockingFromSuicides[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.MainScripts::GotoNextSystem[1]( [System.Runtime]System.Boolean ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.MainScripts::GetCoordsNextSystem[0]( ) -> ​
+	[EVE-Bot]EVE_Bot.Scripts.MainScripts::DestroyTargets[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.MainScripts::EngageTarget[0]( ) -> ‐
+	[EVE-Bot]EVE_Bot.Scripts.MainScripts::WatchDistance[0]( ) -> ‑
+	[EVE-Bot]EVE_Bot.Scripts.MainScripts::GotoLootCont[2]( [System.Runtime]System.String, [System.Runtime]System.Int32 ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.MainScripts::sleep[1]( [System.Runtime]System.Int32 ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.MainScripts::GetUITrees[0]( ) -> ‒
+
+	[EVE-Bot]EVE_Bot.Scripts.MainScripts::.cctor[0]( ) skipped:  special name
+
+	System.Random [EVE-Bot]System.Random EVE_Bot.Scripts.MainScripts::r ->  
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Scripts.MainScripts::AvgDeley ->  
+	EVE_Bot.Models.ModulesInfo [EVE-Bot]EVE_Bot.Models.ModulesInfo EVE_Bot.Scripts.MainScripts::ModulesInfo ->  
+}
+
+[EVE-Bot]EVE_Bot.Scripts.SecScripts -> [EVE-Bot] . 
+{
+	[EVE-Bot]EVE_Bot.Scripts.SecScripts::CheckSituation[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.SecScripts::DockingAndCheckingForSuicides[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.SecScripts::UnloadCargo[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.SecScripts::StartLayRoute[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.SecScripts::RemoveWaypoint[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.SecScripts::CheckMissilesAmount[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.SecScripts::GetUITrees[0]( ) ->  
+
+	[EVE-Bot]EVE_Bot.Scripts.SecScripts::.cctor[0]( ) skipped:  special name
+
+	System.Random [EVE-Bot]System.Random EVE_Bot.Scripts.SecScripts::r ->  
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Scripts.SecScripts::AvgDeley ->  
+	EVE_Bot.Models.ModulesInfo [EVE-Bot]EVE_Bot.Models.ModulesInfo EVE_Bot.Scripts.SecScripts::ModulesInfo ->  
+}
+
+[EVE-Bot]EVE_Bot.Scripts.SecScriptsForFV -> [EVE-Bot] .​
+{
+	[EVE-Bot]EVE_Bot.Scripts.SecScriptsForFV::CheckReadyForFV[0]( ) ->  
+
+	[EVE-Bot]EVE_Bot.Scripts.SecScriptsForFV::.cctor[0]( ) skipped:  special name
+
+	System.Random [EVE-Bot]System.Random EVE_Bot.Scripts.SecScriptsForFV::r ->  
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Scripts.SecScriptsForFV::AvgDeley ->  
+	EVE_Bot.Models.ModulesInfo [EVE-Bot]EVE_Bot.Models.ModulesInfo EVE_Bot.Scripts.SecScriptsForFV::ModulesInfo ->  
+}
+
+[EVE-Bot]EVE_Bot.Models.ActiveItemInfo -> [EVE-Bot] .‪
+{
+	[EVE-Bot]EVE_Bot.Models.ActiveItemInfo::get_Name[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.ActiveItemInfo::set_Name[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Models.ActiveItemInfo::get_Distance[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.ActiveItemInfo::set_Distance[1]( [EVE-Bot]EVE_Bot.Models.Distance ) ->  
+	[EVE-Bot]EVE_Bot.Models.ActiveItemInfo::get_Buttons[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.ActiveItemInfo::set_Buttons[1]( [EVE-Bot]EVE_Bot.Models.AtciveItemButton[] ) ->  
+
+	[EVE-Bot]EVE_Bot.Models.ActiveItemInfo::.ctor[0]( ) skipped:  special name
+
+	System.String [EVE-Bot]System.String EVE_Bot.Models.ActiveItemInfo::<Name>k__BackingField ->  
+	EVE_Bot.Models.Distance [EVE-Bot]EVE_Bot.Models.Distance EVE_Bot.Models.ActiveItemInfo::<Distance>k__BackingField ->  
+	EVE_Bot.Models.AtciveItemButton[] [EVE-Bot]EVE_Bot.Models.AtciveItemButton[] EVE_Bot.Models.ActiveItemInfo::<Buttons>k__BackingField ->  
+
+	System.String [EVE-Bot]System.String EVE_Bot.Models.ActiveItemInfo::Name -> dropped
+	EVE_Bot.Models.Distance [EVE-Bot]EVE_Bot.Models.Distance EVE_Bot.Models.ActiveItemInfo::Distance -> dropped
+	EVE_Bot.Models.AtciveItemButton[] [EVE-Bot]EVE_Bot.Models.AtciveItemButton[] EVE_Bot.Models.ActiveItemInfo::Buttons -> dropped
+}
+
+[EVE-Bot]EVE_Bot.Models.AtciveItemButton -> [EVE-Bot] .‫
+{
+	[EVE-Bot]EVE_Bot.Models.AtciveItemButton::get_BtnName[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.AtciveItemButton::set_BtnName[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Models.AtciveItemButton::get_Pos[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.AtciveItemButton::set_Pos[1]( [EVE-Bot]EVE_Bot.Models.Point ) ->  
+
+	[EVE-Bot]EVE_Bot.Models.AtciveItemButton::.ctor[0]( ) skipped:  special name
+
+	System.String [EVE-Bot]System.String EVE_Bot.Models.AtciveItemButton::<BtnName>k__BackingField ->  
+	EVE_Bot.Models.Point [EVE-Bot]EVE_Bot.Models.Point EVE_Bot.Models.AtciveItemButton::<Pos>k__BackingField ->  
+
+	System.String [EVE-Bot]System.String EVE_Bot.Models.AtciveItemButton::BtnName -> dropped
+	EVE_Bot.Models.Point [EVE-Bot]EVE_Bot.Models.Point EVE_Bot.Models.AtciveItemButton::Pos -> dropped
+}
+
+[EVE-Bot]EVE_Bot.Models.ChatPlayer -> [EVE-Bot] .‬
+{
+	[EVE-Bot]EVE_Bot.Models.ChatPlayer::get_Nickname[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.ChatPlayer::set_Nickname[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Models.ChatPlayer::get_PlayerType[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.ChatPlayer::set_PlayerType[1]( [System.Runtime]System.String ) ->  
+
+	[EVE-Bot]EVE_Bot.Models.ChatPlayer::.ctor[0]( ) skipped:  special name
+
+	System.String [EVE-Bot]System.String EVE_Bot.Models.ChatPlayer::<Nickname>k__BackingField ->  
+	System.String [EVE-Bot]System.String EVE_Bot.Models.ChatPlayer::<PlayerType>k__BackingField ->  
+
+	System.String [EVE-Bot]System.String EVE_Bot.Models.ChatPlayer::Nickname -> dropped
+	System.String [EVE-Bot]System.String EVE_Bot.Models.ChatPlayer::PlayerType -> dropped
+}
+
+[EVE-Bot]EVE_Bot.Models.Colors -> [EVE-Bot] .‭
+{
+	[EVE-Bot]EVE_Bot.Models.Colors::get_Red[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.Colors::set_Red[1]( [System.Runtime]System.Int32 ) ->  
+	[EVE-Bot]EVE_Bot.Models.Colors::get_Green[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.Colors::set_Green[1]( [System.Runtime]System.Int32 ) ->  
+	[EVE-Bot]EVE_Bot.Models.Colors::get_Blue[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.Colors::set_Blue[1]( [System.Runtime]System.Int32 ) ->  
+
+	[EVE-Bot]EVE_Bot.Models.Colors::.ctor[0]( ) skipped:  special name
+
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Models.Colors::<Red>k__BackingField ->  
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Models.Colors::<Green>k__BackingField ->  
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Models.Colors::<Blue>k__BackingField ->  
+
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Models.Colors::Red -> dropped
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Models.Colors::Green -> dropped
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Models.Colors::Blue -> dropped
+}
+
+[EVE-Bot]EVE_Bot.Models.Distance -> [EVE-Bot] .‮
+{
+	[EVE-Bot]EVE_Bot.Models.Distance::get_value[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.Distance::set_value[1]( [System.Runtime]System.Int32 ) ->  
+	[EVE-Bot]EVE_Bot.Models.Distance::get_measure[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.Distance::set_measure[1]( [System.Runtime]System.String ) ->  
+
+	[EVE-Bot]EVE_Bot.Models.Distance::.ctor[0]( ) skipped:  special name
+
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Models.Distance::<value>k__BackingField ->  
+	System.String [EVE-Bot]System.String EVE_Bot.Models.Distance::<measure>k__BackingField ->  
+
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Models.Distance::value -> dropped
+	System.String [EVE-Bot]System.String EVE_Bot.Models.Distance::measure -> dropped
+}
+
+[EVE-Bot]EVE_Bot.Models.DroneInfo -> [EVE-Bot] . 
+{
+	[EVE-Bot]EVE_Bot.Models.DroneInfo::get_Pos[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.DroneInfo::set_Pos[1]( [EVE-Bot]EVE_Bot.Models.Point ) ->  
+	[EVE-Bot]EVE_Bot.Models.DroneInfo::get_WorkMode[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.DroneInfo::set_WorkMode[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Models.DroneInfo::get_HealthPoints[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.DroneInfo::set_HealthPoints[1]( [EVE-Bot]EVE_Bot.Models.HealthPoints ) ->  
+
+	[EVE-Bot]EVE_Bot.Models.DroneInfo::.ctor[0]( ) skipped:  special name
+
+	EVE_Bot.Models.Point [EVE-Bot]EVE_Bot.Models.Point EVE_Bot.Models.DroneInfo::<Pos>k__BackingField ->  
+	System.String [EVE-Bot]System.String EVE_Bot.Models.DroneInfo::<WorkMode>k__BackingField ->  
+	EVE_Bot.Models.HealthPoints [EVE-Bot]EVE_Bot.Models.HealthPoints EVE_Bot.Models.DroneInfo::<HealthPoints>k__BackingField ->  
+
+	EVE_Bot.Models.Point [EVE-Bot]EVE_Bot.Models.Point EVE_Bot.Models.DroneInfo::Pos -> dropped
+	System.String [EVE-Bot]System.String EVE_Bot.Models.DroneInfo::WorkMode -> dropped
+	EVE_Bot.Models.HealthPoints [EVE-Bot]EVE_Bot.Models.HealthPoints EVE_Bot.Models.DroneInfo::HealthPoints -> dropped
+}
+
+[EVE-Bot]EVE_Bot.Models.DScanItem -> [EVE-Bot] .′
+{
+	[EVE-Bot]EVE_Bot.Models.DScanItem::get_IconType[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.DScanItem::set_IconType[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Models.DScanItem::get_Distance[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.DScanItem::set_Distance[1]( [EVE-Bot]EVE_Bot.Models.Distance ) ->  
+	[EVE-Bot]EVE_Bot.Models.DScanItem::get_Name[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.DScanItem::set_Name[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Models.DScanItem::get_Type[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.DScanItem::set_Type[1]( [System.Runtime]System.String ) ->  
+
+	[EVE-Bot]EVE_Bot.Models.DScanItem::.ctor[0]( ) skipped:  special name
+
+	System.String [EVE-Bot]System.String EVE_Bot.Models.DScanItem::<IconType>k__BackingField ->  
+	EVE_Bot.Models.Distance [EVE-Bot]EVE_Bot.Models.Distance EVE_Bot.Models.DScanItem::<Distance>k__BackingField ->  
+	System.String [EVE-Bot]System.String EVE_Bot.Models.DScanItem::<Name>k__BackingField ->  
+	System.String [EVE-Bot]System.String EVE_Bot.Models.DScanItem::<Type>k__BackingField ->  
+
+	System.String [EVE-Bot]System.String EVE_Bot.Models.DScanItem::IconType -> dropped
+	EVE_Bot.Models.Distance [EVE-Bot]EVE_Bot.Models.Distance EVE_Bot.Models.DScanItem::Distance -> dropped
+	System.String [EVE-Bot]System.String EVE_Bot.Models.DScanItem::Name -> dropped
+	System.String [EVE-Bot]System.String EVE_Bot.Models.DScanItem::Type -> dropped
+}
+
+[EVE-Bot]EVE_Bot.Models.HealthPoints -> [EVE-Bot] .‵
+{
+	[EVE-Bot]EVE_Bot.Models.HealthPoints::get_Shield[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.HealthPoints::set_Shield[1]( [System.Runtime]System.Int32 ) ->  
+	[EVE-Bot]EVE_Bot.Models.HealthPoints::get_Armor[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.HealthPoints::set_Armor[1]( [System.Runtime]System.Int32 ) ->  
+	[EVE-Bot]EVE_Bot.Models.HealthPoints::get_Structure[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.HealthPoints::set_Structure[1]( [System.Runtime]System.Int32 ) ->  
+
+	[EVE-Bot]EVE_Bot.Models.HealthPoints::.ctor[0]( ) skipped:  special name
+
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Models.HealthPoints::<Shield>k__BackingField ->  
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Models.HealthPoints::<Armor>k__BackingField ->  
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Models.HealthPoints::<Structure>k__BackingField ->  
+
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Models.HealthPoints::Shield -> dropped
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Models.HealthPoints::Armor -> dropped
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Models.HealthPoints::Structure -> dropped
+}
+
+[EVE-Bot]EVE_Bot.Models.HudInterface -> [EVE-Bot] .″
+{
+	[EVE-Bot]EVE_Bot.Models.HudInterface::get_Pos[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.HudInterface::set_Pos[1]( [EVE-Bot]EVE_Bot.Models.Point ) ->  
+	[EVE-Bot]EVE_Bot.Models.HudInterface::get_AllModules[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.HudInterface::set_AllModules[1]( [System.Collections]System.Collections.Generic.List`1<[EVE-Bot]EVE_Bot.Models.Module> ) ->  
+	[EVE-Bot]EVE_Bot.Models.HudInterface::get_HealthPoints[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.HudInterface::set_HealthPoints[1]( [EVE-Bot]EVE_Bot.Models.HealthPoints ) ->  
+	[EVE-Bot]EVE_Bot.Models.HudInterface::get_CurrentSpeed[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.HudInterface::set_CurrentSpeed[1]( [System.Runtime]System.Int32 ) ->  
+	[EVE-Bot]EVE_Bot.Models.HudInterface::get_ShipState[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.HudInterface::set_ShipState[1]( [System.Runtime]System.String ) ->  
+
+	[EVE-Bot]EVE_Bot.Models.HudInterface::.ctor[0]( ) skipped:  special name
+
+	EVE_Bot.Models.Point [EVE-Bot]EVE_Bot.Models.Point EVE_Bot.Models.HudInterface::<Pos>k__BackingField ->  
+	System.Collections.Generic.List`1<EVE_Bot.Models.Module> [EVE-Bot]System.Collections.Generic.List`1<EVE_Bot.Models.Module> EVE_Bot.Models.HudInterface::<AllModules>k__BackingField ->  
+	EVE_Bot.Models.HealthPoints [EVE-Bot]EVE_Bot.Models.HealthPoints EVE_Bot.Models.HudInterface::<HealthPoints>k__BackingField ->  
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Models.HudInterface::<CurrentSpeed>k__BackingField ->  
+	System.String [EVE-Bot]System.String EVE_Bot.Models.HudInterface::<ShipState>k__BackingField ->  
+
+	EVE_Bot.Models.Point [EVE-Bot]EVE_Bot.Models.Point EVE_Bot.Models.HudInterface::Pos -> dropped
+	System.Collections.Generic.List`1<EVE_Bot.Models.Module> [EVE-Bot]System.Collections.Generic.List`1<EVE_Bot.Models.Module> EVE_Bot.Models.HudInterface::AllModules -> dropped
+	EVE_Bot.Models.HealthPoints [EVE-Bot]EVE_Bot.Models.HealthPoints EVE_Bot.Models.HudInterface::HealthPoints -> dropped
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Models.HudInterface::CurrentSpeed -> dropped
+	System.String [EVE-Bot]System.String EVE_Bot.Models.HudInterface::ShipState -> dropped
+}
+
+[EVE-Bot]EVE_Bot.Models.InventoryItem -> [EVE-Bot] .‶
+{
+	[EVE-Bot]EVE_Bot.Models.InventoryItem::get_Name[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.InventoryItem::set_Name[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Models.InventoryItem::get_Pos[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.InventoryItem::set_Pos[1]( [EVE-Bot]EVE_Bot.Models.Point ) ->  
+	[EVE-Bot]EVE_Bot.Models.InventoryItem::get_Amount[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.InventoryItem::set_Amount[1]( [System.Runtime]System.Int32 ) ->  
+
+	[EVE-Bot]EVE_Bot.Models.InventoryItem::.ctor[0]( ) skipped:  special name
+
+	System.String [EVE-Bot]System.String EVE_Bot.Models.InventoryItem::<Name>k__BackingField ->  
+	EVE_Bot.Models.Point [EVE-Bot]EVE_Bot.Models.Point EVE_Bot.Models.InventoryItem::<Pos>k__BackingField ->  
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Models.InventoryItem::<Amount>k__BackingField ->  
+
+	System.String [EVE-Bot]System.String EVE_Bot.Models.InventoryItem::Name -> dropped
+	EVE_Bot.Models.Point [EVE-Bot]EVE_Bot.Models.Point EVE_Bot.Models.InventoryItem::Pos -> dropped
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Models.InventoryItem::Amount -> dropped
+}
+
+[EVE-Bot]EVE_Bot.Models.Module -> [EVE-Bot] .‾
+{
+	[EVE-Bot]EVE_Bot.Models.Module::get_Name[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.Module::set_Name[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Models.Module::get_Type[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.Module::set_Type[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Models.Module::get_Mode[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.Module::set_Mode[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Models.Module::get_SlotNum[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.Module::set_SlotNum[1]( [System.Runtime]System.Int32 ) ->  
+	[EVE-Bot]EVE_Bot.Models.Module::get_AmountСharges[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.Module::set_AmountСharges[1]( [System.Runtime]System.Int32 ) ->  
+	[EVE-Bot]EVE_Bot.Models.Module::get_VirtualKey[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.Module::set_VirtualKey[1]( [System.Runtime]System.Int32 ) ->  
+
+	[EVE-Bot]EVE_Bot.Models.Module::.ctor[0]( ) skipped:  special name
+
+	System.String [EVE-Bot]System.String EVE_Bot.Models.Module::<Name>k__BackingField ->  
+	System.String [EVE-Bot]System.String EVE_Bot.Models.Module::<Type>k__BackingField ->  
+	System.String [EVE-Bot]System.String EVE_Bot.Models.Module::<Mode>k__BackingField ->  
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Models.Module::<SlotNum>k__BackingField ->  
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Models.Module::<AmountСharges>k__BackingField ->  
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Models.Module::<VirtualKey>k__BackingField ->  
+
+	System.String [EVE-Bot]System.String EVE_Bot.Models.Module::Name -> dropped
+	System.String [EVE-Bot]System.String EVE_Bot.Models.Module::Type -> dropped
+	System.String [EVE-Bot]System.String EVE_Bot.Models.Module::Mode -> dropped
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Models.Module::SlotNum -> dropped
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Models.Module::AmountСharges -> dropped
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Models.Module::VirtualKey -> dropped
+}
+
+[EVE-Bot]EVE_Bot.Models.ModulesInfo -> [EVE-Bot] .⁇
+{
+	[EVE-Bot]EVE_Bot.Models.ModulesInfo::get_MissileLauncher[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.ModulesInfo::set_MissileLauncher[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Models.ModulesInfo::get_MWD[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.ModulesInfo::set_MWD[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Models.ModulesInfo::get_AB[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.ModulesInfo::set_AB[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Models.ModulesInfo::get_ThermalHardener[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.ModulesInfo::set_ThermalHardener[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Models.ModulesInfo::get_KineticHardener[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.ModulesInfo::set_KineticHardener[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Models.ModulesInfo::get_MultispectrumHardener[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.ModulesInfo::set_MultispectrumHardener[1]( [System.Runtime]System.String ) ->  
+
+	[EVE-Bot]EVE_Bot.Models.ModulesInfo::.ctor[0]( ) skipped:  special name
+
+	System.Collections.Generic.Dictionary`2<System.String,System.String> [EVE-Bot]System.Collections.Generic.Dictionary`2<System.String,System.String> EVE_Bot.Models.ModulesInfo::ModuleNamesDict ->  
+	System.String [EVE-Bot]System.String EVE_Bot.Models.ModulesInfo::<MissileLauncher>k__BackingField ->  
+	System.String [EVE-Bot]System.String EVE_Bot.Models.ModulesInfo::<MWD>k__BackingField ->  
+	System.String [EVE-Bot]System.String EVE_Bot.Models.ModulesInfo::<AB>k__BackingField ->  
+	System.String [EVE-Bot]System.String EVE_Bot.Models.ModulesInfo::<ThermalHardener>k__BackingField ->  
+	System.String [EVE-Bot]System.String EVE_Bot.Models.ModulesInfo::<KineticHardener>k__BackingField ->  
+	System.String [EVE-Bot]System.String EVE_Bot.Models.ModulesInfo::<MultispectrumHardener>k__BackingField ->  
+
+	System.String [EVE-Bot]System.String EVE_Bot.Models.ModulesInfo::MissileLauncher -> dropped
+	System.String [EVE-Bot]System.String EVE_Bot.Models.ModulesInfo::MWD -> dropped
+	System.String [EVE-Bot]System.String EVE_Bot.Models.ModulesInfo::AB -> dropped
+	System.String [EVE-Bot]System.String EVE_Bot.Models.ModulesInfo::ThermalHardener -> dropped
+	System.String [EVE-Bot]System.String EVE_Bot.Models.ModulesInfo::KineticHardener -> dropped
+	System.String [EVE-Bot]System.String EVE_Bot.Models.ModulesInfo::MultispectrumHardener -> dropped
+}
+
+[EVE-Bot]EVE_Bot.Models.NotepadItem -> [EVE-Bot] .⁈
+{
+	[EVE-Bot]EVE_Bot.Models.NotepadItem::get_Pos[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.NotepadItem::set_Pos[1]( [EVE-Bot]EVE_Bot.Models.Point ) ->  
+
+	[EVE-Bot]EVE_Bot.Models.NotepadItem::.ctor[0]( ) skipped:  special name
+
+	EVE_Bot.Models.Point [EVE-Bot]EVE_Bot.Models.Point EVE_Bot.Models.NotepadItem::<Pos>k__BackingField ->  
+
+	EVE_Bot.Models.Point [EVE-Bot]EVE_Bot.Models.Point EVE_Bot.Models.NotepadItem::Pos -> dropped
+}
+
+[EVE-Bot]EVE_Bot.Models.OverviewItem -> [EVE-Bot] .⁉
+{
+	[EVE-Bot]EVE_Bot.Models.OverviewItem::get_Pos[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.OverviewItem::set_Pos[1]( [EVE-Bot]EVE_Bot.Models.Point ) ->  
+	[EVE-Bot]EVE_Bot.Models.OverviewItem::get_IconType[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.OverviewItem::set_IconType[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Models.OverviewItem::get_TargetLocked[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.OverviewItem::set_TargetLocked[1]( [System.Runtime]System.Boolean ) ->  
+	[EVE-Bot]EVE_Bot.Models.OverviewItem::get_AimOnTargetLocked[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.OverviewItem::set_AimOnTargetLocked[1]( [System.Runtime]System.Boolean ) ->  
+	[EVE-Bot]EVE_Bot.Models.OverviewItem::get_Colors[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.OverviewItem::set_Colors[1]( [EVE-Bot]EVE_Bot.Models.Colors ) ->  
+	[EVE-Bot]EVE_Bot.Models.OverviewItem::get_Distance[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.OverviewItem::set_Distance[1]( [EVE-Bot]EVE_Bot.Models.Distance ) ->  
+	[EVE-Bot]EVE_Bot.Models.OverviewItem::get_Name[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.OverviewItem::set_Name[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Models.OverviewItem::get_Type[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.OverviewItem::set_Type[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Models.OverviewItem::get_Speed[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.OverviewItem::set_Speed[1]( [System.Runtime]System.Int32 ) ->  
+
+	[EVE-Bot]EVE_Bot.Models.OverviewItem::.ctor[0]( ) skipped:  special name
+
+	EVE_Bot.Models.Point [EVE-Bot]EVE_Bot.Models.Point EVE_Bot.Models.OverviewItem::<Pos>k__BackingField ->  
+	System.String [EVE-Bot]System.String EVE_Bot.Models.OverviewItem::<IconType>k__BackingField ->  
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Models.OverviewItem::<TargetLocked>k__BackingField ->  
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Models.OverviewItem::<AimOnTargetLocked>k__BackingField ->  
+	EVE_Bot.Models.Colors [EVE-Bot]EVE_Bot.Models.Colors EVE_Bot.Models.OverviewItem::<Colors>k__BackingField ->  
+	EVE_Bot.Models.Distance [EVE-Bot]EVE_Bot.Models.Distance EVE_Bot.Models.OverviewItem::<Distance>k__BackingField ->  
+	System.String [EVE-Bot]System.String EVE_Bot.Models.OverviewItem::<Name>k__BackingField ->  
+	System.String [EVE-Bot]System.String EVE_Bot.Models.OverviewItem::<Type>k__BackingField ->  
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Models.OverviewItem::<Speed>k__BackingField ->  
+
+	EVE_Bot.Models.Point [EVE-Bot]EVE_Bot.Models.Point EVE_Bot.Models.OverviewItem::Pos -> dropped
+	System.String [EVE-Bot]System.String EVE_Bot.Models.OverviewItem::IconType -> dropped
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Models.OverviewItem::TargetLocked -> dropped
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Models.OverviewItem::AimOnTargetLocked -> dropped
+	EVE_Bot.Models.Colors [EVE-Bot]EVE_Bot.Models.Colors EVE_Bot.Models.OverviewItem::Colors -> dropped
+	EVE_Bot.Models.Distance [EVE-Bot]EVE_Bot.Models.Distance EVE_Bot.Models.OverviewItem::Distance -> dropped
+	System.String [EVE-Bot]System.String EVE_Bot.Models.OverviewItem::Name -> dropped
+	System.String [EVE-Bot]System.String EVE_Bot.Models.OverviewItem::Type -> dropped
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Models.OverviewItem::Speed -> dropped
+}
+
+[EVE-Bot]EVE_Bot.Models.Point -> [EVE-Bot] .⁊
+{
+
+	[EVE-Bot]EVE_Bot.Models.Point::.ctor[0]( ) skipped:  special name
+
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Models.Point::x ->  
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Models.Point::y ->  
+}
+
+[EVE-Bot]EVE_Bot.Models.ProbeScanItem -> [EVE-Bot] .⁋
+{
+	[EVE-Bot]EVE_Bot.Models.ProbeScanItem::get_Pos[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.ProbeScanItem::set_Pos[1]( [EVE-Bot]EVE_Bot.Models.Point ) ->  
+	[EVE-Bot]EVE_Bot.Models.ProbeScanItem::get_ID[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.ProbeScanItem::set_ID[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Models.ProbeScanItem::get_Distance[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.ProbeScanItem::set_Distance[1]( [EVE-Bot]EVE_Bot.Models.Distance ) ->  
+	[EVE-Bot]EVE_Bot.Models.ProbeScanItem::get_Name[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.ProbeScanItem::set_Name[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Models.ProbeScanItem::get_Group[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.ProbeScanItem::set_Group[1]( [System.Runtime]System.String ) ->  
+
+	[EVE-Bot]EVE_Bot.Models.ProbeScanItem::.ctor[0]( ) skipped:  special name
+
+	EVE_Bot.Models.Point [EVE-Bot]EVE_Bot.Models.Point EVE_Bot.Models.ProbeScanItem::<Pos>k__BackingField ->  
+	System.String [EVE-Bot]System.String EVE_Bot.Models.ProbeScanItem::<ID>k__BackingField ->  
+	EVE_Bot.Models.Distance [EVE-Bot]EVE_Bot.Models.Distance EVE_Bot.Models.ProbeScanItem::<Distance>k__BackingField ->  
+	System.String [EVE-Bot]System.String EVE_Bot.Models.ProbeScanItem::<Name>k__BackingField ->  
+	System.String [EVE-Bot]System.String EVE_Bot.Models.ProbeScanItem::<Group>k__BackingField ->  
+
+	EVE_Bot.Models.Point [EVE-Bot]EVE_Bot.Models.Point EVE_Bot.Models.ProbeScanItem::Pos -> dropped
+	System.String [EVE-Bot]System.String EVE_Bot.Models.ProbeScanItem::ID -> dropped
+	EVE_Bot.Models.Distance [EVE-Bot]EVE_Bot.Models.Distance EVE_Bot.Models.ProbeScanItem::Distance -> dropped
+	System.String [EVE-Bot]System.String EVE_Bot.Models.ProbeScanItem::Name -> dropped
+	System.String [EVE-Bot]System.String EVE_Bot.Models.ProbeScanItem::Group -> dropped
+}
+
+[EVE-Bot]EVE_Bot.Models.ShipState -> [EVE-Bot] .⁌
+{
+	[EVE-Bot]EVE_Bot.Models.ShipState::get_CurrentState[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.ShipState::set_CurrentState[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Models.ShipState::get_CurrentItemAndDistance[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.ShipState::set_CurrentItemAndDistance[1]( [System.Runtime]System.String ) ->  
+
+	[EVE-Bot]EVE_Bot.Models.ShipState::.ctor[0]( ) skipped:  special name
+
+	System.String [EVE-Bot]System.String EVE_Bot.Models.ShipState::<CurrentState>k__BackingField ->  
+	System.String [EVE-Bot]System.String EVE_Bot.Models.ShipState::<CurrentItemAndDistance>k__BackingField ->  
+
+	System.String [EVE-Bot]System.String EVE_Bot.Models.ShipState::CurrentState -> dropped
+	System.String [EVE-Bot]System.String EVE_Bot.Models.ShipState::CurrentItemAndDistance -> dropped
+}
+
+[EVE-Bot]EVE_Bot.Models.SystemInfo -> [EVE-Bot] .⁍
+{
+	[EVE-Bot]EVE_Bot.Models.SystemInfo::get_Colors[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.SystemInfo::set_Colors[1]( [EVE-Bot]EVE_Bot.Models.Colors ) ->  
+
+	[EVE-Bot]EVE_Bot.Models.SystemInfo::.ctor[0]( ) skipped:  special name
+
+	EVE_Bot.Models.Colors [EVE-Bot]EVE_Bot.Models.Colors EVE_Bot.Models.SystemInfo::<Colors>k__BackingField ->  
+
+	EVE_Bot.Models.Colors [EVE-Bot]EVE_Bot.Models.Colors EVE_Bot.Models.SystemInfo::Colors -> dropped
+}
+
+[EVE-Bot]EVE_Bot.Models.TargetInBar -> [EVE-Bot] .⁎
+{
+	[EVE-Bot]EVE_Bot.Models.TargetInBar::get_Pos[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.TargetInBar::set_Pos[1]( [EVE-Bot]EVE_Bot.Models.Point ) ->  
+	[EVE-Bot]EVE_Bot.Models.TargetInBar::get_Distance[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.TargetInBar::set_Distance[1]( [EVE-Bot]EVE_Bot.Models.Distance ) ->  
+	[EVE-Bot]EVE_Bot.Models.TargetInBar::get_Name[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.TargetInBar::set_Name[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Models.TargetInBar::get_AimOnTargetLocked[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.TargetInBar::set_AimOnTargetLocked[1]( [System.Runtime]System.Boolean ) ->  
+	[EVE-Bot]EVE_Bot.Models.TargetInBar::get_WeaponWorking[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Models.TargetInBar::set_WeaponWorking[1]( [System.Runtime]System.Boolean ) ->  
+
+	[EVE-Bot]EVE_Bot.Models.TargetInBar::.ctor[0]( ) skipped:  special name
+
+	EVE_Bot.Models.Point [EVE-Bot]EVE_Bot.Models.Point EVE_Bot.Models.TargetInBar::<Pos>k__BackingField ->  
+	EVE_Bot.Models.Distance [EVE-Bot]EVE_Bot.Models.Distance EVE_Bot.Models.TargetInBar::<Distance>k__BackingField ->  
+	System.String [EVE-Bot]System.String EVE_Bot.Models.TargetInBar::<Name>k__BackingField ->  
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Models.TargetInBar::<AimOnTargetLocked>k__BackingField ->  
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Models.TargetInBar::<WeaponWorking>k__BackingField ->  
+
+	EVE_Bot.Models.Point [EVE-Bot]EVE_Bot.Models.Point EVE_Bot.Models.TargetInBar::Pos -> dropped
+	EVE_Bot.Models.Distance [EVE-Bot]EVE_Bot.Models.Distance EVE_Bot.Models.TargetInBar::Distance -> dropped
+	System.String [EVE-Bot]System.String EVE_Bot.Models.TargetInBar::Name -> dropped
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Models.TargetInBar::AimOnTargetLocked -> dropped
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Models.TargetInBar::WeaponWorking -> dropped
+}
+
+[EVE-Bot]EVE_Bot.Controllers.DroneController -> [EVE-Bot] .⁏
+{
+	[EVE-Bot]EVE_Bot.Controllers.DroneController::DropDrones[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.DroneController::ScoopDrones[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.DroneController::RescoopDrones[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.DroneController::EngageIdleDrones[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.DroneController::GetCoordsLessDamageDrone[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.DroneController::DroneIsUnderAttack[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.DroneController::GetUITrees[0]( ) ->  
+
+	[EVE-Bot]EVE_Bot.Controllers.DroneController::.cctor[0]( ) skipped:  special name
+
+	System.Random [EVE-Bot]System.Random EVE_Bot.Controllers.DroneController::r ->  
+	System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) [EVE-Bot]System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) EVE_Bot.Controllers.DroneController::DronesDroped ->  
+	System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) [EVE-Bot]System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) EVE_Bot.Controllers.DroneController::DroneLaunchInProgress ->  
+	System.Threading.Thread [EVE-Bot]System.Threading.Thread EVE_Bot.Controllers.DroneController::DroneRescoopControl ->  
+	System.Threading.Thread [EVE-Bot]System.Threading.Thread EVE_Bot.Controllers.DroneController::DroneControl ->  
+}
+
+[EVE-Bot]EVE_Bot.Controllers.Emulators -> [EVE-Bot] .⁐
+{
+	[EVE-Bot]EVE_Bot.Controllers.Emulators::LockTargets[1]( [System.Collections]System.Collections.Generic.List`1<[System.Runtime]System.Int32> ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.Emulators::ClickLBForLockTargets[2]( [System.Runtime]System.Int32, [System.Runtime]System.Int32 ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.Emulators::ClickLB[3]( [System.Runtime]System.Int32, [System.Runtime]System.Int32, [System.Runtime]System.Boolean ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.Emulators::ClickRB[2]( [System.Runtime]System.Int32, [System.Runtime]System.Int32 ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.Emulators::Drag[4]( [System.Runtime]System.Int32, [System.Runtime]System.Int32, [System.Runtime]System.Int32, [System.Runtime]System.Int32 ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.Emulators::PressButton[2]( [System.Runtime]System.Int32, [System.Runtime]System.Boolean ) ->  
+
+	[EVE-Bot]EVE_Bot.Controllers.Emulators::.cctor[0]( ) skipped:  special name
+
+	System.IntPtr [EVE-Bot]System.IntPtr EVE_Bot.Controllers.Emulators::hWnd ->  
+	System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) [EVE-Bot]System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) EVE_Bot.Controllers.Emulators::AllowControlEmulator ->  
+	System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) [EVE-Bot]System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) EVE_Bot.Controllers.Emulators::AllowHighLVLControl ->  
+	System.Int32 modreq(System.Runtime.CompilerServices.IsVolatile) [EVE-Bot]System.Int32 modreq(System.Runtime.CompilerServices.IsVolatile) EVE_Bot.Controllers.Emulators::LastX ->  
+	System.Int32 modreq(System.Runtime.CompilerServices.IsVolatile) [EVE-Bot]System.Int32 modreq(System.Runtime.CompilerServices.IsVolatile) EVE_Bot.Controllers.Emulators::LastY ->  
+	System.Random [EVE-Bot]System.Random EVE_Bot.Controllers.Emulators::r ->  
+}
+
+[EVE-Bot]EVE_Bot.Controllers.Point -> [EVE-Bot] .⁑
+{
+
+	[EVE-Bot]EVE_Bot.Controllers.Point::.ctor[2]( [System.Runtime]System.Int32, [System.Runtime]System.Int32 ) skipped:  special name
+
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Controllers.Point::X ->  
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Controllers.Point::Y ->  
+}
+
+[EVE-Bot]EVE_Bot.Controllers.Mouse -> [EVE-Bot] .⁒
+{
+	[EVE-Bot]EVE_Bot.Controllers.Mouse::Move[2]( [System.Runtime]System.Int32, [System.Runtime]System.Int32 ) ->  
+
+	[EVE-Bot]EVE_Bot.Controllers.Mouse::.cctor[0]( ) skipped:  special name
+
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Controllers.Mouse::X1 ->  
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Controllers.Mouse::Y1 ->  
+	System.Random [EVE-Bot]System.Random EVE_Bot.Controllers.Mouse::r ->  
+}
+
+[EVE-Bot]EVE_Bot.Controllers.MissileController -> [EVE-Bot] .⁓
+{
+	[EVE-Bot]EVE_Bot.Controllers.MissileController::MonitorWorkingMissiles[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.MissileController::EnsureStartThread[1]( [System.Threading.Thread]System.Threading.Thread ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.MissileController::EnsureDestroyThread[1]( [System.Threading.Thread]System.Threading.Thread ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.MissileController::Wrapper[0]( ) ->  
+
+	[EVE-Bot]EVE_Bot.Controllers.MissileController::.cctor[0]( ) skipped:  special name
+
+	EVE_Bot.Models.ModulesInfo [EVE-Bot]EVE_Bot.Models.ModulesInfo EVE_Bot.Controllers.MissileController::ModulesInfo ->  
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Controllers.MissileController::CountTimeFor0Amount ->  
+	System.Threading.Thread [EVE-Bot]System.Threading.Thread EVE_Bot.Controllers.MissileController::MissileControlSystem ->  
+}
+
+[EVE-Bot]EVE_Bot.Controllers.ShipController -> [EVE-Bot] .⁔
+{
+	[EVE-Bot]EVE_Bot.Controllers.ShipController::NavigationMonitor[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.ShipController::Wrapper[0]( ) ->  
+
+	[EVE-Bot]EVE_Bot.Controllers.ShipController::.cctor[0]( ) skipped:  special name
+
+	EVE_Bot.Models.ModulesInfo [EVE-Bot]EVE_Bot.Models.ModulesInfo EVE_Bot.Controllers.ShipController::ModulesInfo ->  
+	System.Threading.Thread [EVE-Bot]System.Threading.Thread EVE_Bot.Controllers.ShipController::NavigationControlSystem ->  
+}
+
+[EVE-Bot]EVE_Bot.Controllers.ThreadManager -> [EVE-Bot] .⁖
+{
+
+	[EVE-Bot]EVE_Bot.Controllers.ThreadManager::.cctor[0]( ) skipped:  special name
+
+	System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) [EVE-Bot]System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) EVE_Bot.Controllers.ThreadManager::DangerAnalyzerEnable ->  
+	System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) [EVE-Bot]System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) EVE_Bot.Controllers.ThreadManager::AllowShipControl ->  
+	System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) [EVE-Bot]System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) EVE_Bot.Controllers.ThreadManager::AllowNavigationControl ->  
+	System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) [EVE-Bot]System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) EVE_Bot.Controllers.ThreadManager::AllowShieldHPControl ->  
+	System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) [EVE-Bot]System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) EVE_Bot.Controllers.ThreadManager::AllowPVEMode ->  
+	System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) [EVE-Bot]System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) EVE_Bot.Controllers.ThreadManager::PVEModeRunning ->  
+	System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) [EVE-Bot]System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) EVE_Bot.Controllers.ThreadManager::AllowDroneControl ->  
+	System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) [EVE-Bot]System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) EVE_Bot.Controllers.ThreadManager::AllowDroneRescoop ->  
+	System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) [EVE-Bot]System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) EVE_Bot.Controllers.ThreadManager::SpecialFocusOnDrones ->  
+	System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) [EVE-Bot]System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) EVE_Bot.Controllers.ThreadManager::AllowEnemyWatcher ->  
+	System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) [EVE-Bot]System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) EVE_Bot.Controllers.ThreadManager::EnemiesInGrid ->  
+	System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) [EVE-Bot]System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) EVE_Bot.Controllers.ThreadManager::AllowToAttack ->  
+	System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) [EVE-Bot]System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) EVE_Bot.Controllers.ThreadManager::AllowDocking ->  
+	System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) [EVE-Bot]System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) EVE_Bot.Controllers.ThreadManager::AllowDScan -> ​
+	System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) [EVE-Bot]System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) EVE_Bot.Controllers.ThreadManager::AllowCheckConLost -> ‐
+	System.Int32 modreq(System.Runtime.CompilerServices.IsVolatile) [EVE-Bot]System.Int32 modreq(System.Runtime.CompilerServices.IsVolatile) EVE_Bot.Controllers.ThreadManager::MultiplierSleep ->  
+	System.Int32 modreq(System.Runtime.CompilerServices.IsVolatile) [EVE-Bot]System.Int32 modreq(System.Runtime.CompilerServices.IsVolatile) EVE_Bot.Controllers.ThreadManager::MultipleSleepForDrones ->  
+	System.Int32 modreq(System.Runtime.CompilerServices.IsVolatile) [EVE-Bot]System.Int32 modreq(System.Runtime.CompilerServices.IsVolatile) EVE_Bot.Controllers.ThreadManager::QuantityFilament ->  
+	System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) [EVE-Bot]System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) EVE_Bot.Controllers.ThreadManager::ShipShieldIsLow -> ‑
+	System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) [EVE-Bot]System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) EVE_Bot.Controllers.ThreadManager::CloseDistanceToEnemy -> ‒
+	System.String modreq(System.Runtime.CompilerServices.IsVolatile) [EVE-Bot]System.String modreq(System.Runtime.CompilerServices.IsVolatile) EVE_Bot.Controllers.ThreadManager::ItemInSpace ->  
+	System.String modreq(System.Runtime.CompilerServices.IsVolatile) [EVE-Bot]System.String modreq(System.Runtime.CompilerServices.IsVolatile) EVE_Bot.Controllers.ThreadManager::FlightManeuver ->  
+	System.String modreq(System.Runtime.CompilerServices.IsVolatile) [EVE-Bot]System.String modreq(System.Runtime.CompilerServices.IsVolatile) EVE_Bot.Controllers.ThreadManager::ExpectedState ->  
+}
+
+[EVE-Bot]Program/<<Main>g__CheckState|0_3>d -> [EVE-Bot] . / 
+{
+	[EVE-Bot]Program/<<Main>g__CheckState|0_3>d::MoveNext[0]( ) ->  
+	[EVE-Bot]Program/<<Main>g__CheckState|0_3>d::SetStateMachine[1]( [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine ) ->  
+
+	[EVE-Bot]Program/<<Main>g__CheckState|0_3>d::.ctor[0]( ) skipped:  special name
+
+	System.Int32 [EVE-Bot]System.Int32 Program/<<Main>g__CheckState|0_3>d::<>1__state ->  
+	System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.String> [EVE-Bot]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.String> Program/<<Main>g__CheckState|0_3>d::<>t__builder ->  
+	System.String [EVE-Bot]System.String Program/<<Main>g__CheckState|0_3>d::<Time>5__1 ->  
+	TimeJson [EVE-Bot]TimeJson Program/<<Main>g__CheckState|0_3>d::<TimeSeconds>5__2 ->  
+	System.Int32 [EVE-Bot]System.Int32 Program/<<Main>g__CheckState|0_3>d::<unixTimestamp>5__3 ->  
+	System.Int32 [EVE-Bot]System.Int32 Program/<<Main>g__CheckState|0_3>d::<RandomTime>5__4 ->  
+	System.Int32 [EVE-Bot]System.Int32 Program/<<Main>g__CheckState|0_3>d::<res>5__5 ->  
+	System.String [EVE-Bot]System.String Program/<<Main>g__CheckState|0_3>d::<>s__6 ->  
+	System.Runtime.CompilerServices.TaskAwaiter`1<System.String> [EVE-Bot]System.Runtime.CompilerServices.TaskAwaiter`1<System.String> Program/<<Main>g__CheckState|0_3>d::<>u__1 ->  
+}
+
+[EVE-Bot]Program/<<Main>g__GetRequestAsync|0_1>d -> [EVE-Bot] . / 
+{
+	[EVE-Bot]Program/<<Main>g__GetRequestAsync|0_1>d::MoveNext[0]( ) ->  
+	[EVE-Bot]Program/<<Main>g__GetRequestAsync|0_1>d::SetStateMachine[1]( [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine ) ->  
+
+	[EVE-Bot]Program/<<Main>g__GetRequestAsync|0_1>d::.ctor[0]( ) skipped:  special name
+
+	System.Int32 [EVE-Bot]System.Int32 Program/<<Main>g__GetRequestAsync|0_1>d::<>1__state ->  
+	System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.String> [EVE-Bot]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.String> Program/<<Main>g__GetRequestAsync|0_1>d::<>t__builder ->  
+	System.String [EVE-Bot]System.String Program/<<Main>g__GetRequestAsync|0_1>d::Url ->  
+	System.Net.WebRequest [EVE-Bot]System.Net.WebRequest Program/<<Main>g__GetRequestAsync|0_1>d::<reqGET>5__1 ->  
+	System.Net.WebResponse [EVE-Bot]System.Net.WebResponse Program/<<Main>g__GetRequestAsync|0_1>d::<resp>5__2 ->  
+	System.IO.Stream [EVE-Bot]System.IO.Stream Program/<<Main>g__GetRequestAsync|0_1>d::<stream>5__3 ->  
+	System.IO.StreamReader [EVE-Bot]System.IO.StreamReader Program/<<Main>g__GetRequestAsync|0_1>d::<sr>5__4 ->  
+	System.String [EVE-Bot]System.String Program/<<Main>g__GetRequestAsync|0_1>d::<s>5__5 ->  
+	System.Net.WebResponse [EVE-Bot]System.Net.WebResponse Program/<<Main>g__GetRequestAsync|0_1>d::<>s__6 ->  
+	System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.WebResponse> [EVE-Bot]System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.WebResponse> Program/<<Main>g__GetRequestAsync|0_1>d::<>u__1 ->  
+}
+
+[EVE-Bot]Program/<>c -> [EVE-Bot] . / 
+{
+	[EVE-Bot]Program/<>c::<Main>b__0_4[0]( ) ->  
+	[EVE-Bot]Program/<>c::<Main>b__0_5[0]( ) ->  
+	[EVE-Bot]Program/<>c::<Main>b__0_6[0]( ) ->  
+	[EVE-Bot]Program/<>c::<Main>b__0_7[0]( ) ->  
+	[EVE-Bot]Program/<>c::<Main>b__0_10[0]( ) ->  
+	[EVE-Bot]Program/<>c::<Main>b__0_11[0]( ) ->  
+	[EVE-Bot]Program/<>c::<Main>b__0_8[0]( ) ->  
+	[EVE-Bot]Program/<>c::<Main>b__0_12[0]( ) ->  
+	[EVE-Bot]Program/<>c::<Main>b__0_13[0]( ) ->  
+	[EVE-Bot]Program/<>c::<Main>b__0_9[0]( ) ->  
+
+	[EVE-Bot]Program/<>c::.cctor[0]( ) skipped:  special name
+	[EVE-Bot]Program/<>c::.ctor[0]( ) skipped:  special name
+
+	Program/<>c [EVE-Bot]Program/<>c Program/<>c::<>9 ->  
+	System.Threading.ThreadStart [EVE-Bot]System.Threading.ThreadStart Program/<>c::<>9__0_4 ->  
+	System.Threading.ThreadStart [EVE-Bot]System.Threading.ThreadStart Program/<>c::<>9__0_5 ->  
+	System.Threading.ThreadStart [EVE-Bot]System.Threading.ThreadStart Program/<>c::<>9__0_6 ->  
+	System.Threading.ThreadStart [EVE-Bot]System.Threading.ThreadStart Program/<>c::<>9__0_10 ->  
+	System.Threading.ThreadStart [EVE-Bot]System.Threading.ThreadStart Program/<>c::<>9__0_11 ->  
+	System.Threading.ThreadStart [EVE-Bot]System.Threading.ThreadStart Program/<>c::<>9__0_7 ->  
+	System.Threading.ThreadStart [EVE-Bot]System.Threading.ThreadStart Program/<>c::<>9__0_12 ->  
+	System.Threading.ThreadStart [EVE-Bot]System.Threading.ThreadStart Program/<>c::<>9__0_13 ->  
+	System.Threading.ThreadStart [EVE-Bot]System.Threading.ThreadStart Program/<>c::<>9__0_8 ->  
+	System.Threading.ThreadStart [EVE-Bot]System.Threading.ThreadStart Program/<>c::<>9__0_9 ->  
+}
+
+[EVE-Bot]Program/<Main>d__0 -> [EVE-Bot] . / 
+{
+	[EVE-Bot]Program/<Main>d__0::MoveNext[0]( ) ->  
+	[EVE-Bot]Program/<Main>d__0::SetStateMachine[1]( [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine ) ->  
+
+	[EVE-Bot]Program/<Main>d__0::.ctor[0]( ) skipped:  special name
+
+	System.Int32 [EVE-Bot]System.Int32 Program/<Main>d__0::<>1__state ->  
+	System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.Int32> [EVE-Bot]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.Int32> Program/<Main>d__0::<>t__builder ->  
+	System.String[] [EVE-Bot]System.String[] Program/<Main>d__0::args ->  
+	System.String [EVE-Bot]System.String Program/<Main>d__0::<success>5__1 ->  
+	System.String [EVE-Bot]System.String Program/<Main>d__0::<>s__2 ->  
+	System.Runtime.CompilerServices.TaskAwaiter`1<System.String> [EVE-Bot]System.Runtime.CompilerServices.TaskAwaiter`1<System.String> Program/<Main>d__0::<>u__1 ->  
+}
+
+[EVE-Bot]EVE_Bot.Searchers.Checkers/<>c -> [EVE-Bot] . / 
+{
+	[EVE-Bot]EVE_Bot.Searchers.Checkers/<>c::<CheckDistance>b__1_0[1]( [System.Runtime]System.Char ) ->  
+
+	[EVE-Bot]EVE_Bot.Searchers.Checkers/<>c::.cctor[0]( ) skipped:  special name
+	[EVE-Bot]EVE_Bot.Searchers.Checkers/<>c::.ctor[0]( ) skipped:  special name
+
+	EVE_Bot.Searchers.Checkers/<>c [EVE-Bot]EVE_Bot.Searchers.Checkers/<>c EVE_Bot.Searchers.Checkers/<>c::<>9 ->  
+	System.Func`2<System.Char,System.Boolean> [EVE-Bot]System.Func`2<System.Char,System.Boolean> EVE_Bot.Searchers.Checkers/<>c::<>9__1_0 ->  
+}
+
+[EVE-Bot]EVE_Bot.Searchers.Finders/<>c -> [EVE-Bot] . / 
+{
+	[EVE-Bot]EVE_Bot.Searchers.Finders/<>c::<GetDirectionIconFilter>b__6_0[1]( [EVE-Bot]EVE_Bot.Models.OverviewItem ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.Finders/<>c::<GetDirectionIconFilter>b__6_1[1]( [EVE-Bot]EVE_Bot.Models.OverviewItem ) ->  
+
+	[EVE-Bot]EVE_Bot.Searchers.Finders/<>c::.cctor[0]( ) skipped:  special name
+	[EVE-Bot]EVE_Bot.Searchers.Finders/<>c::.ctor[0]( ) skipped:  special name
+
+	EVE_Bot.Searchers.Finders/<>c [EVE-Bot]EVE_Bot.Searchers.Finders/<>c EVE_Bot.Searchers.Finders/<>c::<>9 ->  
+	System.Predicate`1<EVE_Bot.Models.OverviewItem> [EVE-Bot]System.Predicate`1<EVE_Bot.Models.OverviewItem> EVE_Bot.Searchers.Finders/<>c::<>9__6_0 ->  
+	System.Predicate`1<EVE_Bot.Models.OverviewItem> [EVE-Bot]System.Predicate`1<EVE_Bot.Models.OverviewItem> EVE_Bot.Searchers.Finders/<>c::<>9__6_1 ->  
+}
+
+[EVE-Bot]EVE_Bot.Searchers.Window/<>c -> [EVE-Bot] . / 
+{
+	[EVE-Bot]EVE_Bot.Searchers.Window/<>c::<GetRootAddress>b__6_6[1]( [EVE-Bot]read_memory_64_bit.UITreeNode ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.Window/<>c::<GetRootAddress>b__6_1[1]( [EVE-Bot]read_memory_64_bit.UITreeNode ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.Window/<>c::<GetRootAddress>b__6_2[1]( [EVE-Bot].<>f__AnonymousType0`2<[EVE-Bot]read_memory_64_bit.UITreeNode,[System.Runtime]System.Int32> ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.Window/<>c::<GetRootAddress>b__6_3[1]( [EVE-Bot].<>f__AnonymousType0`2<[EVE-Bot]read_memory_64_bit.UITreeNode,[System.Runtime]System.Int32> ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.Window/<>c::<GetRootAddress>b__6_4[1]( [EVE-Bot].<>f__AnonymousType0`2<[EVE-Bot]read_memory_64_bit.UITreeNode,[System.Runtime]System.Int32> ) ->  
+
+	[EVE-Bot]EVE_Bot.Searchers.Window/<>c::.cctor[0]( ) skipped:  special name
+	[EVE-Bot]EVE_Bot.Searchers.Window/<>c::.ctor[0]( ) skipped:  special name
+
+	EVE_Bot.Searchers.Window/<>c [EVE-Bot]EVE_Bot.Searchers.Window/<>c EVE_Bot.Searchers.Window/<>c::<>9 ->  
+	System.Func`2<read_memory_64_bit.UITreeNode,System.Boolean> [EVE-Bot]System.Func`2<read_memory_64_bit.UITreeNode,System.Boolean> EVE_Bot.Searchers.Window/<>c::<>9__6_6 ->  
+	System.Func`2<read_memory_64_bit.UITreeNode,<>f__AnonymousType0`2<read_memory_64_bit.UITreeNode,System.Int32>> [EVE-Bot]System.Func`2<read_memory_64_bit.UITreeNode,<>f__AnonymousType0`2<read_memory_64_bit.UITreeNode,System.Int32>> EVE_Bot.Searchers.Window/<>c::<>9__6_1 ->  
+	System.Func`2<<>f__AnonymousType0`2<read_memory_64_bit.UITreeNode,System.Int32>,System.Int32> [EVE-Bot]System.Func`2<<>f__AnonymousType0`2<read_memory_64_bit.UITreeNode,System.Int32>,System.Int32> EVE_Bot.Searchers.Window/<>c::<>9__6_2 ->  
+	System.Func`2<<>f__AnonymousType0`2<read_memory_64_bit.UITreeNode,System.Int32>,System.String> [EVE-Bot]System.Func`2<<>f__AnonymousType0`2<read_memory_64_bit.UITreeNode,System.Int32>,System.String> EVE_Bot.Searchers.Window/<>c::<>9__6_3 ->  
+	System.Func`2<<>f__AnonymousType0`2<read_memory_64_bit.UITreeNode,System.Int32>,System.Int32> [EVE-Bot]System.Func`2<<>f__AnonymousType0`2<read_memory_64_bit.UITreeNode,System.Int32>,System.Int32> EVE_Bot.Searchers.Window/<>c::<>9__6_4 ->  
+}
+
+[EVE-Bot]EVE_Bot.Searchers.Window/<>c__DisplayClass6_0 -> [EVE-Bot] . / 
+{
+	[EVE-Bot]EVE_Bot.Searchers.Window/<>c__DisplayClass6_0::<GetRootAddress>g__ReadUITrees|0[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.Window/<>c__DisplayClass6_0::<GetRootAddress>b__5[1]( [System.Runtime]System.UInt64 ) ->  
+
+	[EVE-Bot]EVE_Bot.Searchers.Window/<>c__DisplayClass6_0::.ctor[0]( ) skipped:  special name
+
+	System.Collections.Immutable.IImmutableList`1<System.UInt64> [EVE-Bot]System.Collections.Immutable.IImmutableList`1<System.UInt64> EVE_Bot.Searchers.Window/<>c__DisplayClass6_0::uiRootCandidatesAddresses ->  
+	read_memory_64_bit.IMemoryReader [EVE-Bot]read_memory_64_bit.IMemoryReader EVE_Bot.Searchers.Window/<>c__DisplayClass6_0::memoryReader ->  
+}
+
+[EVE-Bot]EVE_Bot.Searchers.Window/<PostRequestAsync>d__5 -> [EVE-Bot] . / 
+{
+	[EVE-Bot]EVE_Bot.Searchers.Window/<PostRequestAsync>d__5::MoveNext[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.Window/<PostRequestAsync>d__5::SetStateMachine[1]( [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine ) ->  
+
+	[EVE-Bot]EVE_Bot.Searchers.Window/<PostRequestAsync>d__5::.ctor[0]( ) skipped:  special name
+
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Searchers.Window/<PostRequestAsync>d__5::<>1__state ->  
+	System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.String> [EVE-Bot]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.String> EVE_Bot.Searchers.Window/<PostRequestAsync>d__5::<>t__builder ->  
+	System.String [EVE-Bot]System.String EVE_Bot.Searchers.Window/<PostRequestAsync>d__5::message ->  
+	System.String [EVE-Bot]System.String EVE_Bot.Searchers.Window/<PostRequestAsync>d__5::<Response>5__1 ->  
+	System.Net.WebRequest [EVE-Bot]System.Net.WebRequest EVE_Bot.Searchers.Window/<PostRequestAsync>d__5::<request>5__2 ->  
+	System.String [EVE-Bot]System.String EVE_Bot.Searchers.Window/<PostRequestAsync>d__5::<data>5__3 ->  
+	System.Byte[] [EVE-Bot]System.Byte[] EVE_Bot.Searchers.Window/<PostRequestAsync>d__5::<byteArray>5__4 ->  
+	System.IO.Stream [EVE-Bot]System.IO.Stream EVE_Bot.Searchers.Window/<PostRequestAsync>d__5::<dataStream>5__5 ->  
+	System.Net.WebResponse [EVE-Bot]System.Net.WebResponse EVE_Bot.Searchers.Window/<PostRequestAsync>d__5::<response>5__6 ->  
+	System.Net.WebResponse [EVE-Bot]System.Net.WebResponse EVE_Bot.Searchers.Window/<PostRequestAsync>d__5::<>s__7 ->  
+	System.IO.Stream [EVE-Bot]System.IO.Stream EVE_Bot.Searchers.Window/<PostRequestAsync>d__5::<stream>5__8 ->  
+	System.IO.StreamReader [EVE-Bot]System.IO.StreamReader EVE_Bot.Searchers.Window/<PostRequestAsync>d__5::<reader>5__9 ->  
+	System.Net.WebException [EVE-Bot]System.Net.WebException EVE_Bot.Searchers.Window/<PostRequestAsync>d__5::<ex>5__10 ->  
+	System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.WebResponse> [EVE-Bot]System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.WebResponse> EVE_Bot.Searchers.Window/<PostRequestAsync>d__5::<>u__1 ->  
+}
+
+[EVE-Bot]EVE_Bot.Scripts.General/<>c -> [EVE-Bot] . / 
+{
+	[EVE-Bot]EVE_Bot.Scripts.General/<>c::<EnsureTargetIsAvailable>b__26_0[1]( [EVE-Bot]EVE_Bot.Models.OverviewItem ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General/<>c::<LochedTargetsAreAvailable>b__29_0[1]( [EVE-Bot]EVE_Bot.Models.OverviewItem ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General/<>c::<UnlockTargets>b__30_0[1]( [EVE-Bot]EVE_Bot.Models.OverviewItem ) ->  
+
+	[EVE-Bot]EVE_Bot.Scripts.General/<>c::.cctor[0]( ) skipped:  special name
+	[EVE-Bot]EVE_Bot.Scripts.General/<>c::.ctor[0]( ) skipped:  special name
+
+	EVE_Bot.Scripts.General/<>c [EVE-Bot]EVE_Bot.Scripts.General/<>c EVE_Bot.Scripts.General/<>c::<>9 ->  
+	System.Predicate`1<EVE_Bot.Models.OverviewItem> [EVE-Bot]System.Predicate`1<EVE_Bot.Models.OverviewItem> EVE_Bot.Scripts.General/<>c::<>9__26_0 ->  
+	System.Predicate`1<EVE_Bot.Models.OverviewItem> [EVE-Bot]System.Predicate`1<EVE_Bot.Models.OverviewItem> EVE_Bot.Scripts.General/<>c::<>9__29_0 ->  
+	System.Predicate`1<EVE_Bot.Models.OverviewItem> [EVE-Bot]System.Predicate`1<EVE_Bot.Models.OverviewItem> EVE_Bot.Scripts.General/<>c::<>9__30_0 ->  
+}
+
+[EVE-Bot]EVE_Bot.Scripts.General/<>c__DisplayClass4_0 -> [EVE-Bot] . / 
+{
+	[EVE-Bot]EVE_Bot.Scripts.General/<>c__DisplayClass4_0::<ActivateModule>b__2[1]( [EVE-Bot]EVE_Bot.Models.Module ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General/<>c__DisplayClass4_0::<ActivateModule>b__0[1]( [EVE-Bot]EVE_Bot.Models.Module ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General/<>c__DisplayClass4_0::<ActivateModule>b__1[1]( [EVE-Bot]EVE_Bot.Models.Module ) ->  
+
+	[EVE-Bot]EVE_Bot.Scripts.General/<>c__DisplayClass4_0::.ctor[0]( ) skipped:  special name
+
+	System.String [EVE-Bot]System.String EVE_Bot.Scripts.General/<>c__DisplayClass4_0::ModuleName ->  
+}
+
+[EVE-Bot]EVE_Bot.Scripts.General/<>c__DisplayClass5_0 -> [EVE-Bot] . / 
+{
+	[EVE-Bot]EVE_Bot.Scripts.General/<>c__DisplayClass5_0::<DeactivateModule>b__2[1]( [EVE-Bot]EVE_Bot.Models.Module ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General/<>c__DisplayClass5_0::<DeactivateModule>b__0[1]( [EVE-Bot]EVE_Bot.Models.Module ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.General/<>c__DisplayClass5_0::<DeactivateModule>b__1[1]( [EVE-Bot]EVE_Bot.Models.Module ) ->  
+
+	[EVE-Bot]EVE_Bot.Scripts.General/<>c__DisplayClass5_0::.ctor[0]( ) skipped:  special name
+
+	System.String [EVE-Bot]System.String EVE_Bot.Scripts.General/<>c__DisplayClass5_0::ModuleName ->  
+}
+
+[EVE-Bot]EVE_Bot.Scripts.SecScripts/<>c -> [EVE-Bot] . / 
+{
+	[EVE-Bot]EVE_Bot.Scripts.SecScripts/<>c::<UnloadCargo>b__5_0[1]( [EVE-Bot]EVE_Bot.Models.InventoryItem ) ->  
+	[EVE-Bot]EVE_Bot.Scripts.SecScripts/<>c::<UnloadCargo>b__5_1[1]( [EVE-Bot]EVE_Bot.Models.InventoryItem ) ->  
+
+	[EVE-Bot]EVE_Bot.Scripts.SecScripts/<>c::.cctor[0]( ) skipped:  special name
+	[EVE-Bot]EVE_Bot.Scripts.SecScripts/<>c::.ctor[0]( ) skipped:  special name
+
+	EVE_Bot.Scripts.SecScripts/<>c [EVE-Bot]EVE_Bot.Scripts.SecScripts/<>c EVE_Bot.Scripts.SecScripts/<>c::<>9 ->  
+	System.Predicate`1<EVE_Bot.Models.InventoryItem> [EVE-Bot]System.Predicate`1<EVE_Bot.Models.InventoryItem> EVE_Bot.Scripts.SecScripts/<>c::<>9__5_0 ->  
+	System.Predicate`1<EVE_Bot.Models.InventoryItem> [EVE-Bot]System.Predicate`1<EVE_Bot.Models.InventoryItem> EVE_Bot.Scripts.SecScripts/<>c::<>9__5_1 ->  
+}
+
+[EVE-Bot]EVE_Bot.Parsers.HI/<>c -> [EVE-Bot] .–/ 
+{
+	[EVE-Bot]EVE_Bot.Parsers.HI/<>c::<GetShipHP>b__2_0[1]( [System.Runtime]System.Char ) ->  
+	[EVE-Bot]EVE_Bot.Parsers.HI/<>c::<GetShipHP>b__2_1[1]( [System.Runtime]System.Char ) ->  
+	[EVE-Bot]EVE_Bot.Parsers.HI/<>c::<GetShipHP>b__2_2[1]( [System.Runtime]System.Char ) ->  
+	[EVE-Bot]EVE_Bot.Parsers.HI/<>c::<GetAllModulesInfo>b__4_0[1]( [System.Runtime]System.Char ) ->  
+
+	[EVE-Bot]EVE_Bot.Parsers.HI/<>c::.cctor[0]( ) skipped:  special name
+	[EVE-Bot]EVE_Bot.Parsers.HI/<>c::.ctor[0]( ) skipped:  special name
+
+	EVE_Bot.Parsers.HI/<>c [EVE-Bot]EVE_Bot.Parsers.HI/<>c EVE_Bot.Parsers.HI/<>c::<>9 ->  
+	System.Func`2<System.Char,System.Boolean> [EVE-Bot]System.Func`2<System.Char,System.Boolean> EVE_Bot.Parsers.HI/<>c::<>9__2_0 ->  
+	System.Func`2<System.Char,System.Boolean> [EVE-Bot]System.Func`2<System.Char,System.Boolean> EVE_Bot.Parsers.HI/<>c::<>9__2_1 ->  
+	System.Func`2<System.Char,System.Boolean> [EVE-Bot]System.Func`2<System.Char,System.Boolean> EVE_Bot.Parsers.HI/<>c::<>9__2_2 ->  
+	System.Func`2<System.Char,System.Boolean> [EVE-Bot]System.Func`2<System.Char,System.Boolean> EVE_Bot.Parsers.HI/<>c::<>9__4_0 ->  
+}
+
+[EVE-Bot]EVE_Bot.Parsers.Invent/<>c -> [EVE-Bot] .—/ 
+{
+	[EVE-Bot]EVE_Bot.Parsers.Invent/<>c::<GetVolumeInfo>b__1_0[1]( [System.Runtime]System.Char ) ->  
+	[EVE-Bot]EVE_Bot.Parsers.Invent/<>c::<GetPriceInfo>b__2_0[1]( [System.Runtime]System.Char ) ->  
+
+	[EVE-Bot]EVE_Bot.Parsers.Invent/<>c::.cctor[0]( ) skipped:  special name
+	[EVE-Bot]EVE_Bot.Parsers.Invent/<>c::.ctor[0]( ) skipped:  special name
+
+	EVE_Bot.Parsers.Invent/<>c [EVE-Bot]EVE_Bot.Parsers.Invent/<>c EVE_Bot.Parsers.Invent/<>c::<>9 ->  
+	System.Func`2<System.Char,System.Boolean> [EVE-Bot]System.Func`2<System.Char,System.Boolean> EVE_Bot.Parsers.Invent/<>c::<>9__1_0 ->  
+	System.Func`2<System.Char,System.Boolean> [EVE-Bot]System.Func`2<System.Char,System.Boolean> EVE_Bot.Parsers.Invent/<>c::<>9__2_0 ->  
+}
+
+[EVE-Bot]EVE_Bot.Parsers.OV/<>c -> [EVE-Bot] .•/ 
+{
+	[EVE-Bot]EVE_Bot.Parsers.OV/<>c::<GetInfo>b__0_0[1]( [System.Runtime]System.Char ) ->  
+	[EVE-Bot]EVE_Bot.Parsers.OV/<>c::<GetInfo>b__0_1[1]( [System.Runtime]System.Char ) ->  
+
+	[EVE-Bot]EVE_Bot.Parsers.OV/<>c::.cctor[0]( ) skipped:  special name
+	[EVE-Bot]EVE_Bot.Parsers.OV/<>c::.ctor[0]( ) skipped:  special name
+
+	EVE_Bot.Parsers.OV/<>c [EVE-Bot]EVE_Bot.Parsers.OV/<>c EVE_Bot.Parsers.OV/<>c::<>9 ->  
+	System.Func`2<System.Char,System.Boolean> [EVE-Bot]System.Func`2<System.Char,System.Boolean> EVE_Bot.Parsers.OV/<>c::<>9__0_0 ->  
+	System.Func`2<System.Char,System.Boolean> [EVE-Bot]System.Func`2<System.Char,System.Boolean> EVE_Bot.Parsers.OV/<>c::<>9__0_1 ->  
+}
+
+[EVE-Bot]EVE_Bot.Parsers.TB/<>c -> [EVE-Bot] . / 
+{
+	[EVE-Bot]EVE_Bot.Parsers.TB/<>c::<GetInfo>b__0_0[1]( [System.Runtime]System.Char ) ->  
+
+	[EVE-Bot]EVE_Bot.Parsers.TB/<>c::.cctor[0]( ) skipped:  special name
+	[EVE-Bot]EVE_Bot.Parsers.TB/<>c::.ctor[0]( ) skipped:  special name
+
+	EVE_Bot.Parsers.TB/<>c [EVE-Bot]EVE_Bot.Parsers.TB/<>c EVE_Bot.Parsers.TB/<>c::<>9 ->  
+	System.Func`2<System.Char,System.Boolean> [EVE-Bot]System.Func`2<System.Char,System.Boolean> EVE_Bot.Parsers.TB/<>c::<>9__0_0 ->  
+}
+
+[EVE-Bot]EVE_Bot.Controllers.DroneController/OneDroneInfo -> [EVE-Bot] .⁏/ 
+{
+	[EVE-Bot]EVE_Bot.Controllers.DroneController/OneDroneInfo::get_Y[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.DroneController/OneDroneInfo::set_Y[1]( [System.Runtime]System.Int32 ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.DroneController/OneDroneInfo::get_HPStructure[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.DroneController/OneDroneInfo::set_HPStructure[1]( [System.Runtime]System.Int32 ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.DroneController/OneDroneInfo::get_HPArmor[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.DroneController/OneDroneInfo::set_HPArmor[1]( [System.Runtime]System.Int32 ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.DroneController/OneDroneInfo::get_HPShield[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.DroneController/OneDroneInfo::set_HPShield[1]( [System.Runtime]System.Int32 ) ->  
+
+	[EVE-Bot]EVE_Bot.Controllers.DroneController/OneDroneInfo::ToString[0]( ) skipped:  external base class or interface
+	[EVE-Bot]EVE_Bot.Controllers.DroneController/OneDroneInfo::.ctor[4]( [System.Runtime]System.Int32, [System.Runtime]System.Int32, [System.Runtime]System.Int32, [System.Runtime]System.Int32 ) skipped:  special name
+
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Controllers.DroneController/OneDroneInfo::<Y>k__BackingField ->  
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Controllers.DroneController/OneDroneInfo::<HPStructure>k__BackingField ->  
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Controllers.DroneController/OneDroneInfo::<HPArmor>k__BackingField ->  
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Controllers.DroneController/OneDroneInfo::<HPShield>k__BackingField ->  
+
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Controllers.DroneController/OneDroneInfo::Y -> dropped
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Controllers.DroneController/OneDroneInfo::HPStructure -> dropped
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Controllers.DroneController/OneDroneInfo::HPArmor -> dropped
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Controllers.DroneController/OneDroneInfo::HPShield -> dropped
+}
+
+[EVE-Bot]EVE_Bot.Controllers.DroneController/<>c -> [EVE-Bot] .⁏/ 
+{
+	[EVE-Bot]EVE_Bot.Controllers.DroneController/<>c::<GetCoordsLessDamageDrone>b__10_0[1]( [EVE-Bot]EVE_Bot.Controllers.DroneController/OneDroneInfo ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.DroneController/<>c::<GetCoordsLessDamageDrone>b__10_1[1]( [EVE-Bot]EVE_Bot.Controllers.DroneController/OneDroneInfo ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.DroneController/<>c::<GetCoordsLessDamageDrone>b__10_2[1]( [EVE-Bot]EVE_Bot.Controllers.DroneController/OneDroneInfo ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.DroneController/<>c::<.cctor>b__13_0[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.DroneController/<>c::<.cctor>b__13_2[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.DroneController/<>c::<.cctor>b__13_3[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.DroneController/<>c::<.cctor>b__13_1[0]( ) ->  
+
+	[EVE-Bot]EVE_Bot.Controllers.DroneController/<>c::.cctor[0]( ) skipped:  special name
+	[EVE-Bot]EVE_Bot.Controllers.DroneController/<>c::.ctor[0]( ) skipped:  special name
+
+	EVE_Bot.Controllers.DroneController/<>c [EVE-Bot]EVE_Bot.Controllers.DroneController/<>c EVE_Bot.Controllers.DroneController/<>c::<>9 ->  
+	System.Func`2<EVE_Bot.Controllers.DroneController/OneDroneInfo,System.Int32> [EVE-Bot]System.Func`2<EVE_Bot.Controllers.DroneController/OneDroneInfo,System.Int32> EVE_Bot.Controllers.DroneController/<>c::<>9__10_0 ->  
+	System.Func`2<EVE_Bot.Controllers.DroneController/OneDroneInfo,System.Int32> [EVE-Bot]System.Func`2<EVE_Bot.Controllers.DroneController/OneDroneInfo,System.Int32> EVE_Bot.Controllers.DroneController/<>c::<>9__10_1 ->  
+	System.Func`2<EVE_Bot.Controllers.DroneController/OneDroneInfo,System.Int32> [EVE-Bot]System.Func`2<EVE_Bot.Controllers.DroneController/OneDroneInfo,System.Int32> EVE_Bot.Controllers.DroneController/<>c::<>9__10_2 ->  
+	System.Threading.ThreadStart [EVE-Bot]System.Threading.ThreadStart EVE_Bot.Controllers.DroneController/<>c::<>9__13_2 ->  
+	System.Threading.ThreadStart [EVE-Bot]System.Threading.ThreadStart EVE_Bot.Controllers.DroneController/<>c::<>9__13_3 ->  
+}
+
+[EVE-Bot]EVE_Bot.Controllers.MissileController/<>c -> [EVE-Bot] .⁓/ 
+{
+	[EVE-Bot]EVE_Bot.Controllers.MissileController/<>c::<MonitorWorkingMissiles>b__3_0[1]( [EVE-Bot]EVE_Bot.Models.Module ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.MissileController/<>c::<.cctor>b__7_0[0]( ) ->  
+
+	[EVE-Bot]EVE_Bot.Controllers.MissileController/<>c::.cctor[0]( ) skipped:  special name
+	[EVE-Bot]EVE_Bot.Controllers.MissileController/<>c::.ctor[0]( ) skipped:  special name
+
+	EVE_Bot.Controllers.MissileController/<>c [EVE-Bot]EVE_Bot.Controllers.MissileController/<>c EVE_Bot.Controllers.MissileController/<>c::<>9 ->  
+	System.Predicate`1<EVE_Bot.Models.Module> [EVE-Bot]System.Predicate`1<EVE_Bot.Models.Module> EVE_Bot.Controllers.MissileController/<>c::<>9__3_0 ->  
+}
+
+[EVE-Bot]EVE_Bot.Controllers.ShipController/<>c -> [EVE-Bot] .⁔/ 
+{
+	[EVE-Bot]EVE_Bot.Controllers.ShipController/<>c::<NavigationMonitor>b__2_0[1]( [EVE-Bot]EVE_Bot.Models.OverviewItem ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.ShipController/<>c::<NavigationMonitor>b__2_1[1]( [EVE-Bot]EVE_Bot.Models.OverviewItem ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.ShipController/<>c::<NavigationMonitor>b__2_2[1]( [EVE-Bot]EVE_Bot.Models.OverviewItem ) ->  
+	[EVE-Bot]EVE_Bot.Controllers.ShipController/<>c::<.cctor>b__4_0[0]( ) ->  
+
+	[EVE-Bot]EVE_Bot.Controllers.ShipController/<>c::.cctor[0]( ) skipped:  special name
+	[EVE-Bot]EVE_Bot.Controllers.ShipController/<>c::.ctor[0]( ) skipped:  special name
+
+	EVE_Bot.Controllers.ShipController/<>c [EVE-Bot]EVE_Bot.Controllers.ShipController/<>c EVE_Bot.Controllers.ShipController/<>c::<>9 ->  
+	System.Predicate`1<EVE_Bot.Models.OverviewItem> [EVE-Bot]System.Predicate`1<EVE_Bot.Models.OverviewItem> EVE_Bot.Controllers.ShipController/<>c::<>9__2_0 ->  
+	System.Func`2<EVE_Bot.Models.OverviewItem,System.Int32> [EVE-Bot]System.Func`2<EVE_Bot.Models.OverviewItem,System.Int32> EVE_Bot.Controllers.ShipController/<>c::<>9__2_1 ->  
+	System.Predicate`1<EVE_Bot.Models.OverviewItem> [EVE-Bot]System.Predicate`1<EVE_Bot.Models.OverviewItem> EVE_Bot.Controllers.ShipController/<>c::<>9__2_2 ->  
+}
+
+[EVE-Bot]Kalmit.CommonConversion/<>c__DisplayClass0_0 -> [EVE-Bot] .⁗/ 
+{
+	[EVE-Bot]Kalmit.CommonConversion/<>c__DisplayClass0_0::<ByteArrayFromStringBase16>b__0[1]( [System.Runtime]System.Int32 ) ->  
+
+	[EVE-Bot]Kalmit.CommonConversion/<>c__DisplayClass0_0::.ctor[0]( ) skipped:  special name
+
+	System.String [EVE-Bot]System.String Kalmit.CommonConversion/<>c__DisplayClass0_0::base16 ->  
+}
+
+[EVE-Bot]Kalmit.ZipArchive/<>c -> [EVE-Bot] .⁘/ 
+{
+	[EVE-Bot]Kalmit.ZipArchive/<>c::<ZipArchiveFromEntries>b__2_0[1]( [System.Runtime]System.ValueTuple`2<[System.Runtime]System.String,[System.Runtime]System.Byte[]> ) ->  
+	[EVE-Bot]Kalmit.ZipArchive/<>c::<ZipArchiveFromEntries>b__3_0[1]( [System.Runtime]System.Collections.Generic.KeyValuePair`2<[System.Collections.Immutable]System.Collections.Immutable.IImmutableList`1<[System.Runtime]System.String>,[System.Runtime]System.Byte[]> ) ->  
+
+	[EVE-Bot]Kalmit.ZipArchive/<>c::.cctor[0]( ) skipped:  special name
+	[EVE-Bot]Kalmit.ZipArchive/<>c::.ctor[0]( ) skipped:  special name
+
+	Kalmit.ZipArchive/<>c [EVE-Bot]Kalmit.ZipArchive/<>c Kalmit.ZipArchive/<>c::<>9 ->  
+	System.Func`2<System.ValueTuple`2<System.String,System.Byte[]>,System.ValueTuple`3<System.String,System.Byte[],System.DateTimeOffset>> [EVE-Bot]System.Func`2<System.ValueTuple`2<System.String,System.Byte[]>,System.ValueTuple`3<System.String,System.Byte[],System.DateTimeOffset>> Kalmit.ZipArchive/<>c::<>9__2_0 ->  
+	System.Func`2<System.Collections.Generic.KeyValuePair`2<System.Collections.Immutable.IImmutableList`1<System.String>,System.Byte[]>,System.ValueTuple`2<System.String,System.Byte[]>> [EVE-Bot]System.Func`2<System.Collections.Generic.KeyValuePair`2<System.Collections.Immutable.IImmutableList`1<System.String>,System.Byte[]>,System.ValueTuple`2<System.String,System.Byte[]>> Kalmit.ZipArchive/<>c::<>9__3_0 ->  
+}
+
+[EVE-Bot]Kalmit.ZipArchive/<EntriesFromZipArchive>d__5 -> [EVE-Bot] .⁘/ 
+{
+	[EVE-Bot]Kalmit.ZipArchive/<EntriesFromZipArchive>d__5::System.IDisposable.Dispose[0]( ) ->  
+	[EVE-Bot]Kalmit.ZipArchive/<EntriesFromZipArchive>d__5::<>m__Finally1[0]( ) ->  
+	[EVE-Bot]Kalmit.ZipArchive/<EntriesFromZipArchive>d__5::<>m__Finally2[0]( ) ->  
+	[EVE-Bot]Kalmit.ZipArchive/<EntriesFromZipArchive>d__5::System.Collections.Generic.IEnumerator<(System.Stringname,System.Byte[]content)>.get_Current[0]( ) ->  
+	[EVE-Bot]Kalmit.ZipArchive/<EntriesFromZipArchive>d__5::System.Collections.IEnumerator.Reset[0]( ) ->  
+	[EVE-Bot]Kalmit.ZipArchive/<EntriesFromZipArchive>d__5::System.Collections.IEnumerator.get_Current[0]( ) ->  
+	[EVE-Bot]Kalmit.ZipArchive/<EntriesFromZipArchive>d__5::System.Collections.Generic.IEnumerable<(System.Stringname,System.Byte[]content)>.GetEnumerator[0]( ) ->  
+	[EVE-Bot]Kalmit.ZipArchive/<EntriesFromZipArchive>d__5::System.Collections.IEnumerable.GetEnumerator[0]( ) ->  
+
+	[EVE-Bot]Kalmit.ZipArchive/<EntriesFromZipArchive>d__5::.ctor[1]( [System.Runtime]System.Int32 ) skipped:  special name
+	[EVE-Bot]Kalmit.ZipArchive/<EntriesFromZipArchive>d__5::MoveNext[0]( ) skipped:  external base class or interface
+
+	System.Int32 [EVE-Bot]System.Int32 Kalmit.ZipArchive/<EntriesFromZipArchive>d__5::<>1__state ->  
+	System.ValueTuple`2<System.String,System.Byte[]> [EVE-Bot]System.ValueTuple`2<System.String,System.Byte[]> Kalmit.ZipArchive/<EntriesFromZipArchive>d__5::<>2__current ->  
+	System.Int32 [EVE-Bot]System.Int32 Kalmit.ZipArchive/<EntriesFromZipArchive>d__5::<>l__initialThreadId ->  
+	System.Byte[] [EVE-Bot]System.Byte[] Kalmit.ZipArchive/<EntriesFromZipArchive>d__5::zipArchive ->  
+	System.Byte[] [EVE-Bot]System.Byte[] Kalmit.ZipArchive/<EntriesFromZipArchive>d__5::<>3__zipArchive ->  
+	System.IO.Compression.ZipArchive [EVE-Bot]System.IO.Compression.ZipArchive Kalmit.ZipArchive/<EntriesFromZipArchive>d__5::<fclZipArchive>5__1 ->  
+	System.Collections.Generic.IEnumerator`1<System.IO.Compression.ZipArchiveEntry> [EVE-Bot]System.Collections.Generic.IEnumerator`1<System.IO.Compression.ZipArchiveEntry> Kalmit.ZipArchive/<EntriesFromZipArchive>d__5::<>s__2 ->  
+	System.IO.Compression.ZipArchiveEntry [EVE-Bot]System.IO.Compression.ZipArchiveEntry Kalmit.ZipArchive/<EntriesFromZipArchive>d__5::<entry>5__3 ->  
+	System.Byte[] [EVE-Bot]System.Byte[] Kalmit.ZipArchive/<EntriesFromZipArchive>d__5::<entryContent>5__4 ->  
+	System.IO.Stream [EVE-Bot]System.IO.Stream Kalmit.ZipArchive/<EntriesFromZipArchive>d__5::<entryStream>5__5 ->  
+
+	System.ValueTuple`2<System.String,System.Byte[]> [EVE-Bot]System.ValueTuple`2<System.String,System.Byte[]> Kalmit.ZipArchive/<EntriesFromZipArchive>d__5::System.Collections.Generic.IEnumerator<(System.Stringname,System.Byte[]content)>.Current -> dropped
+	System.Object [EVE-Bot]System.Object Kalmit.ZipArchive/<EntriesFromZipArchive>d__5::System.Collections.IEnumerator.Current -> dropped
+}
+
+[EVE-Bot]Kalmit.ZipArchive -> [EVE-Bot] .⁘
+{
+	[EVE-Bot]Kalmit.ZipArchive::get_EntryLastWriteTimeDefault[0]( ) ->  
+	[EVE-Bot]Kalmit.ZipArchive::ZipArchiveFromEntries[2]( [System.Runtime]System.Collections.Generic.IEnumerable`1<[System.Runtime]System.ValueTuple`2<[System.Runtime]System.String,[System.Runtime]System.Byte[]>>, [System.IO.Compression]System.IO.Compression.CompressionLevel ) ->  
+	[EVE-Bot]Kalmit.ZipArchive::ZipArchiveFromEntries[2]( [System.Runtime]System.Collections.Generic.IReadOnlyDictionary`2<[System.Collections.Immutable]System.Collections.Immutable.IImmutableList`1<[System.Runtime]System.String>,[System.Runtime]System.Byte[]>, [System.IO.Compression]System.IO.Compression.CompressionLevel ) ->  
+	[EVE-Bot]Kalmit.ZipArchive::ZipArchiveFromEntries[2]( [System.Runtime]System.Collections.Generic.IEnumerable`1<[System.Runtime]System.ValueTuple`3<[System.Runtime]System.String,[System.Runtime]System.Byte[],[System.Runtime]System.DateTimeOffset>>, [System.IO.Compression]System.IO.Compression.CompressionLevel ) ->  
+	[EVE-Bot]Kalmit.ZipArchive::EntriesFromZipArchive[1]( [System.Runtime]System.Byte[] ) ->  
+
+	System.DateTimeOffset [EVE-Bot]System.DateTimeOffset Kalmit.ZipArchive::EntryLastWriteTimeDefault -> dropped
+}
+
+[EVE-Bot]Program -> [EVE-Bot] . 
+{
+	[EVE-Bot]Program::Main[1]( [System.Runtime]System.String[] ) ->  
+	[EVE-Bot]Program::<Main>g__StartThreads|0_0[0]( ) ->  
+	[EVE-Bot]Program::<Main>g__GetRequestAsync|0_1[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]Program::<Main>g__UnixTimeStampToDateTime|0_2[1]( [System.Runtime]System.Int32 ) ->  
+	[EVE-Bot]Program::<Main>g__CheckState|0_3[0]( ) ->  
+
+	[EVE-Bot]Program::<Main>[1]( [System.Runtime]System.String[] ) skipped:  special name
+}
+
+[EVE-Bot]EVE_Bot.Searchers.Checkers -> [EVE-Bot] . 
+{
+	[EVE-Bot]EVE_Bot.Searchers.Checkers::GetCoordsEnemies[2]( [System.Runtime]System.String, [System.Runtime]System.Boolean ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.Checkers::CheckDistance[3]( [System.Runtime]System.String, [System.Runtime]System.Int32, [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.Checkers::CheckEnemyAbsenceAgr[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.Checkers::CheckLocking[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.Checkers::WatchLockingTargets[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.Checkers::WatchState[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.Checkers::CheckState[3]( [System.Runtime]System.String, [System.Runtime]System.String, [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.Checkers::CheckQuantityDrones[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.Checkers::ShipInLowHP[1]( [System.Runtime]System.Int32 ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.Checkers::GetUITrees[0]( ) ->  
+}
+
+[EVE-Bot]EVE_Bot.Searchers.Finders -> [EVE-Bot] . 
+{
+	[EVE-Bot]EVE_Bot.Searchers.Finders::CheckCurrentSystemForCombatSites[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.Finders::FindObjectByWordInOverview[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.Finders::FindObjectByWordsInOverview[1]( [System.Collections]System.Collections.Generic.List`1<[System.Runtime]System.String> ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.Finders::GetColorInfo[1]( [EVE-Bot]EVE_Bot.Models.Colors ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.Finders::FindAccelerationGate[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.Finders::FindExpBlock[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.Finders::GetDirectionIconFilter[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.Finders::SetIconFilter[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.Finders::FindIconFilter[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.Finders::FindLocWnd[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]EVE_Bot.Searchers.Finders::GetUITrees[0]( ) ->  
+}
+
+[EVE-Bot]EVE_Bot.Searchers.UITreeReader -> [EVE-Bot] . 
+{
+	[EVE-Bot]EVE_Bot.Searchers.UITreeReader::GetUITrees[0]( ) ->  
+}
+
+[EVE-Bot]EVE_Bot.Scripts.Autopilot -> [EVE-Bot] . 
+{
+	[EVE-Bot]EVE_Bot.Scripts.Autopilot::Start[0]( ) ->  
+}
+
+[EVE-Bot]EVE_Bot.Parsers.Chat -> [EVE-Bot] .‐
+{
+	[EVE-Bot]EVE_Bot.Parsers.Chat::GetInfo[0]( ) ->  
+}
+
+[EVE-Bot]EVE_Bot.Parsers.Drones -> [EVE-Bot] .‑
+{
+	[EVE-Bot]EVE_Bot.Parsers.Drones::GetInfo[0]( ) ->  
+
+	[EVE-Bot]EVE_Bot.Parsers.Drones::.ctor[0]( ) skipped:  special name
+}
+
+[EVE-Bot]EVE_Bot.Parsers.DS -> [EVE-Bot] .‒
+{
+	[EVE-Bot]EVE_Bot.Parsers.DS::GetInfo[0]( ) ->  
+}
+
+[EVE-Bot]EVE_Bot.Parsers.HI -> [EVE-Bot] .–
+{
+	[EVE-Bot]EVE_Bot.Parsers.HI::GetInfo[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Parsers.HI::GetCenterPos[1]( [EVE-Bot]read_memory_64_bit.UITreeNode ) ->  
+	[EVE-Bot]EVE_Bot.Parsers.HI::GetShipHP[1]( [EVE-Bot]read_memory_64_bit.UITreeNode ) ->  
+	[EVE-Bot]EVE_Bot.Parsers.HI::GetCurrentSpeed[1]( [EVE-Bot]read_memory_64_bit.UITreeNode ) ->  
+	[EVE-Bot]EVE_Bot.Parsers.HI::GetAllModulesInfo[1]( [EVE-Bot]read_memory_64_bit.UITreeNode ) ->  
+	[EVE-Bot]EVE_Bot.Parsers.HI::GetShipState[1]( [EVE-Bot]read_memory_64_bit.UITreeNode ) ->  
+	[EVE-Bot]EVE_Bot.Parsers.HI::GetHudContainer[0]( ) ->  
+}
+
+[EVE-Bot]EVE_Bot.Parsers.Invent -> [EVE-Bot] .—
+{
+	[EVE-Bot]EVE_Bot.Parsers.Invent::GetInfo[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Parsers.Invent::GetVolumeInfo[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Parsers.Invent::GetPriceInfo[0]( ) ->  
+}
+
+[EVE-Bot]EVE_Bot.Parsers.NP -> [EVE-Bot] .―
+{
+	[EVE-Bot]EVE_Bot.Parsers.NP::GetInfo[0]( ) ->  
+}
+
+[EVE-Bot]EVE_Bot.Parsers.OV -> [EVE-Bot] .•
+{
+	[EVE-Bot]EVE_Bot.Parsers.OV::GetInfo[0]( ) ->  
+	[EVE-Bot]EVE_Bot.Parsers.OV::GetColorInfo[1]( [EVE-Bot]EVE_Bot.Models.Colors ) ->  
+}
+
+[EVE-Bot]EVE_Bot.Parsers.PS -> [EVE-Bot] .․
+{
+
+	[EVE-Bot]EVE_Bot.Parsers.PS::.ctor[0]( ) skipped:  special name
+}
+
+[EVE-Bot]EVE_Bot.Parsers.Route -> [EVE-Bot] .‥
+{
+	[EVE-Bot]EVE_Bot.Parsers.Route::GetInfo[0]( ) ->  
+}
+
+[EVE-Bot]EVE_Bot.Parsers.SI -> [EVE-Bot] .‧
+{
+
+	[EVE-Bot]EVE_Bot.Parsers.SI::.ctor[0]( ) skipped:  special name
+}
+
+[EVE-Bot]EVE_Bot.Parsers.TB -> [EVE-Bot] . 
+{
+	[EVE-Bot]EVE_Bot.Parsers.TB::GetInfo[0]( ) ->  
+}
+
+[EVE-Bot]EVE_Bot.Parsers.UITreeReader -> [EVE-Bot] . 
+{
+	[EVE-Bot]EVE_Bot.Parsers.UITreeReader::GetUITrees[3]( [System.Runtime]System.String, [System.Runtime]System.Int32, [System.Runtime]System.Boolean ) ->  
+}
+
+[EVE-Bot]Kalmit.CommonConversion -> [EVE-Bot] .⁗
+{
+	[EVE-Bot]Kalmit.CommonConversion::ByteArrayFromStringBase16[1]( [System.Runtime]System.String ) ->  
+	[EVE-Bot]Kalmit.CommonConversion::StringBase16FromByteArray[1]( [System.Runtime]System.Byte[] ) ->  
+	[EVE-Bot]Kalmit.CommonConversion::HashSHA256[1]( [System.Runtime]System.Byte[] ) ->  
+	[EVE-Bot]Kalmit.CommonConversion::DecompressGzip[1]( [System.Runtime]System.Byte[] ) ->  
+
+	[EVE-Bot]Kalmit.CommonConversion::.ctor[0]( ) skipped:  special name
+}
+
+[EVE-Bot]EVE_Bot.Controllers.ThreadController -> [EVE-Bot] .⁕
+{
+}
+
+Skipped Types:
+
+[EVE-Bot]read_memory_64_bit.EveOnline64 skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.EveOnline64::EnumeratePossibleAddressesForUIRootObjectsFromProcessId[1]( [System.Runtime]System.Int32 ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64::ReadCommittedMemoryRegionsWithContentFromProcessId[1]( [System.Runtime]System.Int32 ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64::ReadCommittedMemoryRegionsWithoutContentFromProcessId[1]( [System.Runtime]System.Int32 ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64::ReadCommittedMemoryRegionsFromProcessId[2]( [System.Runtime]System.Int32, [System.Runtime]System.Boolean ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64::EnumeratePossibleAddressesForUIRootObjects[2]( [System.Runtime]System.Collections.Generic.IEnumerable`1<[System.Runtime]System.ValueTuple`2<[System.Runtime]System.UInt64,[System.Runtime]System.UInt64>>, [EVE-Bot]read_memory_64_bit.IMemoryReader ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64::ReadUITreeFromAddress[3]( [System.Runtime]System.UInt64, [EVE-Bot]read_memory_64_bit.IMemoryReader, [System.Runtime]System.Int32 ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64::ReadUITreeFromAddress[4]( [System.Runtime]System.UInt64, [EVE-Bot]read_memory_64_bit.IMemoryReader, [System.Runtime]System.Int32, [EVE-Bot]read_memory_64_bit.EveOnline64/MemoryReadingCache ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64::ReadPythonStringValue[3]( [System.Runtime]System.UInt64, [EVE-Bot]read_memory_64_bit.IMemoryReader, [System.Runtime]System.Int32 ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64::ReadPythonFloatObjectValue[2]( [System.Runtime]System.UInt64, [EVE-Bot]read_memory_64_bit.IMemoryReader ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64::.ctor[0]( ) skipped:  special name
+	[EVE-Bot]read_memory_64_bit.EveOnline64::.cctor[0]( ) skipped:  special name
+	[EVE-Bot]read_memory_64_bit.EveOnline64::<ReadCommittedMemoryRegionsFromProcessId>g__logLine|3_0[2]( [System.Runtime]System.String, [EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass3_0& ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64::<.cctor>g__readValuePercentFromDictEntryKey|15_7[2]( [System.Runtime]System.String, [EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass15_0& ) skipped:  type rule in configuration
+
+
+	System.Collections.Immutable.IImmutableSet`1<System.String> [EVE-Bot]System.Collections.Immutable.IImmutableSet`1<System.String> read_memory_64_bit.EveOnline64::DictEntriesOfInterestKeys skipped:  type rule in configuration
+	System.Collections.Immutable.IImmutableDictionary`2<System.String,System.Func`3<System.UInt64,read_memory_64_bit.EveOnline64/LocalMemoryReadingTools,System.Object>> [EVE-Bot]System.Collections.Immutable.IImmutableDictionary`2<System.String,System.Func`3<System.UInt64,read_memory_64_bit.EveOnline64/LocalMemoryReadingTools,System.Object>> read_memory_64_bit.EveOnline64::specializedReadingFromPythonType skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.PyObject skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.PyObject::.ctor[0]( ) skipped:  special name
+
+
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.PyObject::Offset_ob_refcnt skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.PyObject::Offset_ob_type skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.PyInt skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.PyInt::get_int[0]( ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.PyInt::set_int[1]( [System.Runtime]System.Int64 ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.PyInt::get_int_low32[0]( ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.PyInt::set_int_low32[1]( [System.Runtime]System.Int32 ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.PyInt::.ctor[0]( ) skipped:  special name
+
+
+	System.Int64 [EVE-Bot]System.Int64 read_memory_64_bit.PyInt::<int>k__BackingField skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.PyInt::<int_low32>k__BackingField skipped:  type rule in configuration
+
+
+	System.Int64 [EVE-Bot]System.Int64 read_memory_64_bit.PyInt::int skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.PyInt::int_low32 skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.PyColor skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.PyColor::get_aPercent[0]( ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.PyColor::set_aPercent[1]( [System.Runtime]System.Nullable`1<[System.Runtime]System.Int32> ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.PyColor::get_rPercent[0]( ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.PyColor::set_rPercent[1]( [System.Runtime]System.Nullable`1<[System.Runtime]System.Int32> ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.PyColor::get_gPercent[0]( ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.PyColor::set_gPercent[1]( [System.Runtime]System.Nullable`1<[System.Runtime]System.Int32> ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.PyColor::get_bPercent[0]( ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.PyColor::set_bPercent[1]( [System.Runtime]System.Nullable`1<[System.Runtime]System.Int32> ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.PyColor::.ctor[0]( ) skipped:  special name
+
+
+	System.Nullable`1<System.Int32> [EVE-Bot]System.Nullable`1<System.Int32> read_memory_64_bit.PyColor::<aPercent>k__BackingField skipped:  type rule in configuration
+	System.Nullable`1<System.Int32> [EVE-Bot]System.Nullable`1<System.Int32> read_memory_64_bit.PyColor::<rPercent>k__BackingField skipped:  type rule in configuration
+	System.Nullable`1<System.Int32> [EVE-Bot]System.Nullable`1<System.Int32> read_memory_64_bit.PyColor::<gPercent>k__BackingField skipped:  type rule in configuration
+	System.Nullable`1<System.Int32> [EVE-Bot]System.Nullable`1<System.Int32> read_memory_64_bit.PyColor::<bPercent>k__BackingField skipped:  type rule in configuration
+
+
+	System.Nullable`1<System.Int32> [EVE-Bot]System.Nullable`1<System.Int32> read_memory_64_bit.PyColor::aPercent skipped:  type rule in configuration
+	System.Nullable`1<System.Int32> [EVE-Bot]System.Nullable`1<System.Int32> read_memory_64_bit.PyColor::rPercent skipped:  type rule in configuration
+	System.Nullable`1<System.Int32> [EVE-Bot]System.Nullable`1<System.Int32> read_memory_64_bit.PyColor::gPercent skipped:  type rule in configuration
+	System.Nullable`1<System.Int32> [EVE-Bot]System.Nullable`1<System.Int32> read_memory_64_bit.PyColor::bPercent skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.UITreeNode skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.UITreeNode::get_pythonObjectAddress[0]( ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.UITreeNode::set_pythonObjectAddress[1]( [System.Runtime]System.UInt64 ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.UITreeNode::get_pythonObjectTypeName[0]( ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.UITreeNode::set_pythonObjectTypeName[1]( [System.Runtime]System.String ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.UITreeNode::get_dictEntriesOfInterest[0]( ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.UITreeNode::set_dictEntriesOfInterest[1]( [Newtonsoft.Json]Newtonsoft.Json.Linq.JObject ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.UITreeNode::get_otherDictEntriesKeys[0]( ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.UITreeNode::set_otherDictEntriesKeys[1]( [System.Runtime]System.String[] ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.UITreeNode::get_children[0]( ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.UITreeNode::set_children[1]( [EVE-Bot]read_memory_64_bit.UITreeNode[] ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.UITreeNode::EnumerateSelfAndDescendants[0]( ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.UITreeNode::WithOtherDictEntriesRemoved[0]( ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.UITreeNode::handleEntity[1]( [System.Runtime]System.String ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.UITreeNode::handleEntityByDictEntriesOfInterest[2]( [System.Runtime]System.String, [System.Runtime]System.String ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.UITreeNode::FindEntityOfString[1]( [System.Runtime]System.String ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.UITreeNode::FindEntityOfStringByDictEntriesOfInterest[2]( [System.Runtime]System.String, [System.Runtime]System.String ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.UITreeNode::.ctor[0]( ) skipped:  special name
+
+
+	System.UInt64 [EVE-Bot]System.UInt64 read_memory_64_bit.UITreeNode::<pythonObjectAddress>k__BackingField skipped:  type rule in configuration
+	System.String [EVE-Bot]System.String read_memory_64_bit.UITreeNode::<pythonObjectTypeName>k__BackingField skipped:  type rule in configuration
+	Newtonsoft.Json.Linq.JObject [EVE-Bot]Newtonsoft.Json.Linq.JObject read_memory_64_bit.UITreeNode::<dictEntriesOfInterest>k__BackingField skipped:  type rule in configuration
+	System.String[] [EVE-Bot]System.String[] read_memory_64_bit.UITreeNode::<otherDictEntriesKeys>k__BackingField skipped:  type rule in configuration
+	read_memory_64_bit.UITreeNode[] [EVE-Bot]read_memory_64_bit.UITreeNode[] read_memory_64_bit.UITreeNode::<children>k__BackingField skipped:  type rule in configuration
+
+
+	System.UInt64 [EVE-Bot]System.UInt64 read_memory_64_bit.UITreeNode::pythonObjectAddress skipped:  type rule in configuration
+	System.String [EVE-Bot]System.String read_memory_64_bit.UITreeNode::pythonObjectTypeName skipped:  type rule in configuration
+	Newtonsoft.Json.Linq.JObject [EVE-Bot]Newtonsoft.Json.Linq.JObject read_memory_64_bit.UITreeNode::dictEntriesOfInterest skipped:  type rule in configuration
+	System.String[] [EVE-Bot]System.String[] read_memory_64_bit.UITreeNode::otherDictEntriesKeys skipped:  type rule in configuration
+	read_memory_64_bit.UITreeNode[] [EVE-Bot]read_memory_64_bit.UITreeNode[] read_memory_64_bit.UITreeNode::children skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.ReadMemory skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.ReadMemory::GetRootAddressesAndMemoryReader[2]( [System.Runtime]System.String, [System.Runtime]System.Int32 ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.ReadMemory::GetProcessSampleFileFromProcessId[1]( [System.Runtime]System.Int32 ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.ReadMemory::BMPFileFromBitmap[1]( [System.Drawing.Common]System.Drawing.Bitmap ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.ReadMemory::GetScreenshotOfWindowAsPixelsValuesR8G8B8[1]( [System.Runtime]System.IntPtr ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.ReadMemory::GetScreenshotOfWindowAsBitmap[1]( [System.Runtime]System.IntPtr ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.ReadMemory::GetScreenshotOfWindowClientAreaAsBitmap[1]( [System.Runtime]System.IntPtr ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.ReadMemory::SetProcessDPIAware[0]( ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.ReadMemory::ParseULong[1]( [System.Runtime]System.String ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.ReadMemory::GetUITrees[3]( [System.Runtime]System.String, [System.Runtime]System.Int32, [System.Runtime]System.Int32 ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.ReadMemory::SaveUITreeToFile[2]( [EVE-Bot]read_memory_64_bit.UITreeNode, [System.Runtime]System.String ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.ReadMemory::.cctor[0]( ) skipped:  special name
+
+
+	System.String [EVE-Bot]System.String read_memory_64_bit.ReadMemory::RootAddress1 skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.ReadMemory::processId1 skipped:  type rule in configuration
+	System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) [EVE-Bot]System.Boolean modreq(System.Runtime.CompilerServices.IsVolatile) read_memory_64_bit.ReadMemory::AllowGetUITree skipped:  type rule in configuration
+}
+
+[EVE-Bot]EVE_Bot.Configs.Config skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]EVE_Bot.Configs.Config::get_SpotName[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::set_SpotName[1]( [System.Runtime]System.String ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::get_LockRange[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::set_LockRange[1]( [System.Runtime]System.Int32 ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::get_WeaponsRange[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::set_WeaponsRange[1]( [System.Runtime]System.Int32 ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::get_PropModule[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::set_PropModule[1]( [System.Runtime]System.String ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::get_ActiveTank[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::set_ActiveTank[1]( [System.Runtime]System.Boolean ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::get_AutoMissile[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::set_AutoMissile[1]( [System.Runtime]System.Boolean ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::get_NickName[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::set_NickName[1]( [System.Runtime]System.String ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::get_ShipName[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::set_ShipName[1]( [System.Runtime]System.String ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::get_AutopilotMode[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::set_AutopilotMode[1]( [System.Runtime]System.Boolean ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::get_SecondModule[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::set_SecondModule[1]( [System.Runtime]System.Boolean ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::get_AverageDelay[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::set_AverageDelay[1]( [System.Runtime]System.Int32 ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::get_SpecialUnloadingMode[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::set_SpecialUnloadingMode[1]( [System.Runtime]System.Boolean ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::get_StationForUnload[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::set_StationForUnload[1]( [System.Runtime]System.String ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::get_FarmExp[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::set_FarmExp[1]( [System.Runtime]System.Boolean ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::get_Missiles[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::set_Missiles[1]( [System.Runtime]System.String ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::get_LimiteCargoVolumeForUnload[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::set_LimiteCargoVolumeForUnload[1]( [System.Runtime]System.Int32 ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.Config::.cctor[0]( ) skipped:  special name
+
+
+	System.String [EVE-Bot]System.String EVE_Bot.Configs.Config::<SpotName>k__BackingField skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Configs.Config::<LockRange>k__BackingField skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Configs.Config::<WeaponsRange>k__BackingField skipped:  type rule in configuration
+	System.String [EVE-Bot]System.String EVE_Bot.Configs.Config::<PropModule>k__BackingField skipped:  type rule in configuration
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Configs.Config::<ActiveTank>k__BackingField skipped:  type rule in configuration
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Configs.Config::<AutoMissile>k__BackingField skipped:  type rule in configuration
+	System.String [EVE-Bot]System.String EVE_Bot.Configs.Config::<NickName>k__BackingField skipped:  type rule in configuration
+	System.String [EVE-Bot]System.String EVE_Bot.Configs.Config::<ShipName>k__BackingField skipped:  type rule in configuration
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Configs.Config::<AutopilotMode>k__BackingField skipped:  type rule in configuration
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Configs.Config::<SecondModule>k__BackingField skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Configs.Config::<AverageDelay>k__BackingField skipped:  type rule in configuration
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Configs.Config::<SpecialUnloadingMode>k__BackingField skipped:  type rule in configuration
+	System.String [EVE-Bot]System.String EVE_Bot.Configs.Config::<StationForUnload>k__BackingField skipped:  type rule in configuration
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Configs.Config::<FarmExp>k__BackingField skipped:  type rule in configuration
+	System.String [EVE-Bot]System.String EVE_Bot.Configs.Config::<Missiles>k__BackingField skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Configs.Config::<LimiteCargoVolumeForUnload>k__BackingField skipped:  type rule in configuration
+
+
+	System.String [EVE-Bot]System.String EVE_Bot.Configs.Config::SpotName skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Configs.Config::LockRange skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Configs.Config::WeaponsRange skipped:  type rule in configuration
+	System.String [EVE-Bot]System.String EVE_Bot.Configs.Config::PropModule skipped:  type rule in configuration
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Configs.Config::ActiveTank skipped:  type rule in configuration
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Configs.Config::AutoMissile skipped:  type rule in configuration
+	System.String [EVE-Bot]System.String EVE_Bot.Configs.Config::NickName skipped:  type rule in configuration
+	System.String [EVE-Bot]System.String EVE_Bot.Configs.Config::ShipName skipped:  type rule in configuration
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Configs.Config::AutopilotMode skipped:  type rule in configuration
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Configs.Config::SecondModule skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Configs.Config::AverageDelay skipped:  type rule in configuration
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Configs.Config::SpecialUnloadingMode skipped:  type rule in configuration
+	System.String [EVE-Bot]System.String EVE_Bot.Configs.Config::StationForUnload skipped:  type rule in configuration
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Configs.Config::FarmExp skipped:  type rule in configuration
+	System.String [EVE-Bot]System.String EVE_Bot.Configs.Config::Missiles skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Configs.Config::LimiteCargoVolumeForUnload skipped:  type rule in configuration
+}
+
+[EVE-Bot]EVE_Bot.Configs.ConfigFromJson skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::get_SpotName[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::set_SpotName[1]( [System.Runtime]System.String ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::get_LockRange[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::set_LockRange[1]( [System.Runtime]System.Int32 ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::get_WeaponsRange[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::set_WeaponsRange[1]( [System.Runtime]System.Int32 ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::get_PropModule[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::set_PropModule[1]( [System.Runtime]System.String ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::get_ActiveTank[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::set_ActiveTank[1]( [System.Runtime]System.Boolean ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::get_AutoMissile[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::set_AutoMissile[1]( [System.Runtime]System.Boolean ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::get_NickName[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::set_NickName[1]( [System.Runtime]System.String ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::get_ShipName[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::set_ShipName[1]( [System.Runtime]System.String ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::get_AutopilotMode[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::set_AutopilotMode[1]( [System.Runtime]System.Boolean ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::get_SecondModule[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::set_SecondModule[1]( [System.Runtime]System.Boolean ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::get_AverageDelay[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::set_AverageDelay[1]( [System.Runtime]System.Int32 ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::get_SpecialUnloadingMode[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::set_SpecialUnloadingMode[1]( [System.Runtime]System.Boolean ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::get_StationForUnload[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::set_StationForUnload[1]( [System.Runtime]System.String ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::get_FarmExp[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::set_FarmExp[1]( [System.Runtime]System.Boolean ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::get_Missiles[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::set_Missiles[1]( [System.Runtime]System.String ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::get_LimiteCargoVolumeForUnload[0]( ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::set_LimiteCargoVolumeForUnload[1]( [System.Runtime]System.Int32 ) skipped:  skip by property
+	[EVE-Bot]EVE_Bot.Configs.ConfigFromJson::.ctor[0]( ) skipped:  special name
+
+
+	System.String [EVE-Bot]System.String EVE_Bot.Configs.ConfigFromJson::<SpotName>k__BackingField skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Configs.ConfigFromJson::<LockRange>k__BackingField skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Configs.ConfigFromJson::<WeaponsRange>k__BackingField skipped:  type rule in configuration
+	System.String [EVE-Bot]System.String EVE_Bot.Configs.ConfigFromJson::<PropModule>k__BackingField skipped:  type rule in configuration
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Configs.ConfigFromJson::<ActiveTank>k__BackingField skipped:  type rule in configuration
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Configs.ConfigFromJson::<AutoMissile>k__BackingField skipped:  type rule in configuration
+	System.String [EVE-Bot]System.String EVE_Bot.Configs.ConfigFromJson::<NickName>k__BackingField skipped:  type rule in configuration
+	System.String [EVE-Bot]System.String EVE_Bot.Configs.ConfigFromJson::<ShipName>k__BackingField skipped:  type rule in configuration
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Configs.ConfigFromJson::<AutopilotMode>k__BackingField skipped:  type rule in configuration
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Configs.ConfigFromJson::<SecondModule>k__BackingField skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Configs.ConfigFromJson::<AverageDelay>k__BackingField skipped:  type rule in configuration
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Configs.ConfigFromJson::<SpecialUnloadingMode>k__BackingField skipped:  type rule in configuration
+	System.String [EVE-Bot]System.String EVE_Bot.Configs.ConfigFromJson::<StationForUnload>k__BackingField skipped:  type rule in configuration
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Configs.ConfigFromJson::<FarmExp>k__BackingField skipped:  type rule in configuration
+	System.String [EVE-Bot]System.String EVE_Bot.Configs.ConfigFromJson::<Missiles>k__BackingField skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Configs.ConfigFromJson::<LimiteCargoVolumeForUnload>k__BackingField skipped:  type rule in configuration
+
+
+	System.String [EVE-Bot]System.String EVE_Bot.Configs.ConfigFromJson::SpotName skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Configs.ConfigFromJson::LockRange skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Configs.ConfigFromJson::WeaponsRange skipped:  type rule in configuration
+	System.String [EVE-Bot]System.String EVE_Bot.Configs.ConfigFromJson::PropModule skipped:  type rule in configuration
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Configs.ConfigFromJson::ActiveTank skipped:  type rule in configuration
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Configs.ConfigFromJson::AutoMissile skipped:  type rule in configuration
+	System.String [EVE-Bot]System.String EVE_Bot.Configs.ConfigFromJson::NickName skipped:  type rule in configuration
+	System.String [EVE-Bot]System.String EVE_Bot.Configs.ConfigFromJson::ShipName skipped:  type rule in configuration
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Configs.ConfigFromJson::AutopilotMode skipped:  type rule in configuration
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Configs.ConfigFromJson::SecondModule skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Configs.ConfigFromJson::AverageDelay skipped:  type rule in configuration
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Configs.ConfigFromJson::SpecialUnloadingMode skipped:  type rule in configuration
+	System.String [EVE-Bot]System.String EVE_Bot.Configs.ConfigFromJson::StationForUnload skipped:  type rule in configuration
+	System.Boolean [EVE-Bot]System.Boolean EVE_Bot.Configs.ConfigFromJson::FarmExp skipped:  type rule in configuration
+	System.String [EVE-Bot]System.String EVE_Bot.Configs.ConfigFromJson::Missiles skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 EVE_Bot.Configs.ConfigFromJson::LimiteCargoVolumeForUnload skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.EveOnline64/PyDictEntry skipped:  namespace rule in configuration
+{
+
+	System.UInt64 [EVE-Bot]System.UInt64 read_memory_64_bit.EveOnline64/PyDictEntry::hash skipped:  type rule in configuration
+	System.UInt64 [EVE-Bot]System.UInt64 read_memory_64_bit.EveOnline64/PyDictEntry::key skipped:  type rule in configuration
+	System.UInt64 [EVE-Bot]System.UInt64 read_memory_64_bit.EveOnline64/PyDictEntry::value skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.EveOnline64/LocalMemoryReadingTools skipped:  namespace rule in configuration
+{
+
+	read_memory_64_bit.IMemoryReader [EVE-Bot]read_memory_64_bit.IMemoryReader read_memory_64_bit.EveOnline64/LocalMemoryReadingTools::memoryReader skipped:  type rule in configuration
+	System.Func`2<System.UInt64,System.Collections.Immutable.IImmutableDictionary`2<System.String,System.UInt64>> [EVE-Bot]System.Func`2<System.UInt64,System.Collections.Immutable.IImmutableDictionary`2<System.String,System.UInt64>> read_memory_64_bit.EveOnline64/LocalMemoryReadingTools::getDictionaryEntriesWithStringKeys skipped:  type rule in configuration
+	System.Func`2<System.UInt64,System.String> [EVE-Bot]System.Func`2<System.UInt64,System.String> read_memory_64_bit.EveOnline64/LocalMemoryReadingTools::GetPythonTypeNameFromPythonObjectAddress skipped:  type rule in configuration
+	System.Func`2<System.UInt64,System.Object> [EVE-Bot]System.Func`2<System.UInt64,System.Object> read_memory_64_bit.EveOnline64/LocalMemoryReadingTools::GetDictEntryValueRepresentation skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.EveOnline64/MemoryReadingCache skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.EveOnline64/MemoryReadingCache::.ctor[0]( ) skipped:  special name
+	[EVE-Bot]read_memory_64_bit.EveOnline64/MemoryReadingCache::GetPythonTypeNameFromPythonObjectAddress[2]( [System.Runtime]System.UInt64, [System.Runtime]System.Func`2<[System.Runtime]System.UInt64,[System.Runtime]System.String> ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/MemoryReadingCache::GetPythonStringValueMaxLength4000[2]( [System.Runtime]System.UInt64, [System.Runtime]System.Func`2<[System.Runtime]System.UInt64,[System.Runtime]System.String> ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/MemoryReadingCache::GetDictEntryValueRepresentation[2]( [System.Runtime]System.UInt64, [System.Runtime]System.Func`2<[System.Runtime]System.UInt64,[System.Runtime]System.Object> ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/MemoryReadingCache::GetFromCacheOrUpdate[3]( [System.Runtime]System.Collections.Generic.IDictionary`2<!0,!1>, !0, [System.Runtime]System.Func`2<!0,!1> ) skipped:  type rule in configuration
+
+
+	System.Collections.Generic.IDictionary`2<System.UInt64,System.String> [EVE-Bot]System.Collections.Generic.IDictionary`2<System.UInt64,System.String> read_memory_64_bit.EveOnline64/MemoryReadingCache::PythonTypeNameFromPythonObjectAddress skipped:  type rule in configuration
+	System.Collections.Generic.IDictionary`2<System.UInt64,System.String> [EVE-Bot]System.Collections.Generic.IDictionary`2<System.UInt64,System.String> read_memory_64_bit.EveOnline64/MemoryReadingCache::PythonStringValueMaxLength4000 skipped:  type rule in configuration
+	System.Collections.Generic.IDictionary`2<System.UInt64,System.Object> [EVE-Bot]System.Collections.Generic.IDictionary`2<System.UInt64,System.Object> read_memory_64_bit.EveOnline64/MemoryReadingCache::DictEntryValueRepresentation skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.EveOnline64/<>c skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c::.cctor[0]( ) skipped:  special name
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c::.ctor[0]( ) skipped:  special name
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c::<ReadCommittedMemoryRegionsWithContentFromProcessId>b__1_0[1]( [System.Runtime]System.ValueTuple`3<[System.Runtime]System.UInt64,[System.Runtime]System.UInt64,[System.Runtime]System.Byte[]> ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c::<ReadCommittedMemoryRegionsWithoutContentFromProcessId>b__2_0[1]( [System.Runtime]System.ValueTuple`3<[System.Runtime]System.UInt64,[System.Runtime]System.UInt64,[System.Runtime]System.Byte[]> ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c::<ReadCommittedMemoryRegionsFromProcessId>b__3_1[1]( [System.Runtime]System.ValueTuple`3<[System.Runtime]System.UInt64,[System.Runtime]System.UInt64,[System.Runtime]System.Byte[]> ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c::<EnumeratePossibleAddressesForUIRootObjects>b__4_0[1]( [System.Runtime]System.ValueTuple`2<[System.Runtime]System.UInt64,[System.Runtime]System.UInt64> ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c::<EnumeratePossibleAddressesForUIRootObjects>b__4_8[1]( [System.Runtime]System.Byte ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c::<EnumeratePossibleAddressesForUIRootObjects>b__4_6[1]( [System.Runtime]System.ValueTuple`2<[System.Runtime]System.UInt64,[System.Runtime]System.String> ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c::<EnumeratePossibleAddressesForUIRootObjects>b__4_7[1]( [System.Runtime]System.ValueTuple`2<[System.Runtime]System.UInt64,[System.Runtime]System.String> ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c::<ReadUITreeFromAddress>b__11_9[1]( [System.Runtime]System.Byte ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c::<ReadUITreeFromAddress>b__11_13[1]( [EVE-Bot]read_memory_64_bit.EveOnline64/PyDictEntry ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c::<ReadUITreeFromAddress>b__11_15[1]( [EVE-Bot]read_memory_64_bit.UITreeNode/DictEntry ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c::<ReadUITreeFromAddress>b__11_16[1]( [EVE-Bot]read_memory_64_bit.UITreeNode/DictEntry ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c::<ReadUITreeFromAddress>b__11_7[1]( [EVE-Bot]read_memory_64_bit.UITreeNode/DictEntry ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c::<ReadUITreeFromAddress>b__11_8[1]( [EVE-Bot]read_memory_64_bit.UITreeNode/DictEntry ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c::<ReadUITreeFromAddress>b__11_19[1]( [EVE-Bot]read_memory_64_bit.UITreeNode ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c::<.cctor>b__15_0[2]( [System.Runtime]System.UInt64, [EVE-Bot]read_memory_64_bit.EveOnline64/LocalMemoryReadingTools ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c::<.cctor>b__15_1[2]( [System.Runtime]System.UInt64, [EVE-Bot]read_memory_64_bit.EveOnline64/LocalMemoryReadingTools ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c::<.cctor>b__15_2[2]( [System.Runtime]System.UInt64, [EVE-Bot]read_memory_64_bit.EveOnline64/LocalMemoryReadingTools ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c::<.cctor>b__15_3[2]( [System.Runtime]System.UInt64, [EVE-Bot]read_memory_64_bit.EveOnline64/LocalMemoryReadingTools ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c::<.cctor>b__15_4[2]( [System.Runtime]System.UInt64, [EVE-Bot]read_memory_64_bit.EveOnline64/LocalMemoryReadingTools ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c::<.cctor>b__15_5[2]( [System.Runtime]System.UInt64, [EVE-Bot]read_memory_64_bit.EveOnline64/LocalMemoryReadingTools ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c::<.cctor>b__15_6[2]( [System.Runtime]System.UInt64, [EVE-Bot]read_memory_64_bit.EveOnline64/LocalMemoryReadingTools ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c::<.cctor>b__15_8[1]( [EVE-Bot]read_memory_64_bit.UITreeNode/DictEntry ) skipped:  type rule in configuration
+
+
+	read_memory_64_bit.EveOnline64/<>c [EVE-Bot]read_memory_64_bit.EveOnline64/<>c read_memory_64_bit.EveOnline64/<>c::<>9 skipped:  type rule in configuration
+	System.Func`2<System.ValueTuple`3<System.UInt64,System.UInt64,System.Byte[]>,System.ValueTuple`2<System.UInt64,System.Byte[]>> [EVE-Bot]System.Func`2<System.ValueTuple`3<System.UInt64,System.UInt64,System.Byte[]>,System.ValueTuple`2<System.UInt64,System.Byte[]>> read_memory_64_bit.EveOnline64/<>c::<>9__1_0 skipped:  type rule in configuration
+	System.Func`2<System.ValueTuple`3<System.UInt64,System.UInt64,System.Byte[]>,System.ValueTuple`2<System.UInt64,System.UInt64>> [EVE-Bot]System.Func`2<System.ValueTuple`3<System.UInt64,System.UInt64,System.Byte[]>,System.ValueTuple`2<System.UInt64,System.UInt64>> read_memory_64_bit.EveOnline64/<>c::<>9__2_0 skipped:  type rule in configuration
+	System.Func`2<System.ValueTuple`3<System.UInt64,System.UInt64,System.Byte[]>,System.Int64> [EVE-Bot]System.Func`2<System.ValueTuple`3<System.UInt64,System.UInt64,System.Byte[]>,System.Int64> read_memory_64_bit.EveOnline64/<>c::<>9__3_1 skipped:  type rule in configuration
+	System.Func`2<System.ValueTuple`2<System.UInt64,System.UInt64>,System.UInt64> [EVE-Bot]System.Func`2<System.ValueTuple`2<System.UInt64,System.UInt64>,System.UInt64> read_memory_64_bit.EveOnline64/<>c::<>9__4_0 skipped:  type rule in configuration
+	System.Func`2<System.Byte,System.Boolean> [EVE-Bot]System.Func`2<System.Byte,System.Boolean> read_memory_64_bit.EveOnline64/<>c::<>9__4_8 skipped:  type rule in configuration
+	System.Func`2<System.ValueTuple`2<System.UInt64,System.String>,System.Boolean> [EVE-Bot]System.Func`2<System.ValueTuple`2<System.UInt64,System.String>,System.Boolean> read_memory_64_bit.EveOnline64/<>c::<>9__4_6 skipped:  type rule in configuration
+	System.Func`2<System.ValueTuple`2<System.UInt64,System.String>,System.UInt64> [EVE-Bot]System.Func`2<System.ValueTuple`2<System.UInt64,System.String>,System.UInt64> read_memory_64_bit.EveOnline64/<>c::<>9__4_7 skipped:  type rule in configuration
+	System.Func`2<System.Byte,System.Boolean> [EVE-Bot]System.Func`2<System.Byte,System.Boolean> read_memory_64_bit.EveOnline64/<>c::<>9__11_9 skipped:  type rule in configuration
+	System.Func`2<read_memory_64_bit.EveOnline64/PyDictEntry,System.UInt64> [EVE-Bot]System.Func`2<read_memory_64_bit.EveOnline64/PyDictEntry,System.UInt64> read_memory_64_bit.EveOnline64/<>c::<>9__11_13 skipped:  type rule in configuration
+	System.Func`2<read_memory_64_bit.UITreeNode/DictEntry,System.Boolean> [EVE-Bot]System.Func`2<read_memory_64_bit.UITreeNode/DictEntry,System.Boolean> read_memory_64_bit.EveOnline64/<>c::<>9__11_15 skipped:  type rule in configuration
+	System.Func`2<read_memory_64_bit.UITreeNode/DictEntry,System.Boolean> [EVE-Bot]System.Func`2<read_memory_64_bit.UITreeNode/DictEntry,System.Boolean> read_memory_64_bit.EveOnline64/<>c::<>9__11_16 skipped:  type rule in configuration
+	System.Func`2<read_memory_64_bit.UITreeNode/DictEntry,System.Boolean> [EVE-Bot]System.Func`2<read_memory_64_bit.UITreeNode/DictEntry,System.Boolean> read_memory_64_bit.EveOnline64/<>c::<>9__11_7 skipped:  type rule in configuration
+	System.Func`2<read_memory_64_bit.UITreeNode/DictEntry,Newtonsoft.Json.Linq.JProperty> [EVE-Bot]System.Func`2<read_memory_64_bit.UITreeNode/DictEntry,Newtonsoft.Json.Linq.JProperty> read_memory_64_bit.EveOnline64/<>c::<>9__11_8 skipped:  type rule in configuration
+	System.Func`2<read_memory_64_bit.UITreeNode,System.Boolean> [EVE-Bot]System.Func`2<read_memory_64_bit.UITreeNode,System.Boolean> read_memory_64_bit.EveOnline64/<>c::<>9__11_19 skipped:  type rule in configuration
+	System.Func`2<read_memory_64_bit.UITreeNode/DictEntry,Newtonsoft.Json.Linq.JProperty> [EVE-Bot]System.Func`2<read_memory_64_bit.UITreeNode/DictEntry,Newtonsoft.Json.Linq.JProperty> read_memory_64_bit.EveOnline64/<>c::<>9__15_8 skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass11_0 skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass11_0::.ctor[0]( ) skipped:  special name
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass11_0::<ReadUITreeFromAddress>g__getPythonTypeNameFromPythonTypeObjectAddress|0[1]( [System.Runtime]System.UInt64 ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass11_0::<ReadUITreeFromAddress>g__getPythonTypeNameFromPythonObjectAddress|1[1]( [System.Runtime]System.UInt64 ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass11_0::<ReadUITreeFromAddress>b__10[1]( [System.Runtime]System.UInt64 ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass11_0::<ReadUITreeFromAddress>g__readPythonStringValueMaxLength4000|2[1]( [System.Runtime]System.UInt64 ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass11_0::<ReadUITreeFromAddress>b__11[1]( [System.Runtime]System.UInt64 ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass11_0::<ReadUITreeFromAddress>g__ReadActiveDictionaryEntriesFromDictionaryAddress|3[1]( [System.Runtime]System.UInt64 ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass11_0::<ReadUITreeFromAddress>g__GetDictionaryEntriesWithStringKeys|4[1]( [System.Runtime]System.UInt64 ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass11_0::<ReadUITreeFromAddress>b__12[1]( [EVE-Bot]read_memory_64_bit.EveOnline64/PyDictEntry ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass11_0::<ReadUITreeFromAddress>g__GetDictEntryValueRepresentation|5[1]( [System.Runtime]System.UInt64 ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass11_0::<ReadUITreeFromAddress>b__14[1]( [System.Runtime]System.UInt64 ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass11_0::<ReadUITreeFromAddress>g__ReadChildren|6[0]( ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass11_0::<ReadUITreeFromAddress>b__17[1]( [EVE-Bot]read_memory_64_bit.EveOnline64/PyDictEntry ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass11_0::<ReadUITreeFromAddress>b__18[1]( [System.Runtime]System.UInt64 ) skipped:  type rule in configuration
+
+
+	read_memory_64_bit.IMemoryReader [EVE-Bot]read_memory_64_bit.IMemoryReader read_memory_64_bit.EveOnline64/<>c__DisplayClass11_0::memoryReader skipped:  type rule in configuration
+	read_memory_64_bit.EveOnline64/MemoryReadingCache [EVE-Bot]read_memory_64_bit.EveOnline64/MemoryReadingCache read_memory_64_bit.EveOnline64/<>c__DisplayClass11_0::cache skipped:  type rule in configuration
+	read_memory_64_bit.EveOnline64/LocalMemoryReadingTools [EVE-Bot]read_memory_64_bit.EveOnline64/LocalMemoryReadingTools read_memory_64_bit.EveOnline64/<>c__DisplayClass11_0::localMemoryReadingTools skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.EveOnline64/<>c__DisplayClass11_0::maxDepth skipped:  type rule in configuration
+	System.Collections.Generic.List`1<read_memory_64_bit.UITreeNode/DictEntry> [EVE-Bot]System.Collections.Generic.List`1<read_memory_64_bit.UITreeNode/DictEntry> read_memory_64_bit.EveOnline64/<>c__DisplayClass11_0::dictEntriesOfInterest skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass15_0 skipped:  namespace rule in configuration
+{
+
+	System.Collections.Immutable.IImmutableDictionary`2<System.String,System.UInt64> [EVE-Bot]System.Collections.Immutable.IImmutableDictionary`2<System.String,System.UInt64> read_memory_64_bit.EveOnline64/<>c__DisplayClass15_0::dictionaryEntries skipped:  type rule in configuration
+	read_memory_64_bit.EveOnline64/LocalMemoryReadingTools [EVE-Bot]read_memory_64_bit.EveOnline64/LocalMemoryReadingTools read_memory_64_bit.EveOnline64/<>c__DisplayClass15_0::memoryReadingTools skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass3_0 skipped:  namespace rule in configuration
+{
+
+	System.Collections.Generic.List`1<System.String> [EVE-Bot]System.Collections.Generic.List`1<System.String> read_memory_64_bit.EveOnline64/<>c__DisplayClass3_0::logEntries skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0 skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0::.ctor[0]( ) skipped:  special name
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0::<EnumeratePossibleAddressesForUIRootObjects>g__ReadNullTerminatedAsciiStringFromAddressUpTo255|1[1]( [System.Runtime]System.UInt64 ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0::<EnumeratePossibleAddressesForUIRootObjects>g__ReadMemoryRegionContentAsULongArray|2[1]( [System.Runtime]System.ValueTuple`2<[System.Runtime]System.UInt64,[System.Runtime]System.UInt64> ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0::<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjectType|3[0]( ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0::<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjects|4[1]( [System.Collections.Immutable]System.Collections.Immutable.IImmutableList`1<[System.Runtime]System.UInt64> ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0::<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForInstancesOfPythonType|5[1]( [System.Collections.Immutable]System.Collections.Immutable.IImmutableList`1<[System.Runtime]System.UInt64> ) skipped:  type rule in configuration
+
+
+	read_memory_64_bit.IMemoryReader [EVE-Bot]read_memory_64_bit.IMemoryReader read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0::memoryReader skipped:  type rule in configuration
+	System.Collections.Immutable.ImmutableList`1<System.ValueTuple`2<System.UInt64,System.UInt64>> [EVE-Bot]System.Collections.Immutable.ImmutableList`1<System.ValueTuple`2<System.UInt64,System.UInt64>> read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0::memoryRegionsOrderedByAddress skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.MemoryReaderFromProcessSample skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.MemoryReaderFromProcessSample::ReadBytes[2]( [System.Runtime]System.UInt64, [System.Runtime]System.Int32 ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.MemoryReaderFromProcessSample::.ctor[1]( [System.Collections.Immutable]System.Collections.Immutable.IImmutableList`1<[System.Runtime]System.ValueTuple`2<[System.Runtime]System.UInt64,[System.Runtime]System.Byte[]>> ) skipped:  special name
+
+
+	System.Collections.Immutable.IImmutableList`1<System.ValueTuple`2<System.UInt64,System.Byte[]>> [EVE-Bot]System.Collections.Immutable.IImmutableList`1<System.ValueTuple`2<System.UInt64,System.Byte[]>> read_memory_64_bit.MemoryReaderFromProcessSample::memoryRegionsOrderedByAddress skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.MemoryReaderFromLiveProcess skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.MemoryReaderFromLiveProcess::ReadBytes[2]( [System.Runtime]System.UInt64, [System.Runtime]System.Int32 ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.MemoryReaderFromLiveProcess::.ctor[1]( [System.Runtime]System.Int32 ) skipped:  special name
+	[EVE-Bot]read_memory_64_bit.MemoryReaderFromLiveProcess::Dispose[0]( ) skipped:  external base class or interface
+
+
+	System.IntPtr [EVE-Bot]System.IntPtr read_memory_64_bit.MemoryReaderFromLiveProcess::processHandle skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.WinApi/Rect skipped:  namespace rule in configuration
+{
+
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.WinApi/Rect::left skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.WinApi/Rect::top skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.WinApi/Rect::right skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.WinApi/Rect::bottom skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.WinApi/Point skipped:  namespace rule in configuration
+{
+
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.WinApi/Point::x skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.WinApi/Point::y skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.WinApi/MEMORY_BASIC_INFORMATION64 skipped:  namespace rule in configuration
+{
+
+	System.UInt64 [EVE-Bot]System.UInt64 read_memory_64_bit.WinApi/MEMORY_BASIC_INFORMATION64::BaseAddress skipped:  type rule in configuration
+	System.UInt64 [EVE-Bot]System.UInt64 read_memory_64_bit.WinApi/MEMORY_BASIC_INFORMATION64::AllocationBase skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.WinApi/MEMORY_BASIC_INFORMATION64::AllocationProtect skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.WinApi/MEMORY_BASIC_INFORMATION64::__alignment1 skipped:  type rule in configuration
+	System.UInt64 [EVE-Bot]System.UInt64 read_memory_64_bit.WinApi/MEMORY_BASIC_INFORMATION64::RegionSize skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.WinApi/MEMORY_BASIC_INFORMATION64::State skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.WinApi/MEMORY_BASIC_INFORMATION64::Protect skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.WinApi/MEMORY_BASIC_INFORMATION64::Type skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.WinApi/MEMORY_BASIC_INFORMATION64::__alignment2 skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.WinApi/AllocationProtect skipped:  namespace rule in configuration
+{
+
+	System.UInt32 [EVE-Bot]System.UInt32 read_memory_64_bit.WinApi/AllocationProtect::value__ skipped:  special name
+	read_memory_64_bit.WinApi/AllocationProtect [EVE-Bot]read_memory_64_bit.WinApi/AllocationProtect read_memory_64_bit.WinApi/AllocationProtect::PAGE_EXECUTE skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/AllocationProtect [EVE-Bot]read_memory_64_bit.WinApi/AllocationProtect read_memory_64_bit.WinApi/AllocationProtect::PAGE_EXECUTE_READ skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/AllocationProtect [EVE-Bot]read_memory_64_bit.WinApi/AllocationProtect read_memory_64_bit.WinApi/AllocationProtect::PAGE_EXECUTE_READWRITE skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/AllocationProtect [EVE-Bot]read_memory_64_bit.WinApi/AllocationProtect read_memory_64_bit.WinApi/AllocationProtect::PAGE_EXECUTE_WRITECOPY skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/AllocationProtect [EVE-Bot]read_memory_64_bit.WinApi/AllocationProtect read_memory_64_bit.WinApi/AllocationProtect::PAGE_NOACCESS skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/AllocationProtect [EVE-Bot]read_memory_64_bit.WinApi/AllocationProtect read_memory_64_bit.WinApi/AllocationProtect::PAGE_READONLY skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/AllocationProtect [EVE-Bot]read_memory_64_bit.WinApi/AllocationProtect read_memory_64_bit.WinApi/AllocationProtect::PAGE_READWRITE skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/AllocationProtect [EVE-Bot]read_memory_64_bit.WinApi/AllocationProtect read_memory_64_bit.WinApi/AllocationProtect::PAGE_WRITECOPY skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/AllocationProtect [EVE-Bot]read_memory_64_bit.WinApi/AllocationProtect read_memory_64_bit.WinApi/AllocationProtect::PAGE_GUARD skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/AllocationProtect [EVE-Bot]read_memory_64_bit.WinApi/AllocationProtect read_memory_64_bit.WinApi/AllocationProtect::PAGE_NOCACHE skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/AllocationProtect [EVE-Bot]read_memory_64_bit.WinApi/AllocationProtect read_memory_64_bit.WinApi/AllocationProtect::PAGE_WRITECOMBINE skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.WinApi/ProcessAccessFlags skipped:  namespace rule in configuration
+{
+
+	System.UInt32 [EVE-Bot]System.UInt32 read_memory_64_bit.WinApi/ProcessAccessFlags::value__ skipped:  special name
+	read_memory_64_bit.WinApi/ProcessAccessFlags [EVE-Bot]read_memory_64_bit.WinApi/ProcessAccessFlags read_memory_64_bit.WinApi/ProcessAccessFlags::All skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/ProcessAccessFlags [EVE-Bot]read_memory_64_bit.WinApi/ProcessAccessFlags read_memory_64_bit.WinApi/ProcessAccessFlags::Terminate skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/ProcessAccessFlags [EVE-Bot]read_memory_64_bit.WinApi/ProcessAccessFlags read_memory_64_bit.WinApi/ProcessAccessFlags::CreateThread skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/ProcessAccessFlags [EVE-Bot]read_memory_64_bit.WinApi/ProcessAccessFlags read_memory_64_bit.WinApi/ProcessAccessFlags::VirtualMemoryOperation skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/ProcessAccessFlags [EVE-Bot]read_memory_64_bit.WinApi/ProcessAccessFlags read_memory_64_bit.WinApi/ProcessAccessFlags::VirtualMemoryRead skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/ProcessAccessFlags [EVE-Bot]read_memory_64_bit.WinApi/ProcessAccessFlags read_memory_64_bit.WinApi/ProcessAccessFlags::VirtualMemoryWrite skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/ProcessAccessFlags [EVE-Bot]read_memory_64_bit.WinApi/ProcessAccessFlags read_memory_64_bit.WinApi/ProcessAccessFlags::DuplicateHandle skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/ProcessAccessFlags [EVE-Bot]read_memory_64_bit.WinApi/ProcessAccessFlags read_memory_64_bit.WinApi/ProcessAccessFlags::CreateProcess skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/ProcessAccessFlags [EVE-Bot]read_memory_64_bit.WinApi/ProcessAccessFlags read_memory_64_bit.WinApi/ProcessAccessFlags::SetQuota skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/ProcessAccessFlags [EVE-Bot]read_memory_64_bit.WinApi/ProcessAccessFlags read_memory_64_bit.WinApi/ProcessAccessFlags::SetInformation skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/ProcessAccessFlags [EVE-Bot]read_memory_64_bit.WinApi/ProcessAccessFlags read_memory_64_bit.WinApi/ProcessAccessFlags::QueryInformation skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/ProcessAccessFlags [EVE-Bot]read_memory_64_bit.WinApi/ProcessAccessFlags read_memory_64_bit.WinApi/ProcessAccessFlags::QueryLimitedInformation skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/ProcessAccessFlags [EVE-Bot]read_memory_64_bit.WinApi/ProcessAccessFlags read_memory_64_bit.WinApi/ProcessAccessFlags::Synchronize skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.WinApi/MemoryInformationState skipped:  namespace rule in configuration
+{
+
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.WinApi/MemoryInformationState::value__ skipped:  special name
+	read_memory_64_bit.WinApi/MemoryInformationState [EVE-Bot]read_memory_64_bit.WinApi/MemoryInformationState read_memory_64_bit.WinApi/MemoryInformationState::MEM_COMMIT skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/MemoryInformationState [EVE-Bot]read_memory_64_bit.WinApi/MemoryInformationState read_memory_64_bit.WinApi/MemoryInformationState::MEM_FREE skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/MemoryInformationState [EVE-Bot]read_memory_64_bit.WinApi/MemoryInformationState read_memory_64_bit.WinApi/MemoryInformationState::MEM_RESERVE skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.WinApi/MemoryInformationType skipped:  namespace rule in configuration
+{
+
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.WinApi/MemoryInformationType::value__ skipped:  special name
+	read_memory_64_bit.WinApi/MemoryInformationType [EVE-Bot]read_memory_64_bit.WinApi/MemoryInformationType read_memory_64_bit.WinApi/MemoryInformationType::MEM_IMAGE skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/MemoryInformationType [EVE-Bot]read_memory_64_bit.WinApi/MemoryInformationType read_memory_64_bit.WinApi/MemoryInformationType::MEM_MAPPED skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/MemoryInformationType [EVE-Bot]read_memory_64_bit.WinApi/MemoryInformationType read_memory_64_bit.WinApi/MemoryInformationType::MEM_PRIVATE skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.WinApi/MemoryInformationProtection skipped:  namespace rule in configuration
+{
+
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.WinApi/MemoryInformationProtection::value__ skipped:  special name
+	read_memory_64_bit.WinApi/MemoryInformationProtection [EVE-Bot]read_memory_64_bit.WinApi/MemoryInformationProtection read_memory_64_bit.WinApi/MemoryInformationProtection::PAGE_EXECUTE skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/MemoryInformationProtection [EVE-Bot]read_memory_64_bit.WinApi/MemoryInformationProtection read_memory_64_bit.WinApi/MemoryInformationProtection::PAGE_EXECUTE_READ skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/MemoryInformationProtection [EVE-Bot]read_memory_64_bit.WinApi/MemoryInformationProtection read_memory_64_bit.WinApi/MemoryInformationProtection::PAGE_EXECUTE_READWRITE skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/MemoryInformationProtection [EVE-Bot]read_memory_64_bit.WinApi/MemoryInformationProtection read_memory_64_bit.WinApi/MemoryInformationProtection::PAGE_EXECUTE_WRITECOPY skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/MemoryInformationProtection [EVE-Bot]read_memory_64_bit.WinApi/MemoryInformationProtection read_memory_64_bit.WinApi/MemoryInformationProtection::PAGE_NOACCESS skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/MemoryInformationProtection [EVE-Bot]read_memory_64_bit.WinApi/MemoryInformationProtection read_memory_64_bit.WinApi/MemoryInformationProtection::PAGE_READONLY skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/MemoryInformationProtection [EVE-Bot]read_memory_64_bit.WinApi/MemoryInformationProtection read_memory_64_bit.WinApi/MemoryInformationProtection::PAGE_READWRITE skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/MemoryInformationProtection [EVE-Bot]read_memory_64_bit.WinApi/MemoryInformationProtection read_memory_64_bit.WinApi/MemoryInformationProtection::PAGE_WRITECOPY skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/MemoryInformationProtection [EVE-Bot]read_memory_64_bit.WinApi/MemoryInformationProtection read_memory_64_bit.WinApi/MemoryInformationProtection::PAGE_TARGETS_INVALID skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/MemoryInformationProtection [EVE-Bot]read_memory_64_bit.WinApi/MemoryInformationProtection read_memory_64_bit.WinApi/MemoryInformationProtection::PAGE_TARGETS_NO_UPDATE skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/MemoryInformationProtection [EVE-Bot]read_memory_64_bit.WinApi/MemoryInformationProtection read_memory_64_bit.WinApi/MemoryInformationProtection::PAGE_GUARD skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/MemoryInformationProtection [EVE-Bot]read_memory_64_bit.WinApi/MemoryInformationProtection read_memory_64_bit.WinApi/MemoryInformationProtection::PAGE_NOCACHE skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/MemoryInformationProtection [EVE-Bot]read_memory_64_bit.WinApi/MemoryInformationProtection read_memory_64_bit.WinApi/MemoryInformationProtection::PAGE_WRITECOMBINE skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.WinApi/MouseMessages skipped:  namespace rule in configuration
+{
+
+	System.UInt32 [EVE-Bot]System.UInt32 read_memory_64_bit.WinApi/MouseMessages::value__ skipped:  special name
+	read_memory_64_bit.WinApi/MouseMessages [EVE-Bot]read_memory_64_bit.WinApi/MouseMessages read_memory_64_bit.WinApi/MouseMessages::WM_LBUTTONDOWN skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/MouseMessages [EVE-Bot]read_memory_64_bit.WinApi/MouseMessages read_memory_64_bit.WinApi/MouseMessages::WM_LBUTTONUP skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/MouseMessages [EVE-Bot]read_memory_64_bit.WinApi/MouseMessages read_memory_64_bit.WinApi/MouseMessages::WM_MOUSEMOVE skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/MouseMessages [EVE-Bot]read_memory_64_bit.WinApi/MouseMessages read_memory_64_bit.WinApi/MouseMessages::WM_MOUSEWHEEL skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/MouseMessages [EVE-Bot]read_memory_64_bit.WinApi/MouseMessages read_memory_64_bit.WinApi/MouseMessages::WM_RBUTTONDOWN skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/MouseMessages [EVE-Bot]read_memory_64_bit.WinApi/MouseMessages read_memory_64_bit.WinApi/MouseMessages::WM_RBUTTONUP skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.WinApi/KeyboardMessages skipped:  namespace rule in configuration
+{
+
+	System.UInt32 [EVE-Bot]System.UInt32 read_memory_64_bit.WinApi/KeyboardMessages::value__ skipped:  special name
+	read_memory_64_bit.WinApi/KeyboardMessages [EVE-Bot]read_memory_64_bit.WinApi/KeyboardMessages read_memory_64_bit.WinApi/KeyboardMessages::WM_KEYDOWN skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/KeyboardMessages [EVE-Bot]read_memory_64_bit.WinApi/KeyboardMessages read_memory_64_bit.WinApi/KeyboardMessages::WM_KEYUP skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/KeyboardMessages [EVE-Bot]read_memory_64_bit.WinApi/KeyboardMessages read_memory_64_bit.WinApi/KeyboardMessages::WM_IME_KEYDOWN skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/KeyboardMessages [EVE-Bot]read_memory_64_bit.WinApi/KeyboardMessages read_memory_64_bit.WinApi/KeyboardMessages::WM_IME_KEYUP skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.WinApi/VirtualKeyShort skipped:  namespace rule in configuration
+{
+
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.WinApi/VirtualKeyShort::value__ skipped:  special name
+	read_memory_64_bit.WinApi/VirtualKeyShort [EVE-Bot]read_memory_64_bit.WinApi/VirtualKeyShort read_memory_64_bit.WinApi/VirtualKeyShort::LBUTTON skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/VirtualKeyShort [EVE-Bot]read_memory_64_bit.WinApi/VirtualKeyShort read_memory_64_bit.WinApi/VirtualKeyShort::RBUTTON skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/VirtualKeyShort [EVE-Bot]read_memory_64_bit.WinApi/VirtualKeyShort read_memory_64_bit.WinApi/VirtualKeyShort::VK_CONTROL skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/VirtualKeyShort [EVE-Bot]read_memory_64_bit.WinApi/VirtualKeyShort read_memory_64_bit.WinApi/VirtualKeyShort::VK_F skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/VirtualKeyShort [EVE-Bot]read_memory_64_bit.WinApi/VirtualKeyShort read_memory_64_bit.WinApi/VirtualKeyShort::VK_G skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/VirtualKeyShort [EVE-Bot]read_memory_64_bit.WinApi/VirtualKeyShort read_memory_64_bit.WinApi/VirtualKeyShort::VK_H skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/VirtualKeyShort [EVE-Bot]read_memory_64_bit.WinApi/VirtualKeyShort read_memory_64_bit.WinApi/VirtualKeyShort::VK_V skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/VirtualKeyShort [EVE-Bot]read_memory_64_bit.WinApi/VirtualKeyShort read_memory_64_bit.WinApi/VirtualKeyShort::VK_F1 skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/VirtualKeyShort [EVE-Bot]read_memory_64_bit.WinApi/VirtualKeyShort read_memory_64_bit.WinApi/VirtualKeyShort::VK_F2 skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/VirtualKeyShort [EVE-Bot]read_memory_64_bit.WinApi/VirtualKeyShort read_memory_64_bit.WinApi/VirtualKeyShort::VK_F3 skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/VirtualKeyShort [EVE-Bot]read_memory_64_bit.WinApi/VirtualKeyShort read_memory_64_bit.WinApi/VirtualKeyShort::VK_UP skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/VirtualKeyShort [EVE-Bot]read_memory_64_bit.WinApi/VirtualKeyShort read_memory_64_bit.WinApi/VirtualKeyShort::VK_DOWN skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/VirtualKeyShort [EVE-Bot]read_memory_64_bit.WinApi/VirtualKeyShort read_memory_64_bit.WinApi/VirtualKeyShort::VK_NUMPAD1 skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/VirtualKeyShort [EVE-Bot]read_memory_64_bit.WinApi/VirtualKeyShort read_memory_64_bit.WinApi/VirtualKeyShort::VK_NUMPAD2 skipped:  type rule in configuration
+	read_memory_64_bit.WinApi/VirtualKeyShort [EVE-Bot]read_memory_64_bit.WinApi/VirtualKeyShort read_memory_64_bit.WinApi/VirtualKeyShort::VK_NUMPAD3 skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.UITreeNode/DictEntryValueGenericRepresentation skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.UITreeNode/DictEntryValueGenericRepresentation::get_address[0]( ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.UITreeNode/DictEntryValueGenericRepresentation::set_address[1]( [System.Runtime]System.UInt64 ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.UITreeNode/DictEntryValueGenericRepresentation::get_pythonObjectTypeName[0]( ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.UITreeNode/DictEntryValueGenericRepresentation::set_pythonObjectTypeName[1]( [System.Runtime]System.String ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.UITreeNode/DictEntryValueGenericRepresentation::.ctor[0]( ) skipped:  special name
+
+
+	System.UInt64 [EVE-Bot]System.UInt64 read_memory_64_bit.UITreeNode/DictEntryValueGenericRepresentation::<address>k__BackingField skipped:  type rule in configuration
+	System.String [EVE-Bot]System.String read_memory_64_bit.UITreeNode/DictEntryValueGenericRepresentation::<pythonObjectTypeName>k__BackingField skipped:  type rule in configuration
+
+
+	System.UInt64 [EVE-Bot]System.UInt64 read_memory_64_bit.UITreeNode/DictEntryValueGenericRepresentation::address skipped:  type rule in configuration
+	System.String [EVE-Bot]System.String read_memory_64_bit.UITreeNode/DictEntryValueGenericRepresentation::pythonObjectTypeName skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.UITreeNode/DictEntry skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.UITreeNode/DictEntry::get_key[0]( ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.UITreeNode/DictEntry::set_key[1]( [System.Runtime]System.String ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.UITreeNode/DictEntry::get_value[0]( ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.UITreeNode/DictEntry::set_value[1]( [System.Runtime]System.Object ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.UITreeNode/DictEntry::.ctor[0]( ) skipped:  special name
+
+
+	System.String [EVE-Bot]System.String read_memory_64_bit.UITreeNode/DictEntry::<key>k__BackingField skipped:  type rule in configuration
+	System.Object [EVE-Bot]System.Object read_memory_64_bit.UITreeNode/DictEntry::<value>k__BackingField skipped:  type rule in configuration
+
+
+	System.String [EVE-Bot]System.String read_memory_64_bit.UITreeNode/DictEntry::key skipped:  type rule in configuration
+	System.Object [EVE-Bot]System.Object read_memory_64_bit.UITreeNode/DictEntry::value skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.UITreeNode/Bunch skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.UITreeNode/Bunch::get_entriesOfInterest[0]( ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.UITreeNode/Bunch::set_entriesOfInterest[1]( [Newtonsoft.Json]Newtonsoft.Json.Linq.JObject ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.UITreeNode/Bunch::.ctor[0]( ) skipped:  special name
+
+
+	Newtonsoft.Json.Linq.JObject [EVE-Bot]Newtonsoft.Json.Linq.JObject read_memory_64_bit.UITreeNode/Bunch::<entriesOfInterest>k__BackingField skipped:  type rule in configuration
+
+
+	Newtonsoft.Json.Linq.JObject [EVE-Bot]Newtonsoft.Json.Linq.JObject read_memory_64_bit.UITreeNode/Bunch::entriesOfInterest skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.UITreeNode/<>c skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.UITreeNode/<>c::.cctor[0]( ) skipped:  special name
+	[EVE-Bot]read_memory_64_bit.UITreeNode/<>c::.ctor[0]( ) skipped:  special name
+	[EVE-Bot]read_memory_64_bit.UITreeNode/<>c::<EnumerateSelfAndDescendants>b__23_0[1]( [EVE-Bot]read_memory_64_bit.UITreeNode ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.UITreeNode/<>c::<WithOtherDictEntriesRemoved>b__24_0[1]( [EVE-Bot]read_memory_64_bit.UITreeNode ) skipped:  type rule in configuration
+
+
+	read_memory_64_bit.UITreeNode/<>c [EVE-Bot]read_memory_64_bit.UITreeNode/<>c read_memory_64_bit.UITreeNode/<>c::<>9 skipped:  type rule in configuration
+	System.Func`2<read_memory_64_bit.UITreeNode,System.Collections.Generic.IEnumerable`1<read_memory_64_bit.UITreeNode>> [EVE-Bot]System.Func`2<read_memory_64_bit.UITreeNode,System.Collections.Generic.IEnumerable`1<read_memory_64_bit.UITreeNode>> read_memory_64_bit.UITreeNode/<>c::<>9__23_0 skipped:  type rule in configuration
+	System.Func`2<read_memory_64_bit.UITreeNode,read_memory_64_bit.UITreeNode> [EVE-Bot]System.Func`2<read_memory_64_bit.UITreeNode,read_memory_64_bit.UITreeNode> read_memory_64_bit.UITreeNode/<>c::<>9__24_0 skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.UITreeNode/<>c__DisplayClass27_0 skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.UITreeNode/<>c__DisplayClass27_0::.ctor[0]( ) skipped:  special name
+	[EVE-Bot]read_memory_64_bit.UITreeNode/<>c__DisplayClass27_0::<FindEntityOfString>b__0[1]( [EVE-Bot]read_memory_64_bit.UITreeNode ) skipped:  type rule in configuration
+
+
+	System.String [EVE-Bot]System.String read_memory_64_bit.UITreeNode/<>c__DisplayClass27_0::str skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.UITreeNode/<>c__DisplayClass28_0 skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.UITreeNode/<>c__DisplayClass28_0::.ctor[0]( ) skipped:  special name
+	[EVE-Bot]read_memory_64_bit.UITreeNode/<>c__DisplayClass28_0::<FindEntityOfStringByDictEntriesOfInterest>b__0[1]( [EVE-Bot]read_memory_64_bit.UITreeNode ) skipped:  type rule in configuration
+
+
+	System.String [EVE-Bot]System.String read_memory_64_bit.UITreeNode/<>c__DisplayClass28_0::key skipped:  type rule in configuration
+	System.String [EVE-Bot]System.String read_memory_64_bit.UITreeNode/<>c__DisplayClass28_0::value skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.ProcessSample/<>c skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.ProcessSample/<>c::.cctor[0]( ) skipped:  special name
+	[EVE-Bot]read_memory_64_bit.ProcessSample/<>c::.ctor[0]( ) skipped:  special name
+	[EVE-Bot]read_memory_64_bit.ProcessSample/<>c::<ZipArchiveFromProcessSample>b__0_0[1]( [System.Runtime]System.ValueTuple`2<[System.Collections.Immutable]System.Collections.Immutable.ImmutableList`1<[System.Runtime]System.String>,[System.Runtime]System.Byte[]> ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.ProcessSample/<>c::<ZipArchiveFromProcessSample>b__0_1[1]( [System.Runtime]System.ValueTuple`2<[System.Collections.Immutable]System.Collections.Immutable.ImmutableList`1<[System.Runtime]System.String>,[System.Runtime]System.Byte[]> ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.ProcessSample/<>c::<ZipArchiveFromProcessSample>b__0_2[1]( [System.Runtime]System.ValueTuple`2<[System.Runtime]System.UInt64,[System.Runtime]System.Byte[]> ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.ProcessSample/<>c::<ZipArchiveFromProcessSample>b__0_3[1]( [System.Runtime]System.ValueTuple`2<[System.Runtime]System.UInt64,[System.Runtime]System.Byte[]> ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.ProcessSample/<>c::<ProcessSampleFromZipArchive>b__1_1[1]( [System.Runtime]System.ValueTuple`2<[System.Collections.Immutable]System.Collections.Immutable.IImmutableList`1<[System.Runtime]System.String>,[System.Runtime]System.Byte[]> ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.ProcessSample/<>c::<ProcessSampleFromZipArchive>b__1_2[1]( [System.Runtime]System.ValueTuple`2<[System.Collections.Immutable]System.Collections.Immutable.IImmutableList`1<[System.Runtime]System.String>,[System.Runtime]System.Byte[]> ) skipped:  type rule in configuration
+
+
+	read_memory_64_bit.ProcessSample/<>c [EVE-Bot]read_memory_64_bit.ProcessSample/<>c read_memory_64_bit.ProcessSample/<>c::<>9 skipped:  type rule in configuration
+	System.Func`2<System.ValueTuple`2<System.Collections.Immutable.ImmutableList`1<System.String>,System.Byte[]>,System.Boolean> [EVE-Bot]System.Func`2<System.ValueTuple`2<System.Collections.Immutable.ImmutableList`1<System.String>,System.Byte[]>,System.Boolean> read_memory_64_bit.ProcessSample/<>c::<>9__0_0 skipped:  type rule in configuration
+	System.Func`2<System.ValueTuple`2<System.Collections.Immutable.ImmutableList`1<System.String>,System.Byte[]>,System.Collections.Generic.KeyValuePair`2<System.Collections.Immutable.IImmutableList`1<System.String>,System.Byte[]>> [EVE-Bot]System.Func`2<System.ValueTuple`2<System.Collections.Immutable.ImmutableList`1<System.String>,System.Byte[]>,System.Collections.Generic.KeyValuePair`2<System.Collections.Immutable.IImmutableList`1<System.String>,System.Byte[]>> read_memory_64_bit.ProcessSample/<>c::<>9__0_1 skipped:  type rule in configuration
+	System.Func`2<System.ValueTuple`2<System.UInt64,System.Byte[]>,System.Collections.Immutable.IImmutableList`1<System.String>> [EVE-Bot]System.Func`2<System.ValueTuple`2<System.UInt64,System.Byte[]>,System.Collections.Immutable.IImmutableList`1<System.String>> read_memory_64_bit.ProcessSample/<>c::<>9__0_2 skipped:  type rule in configuration
+	System.Func`2<System.ValueTuple`2<System.UInt64,System.Byte[]>,System.Byte[]> [EVE-Bot]System.Func`2<System.ValueTuple`2<System.UInt64,System.Byte[]>,System.Byte[]> read_memory_64_bit.ProcessSample/<>c::<>9__0_3 skipped:  type rule in configuration
+	System.Func`2<System.ValueTuple`2<System.Collections.Immutable.IImmutableList`1<System.String>,System.Byte[]>,System.Boolean> [EVE-Bot]System.Func`2<System.ValueTuple`2<System.Collections.Immutable.IImmutableList`1<System.String>,System.Byte[]>,System.Boolean> read_memory_64_bit.ProcessSample/<>c::<>9__1_1 skipped:  type rule in configuration
+	System.Func`2<System.ValueTuple`2<System.Collections.Immutable.IImmutableList`1<System.String>,System.Byte[]>,System.ValueTuple`2<System.UInt64,System.Byte[]>> [EVE-Bot]System.Func`2<System.ValueTuple`2<System.Collections.Immutable.IImmutableList`1<System.String>,System.Byte[]>,System.ValueTuple`2<System.UInt64,System.Byte[]>> read_memory_64_bit.ProcessSample/<>c::<>9__1_2 skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.ProcessSample/<>c__DisplayClass1_0 skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.ProcessSample/<>c__DisplayClass1_0::.ctor[0]( ) skipped:  special name
+	[EVE-Bot]read_memory_64_bit.ProcessSample/<>c__DisplayClass1_0::<ProcessSampleFromZipArchive>g__GetFilesInDirectory|0[1]( [System.Collections.Immutable]System.Collections.Immutable.IImmutableList`1<[System.Runtime]System.String> ) skipped:  type rule in configuration
+
+
+	System.Collections.Generic.IEnumerable`1<System.ValueTuple`2<System.String,System.Byte[]>> [EVE-Bot]System.Collections.Generic.IEnumerable`1<System.ValueTuple`2<System.String,System.Byte[]>> read_memory_64_bit.ProcessSample/<>c__DisplayClass1_0::files skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.ReadMemory/<>c skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.ReadMemory/<>c::.cctor[0]( ) skipped:  special name
+	[EVE-Bot]read_memory_64_bit.ReadMemory/<>c::.ctor[0]( ) skipped:  special name
+	[EVE-Bot]read_memory_64_bit.ReadMemory/<>c::<GetRootAddressesAndMemoryReader>b__3_0[1]( [System.Runtime]System.ValueTuple`2<[System.Runtime]System.UInt64,[System.Runtime]System.Byte[]> ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.ReadMemory/<>c::<GetUITrees>b__11_6[1]( [EVE-Bot]read_memory_64_bit.UITreeNode ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.ReadMemory/<>c::<GetUITrees>b__11_1[1]( [EVE-Bot]read_memory_64_bit.UITreeNode ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.ReadMemory/<>c::<GetUITrees>b__11_2[1]( [EVE-Bot].<>f__AnonymousType0`2<[EVE-Bot]read_memory_64_bit.UITreeNode,[System.Runtime]System.Int32> ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.ReadMemory/<>c::<GetUITrees>b__11_3[1]( [EVE-Bot].<>f__AnonymousType0`2<[EVE-Bot]read_memory_64_bit.UITreeNode,[System.Runtime]System.Int32> ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.ReadMemory/<>c::<GetUITrees>b__11_4[1]( [EVE-Bot].<>f__AnonymousType0`2<[EVE-Bot]read_memory_64_bit.UITreeNode,[System.Runtime]System.Int32> ) skipped:  type rule in configuration
+
+
+	read_memory_64_bit.ReadMemory/<>c [EVE-Bot]read_memory_64_bit.ReadMemory/<>c read_memory_64_bit.ReadMemory/<>c::<>9 skipped:  type rule in configuration
+	System.Func`2<System.ValueTuple`2<System.UInt64,System.Byte[]>,System.ValueTuple`2<System.UInt64,System.UInt64>> [EVE-Bot]System.Func`2<System.ValueTuple`2<System.UInt64,System.Byte[]>,System.ValueTuple`2<System.UInt64,System.UInt64>> read_memory_64_bit.ReadMemory/<>c::<>9__3_0 skipped:  type rule in configuration
+	System.Func`2<read_memory_64_bit.UITreeNode,System.Boolean> [EVE-Bot]System.Func`2<read_memory_64_bit.UITreeNode,System.Boolean> read_memory_64_bit.ReadMemory/<>c::<>9__11_6 skipped:  type rule in configuration
+	System.Func`2<read_memory_64_bit.UITreeNode,<>f__AnonymousType0`2<read_memory_64_bit.UITreeNode,System.Int32>> [EVE-Bot]System.Func`2<read_memory_64_bit.UITreeNode,<>f__AnonymousType0`2<read_memory_64_bit.UITreeNode,System.Int32>> read_memory_64_bit.ReadMemory/<>c::<>9__11_1 skipped:  type rule in configuration
+	System.Func`2<<>f__AnonymousType0`2<read_memory_64_bit.UITreeNode,System.Int32>,System.Int32> [EVE-Bot]System.Func`2<<>f__AnonymousType0`2<read_memory_64_bit.UITreeNode,System.Int32>,System.Int32> read_memory_64_bit.ReadMemory/<>c::<>9__11_2 skipped:  type rule in configuration
+	System.Func`2<<>f__AnonymousType0`2<read_memory_64_bit.UITreeNode,System.Int32>,System.String> [EVE-Bot]System.Func`2<<>f__AnonymousType0`2<read_memory_64_bit.UITreeNode,System.Int32>,System.String> read_memory_64_bit.ReadMemory/<>c::<>9__11_3 skipped:  type rule in configuration
+	System.Func`2<<>f__AnonymousType0`2<read_memory_64_bit.UITreeNode,System.Int32>,System.Int32> [EVE-Bot]System.Func`2<<>f__AnonymousType0`2<read_memory_64_bit.UITreeNode,System.Int32>,System.Int32> read_memory_64_bit.ReadMemory/<>c::<>9__11_4 skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.ReadMemory/<>c__DisplayClass11_0 skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.ReadMemory/<>c__DisplayClass11_0::.ctor[0]( ) skipped:  special name
+	[EVE-Bot]read_memory_64_bit.ReadMemory/<>c__DisplayClass11_0::<GetUITrees>g__ReadUITrees|0[0]( ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.ReadMemory/<>c__DisplayClass11_0::<GetUITrees>b__5[1]( [System.Runtime]System.UInt64 ) skipped:  type rule in configuration
+
+
+	System.Collections.Immutable.IImmutableList`1<System.UInt64> [EVE-Bot]System.Collections.Immutable.IImmutableList`1<System.UInt64> read_memory_64_bit.ReadMemory/<>c__DisplayClass11_0::uiRootCandidatesAddresses skipped:  type rule in configuration
+	read_memory_64_bit.IMemoryReader [EVE-Bot]read_memory_64_bit.IMemoryReader read_memory_64_bit.ReadMemory/<>c__DisplayClass11_0::memoryReader skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.ReadMemory/<>c__DisplayClass11_0::maxDepth skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForInstancesOfPythonType|5>d skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForInstancesOfPythonType|5>d::System.Collections.Generic.IEnumerator<System.UInt64>.get_Current[0]( ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForInstancesOfPythonType|5>d::System.Collections.IEnumerator.get_Current[0]( ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForInstancesOfPythonType|5>d::MoveNext[0]( ) skipped:  external base class or interface
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForInstancesOfPythonType|5>d::.ctor[1]( [System.Runtime]System.Int32 ) skipped:  special name
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForInstancesOfPythonType|5>d::System.IDisposable.Dispose[0]( ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForInstancesOfPythonType|5>d::<>m__Finally1[0]( ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForInstancesOfPythonType|5>d::System.Collections.IEnumerator.Reset[0]( ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForInstancesOfPythonType|5>d::System.Collections.Generic.IEnumerable<System.UInt64>.GetEnumerator[0]( ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForInstancesOfPythonType|5>d::System.Collections.IEnumerable.GetEnumerator[0]( ) skipped:  type rule in configuration
+
+
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForInstancesOfPythonType|5>d::<>1__state skipped:  type rule in configuration
+	System.UInt64 [EVE-Bot]System.UInt64 read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForInstancesOfPythonType|5>d::<>2__current skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForInstancesOfPythonType|5>d::<>l__initialThreadId skipped:  type rule in configuration
+	System.Collections.Immutable.IImmutableList`1<System.UInt64> [EVE-Bot]System.Collections.Immutable.IImmutableList`1<System.UInt64> read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForInstancesOfPythonType|5>d::typeObjectCandidatesAddresses skipped:  type rule in configuration
+	System.Collections.Immutable.IImmutableList`1<System.UInt64> [EVE-Bot]System.Collections.Immutable.IImmutableList`1<System.UInt64> read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForInstancesOfPythonType|5>d::<>3__typeObjectCandidatesAddresses skipped:  type rule in configuration
+	read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0 [EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0 read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForInstancesOfPythonType|5>d::<>4__this skipped:  type rule in configuration
+	System.UInt64 [EVE-Bot]System.UInt64 read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForInstancesOfPythonType|5>d::<typeAddressMin>5__1 skipped:  type rule in configuration
+	System.UInt64 [EVE-Bot]System.UInt64 read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForInstancesOfPythonType|5>d::<typeAddressMax>5__2 skipped:  type rule in configuration
+	System.Collections.Immutable.ImmutableList`1/Enumerator<System.ValueTuple`2<System.UInt64,System.UInt64>> [EVE-Bot]System.Collections.Immutable.ImmutableList`1/Enumerator<System.ValueTuple`2<System.UInt64,System.UInt64>> read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForInstancesOfPythonType|5>d::<>s__3 skipped:  type rule in configuration
+	System.ValueTuple`2<System.UInt64,System.UInt64> [EVE-Bot]System.ValueTuple`2<System.UInt64,System.UInt64> read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForInstancesOfPythonType|5>d::<memoryRegion>5__4 skipped:  type rule in configuration
+	System.UInt64[] [EVE-Bot]System.UInt64[] read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForInstancesOfPythonType|5>d::<memoryRegionContentAsULongArray>5__5 skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForInstancesOfPythonType|5>d::<candidateAddressIndex>5__6 skipped:  type rule in configuration
+	System.UInt64 [EVE-Bot]System.UInt64 read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForInstancesOfPythonType|5>d::<candidateAddressInProcess>5__7 skipped:  type rule in configuration
+	System.UInt64 [EVE-Bot]System.UInt64 read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForInstancesOfPythonType|5>d::<candidate_ob_type>5__8 skipped:  type rule in configuration
+
+
+	System.UInt64 [EVE-Bot]System.UInt64 read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForInstancesOfPythonType|5>d::System.Collections.Generic.IEnumerator<System.UInt64>.Current skipped:  type rule in configuration
+	System.Object [EVE-Bot]System.Object read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForInstancesOfPythonType|5>d::System.Collections.IEnumerator.Current skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjectType|3>d skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjectType|3>d::System.Collections.Generic.IEnumerator<System.UInt64>.get_Current[0]( ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjectType|3>d::System.Collections.IEnumerator.get_Current[0]( ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjectType|3>d::MoveNext[0]( ) skipped:  external base class or interface
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjectType|3>d::.ctor[1]( [System.Runtime]System.Int32 ) skipped:  special name
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjectType|3>d::System.IDisposable.Dispose[0]( ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjectType|3>d::<>m__Finally1[0]( ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjectType|3>d::System.Collections.IEnumerator.Reset[0]( ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjectType|3>d::System.Collections.Generic.IEnumerable<System.UInt64>.GetEnumerator[0]( ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjectType|3>d::System.Collections.IEnumerable.GetEnumerator[0]( ) skipped:  type rule in configuration
+
+
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjectType|3>d::<>1__state skipped:  type rule in configuration
+	System.UInt64 [EVE-Bot]System.UInt64 read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjectType|3>d::<>2__current skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjectType|3>d::<>l__initialThreadId skipped:  type rule in configuration
+	read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0 [EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0 read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjectType|3>d::<>4__this skipped:  type rule in configuration
+	System.Collections.Immutable.ImmutableList`1/Enumerator<System.ValueTuple`2<System.UInt64,System.UInt64>> [EVE-Bot]System.Collections.Immutable.ImmutableList`1/Enumerator<System.ValueTuple`2<System.UInt64,System.UInt64>> read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjectType|3>d::<>s__1 skipped:  type rule in configuration
+	System.ValueTuple`2<System.UInt64,System.UInt64> [EVE-Bot]System.ValueTuple`2<System.UInt64,System.UInt64> read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjectType|3>d::<memoryRegion>5__2 skipped:  type rule in configuration
+	System.UInt64[] [EVE-Bot]System.UInt64[] read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjectType|3>d::<memoryRegionContentAsULongArray>5__3 skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjectType|3>d::<candidateAddressIndex>5__4 skipped:  type rule in configuration
+	System.UInt64 [EVE-Bot]System.UInt64 read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjectType|3>d::<candidateAddressInProcess>5__5 skipped:  type rule in configuration
+	System.UInt64 [EVE-Bot]System.UInt64 read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjectType|3>d::<candidate_ob_type>5__6 skipped:  type rule in configuration
+	System.String [EVE-Bot]System.String read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjectType|3>d::<candidate_tp_name>5__7 skipped:  type rule in configuration
+
+
+	System.UInt64 [EVE-Bot]System.UInt64 read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjectType|3>d::System.Collections.Generic.IEnumerator<System.UInt64>.Current skipped:  type rule in configuration
+	System.Object [EVE-Bot]System.Object read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjectType|3>d::System.Collections.IEnumerator.Current skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjects|4>d skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjects|4>d::System.Collections.Generic.IEnumerator<(System.UInt64address,System.Stringtp_name)>.get_Current[0]( ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjects|4>d::System.Collections.IEnumerator.get_Current[0]( ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjects|4>d::MoveNext[0]( ) skipped:  external base class or interface
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjects|4>d::.ctor[1]( [System.Runtime]System.Int32 ) skipped:  special name
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjects|4>d::System.IDisposable.Dispose[0]( ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjects|4>d::<>m__Finally1[0]( ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjects|4>d::System.Collections.IEnumerator.Reset[0]( ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjects|4>d::System.Collections.Generic.IEnumerable<(System.UInt64address,System.Stringtp_name)>.GetEnumerator[0]( ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjects|4>d::System.Collections.IEnumerable.GetEnumerator[0]( ) skipped:  type rule in configuration
+
+
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjects|4>d::<>1__state skipped:  type rule in configuration
+	System.ValueTuple`2<System.UInt64,System.String> [EVE-Bot]System.ValueTuple`2<System.UInt64,System.String> read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjects|4>d::<>2__current skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjects|4>d::<>l__initialThreadId skipped:  type rule in configuration
+	System.Collections.Immutable.IImmutableList`1<System.UInt64> [EVE-Bot]System.Collections.Immutable.IImmutableList`1<System.UInt64> read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjects|4>d::typeObjectCandidatesAddresses skipped:  type rule in configuration
+	System.Collections.Immutable.IImmutableList`1<System.UInt64> [EVE-Bot]System.Collections.Immutable.IImmutableList`1<System.UInt64> read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjects|4>d::<>3__typeObjectCandidatesAddresses skipped:  type rule in configuration
+	read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0 [EVE-Bot]read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0 read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjects|4>d::<>4__this skipped:  type rule in configuration
+	System.UInt64 [EVE-Bot]System.UInt64 read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjects|4>d::<typeAddressMin>5__1 skipped:  type rule in configuration
+	System.UInt64 [EVE-Bot]System.UInt64 read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjects|4>d::<typeAddressMax>5__2 skipped:  type rule in configuration
+	System.Collections.Immutable.ImmutableList`1/Enumerator<System.ValueTuple`2<System.UInt64,System.UInt64>> [EVE-Bot]System.Collections.Immutable.ImmutableList`1/Enumerator<System.ValueTuple`2<System.UInt64,System.UInt64>> read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjects|4>d::<>s__3 skipped:  type rule in configuration
+	System.ValueTuple`2<System.UInt64,System.UInt64> [EVE-Bot]System.ValueTuple`2<System.UInt64,System.UInt64> read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjects|4>d::<memoryRegion>5__4 skipped:  type rule in configuration
+	System.UInt64[] [EVE-Bot]System.UInt64[] read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjects|4>d::<memoryRegionContentAsULongArray>5__5 skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjects|4>d::<candidateAddressIndex>5__6 skipped:  type rule in configuration
+	System.UInt64 [EVE-Bot]System.UInt64 read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjects|4>d::<candidateAddressInProcess>5__7 skipped:  type rule in configuration
+	System.UInt64 [EVE-Bot]System.UInt64 read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjects|4>d::<candidate_ob_type>5__8 skipped:  type rule in configuration
+	System.String [EVE-Bot]System.String read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjects|4>d::<candidate_tp_name>5__9 skipped:  type rule in configuration
+
+
+	System.ValueTuple`2<System.UInt64,System.String> [EVE-Bot]System.ValueTuple`2<System.UInt64,System.String> read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjects|4>d::System.Collections.Generic.IEnumerator<(System.UInt64address,System.Stringtp_name)>.Current skipped:  type rule in configuration
+	System.Object [EVE-Bot]System.Object read_memory_64_bit.EveOnline64/<>c__DisplayClass4_0/<<EnumeratePossibleAddressesForUIRootObjects>g__EnumerateCandidatesForPythonTypeObjects|4>d::System.Collections.IEnumerator.Current skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.MemoryReaderFromProcessSample/<>c skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.MemoryReaderFromProcessSample/<>c::.cctor[0]( ) skipped:  special name
+	[EVE-Bot]read_memory_64_bit.MemoryReaderFromProcessSample/<>c::.ctor[0]( ) skipped:  special name
+	[EVE-Bot]read_memory_64_bit.MemoryReaderFromProcessSample/<>c::<.ctor>b__1_0[1]( [System.Runtime]System.ValueTuple`2<[System.Runtime]System.UInt64,[System.Runtime]System.Byte[]> ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.MemoryReaderFromProcessSample/<>c::<ReadBytes>b__2_1[1]( [System.Runtime]System.ValueTuple`2<[System.Runtime]System.UInt64,[System.Runtime]System.Byte[]> ) skipped:  type rule in configuration
+
+
+	read_memory_64_bit.MemoryReaderFromProcessSample/<>c [EVE-Bot]read_memory_64_bit.MemoryReaderFromProcessSample/<>c read_memory_64_bit.MemoryReaderFromProcessSample/<>c::<>9 skipped:  type rule in configuration
+	System.Func`2<System.ValueTuple`2<System.UInt64,System.Byte[]>,System.UInt64> [EVE-Bot]System.Func`2<System.ValueTuple`2<System.UInt64,System.Byte[]>,System.UInt64> read_memory_64_bit.MemoryReaderFromProcessSample/<>c::<>9__1_0 skipped:  type rule in configuration
+	System.Func`2<System.ValueTuple`2<System.UInt64,System.Byte[]>,System.UInt64> [EVE-Bot]System.Func`2<System.ValueTuple`2<System.UInt64,System.Byte[]>,System.UInt64> read_memory_64_bit.MemoryReaderFromProcessSample/<>c::<>9__2_1 skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.MemoryReaderFromProcessSample/<>c__DisplayClass2_0 skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.MemoryReaderFromProcessSample/<>c__DisplayClass2_0::.ctor[0]( ) skipped:  special name
+	[EVE-Bot]read_memory_64_bit.MemoryReaderFromProcessSample/<>c__DisplayClass2_0::<ReadBytes>b__0[1]( [System.Runtime]System.ValueTuple`2<[System.Runtime]System.UInt64,[System.Runtime]System.Byte[]> ) skipped:  type rule in configuration
+
+
+	System.UInt64 [EVE-Bot]System.UInt64 read_memory_64_bit.MemoryReaderFromProcessSample/<>c__DisplayClass2_0::startAddress skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.ProcessSample/<>c__DisplayClass1_0/<<ProcessSampleFromZipArchive>g__GetFilesInDirectory|0>d skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.ProcessSample/<>c__DisplayClass1_0/<<ProcessSampleFromZipArchive>g__GetFilesInDirectory|0>d::System.Collections.Generic.IEnumerator<(System.Collections.Immutable.IImmutableList<System.String>filePath,System.Byte[]fileContent)>.get_Current[0]( ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.ProcessSample/<>c__DisplayClass1_0/<<ProcessSampleFromZipArchive>g__GetFilesInDirectory|0>d::System.Collections.IEnumerator.get_Current[0]( ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.ProcessSample/<>c__DisplayClass1_0/<<ProcessSampleFromZipArchive>g__GetFilesInDirectory|0>d::MoveNext[0]( ) skipped:  external base class or interface
+	[EVE-Bot]read_memory_64_bit.ProcessSample/<>c__DisplayClass1_0/<<ProcessSampleFromZipArchive>g__GetFilesInDirectory|0>d::.ctor[1]( [System.Runtime]System.Int32 ) skipped:  special name
+	[EVE-Bot]read_memory_64_bit.ProcessSample/<>c__DisplayClass1_0/<<ProcessSampleFromZipArchive>g__GetFilesInDirectory|0>d::System.IDisposable.Dispose[0]( ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.ProcessSample/<>c__DisplayClass1_0/<<ProcessSampleFromZipArchive>g__GetFilesInDirectory|0>d::<>m__Finally1[0]( ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.ProcessSample/<>c__DisplayClass1_0/<<ProcessSampleFromZipArchive>g__GetFilesInDirectory|0>d::System.Collections.IEnumerator.Reset[0]( ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.ProcessSample/<>c__DisplayClass1_0/<<ProcessSampleFromZipArchive>g__GetFilesInDirectory|0>d::System.Collections.Generic.IEnumerable<(System.Collections.Immutable.IImmutableList<System.String>filePath,System.Byte[]fileContent)>.GetEnumerator[0]( ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.ProcessSample/<>c__DisplayClass1_0/<<ProcessSampleFromZipArchive>g__GetFilesInDirectory|0>d::System.Collections.IEnumerable.GetEnumerator[0]( ) skipped:  type rule in configuration
+
+
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.ProcessSample/<>c__DisplayClass1_0/<<ProcessSampleFromZipArchive>g__GetFilesInDirectory|0>d::<>1__state skipped:  type rule in configuration
+	System.ValueTuple`2<System.Collections.Immutable.IImmutableList`1<System.String>,System.Byte[]> [EVE-Bot]System.ValueTuple`2<System.Collections.Immutable.IImmutableList`1<System.String>,System.Byte[]> read_memory_64_bit.ProcessSample/<>c__DisplayClass1_0/<<ProcessSampleFromZipArchive>g__GetFilesInDirectory|0>d::<>2__current skipped:  type rule in configuration
+	System.Int32 [EVE-Bot]System.Int32 read_memory_64_bit.ProcessSample/<>c__DisplayClass1_0/<<ProcessSampleFromZipArchive>g__GetFilesInDirectory|0>d::<>l__initialThreadId skipped:  type rule in configuration
+	System.Collections.Immutable.IImmutableList`1<System.String> [EVE-Bot]System.Collections.Immutable.IImmutableList`1<System.String> read_memory_64_bit.ProcessSample/<>c__DisplayClass1_0/<<ProcessSampleFromZipArchive>g__GetFilesInDirectory|0>d::directory skipped:  type rule in configuration
+	System.Collections.Immutable.IImmutableList`1<System.String> [EVE-Bot]System.Collections.Immutable.IImmutableList`1<System.String> read_memory_64_bit.ProcessSample/<>c__DisplayClass1_0/<<ProcessSampleFromZipArchive>g__GetFilesInDirectory|0>d::<>3__directory skipped:  type rule in configuration
+	read_memory_64_bit.ProcessSample/<>c__DisplayClass1_0 [EVE-Bot]read_memory_64_bit.ProcessSample/<>c__DisplayClass1_0 read_memory_64_bit.ProcessSample/<>c__DisplayClass1_0/<<ProcessSampleFromZipArchive>g__GetFilesInDirectory|0>d::<>4__this skipped:  type rule in configuration
+	System.Collections.Generic.IEnumerator`1<System.ValueTuple`2<System.String,System.Byte[]>> [EVE-Bot]System.Collections.Generic.IEnumerator`1<System.ValueTuple`2<System.String,System.Byte[]>> read_memory_64_bit.ProcessSample/<>c__DisplayClass1_0/<<ProcessSampleFromZipArchive>g__GetFilesInDirectory|0>d::<>s__1 skipped:  type rule in configuration
+	System.ValueTuple`2<System.String,System.Byte[]> [EVE-Bot]System.ValueTuple`2<System.String,System.Byte[]> read_memory_64_bit.ProcessSample/<>c__DisplayClass1_0/<<ProcessSampleFromZipArchive>g__GetFilesInDirectory|0>d::<fileFullPathAndContent>5__2 skipped:  type rule in configuration
+	System.String[] [EVE-Bot]System.String[] read_memory_64_bit.ProcessSample/<>c__DisplayClass1_0/<<ProcessSampleFromZipArchive>g__GetFilesInDirectory|0>d::<fullPath>5__3 skipped:  type rule in configuration
+
+
+	System.ValueTuple`2<System.Collections.Immutable.IImmutableList`1<System.String>,System.Byte[]> [EVE-Bot]System.ValueTuple`2<System.Collections.Immutable.IImmutableList`1<System.String>,System.Byte[]> read_memory_64_bit.ProcessSample/<>c__DisplayClass1_0/<<ProcessSampleFromZipArchive>g__GetFilesInDirectory|0>d::System.Collections.Generic.IEnumerator<(System.Collections.Immutable.IImmutableList<System.String>filePath,System.Byte[]fileContent)>.Current skipped:  type rule in configuration
+	System.Object [EVE-Bot]System.Object read_memory_64_bit.ProcessSample/<>c__DisplayClass1_0/<<ProcessSampleFromZipArchive>g__GetFilesInDirectory|0>d::System.Collections.IEnumerator.Current skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.IntegersToStringJsonConverter skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.IntegersToStringJsonConverter::get_CanRead[0]( ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.IntegersToStringJsonConverter::get_CanWrite[0]( ) skipped:  skip by property
+	[EVE-Bot]read_memory_64_bit.IntegersToStringJsonConverter::CanConvert[1]( [System.Runtime]System.Type ) skipped:  external base class or interface
+	[EVE-Bot]read_memory_64_bit.IntegersToStringJsonConverter::WriteJson[3]( [Newtonsoft.Json]Newtonsoft.Json.JsonWriter, [System.Runtime]System.Object, [Newtonsoft.Json]Newtonsoft.Json.JsonSerializer ) skipped:  external base class or interface
+	[EVE-Bot]read_memory_64_bit.IntegersToStringJsonConverter::ReadJson[4]( [Newtonsoft.Json]Newtonsoft.Json.JsonReader, [System.Runtime]System.Type, [System.Runtime]System.Object, [Newtonsoft.Json]Newtonsoft.Json.JsonSerializer ) skipped:  external base class or interface
+	[EVE-Bot]read_memory_64_bit.IntegersToStringJsonConverter::.ctor[0]( ) skipped:  special name
+
+
+	System.Boolean [EVE-Bot]System.Boolean read_memory_64_bit.IntegersToStringJsonConverter::CanRead skipped:  type rule in configuration
+	System.Boolean [EVE-Bot]System.Boolean read_memory_64_bit.IntegersToStringJsonConverter::CanWrite skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.IMemoryReader skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.IMemoryReader::ReadBytes[2]( [System.Runtime]System.UInt64, [System.Runtime]System.Int32 ) skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.WinApi skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.WinApi::OpenProcess[3]( [System.Runtime]System.Int32, [System.Runtime]System.Boolean, [System.Runtime]System.Int32 ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.WinApi::VirtualQueryEx[4]( [System.Runtime]System.IntPtr, [System.Runtime]System.IntPtr, [EVE-Bot]read_memory_64_bit.WinApi/MEMORY_BASIC_INFORMATION64&, [System.Runtime]System.UInt32 ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.WinApi::ReadProcessMemory[5]( [System.Runtime]System.IntPtr, [System.Runtime]System.UInt64, [System.Runtime]System.Byte[], [System.Runtime]System.UIntPtr, [System.Runtime]System.UIntPtr& ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.WinApi::CloseHandle[1]( [System.Runtime]System.IntPtr ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.WinApi::GetProcessId[1]( [System.Runtime]System.IntPtr ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.WinApi::SetProcessDPIAware[0]( ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.WinApi::GetWindowRect[2]( [System.Runtime]System.IntPtr, [EVE-Bot]read_memory_64_bit.WinApi/Rect& ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.WinApi::GetClientRect[2]( [System.Runtime]System.IntPtr, [EVE-Bot]read_memory_64_bit.WinApi/Rect& ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.WinApi::ClientToScreen[2]( [System.Runtime]System.IntPtr, [EVE-Bot]read_memory_64_bit.WinApi/Point& ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.WinApi::FindWindow[2]( [System.Runtime]System.String, [System.Runtime]System.String ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.WinApi::GetWindowThreadProcessId[2]( [System.Runtime]System.IntPtr, [System.Runtime]System.UInt32& ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.WinApi::PostMessage[4]( [System.Runtime]System.IntPtr, [System.Runtime]System.UInt32, [System.Runtime]System.Int32, [System.Runtime]System.Int32 ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.WinApi::SetCursorPos[2]( [System.Runtime]System.Int32, [System.Runtime]System.Int32 ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.WinApi::GetCursorPos[1]( [EVE-Bot]read_memory_64_bit.WinApi/Point& ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.WinApi::MakeLParam[2]( [System.Runtime]System.Int32, [System.Runtime]System.Int32 ) skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.TransformMemoryContent skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.TransformMemoryContent::AsULongArray[1]( [System.Runtime]System.Byte[] ) skipped:  type rule in configuration
+}
+
+[EVE-Bot]read_memory_64_bit.ProcessSample skipped:  namespace rule in configuration
+{
+
+	[EVE-Bot]read_memory_64_bit.ProcessSample::ZipArchiveFromProcessSample[4]( [System.Collections.Immutable]System.Collections.Immutable.IImmutableList`1<[System.Runtime]System.ValueTuple`2<[System.Runtime]System.UInt64,[System.Runtime]System.Byte[]>>, [System.Collections.Immutable]System.Collections.Immutable.IImmutableList`1<[System.Runtime]System.String>, [System.Runtime]System.Byte[], [System.Runtime]System.Byte[] ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.ProcessSample::ProcessSampleFromZipArchive[1]( [System.Runtime]System.Byte[] ) skipped:  type rule in configuration
+	[EVE-Bot]read_memory_64_bit.ProcessSample::.ctor[0]( ) skipped:  special name
+}
+
+Renamed Resources:
+
+
+Skipped Resources:
+

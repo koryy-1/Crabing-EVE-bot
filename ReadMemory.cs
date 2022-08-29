@@ -364,7 +364,7 @@ namespace read_memory_64_bit
                 if (asInt32 == value)
                     return asInt32;
 
-                return new
+                return new PyInt
                 {
                     @int = value,
                     int_low32 = asInt32,
@@ -410,7 +410,7 @@ namespace read_memory_64_bit
                     return (int)(valueAsFloat.Value * 100);
                 }
 
-                return new
+                return new PyColor
                 {
                     aPercent = readValuePercentFromDictEntryKey("_a"),
                     rPercent = readValuePercentFromDictEntryKey("_r"),
@@ -1124,6 +1124,20 @@ namespace read_memory_64_bit
         public const int Offset_ob_type = 8;
     }
 
+    public class PyInt
+    {
+        public long @int { set; get; }
+        public int int_low32 { set; get; }
+    }
+
+    public class PyColor
+    {
+        public int? aPercent { set; get; }
+        public int? rPercent { set; get; }
+        public int? gPercent { set; get; }
+        public int? bPercent { set; get; }
+    }
+
     public class UITreeNode
     {
         public ulong pythonObjectAddress { set; get; }
@@ -1448,7 +1462,7 @@ namespace read_memory_64_bit
 
             var processSampleId = Kalmit.CommonConversion.StringBase16FromByteArray(Kalmit.CommonConversion.HashSHA256(processSampleFile));
 
-            Console.WriteLine($"Reading from process sample {processSampleId}.");
+            //Console.WriteLine($"Reading from process sample {processSampleId}.");
 
             var processSampleUnpacked = ProcessSample.ProcessSampleFromZipArchive(processSampleFile);
 
@@ -1467,7 +1481,7 @@ namespace read_memory_64_bit
 
             searchUIRootsStopwatch.Stop();
 
-            Console.WriteLine($"Found {uiRootCandidatesAddresses.Count} candidates for UIRoot in {(int)searchUIRootsStopwatch.Elapsed.TotalSeconds} seconds: " + string.Join(",", uiRootCandidatesAddresses.Select(address => $"0x{address:X}")));
+            //Console.WriteLine($"Found {uiRootCandidatesAddresses.Count} candidates for UIRoot in {(int)searchUIRootsStopwatch.Elapsed.TotalSeconds} seconds: " + string.Join(",", uiRootCandidatesAddresses.Select(address => $"0x{address:X}")));
 
             return (uiRootCandidatesAddresses, memoryReader);
         }
@@ -1698,13 +1712,13 @@ namespace read_memory_64_bit
 
             var outputFilePath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory() + "\\Snapshots", outputFileName);
 
-            Console.WriteLine(
-                "I found no configuration of an output file path, so I use '" +
-                outputFilePath + "' as the default.");
+            //Console.WriteLine(
+            //    "I found no configuration of an output file path, so I use '" +
+            //    outputFilePath + "' as the default.");
 
             System.IO.File.WriteAllBytes(outputFilePath, fileContent);
 
-            Console.WriteLine($"I saved memory reading {sampleId} to file '{outputFilePath}'.");
+            //Console.WriteLine($"I saved memory reading {sampleId} to file '{outputFilePath}'.");
         }
     }
 }

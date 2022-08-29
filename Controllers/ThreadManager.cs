@@ -10,6 +10,8 @@ namespace EVE_Bot.Controllers
 
         volatile static public bool AllowShipControl = true;
 
+        volatile static public bool AllowNavigationControl = false;
+
         volatile static public bool AllowShieldHPControl = false;
 
         volatile static public bool AllowPVEMode = false;
@@ -39,5 +41,13 @@ namespace EVE_Bot.Controllers
         volatile static public int MultipleSleepForDrones = 3;
 
         volatile static public int QuantityFilament = 3;
+
+        volatile static public bool ShipShieldIsLow = false;
+
+        volatile static public bool CloseDistanceToEnemy = false;
+
+        volatile static public string ItemInSpace = "";
+        volatile static public string FlightManeuver = "";
+        volatile static public string ExpectedState = "";
     }
 }

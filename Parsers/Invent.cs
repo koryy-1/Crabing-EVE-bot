@@ -58,8 +58,11 @@ namespace EVE_Bot.Parsers
                         continue;
                     if (CargoTree.children[i].children[k].children[0] == null)
                         continue;
-                    if (CargoTree.children[i].children[k].children[0].pythonObjectTypeName == "OmegaCloneOverlayIcon")
-                        index = 1;
+
+                    if (CargoTree.children[i].children[k].children[0].pythonObjectTypeName == "Icon")
+                        index += 1;
+                    if (CargoTree.children[i].children[k].children[index].pythonObjectTypeName == "OmegaCloneOverlayIcon")
+                        index += 1;
 
                     if (CargoTree.children[i].children[k].children[1] == null)
                         continue;
@@ -74,9 +77,7 @@ namespace EVE_Bot.Parsers
                     //if (CargoTree.children[i].children[k].children[1 + index].children[1] == null)
                     //    continue;
 
-                    //GetUITrees().FindEntityOfString("InventoryPrimary").handleEntity("InventoryPrimary").FindEntityOfString("OmegaCloneOverlayIcon") != null
 
-                    //var ChildItem = CargoTree.children[i].children[k].children[1 + index].children[1];
                     var ChildItem = CargoTree.children[i].children[k].children.Last().children.Last();
 
 
@@ -98,9 +99,22 @@ namespace EVE_Bot.Parsers
 
                     Item.Name = ChildItemName;
 
-                    var ChildQuantity = Convert.ToInt32(CargoTree.children[i].children[k].children[1 + index].children[0]
-                            .dictEntriesOfInterest["_setText"].ToString().Replace(" ", ""));
-                    Item.Amount = ChildQuantity;
+
+                    var ChildQuantity = CargoTree.children[i].children[k].children[index];
+
+                    if (ChildQuantity.dictEntriesOfInterest.ContainsKey("_name") &&
+                        ChildQuantity.dictEntriesOfInterest["_name"].ToString() == "qtypar")
+                    {
+                        var ChildQuantityStr = ChildQuantity.children[0].dictEntriesOfInterest["_setText"].ToString();
+                        if (ChildQuantityStr.Contains("K"))
+                        {
+                            ChildQuantityStr = ChildQuantityStr.Split(",")[0] + "000";
+                        }
+
+                        var Quantity = Convert.ToInt32(ChildQuantityStr.Replace(" ", ""));
+                        Item.Amount = Quantity;
+                    }
+                    
 
                     InventoryItems.Add(Item);
                 }

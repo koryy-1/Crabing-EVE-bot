@@ -155,6 +155,11 @@ namespace EVE_Bot.Parsers
             && ComparedColor.Blue == 10)
                 return "red";
 
+            if (ComparedColor.Red == 100
+            && ComparedColor.Green == 100
+            && ComparedColor.Blue == 100)
+                return "white";
+
             return null;
         }
     }

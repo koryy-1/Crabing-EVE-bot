@@ -11,7 +11,7 @@ namespace EVE_Bot.Configs
         {
             string json = System.IO.File.ReadAllText("Config.json");
             ConfigFromJson Config = JsonSerializer.Deserialize<ConfigFromJson>(json);
-            SpotName = Config?.SpotName;
+            SpotName = Config.SpotName;
             LockRange = Config.LockRange;
             WeaponsRange = Config.WeaponsRange;
             PropModule = Config.PropModule;
@@ -25,11 +25,14 @@ namespace EVE_Bot.Configs
             SpecialUnloadingMode = Config.SpecialUnloadingMode;
             StationForUnload = Config.StationForUnload;
             FarmExp = Config.FarmExp;
+            Missiles = Config.Missiles;
+            LimiteCargoVolumeForUnload = Config.LimiteCargoVolumeForUnload;
             Console.WriteLine($"SpotName: {SpotName}\nLockRange: {LockRange}\nPropModule: {PropModule}\n" +
                 $"ActiveTank: {ActiveTank}\nNickName: {NickName}\nShipName: {ShipName}\n" +
                 $"AutopilotMode: {AutopilotMode}\nSecondModule: {SecondModule}\nAverageDelay: {AverageDelay}\n" +
                 $"AutoMissile: {AutoMissile}\nSpecialModeOfUnloading: {SpecialUnloadingMode}\nStationForUnload: {StationForUnload}\n" +
-                $"FarmExp: {FarmExp}\nWeaponsRange: {WeaponsRange}");
+                $"FarmExp: {FarmExp}\nWeaponsRange: {WeaponsRange}\nMissiles: {Missiles}\n" +
+                $"LimiteCargoVolumeForUnload: {LimiteCargoVolumeForUnload}");
         }
         static public string SpotName { get; set; }
         static public int LockRange { get; set; }
@@ -45,6 +48,8 @@ namespace EVE_Bot.Configs
         static public bool SpecialUnloadingMode { get; set; }
         static public string StationForUnload { get; set; }
         static public bool FarmExp { get; set; }
+        static public string Missiles { get; set; }
+        static public int LimiteCargoVolumeForUnload { get; set; }
     }
     public class ConfigFromJson
     {
@@ -62,5 +67,7 @@ namespace EVE_Bot.Configs
         public bool SpecialUnloadingMode { get; set; }
         public string StationForUnload { get; set; }
         public bool FarmExp { get; set; }
+        public string Missiles { get; set; }
+        public int LimiteCargoVolumeForUnload { get; set; }
     }
 }

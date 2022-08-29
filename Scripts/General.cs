@@ -18,18 +18,23 @@ namespace EVE_Bot.Scripts
         static public int AvgDeley = Config.AverageDelay;
         static ModulesInfo ModulesInfo = new ModulesInfo();
 
-        static public void ModuleActivityManager(string ModuleName, bool ModuleEnable)
+        static public void ModuleActivityManager(string ModuleName, bool ModuleEnable, bool PrivilegeControl = false)
         {
             if (ModuleEnable)
-                ActivateModuleMediumSlot(ModuleName);
+                ActivateModule(ModuleName, PrivilegeControl);
             else
-                DeactivateModuleMediumSlot(ModuleName);
+                DeactivateModule(ModuleName, PrivilegeControl);
         }
 
-        static public void ActivateModuleMediumSlot(string ModuleName)
+        static public void ActivateModule(string ModuleName, bool PrivilegeControl)
         {
             var AllModules = HI.GetAllModulesInfo(HI.GetHudContainer());
 
+            if (!AllModules.Exists(item => item.Name == ModuleName))
+            {
+                Console.WriteLine($"Module {ModuleName} not found");
+                return;
+            }
 
             var DesiredModule = AllModules.Find(item => item.Name == ModuleName);
 
@@ -39,13 +44,13 @@ namespace EVE_Bot.Scripts
                 return;
             }
 
-            Emulators.PressButton(DesiredModule.VirtualKey);
+            Emulators.PressButton(DesiredModule.VirtualKey, PrivilegeControl);
             Thread.Sleep(1000);
             DesiredModule = HI.GetAllModulesInfo(HI.GetHudContainer()).Find(item => item.Name == ModuleName);
 
             if (DesiredModule.Mode == "glow")
             {
-                Console.WriteLine($"{DesiredModule.Name} activated successfully");
+                //Console.WriteLine($"{DesiredModule.Name} activated successfully");
                 return;
             }
             else if (DesiredModule.Mode == "busy")
@@ -60,10 +65,15 @@ namespace EVE_Bot.Scripts
             }
         }
 
-        static public void DeactivateModuleMediumSlot(string ModuleName)
+        static public void DeactivateModule(string ModuleName, bool PrivilegeControl)
         {
             var AllModules = HI.GetAllModulesInfo(HI.GetHudContainer());
 
+            if (!AllModules.Exists(item => item.Name == ModuleName))
+            {
+                Console.WriteLine($"Module {ModuleName} not found");
+                return;
+            }
 
             var DesiredModule = AllModules.Find(item => item.Name == ModuleName);
 
@@ -73,7 +83,7 @@ namespace EVE_Bot.Scripts
                 return;
             }
 
-            Emulators.PressButton(DesiredModule.VirtualKey);
+            Emulators.PressButton(DesiredModule.VirtualKey, PrivilegeControl);
             Thread.Sleep(1000);
             DesiredModule = HI.GetAllModulesInfo(HI.GetHudContainer()).Find(item => item.Name == ModuleName);
 
@@ -395,8 +405,9 @@ namespace EVE_Bot.Scripts
                     Console.WriteLine($"No {ItemInSpace} in grid");
                     return;
                 }
-                Emulators.ClickLB(X, Y);
-                Thread.Sleep(AvgDeley + r.Next(-100, 100));
+                Emulators.AllowControlEmulator = false;
+                Emulators.ClickLB(X, Y, PrivilegeControl: true);
+                Thread.Sleep(200 + r.Next(-100, 100));
 
                 var (XSelectedItem, YSelectedItem) = Finders.FindLocWnd("ActiveItem");
                 if (XSelectedItem == 0)
@@ -419,12 +430,15 @@ namespace EVE_Bot.Scripts
                     .children[Convert.ToInt32(SelectedItemEntry.dictEntriesOfInterest["needIndex"])]
                     );
 
-                Emulators.ClickLB(XSelectedItem + XManeuver + 16, YSelectedItem + 85);
-                Thread.Sleep(AvgDeley + r.Next(-100, 100));
+                Emulators.ClickLB(XSelectedItem + XManeuver + 16, YSelectedItem + 85, PrivilegeControl: true);
+                Emulators.AllowControlEmulator = true;
+                Thread.Sleep(120 + r.Next(-100, 100));
 
                 if (Maneuver == "Approach" && Checkers.CheckState("Approaching"))
                     return;
                 else if (Maneuver == "AlignTo" && Checkers.CheckState("Aligning"))
+                    return;
+                else if (Maneuver == "Orbit" && Checkers.CheckState("Orbiting", ItemInSpace))
                     return;
                 else if (Maneuver == "WarpTo" && (Checkers.CheckState("Approaching") || Checkers.CheckState("Jumping")))
                     return;
@@ -438,8 +452,6 @@ namespace EVE_Bot.Scripts
                     Checkers.CheckState("Docking")))
                     return;
                 else if (Maneuver == "ActivateGate")
-                    return;
-                else if (Maneuver == "Orbit" && Checkers.CheckState("Orbiting", ItemInSpace))
                     return;
                 else if (Maneuver == "KeepAtRange" && Checkers.CheckState("Keeping at Range"))
                     return;
@@ -501,12 +513,15 @@ namespace EVE_Bot.Scripts
             var (XCenterHudContainer, _) = GetCoordsEntityOnScreen(CenterHudContainer
                     .children[Convert.ToInt32(CenterHudContainer.dictEntriesOfInterest["needIndex"])]
                     );
+
+            Emulators.AllowControlEmulator = false;
             if (Speed == 0)
-                Emulators.ClickLB(XHudContainer + XCenterHudContainer + 45, YHudContainer + 133); // stop
+                Emulators.ClickLB(XHudContainer + XCenterHudContainer + 45, YHudContainer + 133, PrivilegeControl: true); // stop
             if (Speed == 1)
-                Emulators.ClickLB(XHudContainer + XCenterHudContainer + 97, YHudContainer + 155); // speed 1400 m/s
+                Emulators.ClickLB(XHudContainer + XCenterHudContainer + 97, YHudContainer + 155, PrivilegeControl: true); // speed 1400 m/s
             if (Speed == 2)
-                Emulators.ClickLB(XHudContainer + XCenterHudContainer + 138, YHudContainer + 133); // max speed
+                Emulators.ClickLB(XHudContainer + XCenterHudContainer + 138, YHudContainer + 133, PrivilegeControl: true); // max speed
+            Emulators.AllowControlEmulator = true;
         }
 
         static public void ChangeTab(string TabName)
@@ -628,13 +643,13 @@ namespace EVE_Bot.Scripts
             return (0, 0, 0);
         }
 
-        static public bool CheckCargo(int price = 30)
+        static public bool CheckCargo(int price = 50)
         {
             if (CheckCargoPrice(price))
             {
                 return true;
             }
-            else if (CheckVolumeCargo())
+            else if (CheckVolumeCargo(Config.LimiteCargoVolumeForUnload))
             {
                 return true;
             }
@@ -652,7 +667,7 @@ namespace EVE_Bot.Scripts
             return false;
         }
 
-        static public bool CheckVolumeCargo(int NeedVolume = 100)
+        static public bool CheckVolumeCargo(int NeedVolume = 240)
         {
             int CargoVolume = Invent.GetVolumeInfo();
             if (CargoVolume > NeedVolume)
@@ -739,7 +754,7 @@ namespace EVE_Bot.Scripts
                     var (XUnlockBtn, YUnlockBtn) = GetCoordsButtonActiveItem("UnLockTarget");
                     Emulators.ClickLB(XUnlockBtn, YUnlockBtn);
 
-                    Thread.Sleep(1000 + r.Next(-100, 100));
+                    Thread.Sleep(500 + r.Next(-100, 100));
                     Console.WriteLine("not enemy target unlocked");
                 }
             }
@@ -810,6 +825,46 @@ namespace EVE_Bot.Scripts
             Thread.Sleep(AvgDeley + r.Next(-100, 100));
             ModuleActivityManager(ModulesInfo.MissileLauncher, true);
             Console.WriteLine("target changed");
+        }
+
+        static public bool LochedTargetsAreAvailable()
+        {
+            var OverviewTargetsInfo = OV.GetInfo().FindAll(item => item.TargetLocked);
+            if (OverviewTargetsInfo.Count == 0 || OverviewTargetsInfo.Count < 4)
+                return true;
+
+            foreach (var Target in OverviewTargetsInfo)
+            {
+                if (Target.Distance.measure == "km" && Target.Distance.value < Config.WeaponsRange || Target.Distance.measure == "m")
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        static public void UnlockTargets()
+        {
+            var OverviewTargetsInfo = OV.GetInfo().FindAll(item => item.TargetLocked);
+            if (OverviewTargetsInfo.Count == 0 || OverviewTargetsInfo.Count < 4)
+                return;
+
+            foreach (var Target in OverviewTargetsInfo.SkipLast(1))
+            {
+                Console.WriteLine("unlock targets");
+
+                Emulators.ClickLB(Target.Pos.x, Target.Pos.y);
+                Thread.Sleep(200 + r.Next(-100, 100));
+                var (XUnlockBtn, YUnlockBtn) = GetCoordsButtonActiveItem("UnLockTarget");
+                if (XUnlockBtn == 0)
+                    continue;
+
+                Emulators.ClickLB(XUnlockBtn, YUnlockBtn);
+
+                Thread.Sleep(200 + r.Next(-100, 100));
+                Console.WriteLine("target unlocked");
+            }
         }
 
         static public UITreeNode GetUITrees()

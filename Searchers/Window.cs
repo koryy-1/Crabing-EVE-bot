@@ -70,7 +70,7 @@ namespace EVE_Bot.Searchers
                 //}
                 RootAddress = "";
 
-                Console.WriteLine("waiting to find root address");
+                Console.WriteLine("please wait...");
                 RootAddress = GetRootAddress(RootAddress, processId);
                 if (0 == RootAddress?.Length)
                 {
@@ -172,7 +172,7 @@ namespace EVE_Bot.Searchers
                 .Select(uiTreeWithStats => $"\n0x{uiTreeWithStats.uiTree.pythonObjectAddress:X}: {uiTreeWithStats.nodeCount} nodes.")
                 .ToImmutableList();
 
-            Console.WriteLine($"Read {uiTrees.Count} UI trees in {(int)readUiTreesStopwatch.Elapsed.TotalMilliseconds} milliseconds:" + string.Join("", uiTreesReport));
+            //Console.WriteLine($"Read {uiTrees.Count} UI trees in {(int)readUiTreesStopwatch.Elapsed.TotalMilliseconds} milliseconds:" + string.Join("", uiTreesReport));
 
             var largestUiTree =
                 uiTreesWithStats

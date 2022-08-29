@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using EVE_Bot.Models;
 using EVE_Bot.Parsers;
+using System.Threading;
 
 namespace EVE_Bot.Searchers
 {
@@ -25,6 +26,7 @@ namespace EVE_Bot.Searchers
                 ExcludeSomeTargets.Add(ExcludeTarget);
             }
             int EnemyHere = 0;
+            int LockedEnemyHere = 0;
 
             foreach (var item in OverviewInfo)
             {
@@ -59,7 +61,13 @@ namespace EVE_Bot.Searchers
                     EnemyCoords.Add(item.Pos.x);
                     EnemyCoords.Add(item.Pos.y);
                     if (EnemyCoords.Count / 2 > 4) // макс количество захваченных целей
+                    {
+                        if (LockedEnemyHere == 2)
+                        {
+                            EnemyCoords.Add(2);
+                        }
                         return EnemyCoords;
+                    }
                 }
                 else
                 {
@@ -67,119 +75,14 @@ namespace EVE_Bot.Searchers
                 }
                 if (item.TargetLocked)
                 {
-                    EnemyHere = 2;
+                    LockedEnemyHere = 2;
                 }
             }
             if (EnemyHere == 1 && EnemyCoords.Count == 0)
             {
                 EnemyCoords.Add(1);
             }
-            else if (EnemyHere == 2)
-            {
-                EnemyCoords.Add(2);
-            }
             return EnemyCoords;
-
-
-
-            //var (XlocOverview, YlocOverview) = Finders.FindLocWnd("OverView");
-
-            //var OverviewEntry = GetUITrees().FindEntityOfString("OverviewScrollEntry").handleEntity("OverviewScrollEntry");
-
-            
-            //int DistanceToEnemy = 0;
-            //var DistanceToEnemyStr = "";
-
-            //for (int k = 0; k < OverviewEntry.children.Length; k++)
-            //{
-            //    if (OverviewEntry.children[k] == null)
-            //        continue;
-            //    if (OverviewEntry.children[k].children == null)
-            //        continue;
-            //    if (OverviewEntry.children[k].children.Length == 0)
-            //        continue;
-            //    if (OverviewEntry.children[k].children.Last().pythonObjectTypeName != "SpaceObjectIcon")
-            //        continue;
-            //    if (OverviewEntry.children[k].children.Last().children == null)
-            //        continue;
-
-            //    var IsContOrExcludeTarget = false;
-
-            //    for (int i = 0; i < ExcludeSomeTargets.Count; i++)
-            //    {
-            //        if (OverviewEntry.children[k].children[OverviewEntry.children[k].children.Length - 3]
-            //        .dictEntriesOfInterest.ContainsKey("_text")
-            //        &&
-            //        OverviewEntry.children[k].children[OverviewEntry.children[k].children.Length - 4]
-            //        .dictEntriesOfInterest.ContainsKey("_text")
-            //        &&
-            //        (OverviewEntry.children[k].children[OverviewEntry.children[k].children.Length - 3]
-            //        .dictEntriesOfInterest["_text"].ToString().Contains(ExcludeSomeTargets[i]) ||
-            //        OverviewEntry.children[k].children[OverviewEntry.children[k].children.Length - 4]
-            //        .dictEntriesOfInterest["_text"].ToString().Contains(ExcludeSomeTargets[i]))
-            //        )
-            //        {
-            //            IsContOrExcludeTarget = true;
-            //        }
-            //    }
-            //    if (IsContOrExcludeTarget)
-            //        continue;
-
-            //    int YLocEnemyRelOverview = 0;
-            //    if (OverviewEntry.children[k].dictEntriesOfInterest["_displayY"] is Newtonsoft.Json.Linq.JObject)
-            //        YLocEnemyRelOverview = Convert.ToInt32(OverviewEntry.children[k].dictEntriesOfInterest["_displayY"]["int_low32"]);
-            //    else
-            //        YLocEnemyRelOverview = Convert.ToInt32(OverviewEntry.children[k].dictEntriesOfInterest["_displayY"]);
-
-
-            //    DistanceToEnemy = 0;
-            //    DistanceToEnemyStr = "";
-
-
-            //    for (int j = 0; j < OverviewEntry.children[k].children.Last().children.Length; j++)
-            //    {
-            //        if (OverviewEntry.children[k].children.Last().children[j].pythonObjectTypeName == "Sprite"
-            //            &&
-            //            OverviewEntry.children[k].children.Last().children[j].dictEntriesOfInterest["_name"].ToString() == "iconSprite")
-            //        {
-            //            var RGBColorIcon = OverviewEntry.children[k].children.Last().children[j].dictEntriesOfInterest["_color"];
-            //            //NullReferenceException
-            //            if (Convert.ToInt32(RGBColorIcon["rPercent"]) == 100
-            //            && Convert.ToInt32(RGBColorIcon["gPercent"]) == 10
-            //            && Convert.ToInt32(RGBColorIcon["bPercent"]) == 10)
-            //            {
-            //                DistanceToEnemyStr = OverviewEntry.children[k].children[OverviewEntry.children[k].children.Length - 2]
-            //                    .dictEntriesOfInterest["_text"].ToString();
-
-            //                int.TryParse(string.Join("", DistanceToEnemyStr.Where(c => char.IsDigit(c))), out DistanceToEnemy);
-            //                if (DistanceToEnemyStr.Contains(" km")
-            //                    &&
-            //                    DistanceToEnemy < Config.LockRange
-            //                    ||
-            //                    DistanceToEnemyStr.Contains(" m")
-            //                    ||
-            //                    !ConsiderDistance)
-            //                {
-            //                    EnemyCoords.Add(XlocOverview + 50);
-            //                    EnemyCoords.Add(YlocOverview + YLocEnemyRelOverview + 77);
-            //                    //Console.WriteLine("enemy on X : {0}, Y : {1}!", XlocOverview + 50, YlocOverview + YLocEnemyRelOverview + 77 + 23);
-            //                    if (EnemyCoords.Count / 2 > 4) // количество отмеченных целей
-            //                        return EnemyCoords;
-            //                }
-            //                else
-            //                {
-            //                    EnemyHere = 1;
-            //                }
-
-            //            }
-            //        }
-            //    }
-            //}
-            //if (EnemyHere == 1 && EnemyCoords.Count == 0)
-            //{
-            //    EnemyCoords.Add(1);
-            //}
-            //return EnemyCoords;
         }
 
         static public bool CheckDistance(string ItemInSpace, int MinDistance, string unit = "m")
@@ -349,38 +252,6 @@ namespace EVE_Bot.Searchers
                 }
             }
             return false;
-
-
-            //var OverviewEntry = GetUITrees().FindEntityOfString("OverviewScrollEntry").handleEntity("OverviewScrollEntry");
-
-            //for (int k = 0; k < OverviewEntry.children.Length; k++)
-            //{
-            //    if (OverviewEntry.children[k] == null)
-            //        continue;
-            //    if (OverviewEntry.children[k].children == null)
-            //        continue;
-            //    if (OverviewEntry.children[k].children.Length == 0)
-            //        continue;
-            //    if (OverviewEntry.children[k].children.Last() == null)
-            //        continue;
-            //    if (OverviewEntry.children[k].children.Last().children == null)
-            //        continue;
-
-            //    if (OverviewEntry.children[k].children.Last().pythonObjectTypeName != "SpaceObjectIcon")
-            //        continue;
-
-
-            //    for (int j = 0; j < OverviewEntry.children[k].children.Last().children.Length; j++)
-            //    {
-            //        if (OverviewEntry.children[k].children.Last().children[j].pythonObjectTypeName == "Sprite"
-            //            &&
-            //            OverviewEntry.children[k].children.Last().children[j].dictEntriesOfInterest["_name"].ToString() == "myActiveTargetIndicator")
-            //        {
-            //            return true;
-            //        }
-            //    }
-            //}
-            //return false;
         }
 
         static public void WatchState()
@@ -399,24 +270,24 @@ namespace EVE_Bot.Searchers
                     return;
                 }
 
-                Console.WriteLine(CurrentState);
-                if (CurrentState.ToString().Contains("Jumping"))
+                Console.WriteLine(CurrentState.CurrentState);
+                if (CurrentState.CurrentState.Contains("Jumping"))
                 {
                     Console.WriteLine("ship has reached destination");
                     ThreadManager.DangerAnalyzerEnable = true;
                     return;
                 }
-                else if (CurrentState.ToString().Contains("Click target"))
+                else if (CurrentState.CurrentState.Contains("Click target"))
                 {
                     Console.WriteLine("ship has reached destination");
                     ThreadManager.DangerAnalyzerEnable = true;
                     return;
                 }
-                else if (CurrentState.ToString().Contains("Approaching"))
+                else if (CurrentState.CurrentState.Contains("Approaching"))
                 {
                     ApproachCnt++;
                     ThreadManager.DangerAnalyzerEnable = true;
-                    if (ApproachCnt > 11)
+                    if (ApproachCnt > 30) // 2.5 min
                     {
                         Console.WriteLine("ship hit the curb");
 
@@ -424,7 +295,7 @@ namespace EVE_Bot.Searchers
                     }
 
                 }
-                else if (CurrentState.ToString().Contains("Orbiting"))
+                else if (CurrentState.CurrentState.Contains("Orbiting"))
                 {
                     Console.WriteLine("ship hit the curb");
                     ThreadManager.DangerAnalyzerEnable = true;
@@ -486,7 +357,7 @@ namespace EVE_Bot.Searchers
                 &&
                 CurrentState.Contains(State))
             {
-                Console.WriteLine($"ship is in state of {State} on {ItemInSpace} in {Distance}");
+                //Console.WriteLine($"ship is in state of {State} on {ItemInSpace} in {Distance}");
                 return true;
             }
             else if (Distance == "" && ItemInSpace != ""
@@ -495,14 +366,14 @@ namespace EVE_Bot.Searchers
                 &&
                 CurrentState.Contains(State))
             {
-                Console.WriteLine($"ship is in state of {State} on {ItemInSpace}");
+                //Console.WriteLine($"ship is in state of {State} on {ItemInSpace}");
                 return true;
             }
             else if (Distance == "" && ItemInSpace == ""
                 &&
                 CurrentState.Contains(State))
             {
-                Console.WriteLine($"ship is in state of {State}");
+                //Console.WriteLine($"ship is in state of {State}");
                 return true;
             }
             else
@@ -543,28 +414,26 @@ namespace EVE_Bot.Searchers
             return 0;
         }
 
-        static public bool ShipInLowHP(int HPthreshold)
+        static public void ShipInLowHP(int HPthreshold)
         {
-            //var HudReadout = GetUITrees().FindEntityOfString("HudReadout");
-            //if (HudReadout == null)
-            //    return false;
-
-            //var HudReadoutEntry = HudReadout.handleEntity("HudReadout");
-
-            //var ShipHPWithPercent = HudReadoutEntry.children[Convert.ToInt32(HudReadoutEntry.dictEntriesOfInterest["needIndex"])]
-            //    .children[0].children[0].dictEntriesOfInterest["_setText"].ToString();
-
-            //int ShipHP;
-            //int.TryParse(string.Join("", ShipHPWithPercent.Where(c => char.IsDigit(c))), out ShipHP);
-
-
-            int Shield = HI.GetShipHP(HI.GetHudContainer()).Shield;
-            if (Shield < HPthreshold)
+            int PrevShield = 0;
+            while (true)
             {
-                Console.WriteLine("ship has {0}% shield", Shield);
-                return true;
+                int CurrentShield = HI.GetShipHP(HI.GetHudContainer()).Shield;
+                if (CurrentShield < HPthreshold && CurrentShield < PrevShield || CurrentShield < 10)
+                {
+                    Console.WriteLine("ship has {0}% shield", CurrentShield);
+                    ThreadManager.ShipShieldIsLow = true;
+                }
+                else if (ThreadManager.ShipShieldIsLow)
+                {
+                    ThreadManager.ShipShieldIsLow = false;
+                }
+
+                PrevShield = CurrentShield;
+
+                Thread.Sleep(ThreadManager.MultiplierSleep * 1000);
             }
-            return false;
         }
 
 
