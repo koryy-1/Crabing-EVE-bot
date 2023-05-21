@@ -20,4 +20,6 @@
 3) настроить файл Config.json
 4) запустить start.bat
 
+более подробную настройку можно найти в https://docs.google.com/document/d/1hAaAbwyPQVlCO3g8PsJpSPs5rMA0q_H0f43ebuLq07c/edit
+
 возможно я мог что-то упустить в настройке бота
